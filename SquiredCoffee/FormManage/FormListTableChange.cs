@@ -28,15 +28,15 @@ namespace SquiredCoffee.FormManage
             _parent = parent;
         }
 
-        public void LoadOrderId(string id_table)
-        {
-            List<Order> tableList = DbOrder.LoadOrderId(id_table);
+        //public void LoadOrderId(string id_table)
+        //{
+        //    List<Order> tableList = DbOrder.LoadOrderId(id_table);
 
-            foreach (Order item in tableList)
-            {
-                orderTable_id = item.id;
-            }
-        }
+        //    foreach (Order item in tableList)
+        //    {
+        //        orderTable_id = item.id;
+        //    }
+        //}
 
         public void LoadTable()
         {
@@ -92,7 +92,7 @@ namespace SquiredCoffee.FormManage
             string tag2 = ((sender as PictureBox).Tag as Table).title;
             tagTable_id = tag;
             tagTable_title = tag2;
-            LoadOrderId(tagTable_id.ToString());
+            //LoadOrderId(tagTable_id.ToString());
             this.Close();
         }
 

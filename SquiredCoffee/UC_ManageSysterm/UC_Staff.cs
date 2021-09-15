@@ -51,16 +51,16 @@ namespace SquiredCoffee.UC_ManageSysterm
             string sql = "SELECT * FROM roles";
             DataSet ListCategory = new DataSet();
             ListCategory = LoadDB(sql);
-            cbRole.DataSource = ListCategory.Tables[0];
-            cbRole.DisplayMember = "title";
-            cbRole.ValueMember = "id";
-            cbRole.SelectedIndex = -1;
+            guna2ComboBox1.DataSource = ListCategory.Tables[0];
+            guna2ComboBox1.DisplayMember = "title";
+            guna2ComboBox1.ValueMember = "id";
+            guna2ComboBox1.SelectedIndex = -1;
         }
 
         public void Clear()
         {
             txtAddress.Text=txtEmail.Text=txtEmployeeCode.Text=txtFullName.Text=txtPassword.Text=txtPhoneNumber.Text=txtSearch.Text=txtUserName.Text= string.Empty;
-            cbRole.Text = null;
+            guna2ComboBox1.Text = null;
             ptImage.Image = new Bitmap(Application.StartupPath + "\\Resource\\no_img.jpg");
             chkStatus1.Checked = chkStatus2.Checked = false;
             rbFemale.Checked = rbMale.Checked = false;
@@ -106,7 +106,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             }
             dtpBirthDay.Text = dgvStaff.SelectedRows[0].Cells[6].Value.ToString();
             image_staff = dgvStaff.SelectedRows[0].Cells[7].Value.ToString();
-            cbRole.Text = dgvStaff.SelectedRows[0].Cells[13].Value.ToString();
+            guna2ComboBox1.Text = dgvStaff.SelectedRows[0].Cells[13].Value.ToString();
             txtPhoneNumber.Text = dgvStaff.SelectedRows[0].Cells[8].Value.ToString();
             txtEmail.Text = dgvStaff.SelectedRows[0].Cells[9].Value.ToString();
             ptImage.Image = ConvertBase64ToImage(image_staff);
@@ -196,7 +196,7 @@ namespace SquiredCoffee.UC_ManageSysterm
 
             if (btnInsert.Text == "Thêm")
             {
-                Staff std = new Staff(txtEmployeeCode.Text.Trim(),txtFullName.Text.Trim(),txtUserName.Text.Trim(),txtPassword.Text.Trim(),gender,dtpBirthDay.Text.Trim(), image_staff,txtPhoneNumber.Text.Trim(), txtAddress.Text.Trim(), txtEmail.Text.Trim(), Convert.ToInt32(cbRole.SelectedValue),status);
+                Staff std = new Staff(txtEmployeeCode.Text.Trim(),txtFullName.Text.Trim(),txtUserName.Text.Trim(),txtPassword.Text.Trim(),gender,dtpBirthDay.Text.Trim(), image_staff,txtPhoneNumber.Text.Trim(), txtEmail.Text.Trim(), Convert.ToInt32(guna2ComboBox1.SelectedValue),status);
                 DbStaff.AddStaff(std);
                 Clear();
                 Display();
@@ -258,7 +258,7 @@ namespace SquiredCoffee.UC_ManageSysterm
 
             if (btnInsert.Text == "Thêm")
             {
-                Staff std = new Staff(txtEmployeeCode.Text.Trim(), txtFullName.Text.Trim(), txtUserName.Text.Trim(), txtPassword.Text.Trim(), gender, dtpBirthDay.Text.Trim(), image_staff, txtPhoneNumber.Text.Trim(), txtAddress.Text.Trim(), txtEmail.Text.Trim(), Convert.ToInt32(cbRole.SelectedValue), status);
+                Staff std = new Staff(txtEmployeeCode.Text.Trim(), txtFullName.Text.Trim(), txtUserName.Text.Trim(), txtPassword.Text.Trim(), gender, dtpBirthDay.Text.Trim(), image_staff, txtPhoneNumber.Text.Trim(), txtEmail.Text.Trim(), Convert.ToInt32(guna2ComboBox1.SelectedValue), status);
                 DbStaff.UpdateStaff(std,id.ToString());
                 Clear();
                 Display();
@@ -283,6 +283,11 @@ namespace SquiredCoffee.UC_ManageSysterm
                 Clear();
                 Display();
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

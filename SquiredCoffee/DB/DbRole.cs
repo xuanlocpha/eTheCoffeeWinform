@@ -30,12 +30,12 @@ namespace SquiredCoffee.DB
 
         public static void AddRole(Role std)
         {
-            string sql = "INSERT INTO categories (title) VALUES(@title)";
+            string sql = "INSERT INTO roles (title,status) VALUES(@title,@status)";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
-
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
             try
             {
                 cmd.ExecuteNonQuery();
@@ -51,13 +51,13 @@ namespace SquiredCoffee.DB
 
         public static void UpdateRole(Role std, string id)
         {
-            string sql = "UPDATE categories SET title = @title  WHERE id = @id";
+            string sql = "UPDATE roles SET title = @title,status = @status  WHERE id = @id";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
             cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
-
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
             try
             {
                 cmd.ExecuteNonQuery();
@@ -102,6 +102,85 @@ namespace SquiredCoffee.DB
             adp.Fill(tbl);
             dgv.DataSource = tbl;
             con.Close();
+        }
+
+
+        public static List<Role> LoadRoleList()
+        {
+            List<Role> roleList = new List<Role>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,status FROM roles ");
+            foreach (DataRow item in data.Rows)
+            {
+                Role role = new Role(item);
+                roleList.Add(role);
+            }
+
+            return roleList;
+        }
+
+
+        public static bool CheckRole(string @title)
+        {
+            string sql = "select * from roles where title = '" + @title + "'";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+        public static List<Role> LoadRoleList(string @key)
+        {
+            List<Role> roleList = new List<Role>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,status FROM roles WHERE id ='"+@key+"' ");
+            foreach (DataRow item in data.Rows)
+            {
+                Role role = new Role(item);
+                roleList.Add(role);
+            }
+
+            return roleList;
+        }
+
+
+        public static List<Role> LoadStatusRoleList(string @key)
+        {
+            List<Role> roleList = new List<Role>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,status FROM roles WHERE status ='"+@key+"' ");
+            foreach (DataRow item in data.Rows)
+            {
+                Role role = new Role(item);
+                roleList.Add(role);
+            }
+
+            return roleList;
+        }
+
+
+        public static List<Role> LoadSearchRoleList(string @key)
+        {
+            List<Role> roleList = new List<Role>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,status FROM roles WHERE title LIKE'%" + @key + "%'");
+            foreach (DataRow item in data.Rows)
+            {
+                Role role = new Role(item);
+                roleList.Add(role);
+            }
+
+            return roleList;
         }
     }
 }

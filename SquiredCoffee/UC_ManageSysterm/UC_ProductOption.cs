@@ -206,7 +206,7 @@ namespace SquiredCoffee.UC_Controls
             }
             if (btnInsert.Text == "Thêm")
             {
-                ProductOption std = new ProductOption(int.Parse(cbProductName.SelectedValue.ToString()), int.Parse(cbOptionName.SelectedValue.ToString()), txtTitle.Text.Trim(), decimal.Parse(txtPrice.Text), defaults, status);
+                ProductOption std = new ProductOption(int.Parse(cbProductName.SelectedValue.ToString()), int.Parse(cbOptionName.SelectedValue.ToString()), txtTitle.Text.Trim(), decimal.Parse(txtPrice.Text),defaults, status);
                 DbProductOption.UpdateProductOption(std,id.ToString());
                 Clear();
                 Display();

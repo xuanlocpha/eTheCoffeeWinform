@@ -30,21 +30,21 @@ namespace SquiredCoffee.UC_ManageSysterm
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Staff));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnReset = new System.Windows.Forms.Button();
@@ -52,10 +52,13 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkStatus2 = new System.Windows.Forms.CheckBox();
+            this.chkStatus1 = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
+            this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.rbMale = new System.Windows.Forms.RadioButton();
             this.label12 = new System.Windows.Forms.Label();
-            this.cbRole = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -77,10 +80,6 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
-            this.rbFemale = new System.Windows.Forms.RadioButton();
-            this.rbMale = new System.Windows.Forms.RadioButton();
-            this.chkStatus1 = new System.Windows.Forms.CheckBox();
-            this.chkStatus2 = new System.Windows.Forms.CheckBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,6 +94,8 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.Column12 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbRole = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptImage)).BeginInit();
@@ -200,6 +201,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.guna2ComboBox1);
             this.groupBox1.Controls.Add(this.chkStatus2);
             this.groupBox1.Controls.Add(this.chkStatus1);
             this.groupBox1.Controls.Add(this.txtPassword);
@@ -235,6 +237,31 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Form Nhập Thông Tin";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // chkStatus2
+            // 
+            this.chkStatus2.AutoSize = true;
+            this.chkStatus2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkStatus2.Location = new System.Drawing.Point(933, 211);
+            this.chkStatus2.Name = "chkStatus2";
+            this.chkStatus2.Size = new System.Drawing.Size(119, 27);
+            this.chkStatus2.TabIndex = 41;
+            this.chkStatus2.Text = "Tạm Khóa";
+            this.chkStatus2.UseVisualStyleBackColor = true;
+            this.chkStatus2.CheckedChanged += new System.EventHandler(this.chkStatus2_CheckedChanged);
+            // 
+            // chkStatus1
+            // 
+            this.chkStatus1.AutoSize = true;
+            this.chkStatus1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkStatus1.Location = new System.Drawing.Point(761, 210);
+            this.chkStatus1.Name = "chkStatus1";
+            this.chkStatus1.Size = new System.Drawing.Size(118, 27);
+            this.chkStatus1.TabIndex = 40;
+            this.chkStatus1.Text = "Kích Hoạt";
+            this.chkStatus1.UseVisualStyleBackColor = true;
+            this.chkStatus1.CheckedChanged += new System.EventHandler(this.chkStatus1_CheckedChanged);
             // 
             // txtPassword
             // 
@@ -256,6 +283,28 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.txtUserName.Size = new System.Drawing.Size(330, 32);
             this.txtUserName.TabIndex = 38;
             // 
+            // rbFemale
+            // 
+            this.rbFemale.AutoSize = true;
+            this.rbFemale.Location = new System.Drawing.Point(310, 262);
+            this.rbFemale.Name = "rbFemale";
+            this.rbFemale.Size = new System.Drawing.Size(57, 27);
+            this.rbFemale.TabIndex = 37;
+            this.rbFemale.Text = "Nữ";
+            this.rbFemale.UseVisualStyleBackColor = true;
+            this.rbFemale.CheckedChanged += new System.EventHandler(this.rbFemale_CheckedChanged);
+            // 
+            // rbMale
+            // 
+            this.rbMale.AutoSize = true;
+            this.rbMale.Location = new System.Drawing.Point(212, 261);
+            this.rbMale.Name = "rbMale";
+            this.rbMale.Size = new System.Drawing.Size(70, 27);
+            this.rbMale.TabIndex = 36;
+            this.rbMale.Text = "Nam";
+            this.rbMale.UseVisualStyleBackColor = true;
+            this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -263,21 +312,9 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(595, 211);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(131, 25);
+            this.label12.Size = new System.Drawing.Size(125, 25);
             this.label12.TabIndex = 34;
             this.label12.Text = "Trạng Thái:";
-            // 
-            // cbRole
-            // 
-            this.cbRole.FormattingEnabled = true;
-            this.cbRole.Items.AddRange(new object[] {
-            "Admin",
-            "Quản Lý ",
-            "Nhân Viên"});
-            this.cbRole.Location = new System.Drawing.Point(762, 36);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(360, 31);
-            this.cbRole.TabIndex = 33;
             // 
             // label11
             // 
@@ -286,7 +323,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(595, 44);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(92, 25);
+            this.label11.Size = new System.Drawing.Size(86, 25);
             this.label11.TabIndex = 31;
             this.label11.Text = "Quyền :";
             // 
@@ -307,7 +344,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(595, 256);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(96, 25);
+            this.label10.Size = new System.Drawing.Size(92, 25);
             this.label10.TabIndex = 29;
             this.label10.Text = "Địa Chỉ:";
             // 
@@ -328,7 +365,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(595, 156);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 25);
+            this.label9.Size = new System.Drawing.Size(81, 25);
             this.label9.TabIndex = 27;
             this.label9.Text = "Email :";
             // 
@@ -349,7 +386,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(595, 98);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(160, 25);
+            this.label8.Size = new System.Drawing.Size(153, 25);
             this.label8.TabIndex = 25;
             this.label8.Text = "Số Điện Thoại:";
             // 
@@ -370,7 +407,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(30, 316);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 25);
+            this.label7.Size = new System.Drawing.Size(121, 25);
             this.label7.TabIndex = 23;
             this.label7.Text = "Ngày Sinh :";
             // 
@@ -391,7 +428,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(30, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 25);
+            this.label1.Size = new System.Drawing.Size(161, 25);
             this.label1.TabIndex = 21;
             this.label1.Text = "Mã Nhân Viên :";
             // 
@@ -443,7 +480,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(30, 264);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 25);
+            this.label5.Size = new System.Drawing.Size(111, 25);
             this.label5.TabIndex = 6;
             this.label5.Text = "Giới Tính:";
             // 
@@ -454,7 +491,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(30, 212);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 25);
+            this.label4.Size = new System.Drawing.Size(116, 25);
             this.label4.TabIndex = 4;
             this.label4.Text = "Password :";
             // 
@@ -465,7 +502,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(30, 157);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 25);
+            this.label3.Size = new System.Drawing.Size(118, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "UserName:";
             // 
@@ -486,7 +523,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(30, 100);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(174, 25);
+            this.label2.Size = new System.Drawing.Size(167, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Nhân Viên :";
             // 
@@ -508,14 +545,14 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.dgvStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStaff.BackgroundColor = System.Drawing.Color.White;
             this.dgvStaff.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(47)))));
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(47)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvStaff.ColumnHeadersHeight = 30;
             this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -547,59 +584,13 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.dgvStaff.TabIndex = 5;
             this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
             // 
-            // rbFemale
-            // 
-            this.rbFemale.AutoSize = true;
-            this.rbFemale.Location = new System.Drawing.Point(310, 262);
-            this.rbFemale.Name = "rbFemale";
-            this.rbFemale.Size = new System.Drawing.Size(57, 27);
-            this.rbFemale.TabIndex = 37;
-            this.rbFemale.Text = "Nữ";
-            this.rbFemale.UseVisualStyleBackColor = true;
-            this.rbFemale.CheckedChanged += new System.EventHandler(this.rbFemale_CheckedChanged);
-            // 
-            // rbMale
-            // 
-            this.rbMale.AutoSize = true;
-            this.rbMale.Location = new System.Drawing.Point(212, 261);
-            this.rbMale.Name = "rbMale";
-            this.rbMale.Size = new System.Drawing.Size(70, 27);
-            this.rbMale.TabIndex = 36;
-            this.rbMale.Text = "Nam";
-            this.rbMale.UseVisualStyleBackColor = true;
-            this.rbMale.CheckedChanged += new System.EventHandler(this.rbMale_CheckedChanged);
-            // 
-            // chkStatus1
-            // 
-            this.chkStatus1.AutoSize = true;
-            this.chkStatus1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkStatus1.Location = new System.Drawing.Point(761, 210);
-            this.chkStatus1.Name = "chkStatus1";
-            this.chkStatus1.Size = new System.Drawing.Size(118, 27);
-            this.chkStatus1.TabIndex = 40;
-            this.chkStatus1.Text = "Kích Hoạt";
-            this.chkStatus1.UseVisualStyleBackColor = true;
-            this.chkStatus1.CheckedChanged += new System.EventHandler(this.chkStatus1_CheckedChanged);
-            // 
-            // chkStatus2
-            // 
-            this.chkStatus2.AutoSize = true;
-            this.chkStatus2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkStatus2.Location = new System.Drawing.Point(933, 211);
-            this.chkStatus2.Name = "chkStatus2";
-            this.chkStatus2.Size = new System.Drawing.Size(119, 27);
-            this.chkStatus2.TabIndex = 41;
-            this.chkStatus2.Text = "Tạm Khóa";
-            this.chkStatus2.UseVisualStyleBackColor = true;
-            this.chkStatus2.CheckedChanged += new System.EventHandler(this.chkStatus2_CheckedChanged);
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "id";
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.FillWeight = 50F;
             this.Column1.HeaderText = "Id";
             this.Column1.MinimumWidth = 6;
@@ -610,9 +601,9 @@ namespace SquiredCoffee.UC_ManageSysterm
             // Column2
             // 
             this.Column2.DataPropertyName = "employee_code";
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column2.FillWeight = 50F;
             this.Column2.HeaderText = "Mã NV";
             this.Column2.MinimumWidth = 6;
@@ -622,9 +613,9 @@ namespace SquiredCoffee.UC_ManageSysterm
             // Column3
             // 
             this.Column3.DataPropertyName = "full_name";
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column3.HeaderText = "Tên Nhân Viên";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
@@ -633,9 +624,9 @@ namespace SquiredCoffee.UC_ManageSysterm
             // Column4
             // 
             this.Column4.DataPropertyName = "username";
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column4.FillWeight = 80F;
             this.Column4.HeaderText = "UserName";
             this.Column4.MinimumWidth = 6;
@@ -645,9 +636,9 @@ namespace SquiredCoffee.UC_ManageSysterm
             // Column5
             // 
             this.Column5.DataPropertyName = "password";
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column5.FillWeight = 80F;
             this.Column5.HeaderText = "Password";
             this.Column5.MinimumWidth = 6;
@@ -657,8 +648,8 @@ namespace SquiredCoffee.UC_ManageSysterm
             // Column6
             // 
             this.Column6.DataPropertyName = "gender";
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column6.FillWeight = 70F;
             this.Column6.HeaderText = "Giới Tính";
             this.Column6.MinimumWidth = 6;
@@ -669,9 +660,9 @@ namespace SquiredCoffee.UC_ManageSysterm
             // Column7
             // 
             this.Column7.DataPropertyName = "birthday";
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column7.HeaderText = "Ngày Sinh";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
@@ -680,9 +671,9 @@ namespace SquiredCoffee.UC_ManageSysterm
             // Column14
             // 
             this.Column14.DataPropertyName = "Title";
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            this.Column14.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.Column14.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column14.FillWeight = 50F;
             this.Column14.HeaderText = "Quyền";
             this.Column14.MinimumWidth = 6;
@@ -692,9 +683,9 @@ namespace SquiredCoffee.UC_ManageSysterm
             // Column9
             // 
             this.Column9.DataPropertyName = "phone";
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.Column9.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column9.HeaderText = "Số ĐThoại";
             this.Column9.MinimumWidth = 6;
             this.Column9.Name = "Column9";
@@ -703,9 +694,9 @@ namespace SquiredCoffee.UC_ManageSysterm
             // Column10
             // 
             this.Column10.DataPropertyName = "email";
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column10.HeaderText = "Email";
             this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
@@ -714,9 +705,9 @@ namespace SquiredCoffee.UC_ManageSysterm
             // Column11
             // 
             this.Column11.DataPropertyName = "address";
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            this.Column11.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.Column11.DefaultCellStyle = dataGridViewCellStyle12;
             this.Column11.HeaderText = "Địa Chỉ";
             this.Column11.MinimumWidth = 6;
             this.Column11.Name = "Column11";
@@ -725,10 +716,10 @@ namespace SquiredCoffee.UC_ManageSysterm
             // Column12
             // 
             this.Column12.DataPropertyName = "status";
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("Times New Roman", 10.2F);
-            dataGridViewCellStyle43.NullValue = false;
-            this.Column12.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Times New Roman", 10.2F);
+            dataGridViewCellStyle13.NullValue = false;
+            this.Column12.DefaultCellStyle = dataGridViewCellStyle13;
             this.Column12.FillWeight = 70F;
             this.Column12.HeaderText = "Trạng Thái";
             this.Column12.MinimumWidth = 6;
@@ -740,9 +731,9 @@ namespace SquiredCoffee.UC_ManageSysterm
             // Column8
             // 
             this.Column8.DataPropertyName = "role_id";
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle14;
             this.Column8.FillWeight = 50F;
             this.Column8.HeaderText = "Quyền";
             this.Column8.MinimumWidth = 6;
@@ -753,14 +744,45 @@ namespace SquiredCoffee.UC_ManageSysterm
             // Column13
             // 
             this.Column13.DataPropertyName = "image";
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle45.Font = new System.Drawing.Font("Times New Roman", 10.8F);
-            this.Column13.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 10.8F);
+            this.Column13.DefaultCellStyle = dataGridViewCellStyle15;
             this.Column13.HeaderText = "Hình Ảnh";
             this.Column13.MinimumWidth = 6;
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
             this.Column13.Visible = false;
+            // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Empty;
+            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.FormattingEnabled = true;
+            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Location = new System.Drawing.Point(761, 244);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
+            this.guna2ComboBox1.Size = new System.Drawing.Size(361, 36);
+            this.guna2ComboBox1.TabIndex = 42;
+            // 
+            // cbRole
+            // 
+            this.cbRole.FormattingEnabled = true;
+            this.cbRole.Items.AddRange(new object[] {
+            "Admin",
+            "Quản Lý ",
+            "Nhân Viên"});
+            this.cbRole.Location = new System.Drawing.Point(762, 36);
+            this.cbRole.Name = "cbRole";
+            this.cbRole.Size = new System.Drawing.Size(360, 31);
+            this.cbRole.TabIndex = 33;
             // 
             // UC_Staff
             // 
@@ -797,7 +819,6 @@ namespace SquiredCoffee.UC_ManageSysterm
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox cbRole;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label10;
@@ -839,5 +860,7 @@ namespace SquiredCoffee.UC_ManageSysterm
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private System.Windows.Forms.ComboBox cbRole;
     }
 }

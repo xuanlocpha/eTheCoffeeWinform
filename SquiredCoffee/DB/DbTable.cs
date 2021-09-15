@@ -195,7 +195,6 @@ namespace SquiredCoffee.DB
                 Table table = new Table(item);
                 tableList.Add(table);
             }
-
             return tableList;
         }
 

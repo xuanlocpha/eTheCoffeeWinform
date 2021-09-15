@@ -10,31 +10,36 @@ namespace SquiredCoffee.Class
     class Order_Items
     {
         public int id { get; set; }
-        public int id_order { get; set; }
-        public int id_product { get; set; }
-        public int count { get; set; }
+        public int product_id { get; set; }
+        public int order_id { get; set; }
+        public string item_detail { get; set; }
+        public int quantity{ get; set; }
+        public decimal total_product { get; set; } 
+        public string content { get; set; }
+        public string title { get; set; }
         public decimal price { get; set; }
-        public decimal provisional { get; set; }
-        public string created_at { get; set; }
 
-        public Order_Items(int Id_Order, int Id_Product, int Count, decimal Price, decimal Provisional)
+   public Order_Items(int Order_Id, int Product_Id,string Item_Detail, int Quantity,decimal Total_Product, string Content)
         {
-            id_order = Id_Order;
-            id_product = Id_Product;
-            count = Count;
-            price = Price;
-            provisional = Provisional;
+            product_id = Product_Id;
+            order_id = Order_Id;
+            item_detail = Item_Detail;
+            quantity = Quantity;
+            total_product = Total_Product;
+            content = Content;
         }
 
         public Order_Items(DataRow row)
         {
             id = Convert.ToInt32(row["id"]);
-            id_order = Convert.ToInt32(row["id_order"]);
-            id_product = Convert.ToInt32(row["id_product"]);
-            count = Convert.ToInt32(row["count"]);
-            price = Convert.ToDecimal(row["id"]);
-            provisional = Convert.ToDecimal(row["provisional"]);
-            created_at = row["created_at"].ToString();
+            product_id = Convert.ToInt32(row["product_id"]);
+            order_id = Convert.ToInt32(row["order_id"]);
+            item_detail = row["item_detail"].ToString();
+            quantity = Convert.ToInt32(row["quantity"]);
+            total_product = Convert.ToDecimal(row["total_product"]);
+            content = row["content"].ToString();
+            title = row["title"].ToString();
+            price = Convert.ToDecimal(row["price"]);
         }
     }
 }
