@@ -1,12 +1,12 @@
-﻿using MySql.Data.MySqlClient;
-using SquiredCoffee.Class;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿    using MySql.Data.MySqlClient;
+    using SquiredCoffee.Class;
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
 
 namespace SquiredCoffee.DB
 {
@@ -29,22 +29,42 @@ namespace SquiredCoffee.DB
         }
 
 
+        public static bool CheckAdd(string @userName,string @phone)
+        {
+            string sql = "select * from staffs where username = '" + @userName + "' AND phone = '"+ @phone +"'";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
         public static void AddStaff(Staff std)
         {
-            string sql = "INSERT INTO staffs (employee_code,full_name,username,password,gender,birthday,image,phone,email,address,role_id,status) VALUES(@employee_code,@full_name,@username,@password,@gender,@birthday,@image,@phone,@email,@address,@role_id,@status)";
+            string sql = "INSERT INTO staffs (username,password,last_name,first_name,gender,birthday,image,phone,email,role_id,status) " +
+                "VALUES(@username,@password,@last_name,@first_name,@gender,@birthday,@image,@phone,@email,@role_id,@status)";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("@employee_code", MySqlDbType.VarChar).Value = std.employee_code;
-            cmd.Parameters.Add("@full_name", MySqlDbType.VarChar).Value = std.full_name;
+          
             cmd.Parameters.Add("@username", MySqlDbType.VarChar).Value = std.username;
             cmd.Parameters.Add("@password", MySqlDbType.VarChar).Value = std.password;
+            cmd.Parameters.Add("@last_name", MySqlDbType.VarChar).Value = std.last_name;
+            cmd.Parameters.Add("@first_name", MySqlDbType.VarChar).Value = std.first_name;
             cmd.Parameters.Add("@gender", MySqlDbType.VarChar).Value = std.gender;
             cmd.Parameters.Add("@birthday", MySqlDbType.VarChar).Value = std.birthday;
             cmd.Parameters.Add("@image", MySqlDbType.VarChar).Value = std.image;
             cmd.Parameters.Add("@phone", MySqlDbType.VarChar).Value = std.phone;
             cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = std.email;
-            cmd.Parameters.Add("@address", MySqlDbType.VarChar).Value = std.address;
             cmd.Parameters.Add("@role_id", MySqlDbType.VarChar).Value = std.role_id;
             cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
 
@@ -52,45 +72,43 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm Sản Phẩm Thành Công ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Khởi tạo thành công !!! ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("Không Thể Thêm Sản Phẩm ! \n" + ex.Message, "Cảnh Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Khởi tạo không thành công !!! \n" + ex.Message, "Cảnh Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
 
-        public static void UpdateStaff(Staff std, string id)
+        public static void UpdateStaff(Staff std,string id)
         {
-            string sql = "UPDATE staffs SET employee_code=@employee_code,full_name=@full_name,username=@username,password=@password,gender=@gender,birthday=@birthday,image=@image,phone=@phone,email=@email,address=@address,role_id=@role_id,status=@status  WHERE id = @id";
+            string sql = "UPDATE staffs SET username=@username,password=@password,last_name=@last_name,first_name=@first_name,gender=@gender,birthday=@birthday,image=@image,phone=@phone,email=@email,role_id=@role_id,status=@status WHERE id = @id";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
-            cmd.Parameters.Add("@employee_code", MySqlDbType.VarChar).Value = std.employee_code;
-            cmd.Parameters.Add("@full_name", MySqlDbType.VarChar).Value = std.full_name;
             cmd.Parameters.Add("@username", MySqlDbType.VarChar).Value = std.username;
             cmd.Parameters.Add("@password", MySqlDbType.VarChar).Value = std.password;
+            cmd.Parameters.Add("@last_name", MySqlDbType.VarChar).Value = std.last_name;
+            cmd.Parameters.Add("@first_name", MySqlDbType.VarChar).Value = std.first_name;
             cmd.Parameters.Add("@gender", MySqlDbType.VarChar).Value = std.gender;
             cmd.Parameters.Add("@birthday", MySqlDbType.VarChar).Value = std.birthday;
             cmd.Parameters.Add("@image", MySqlDbType.VarChar).Value = std.image;
             cmd.Parameters.Add("@phone", MySqlDbType.VarChar).Value = std.phone;
             cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = std.email;
-            cmd.Parameters.Add("@address", MySqlDbType.VarChar).Value = std.address;
             cmd.Parameters.Add("@role_id", MySqlDbType.VarChar).Value = std.role_id;
             cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Chỉnh Sửa Thành Công", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chỉnh sửa thành công !!! ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("Chỉnh Sửa Không Thành Công! \n" + ex.Message, " Cảnh Báo Lỗi ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chỉnh sửa không thành công !!! \n" + ex.Message, "Cảnh Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
-
         }
 
 
@@ -104,11 +122,11 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa Thành Công ", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Xóa tài khoản ( Thành Công )", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("Xóa Không Thành Công! \n" + ex.Message, " Cảnh Báo Lỗi ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Xóa tài khoản ( Không thành công! ) \n" + ex.Message, " Cảnh Báo Lỗi ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
@@ -123,6 +141,107 @@ namespace SquiredCoffee.DB
             adp.Fill(tbl);
             dgv.DataSource = tbl;
             con.Close();
+        }
+
+
+        public static List<Staff> LoadStaffList()
+        {
+            List<Staff> staffList = new List<Staff>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT s.id,s.last_name,s.first_name,s.username,s.password,s.gender,s.birthday,s.image,s.phone,s.email,s.role_id,s.status,r.Title FROM staffs s, roles r WHERE s.role_id = r.id");
+
+            foreach (DataRow item in data.Rows)
+            {
+                Staff staff = new Staff(item);
+                staffList.Add(staff);
+            }
+
+            return staffList;
+        }
+
+
+        public static List<Staff> LoadInfomationStaff(string id_staff)
+        {
+            List<Staff> staffList = new List<Staff>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT s.id,s.last_name,s.first_name,s.username,s.password,s.gender,s.birthday,s.image,s.phone,s.email,s.role_id,s.status,r.Title FROM staffs s, roles r WHERE s.role_id = r.id AND s.id = '"+id_staff+"'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                Staff staff = new Staff(item);
+                staffList.Add(staff);
+            }
+
+            return staffList;
+        }
+
+
+
+        public static List<Staff> LoadStaffStatusList(string status)
+        {
+            List<Staff> staffList = new List<Staff>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT s.id,s.last_name,s.first_name,s.username,s.password,s.gender,s.birthday,s.image,s.phone,s.email,s.role_id,s.status,r.Title FROM staffs s, roles r WHERE s.role_id = r.id AND s.status = '"+status+"'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                Staff staff = new Staff(item);
+                staffList.Add(staff);
+            }
+
+            return staffList;
+        }
+
+        public static List<Staff> Search(string search)
+        {
+            List<Staff> staffList = new List<Staff>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT s.id,s.last_name,s.first_name,s.username,s.password,s.gender,s.birthday,s.image,s.phone,s.email,s.role_id,s.status,r.Title FROM staffs s  " +
+                " INNER JOIN roles r ON s.role_id = r.id  WHERE s.username LIKE'%" + search + "%' OR s.phone LIKE'%" + search + "%' OR s.first_name LIKE'%" + search + "%' OR s.last_name LIKE'%" + search + "%' OR s.email LIKE'%" + search + "%'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                Staff staff = new Staff(item);
+                staffList.Add(staff);
+            }
+
+            return staffList;
+        }
+
+
+
+        public static bool CheckLoginStaff(string @username,string @password)
+        {
+            string sql = "select * from staffs where username = '" + @username + "' AND password ='"+@password+"'";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+        public static List<Staff> CheckRole(string role_id)
+        {
+            List<Staff> staffList = new List<Staff>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT s.id,s.last_name,s.first_name,s.username,s.password,s.gender,s.birthday,s.image,s.phone,s.email,s.role_id,s.status,r.Title FROM staffs s, roles r WHERE s.role_id = '"+role_id+"' ");
+
+            foreach (DataRow item in data.Rows)
+            {
+                Staff staff = new Staff(item);
+                staffList.Add(staff);
+            }
+
+            return staffList;
         }
 
     }

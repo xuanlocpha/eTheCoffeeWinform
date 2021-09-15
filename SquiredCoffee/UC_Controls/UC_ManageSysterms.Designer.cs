@@ -30,7 +30,6 @@ namespace SquiredCoffee.UC_Controls
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -46,6 +45,7 @@ namespace SquiredCoffee.UC_Controls
             this.lblProduct = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
             this.panelManage = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,15 +57,6 @@ namespace SquiredCoffee.UC_Controls
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1688, 16);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 16);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(16, 863);
-            this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
@@ -249,6 +240,15 @@ namespace SquiredCoffee.UC_Controls
             this.panelManage.Size = new System.Drawing.Size(1644, 776);
             this.panelManage.TabIndex = 6;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(121)))), ((int)(((byte)(255)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 16);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(16, 863);
+            this.panel2.TabIndex = 1;
+            // 
             // UC_ManageSysterms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -270,7 +270,6 @@ namespace SquiredCoffee.UC_Controls
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
@@ -286,5 +285,6 @@ namespace SquiredCoffee.UC_Controls
         private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Label lblVoucher;
         private System.Windows.Forms.Label lblReward;
+        private System.Windows.Forms.Panel panel2;
     }
 }

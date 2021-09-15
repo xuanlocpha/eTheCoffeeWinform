@@ -18,12 +18,13 @@ namespace SquiredCoffee.FormManage
     public partial class FormScannerBarCode : Form
     {
 
-        private readonly FormStaff _parent;
-        public FormScannerBarCode(FormStaff parent)
+        
+        public FormScannerBarCode()
         {
             InitializeComponent();
-            _parent = parent;
         }
+
+        public int discount;
 
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice videoCaptureDevice;
@@ -76,18 +77,21 @@ namespace SquiredCoffee.FormManage
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCheck_Click(object sender, EventArgs e)
         {
-
-            List<User> userList = DbUser.UserList(txtDisplay.Text);
-
-            foreach (User item in userList)
+            if (DbVoucher.CheckDb(txtDisplay.Text) == true)
             {
-                int point = item.point + 10;
-                User std = new User( item.last_name, item.first_name, item.gender, item.email, item.phone,point);
-                DbUser.UpdateUser(std,item.id.ToString());
+
             }
-                this.Close();
+            else
+            {
+                List<Voucher> voucherList = DbVoucher.LoadVoucherSearch(txtDisplay.Text);
+                foreach (Voucher item in voucherList)
+                {
+                    discount = item.discount;
+                }
+            }
+            this.Close();
         }
     }
 }

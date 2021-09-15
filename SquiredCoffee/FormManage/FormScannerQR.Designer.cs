@@ -43,7 +43,8 @@ namespace SquiredCoffee.FormManage
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 29);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(31, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 29);
             this.label1.TabIndex = 0;
@@ -81,17 +82,17 @@ namespace SquiredCoffee.FormManage
             this.ptCamera.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ptCamera.Location = new System.Drawing.Point(36, 78);
             this.ptCamera.Name = "ptCamera";
-            this.ptCamera.Size = new System.Drawing.Size(974, 497);
+            this.ptCamera.Size = new System.Drawing.Size(953, 474);
             this.ptCamera.TabIndex = 3;
             this.ptCamera.TabStop = false;
             this.ptCamera.Click += new System.EventHandler(this.ptCamera_Click);
             // 
             // txtDisplay
             // 
-            this.txtDisplay.Location = new System.Drawing.Point(36, 594);
+            this.txtDisplay.Location = new System.Drawing.Point(36, 573);
             this.txtDisplay.Multiline = true;
             this.txtDisplay.Name = "txtDisplay";
-            this.txtDisplay.Size = new System.Drawing.Size(974, 175);
+            this.txtDisplay.Size = new System.Drawing.Size(953, 81);
             this.txtDisplay.TabIndex = 4;
             this.txtDisplay.TextChanged += new System.EventHandler(this.txtDisplay_TextChanged);
             // 
@@ -104,7 +105,8 @@ namespace SquiredCoffee.FormManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1043, 781);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(46)))));
+            this.ClientSize = new System.Drawing.Size(1043, 686);
             this.Controls.Add(this.txtDisplay);
             this.Controls.Add(this.ptCamera);
             this.Controls.Add(this.btnStart);

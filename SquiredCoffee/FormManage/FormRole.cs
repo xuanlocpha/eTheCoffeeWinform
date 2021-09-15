@@ -59,19 +59,19 @@ namespace SquiredCoffee.FormManage
                 MessageBox.Show("Tên Quyền đang trống");
                 return;
             }
-            if (btnSave.Text == "Lưu")
-            {
-                Role std = new Role(txtRoleName.Text.Trim());
-                DbRole.AddRole(std);
-                Clear();
-            }
+            //if (btnSave.Text == "Lưu")
+            //{
+            //    Role std = new Role(txtRoleName.Text.Trim());
+            //    DbRole.AddRole(std);
+            //    Clear();
+            //}
 
-            if (btnSave.Text == "Sửa")
-            {
-                Role std = new Role(txtRoleName.Text.Trim());
-                DbRole.UpdateRole(std, id);
-                Clear();
-            }
+            //if (btnSave.Text == "Sửa")
+            //{
+            //    Role std = new Role(txtRoleName.Text.Trim());
+            //    DbRole.UpdateRole(std, id);
+            //    Clear();
+            //}
             _parent.Display();
         }
     }

@@ -14,10 +14,13 @@ namespace SquiredCoffee.Class
         public string type { get; set; }
         public int status { get; set; }
 
-        public Category(string Title)
+        public Category(string Title,string Type,int Status)
         {
             title = Title;
+            type = Type;
+            status = Status;
         }
+
 
         public Category(DataRow row)
         {

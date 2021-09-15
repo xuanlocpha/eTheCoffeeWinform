@@ -40,23 +40,23 @@ namespace SquiredCoffee.FormManage
             Clear();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            if (txtCount.Text.Trim() == "")
-            {
-                MessageBox.Show("Số Lượng Không Được Để Trống");
-                return;
-            }
-            if (btnSave.Text == "Lưu")
-            {
-                decimal x = Convert.ToDecimal(txtCount.Text.Trim()) * Convert.ToDecimal(price);
-                Order_Items std = new Order_Items(Convert.ToInt32(id_order), Convert.ToInt32(id_product), Convert.ToInt32(txtCount.Text.Trim()),decimal.Parse(price),x);
-                DbOrderItem.UpdateOrderItem1(std, id);
-                Clear();
-            }
-            this.Close();
-            _parent.Display();
-        }
+        //private void btnSave_Click(object sender, EventArgs e)
+        //{
+        //    if (txtCount.Text.Trim() == "")
+        //    {
+        //        MessageBox.Show("Số Lượng Không Được Để Trống");
+        //        return;
+        //    }
+        //    if (btnSave.Text == "Lưu")
+        //    {
+        //        decimal x = Convert.ToDecimal(txtCount.Text.Trim()) * Convert.ToDecimal(price);
+        //        Order_Items std = new Order_Items(Convert.ToInt32(id_order), Convert.ToInt32(id_product), Convert.ToInt32(txtCount.Text.Trim()),decimal.Parse(price),x);
+        //        DbOrderItem.UpdateOrderItem1(std, id);
+        //        Clear();
+        //    }
+        //    this.Close();
+        //    _parent.Display();
+        //}
 
         public void Clear()
         {

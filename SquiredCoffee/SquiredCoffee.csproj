@@ -45,11 +45,122 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.Charts.WinForms, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Charts.WinForms.1.1.3\lib\net40\Bunifu.Charts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Dataviz.WinForms, Version=2.1.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Dataviz.WinForms.2.1.8\lib\Bunifu.Dataviz.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.Charts.WinForms.1.1.3\lib\net40\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRating, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShapes, Version=5.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextBox, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>C:\Users\Dell\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
       <HintPath>C:\Users\Dell\Downloads\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>C:\Users\Dell\Downloads\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
@@ -63,6 +174,15 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.25\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Nancy, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nancy.2.0.0\lib\net452\Nancy.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenHtmlToPdf, Version=1.12.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenHtmlToPdf.1.12.0.0\lib\net45\OpenHtmlToPdf.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -118,36 +238,145 @@
   <ItemGroup>
     <Compile Include="Class\Bill_Details.cs" />
     <Compile Include="Class\Category.cs" />
+    <Compile Include="Class\Discount.cs" />
+    <Compile Include="Class\ImportInvoice.cs" />
+    <Compile Include="Class\ItemDetail.cs" />
     <Compile Include="Class\Option.cs" />
+    <Compile Include="Class\OptionGroup.cs" />
     <Compile Include="Class\Order.cs" />
     <Compile Include="Class\Order_Items.cs" />
+    <Compile Include="Class\Order_Option.cs" />
     <Compile Include="Class\Product.cs" />
     <Compile Include="Class\ProductOption.cs" />
+    <Compile Include="Class\ProductTopping.cs" />
     <Compile Include="Class\Rewards.cs" />
     <Compile Include="Class\Role.cs" />
     <Compile Include="Class\Staff.cs" />
+    <Compile Include="Class\StockProduct.cs" />
+    <Compile Include="Class\Supplier.cs" />
     <Compile Include="Class\Table.cs" />
+    <Compile Include="Class\Topping.cs" />
+    <Compile Include="Class\Trannsaction.cs" />
     <Compile Include="Class\User.cs" />
     <Compile Include="Class\Voucher.cs" />
     <Compile Include="DB\DataProvider.cs" />
     <Compile Include="DB\DbBill.cs" />
     <Compile Include="DB\DbCategory.cs" />
+    <Compile Include="DB\DbDiscount.cs" />
+    <Compile Include="DB\DbImportInvoice.cs" />
     <Compile Include="DB\DbOption.cs" />
+    <Compile Include="DB\DbOptionGroup.cs" />
     <Compile Include="DB\DbOrder.cs" />
     <Compile Include="DB\DbOrderItem.cs" />
+    <Compile Include="DB\DbOrderOption.cs" />
     <Compile Include="DB\DbProduct.cs" />
     <Compile Include="DB\DbProductOption.cs" />
+    <Compile Include="DB\DbProductTopping.cs" />
     <Compile Include="DB\DbReward.cs" />
     <Compile Include="DB\DbRole.cs" />
     <Compile Include="DB\DbStaff.cs" />
+    <Compile Include="DB\DbStockProduct.cs" />
+    <Compile Include="DB\DbSupplier.cs" />
     <Compile Include="DB\DbTable.cs" />
+    <Compile Include="DB\DbTopping.cs" />
     <Compile Include="DB\DbUser.cs" />
     <Compile Include="DB\DbVoucher.cs" />
+    <Compile Include="DB\DbTransaction.cs" />
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddCategory.Designer.cs">
+      <DependentUpon>FormAddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddDiscount.Designer.cs">
+      <DependentUpon>FormAddDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddGroupOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddGroupOption.Designer.cs">
+      <DependentUpon>FormAddGroupOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddImportInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddImportInvoice.Designer.cs">
+      <DependentUpon>FormAddImportInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddOption.Designer.cs">
+      <DependentUpon>FormAddOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddProduct.Designer.cs">
+      <DependentUpon>FormAddProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddProductOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddProductOption.Designer.cs">
+      <DependentUpon>FormAddProductOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddProductTopping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddProductTopping.Designer.cs">
+      <DependentUpon>FormAddProductTopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddRole.Designer.cs">
+      <DependentUpon>FormAddRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddStaff.Designer.cs">
+      <DependentUpon>FormAddStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddStockProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddStockProduct.Designer.cs">
+      <DependentUpon>FormAddStockProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddSupplier.Designer.cs">
+      <DependentUpon>FormAddSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddTopping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddTopping.Designer.cs">
+      <DependentUpon>FormAddTopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddVoucher.Designer.cs">
+      <DependentUpon>FormAddVoucher.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManage\FormCategory.cs">
       <SubType>Form</SubType>
@@ -161,23 +390,113 @@
     <Compile Include="FormManage\FormEditOrderItems.Designer.cs">
       <DependentUpon>FormEditOrderItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManage\FormInfomationStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInfomationStaff.Designer.cs">
+      <DependentUpon>FormInfomationStaff.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManage\FormImage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormManage\FormImage.Designer.cs">
       <DependentUpon>FormImage.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManage\FormListTable.cs">
+    <Compile Include="FormManage\FormInformationCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManage\FormListTable.Designer.cs">
-      <DependentUpon>FormListTable.cs</DependentUpon>
+    <Compile Include="FormManage\FormInformationCategory.Designer.cs">
+      <DependentUpon>FormInformationCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationDiscount.Designer.cs">
+      <DependentUpon>FormInformationDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationOption.Designer.cs">
+      <DependentUpon>FormInformationOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationOptionGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationOptionGroup.Designer.cs">
+      <DependentUpon>FormInformationOptionGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationProduct.Designer.cs">
+      <DependentUpon>FormInformationProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationProductOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationProductOption.Designer.cs">
+      <DependentUpon>FormInformationProductOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationProductTopping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationProductTopping.Designer.cs">
+      <DependentUpon>FormInformationProductTopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationRole.Designer.cs">
+      <DependentUpon>FormInformationRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationStockProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationStockProduct.Designer.cs">
+      <DependentUpon>FormInformationStockProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationSupplier.Designer.cs">
+      <DependentUpon>FormInformationSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationTopping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationTopping.Designer.cs">
+      <DependentUpon>FormInformationTopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationVoucher.Designer.cs">
+      <DependentUpon>FormInformationVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInputTableNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInputTableNumber.Designer.cs">
+      <DependentUpon>FormInputTableNumber.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManage\FormListTableChange.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormManage\FormListTableChange.Designer.cs">
       <DependentUpon>FormListTableChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormOrderProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormOrderProduct.Designer.cs">
+      <DependentUpon>FormOrderProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormPayment.Designer.cs">
+      <DependentUpon>FormPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManage\FormRole.cs">
       <SubType>Form</SubType>
@@ -196,6 +515,12 @@
     </Compile>
     <Compile Include="FormManage\FormScannerQR.Designer.cs">
       <DependentUpon>FormScannerQR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormTableList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormTableList.Designer.cs">
+      <DependentUpon>FormTableList.cs</DependentUpon>
     </Compile>
     <Compile Include="FormStaff.cs">
       <SubType>Form</SubType>
@@ -223,6 +548,108 @@
     <Compile Include="UC_Controls\UC_ManageSysterms.Designer.cs">
       <DependentUpon>UC_ManageSysterms.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageCategory.Designer.cs">
+      <DependentUpon>UC_ManageCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageDiscount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageDiscount.Designer.cs">
+      <DependentUpon>UC_ManageDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageImportInvoice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageImportInvoice.Designer.cs">
+      <DependentUpon>UC_ManageImportInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageOption.Designer.cs">
+      <DependentUpon>UC_ManageOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageOption1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageOption1.Designer.cs">
+      <DependentUpon>UC_ManageOption1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageOptionGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageOptionGroup.Designer.cs">
+      <DependentUpon>UC_ManageOptionGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageProductOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageProductOption.Designer.cs">
+      <DependentUpon>UC_ManageProductOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageRole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageRole.Designer.cs">
+      <DependentUpon>UC_ManageRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageStaff.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageStaff.Designer.cs">
+      <DependentUpon>UC_ManageStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageProduct.Designer.cs">
+      <DependentUpon>UC_ManageProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageStockProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageStockProduct.Designer.cs">
+      <DependentUpon>UC_ManageStockProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageSupplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageSupplier.Designer.cs">
+      <DependentUpon>UC_ManageSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageTopping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageTopping.Designer.cs">
+      <DependentUpon>UC_ManageTopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageUser.Designer.cs">
+      <DependentUpon>UC_ManageUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageVoucher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageVoucher.Designer.cs">
+      <DependentUpon>UC_ManageVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageWareHouse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageWareHouse.Designer.cs">
+      <DependentUpon>UC_ManageWareHouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ProductList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ProductList.Designer.cs">
+      <DependentUpon>UC_ProductList.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ManageSysterm\UC_ProductOption.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -246,6 +673,12 @@
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_Product.Designer.cs">
       <DependentUpon>UC_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageProductTopping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageProductTopping.Designer.cs">
+      <DependentUpon>UC_ManageProductTopping.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_Reward.cs">
       <SubType>UserControl</SubType>
@@ -271,11 +704,29 @@
     <Compile Include="UC_ManageSysterm\UC_Table.Designer.cs">
       <DependentUpon>UC_Table.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_ManageSysterm\UC_TableList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_TableList.Designer.cs">
+      <DependentUpon>UC_TableList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageTopping1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageTopping1.Designer.cs">
+      <DependentUpon>UC_ManageTopping1.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ManageSysterm\UC_User.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_User.Designer.cs">
       <DependentUpon>UC_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_UserList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_UserList.Designer.cs">
+      <DependentUpon>UC_UserList.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_Voucher.cs">
       <SubType>UserControl</SubType>
@@ -283,8 +734,58 @@
     <Compile Include="UC_ManageSysterm\UC_Voucher.Designer.cs">
       <DependentUpon>UC_Voucher.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\OptionShow.cs" />
+    <Compile Include="ViewModels\OptionShow1.cs" />
+    <Compile Include="ViewModels\ProductOptionShow.cs" />
+    <Compile Include="ViewModels\ProductShow.cs" />
+    <Compile Include="ViewModels\ProductToppingShow.cs" />
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddCategory.resx">
+      <DependentUpon>FormAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddDiscount.resx">
+      <DependentUpon>FormAddDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddGroupOption.resx">
+      <DependentUpon>FormAddGroupOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddImportInvoice.resx">
+      <DependentUpon>FormAddImportInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddOption.resx">
+      <DependentUpon>FormAddOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddProduct.resx">
+      <DependentUpon>FormAddProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddProductOption.resx">
+      <DependentUpon>FormAddProductOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddProductTopping.resx">
+      <DependentUpon>FormAddProductTopping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddRole.resx">
+      <DependentUpon>FormAddRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddStaff.resx">
+      <DependentUpon>FormAddStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddStockProduct.resx">
+      <DependentUpon>FormAddStockProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddSupplier.resx">
+      <DependentUpon>FormAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddTopping.resx">
+      <DependentUpon>FormAddTopping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddVoucher.resx">
+      <DependentUpon>FormAddVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormCategory.resx">
       <DependentUpon>FormCategory.cs</DependentUpon>
@@ -292,14 +793,59 @@
     <EmbeddedResource Include="FormManage\FormEditOrderItems.resx">
       <DependentUpon>FormEditOrderItems.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInfomationStaff.resx">
+      <DependentUpon>FormInfomationStaff.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormImage.resx">
       <DependentUpon>FormImage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManage\FormListTable.resx">
-      <DependentUpon>FormListTable.cs</DependentUpon>
+    <EmbeddedResource Include="FormManage\FormInformationCategory.resx">
+      <DependentUpon>FormInformationCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationDiscount.resx">
+      <DependentUpon>FormInformationDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationOption.resx">
+      <DependentUpon>FormInformationOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationOptionGroup.resx">
+      <DependentUpon>FormInformationOptionGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationProduct.resx">
+      <DependentUpon>FormInformationProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationProductOption.resx">
+      <DependentUpon>FormInformationProductOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationProductTopping.resx">
+      <DependentUpon>FormInformationProductTopping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationRole.resx">
+      <DependentUpon>FormInformationRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationStockProduct.resx">
+      <DependentUpon>FormInformationStockProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationSupplier.resx">
+      <DependentUpon>FormInformationSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationTopping.resx">
+      <DependentUpon>FormInformationTopping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationVoucher.resx">
+      <DependentUpon>FormInformationVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInputTableNumber.resx">
+      <DependentUpon>FormInputTableNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormListTableChange.resx">
       <DependentUpon>FormListTableChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormOrderProduct.resx">
+      <DependentUpon>FormOrderProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormPayment.resx">
+      <DependentUpon>FormPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormRole.resx">
       <DependentUpon>FormRole.cs</DependentUpon>
@@ -310,9 +856,13 @@
     <EmbeddedResource Include="FormManage\FormScannerQR.resx">
       <DependentUpon>FormScannerQR.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormTableList.resx">
+      <DependentUpon>FormTableList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormStaff.resx">
       <DependentUpon>FormStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -331,6 +881,57 @@
     <EmbeddedResource Include="UC_Controls\UC_ManageSysterms.resx">
       <DependentUpon>UC_ManageSysterms.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageCategory.resx">
+      <DependentUpon>UC_ManageCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageDiscount.resx">
+      <DependentUpon>UC_ManageDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageImportInvoice.resx">
+      <DependentUpon>UC_ManageImportInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageOption.resx">
+      <DependentUpon>UC_ManageOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageOption1.resx">
+      <DependentUpon>UC_ManageOption1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageOptionGroup.resx">
+      <DependentUpon>UC_ManageOptionGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageProductOption.resx">
+      <DependentUpon>UC_ManageProductOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageRole.resx">
+      <DependentUpon>UC_ManageRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageStaff.resx">
+      <DependentUpon>UC_ManageStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageProduct.resx">
+      <DependentUpon>UC_ManageProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageStockProduct.resx">
+      <DependentUpon>UC_ManageStockProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageSupplier.resx">
+      <DependentUpon>UC_ManageSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageTopping.resx">
+      <DependentUpon>UC_ManageTopping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageUser.resx">
+      <DependentUpon>UC_ManageUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageVoucher.resx">
+      <DependentUpon>UC_ManageVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageWareHouse.resx">
+      <DependentUpon>UC_ManageWareHouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ProductList.resx">
+      <DependentUpon>UC_ProductList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ProductOption.resx">
       <DependentUpon>UC_ProductOption.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +943,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_Product.resx">
       <DependentUpon>UC_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageProductTopping.resx">
+      <DependentUpon>UC_ManageProductTopping.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_Reward.resx">
       <DependentUpon>UC_Reward.cs</DependentUpon>
@@ -355,12 +959,24 @@
     <EmbeddedResource Include="UC_ManageSysterm\UC_Table.resx">
       <DependentUpon>UC_Table.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_TableList.resx">
+      <DependentUpon>UC_TableList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageTopping1.resx">
+      <DependentUpon>UC_ManageTopping1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_User.resx">
       <DependentUpon>UC_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_UserList.resx">
+      <DependentUpon>UC_UserList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_Voucher.resx">
       <DependentUpon>UC_Voucher.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -380,6 +996,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resource\qr_code.jpg" />
     <Content Include="Resource\chair.png" />
     <Content Include="Resource\no_img.jpg" />
     <Content Include="Resource\round-table.png" />

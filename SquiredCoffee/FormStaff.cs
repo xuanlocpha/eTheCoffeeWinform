@@ -13,38 +13,65 @@ using System.Windows.Forms;
 using SquiredCoffee.Class;
 using SquiredCoffee.FormManage;
 using System.Drawing.Imaging;
+using SquiredCoffee.UC_ManageSysterm;
+using Nancy.Json;
+using SquiredCoffee.ViewModels;
+using Guna.UI2.WinForms;
 
 namespace SquiredCoffee
 {
     public partial class FormStaff : Form
     {
-        FormEditOrderItems Form1;
-        FormScannerBarCode Form2;
-        FormListTableChange Form3;
-        double total;
-        FormListTable Form;
+        UC_TableList Form4;
+        FormInputTableNumber Form5;
+        FormPayment Form1;
+        UC_ProductList Form6;
+
         public string title_table;
-        public int id_table;
         public int id_order;
-        public int id_tableChange;
+        public int id_staff;
+        public string table_name;
         public string image;
         public Label price;
         public Label title;
         public int amount = 1;
+        public string fullName;
+        public string roleName;
+        public int size_id;
+        public int topping_id;
+        public int ice_id;
+        public int sugar_id;
+        public int drink_type_id;
+        public decimal grandTotal;
+        public string option_size_name;
+        public string option_sugar_name;
+        public string option_ice_name;
+        public string option_drink_type_name;
+        public string topping_name;
 
-        public FormStaff()
+        private readonly FormLogin _parent;
+        
+        public FormStaff(FormLogin parent)
         {
             InitializeComponent();
-            Form = new FormListTable(this);
-            Form1 = new FormEditOrderItems(this);
-            Form2 = new FormScannerBarCode(this);
-            Form3 = new FormListTableChange(this);
-            lblTableName.Hide();
+            _parent = parent;
+            Form1 = new FormPayment(this);
+            Form4 = new UC_TableList(this);
+            Form5 = new FormInputTableNumber(this);
+            Form6 = new UC_ProductList(this);
         }
 
         private PictureBox pic = new PictureBox();
         private Button btn = new Button();
+        
+       
 
+        public void AddControlsToPanel(Control c)
+        {
+            c.Dock = DockStyle.Fill;
+            panelList.Controls.Clear();
+            panelList.Controls.Add(c);
+        }
 
         public static Image LoadBase64(string base64)
         {
@@ -56,143 +83,134 @@ namespace SquiredCoffee
             }
             return image;
         }
+        
+       
 
 
-        //public Image ConvertBase64ToImage(string base64String)
-        //{
-        //    //byte[] imageBytes = Convert.FromBase64String(base64String);
-        //    //using (MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length))
-        //    //{
-        //    //    ms.Write(imageBytes, 0, imageBytes.Length);
-        //    //    return Image.FromStream(ms, true);
-        //    //}
-        //    // Convert base 64 string to byte[]
-          
-        //}
-
-
-
-        public void LoadProductList()
+        public void LoadJson(string file)
         {
-            List<Product> productList = DbProduct.LoadProductList();
-
-            foreach (Product item in productList)
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            ItemDetail[] itemDetails = js.Deserialize<ItemDetail[]>(file);
+            foreach (ItemDetail item in itemDetails)
             {
-                pic = new PictureBox();
-                pic.Width = 207;
-                pic.Height = 207;
-                pic.BackColor = Color.SaddleBrown;
-                pic.BackgroundImageLayout = ImageLayout.Stretch;
-                pic.BackgroundImage = LoadBase64(item.image.ToString());
-                pic.Tag = item.id.ToString();
-
-                price = new Label();
-                price.Text = string.Format("{0:#,##0} Đ", double.Parse((item.price).ToString()));
-                price.BackColor = Color.FromArgb(255, 121, 121);
-                price.TextAlign = ContentAlignment.MiddleCenter;
-                price.ForeColor = Color.White;
-                price.Dock = DockStyle.Bottom;
-
-                title = new Label();
-                title.Text = (item.title).ToString();
-                title.BackColor = Color.FromArgb(46, 134, 222);
-                title.TextAlign = ContentAlignment.MiddleCenter;
-                title.ForeColor = Color.White;
-                title.Dock = DockStyle.Bottom;
-                pic.Controls.Add(title);
-                pic.Controls.Add(price);
-                flpProducts.Controls.Add(pic);
-
-                pic.Click += new EventHandler(Onclick);
+                size_id = item.size;
+                ice_id = item.ice;
+                topping_id = item.topping;
+                sugar_id = item.sugar;
+                drink_type_id = item.drink_type;
             }
         }
 
-
-        public void LoadProductListOnCategory(string id)
+        public void optionIceName()
         {
-            List<Product> productList = DbProduct.LoadProductListOnCategory(id);
 
-            foreach (Product item in productList)
+            if (DbOption.CheckOption(ice_id.ToString()) == true)
             {
-                pic = new PictureBox();
-                pic.Width = 207;
-                pic.Height = 207;
-                pic.BackColor = Color.SaddleBrown;
-                pic.BackgroundImageLayout = ImageLayout.Stretch;
-                pic.BackgroundImage = LoadBase64(item.image);
-                pic.Tag = item.id.ToString();
-
-                price = new Label();
-                price.Text = string.Format("{0:#,##0} Đ", double.Parse((item.price).ToString()));
-                price.BackColor = Color.FromArgb(255, 121, 121);
-                price.TextAlign = ContentAlignment.MiddleCenter;
-                price.ForeColor = Color.White;
-                price.Dock = DockStyle.Bottom;
-
-                title = new Label();
-                title.Text = (item.title).ToString();
-                title.BackColor = Color.FromArgb(46, 134, 222);
-                title.TextAlign = ContentAlignment.MiddleCenter;
-                title.ForeColor = Color.White;
-                title.Dock = DockStyle.Bottom;
-                pic.Controls.Add(title);
-                pic.Controls.Add(price);
-                flpProducts.Controls.Add(pic);
-
-                pic.Click += new EventHandler(Onclick);
-            }
-        }
-
-
-        public void LoadProduct(string id)
-        {
-            List<Product> product = DbProduct.LoadProduct(id);
-            foreach (Product item in product)
-            {
-                if (id_table == 0)
+                List<OptionShow> option_Show_List = DbOption.OptionShow(ice_id.ToString());
+                foreach (OptionShow item1 in option_Show_List)
                 {
-                    MessageBox.Show("Bạn Chưa Chọn ( BÀN ) !!!");
-                    return;
-                }
-                else
-                {
-                    if (DbOrderItem.CheckDb(id_order.ToString(), (item.id).ToString()) == true)
-                    {
-                        List<Order_Items> order_Items = DbOrderItem.OrderItemsList(id_order.ToString(), id_table.ToString(), item.id.ToString());
-                        foreach (Order_Items item1 in order_Items)
-                        {
-                            Order_Items std = new Order_Items(id_order, item.id, item1.count + 1, item.price, (item1.count + 1) * item.price);
-                            DbOrderItem.UpdateOrderItem(std, item1.id.ToString(), item1.created_at);
-                            total += double.Parse((item.price.ToString()));
-
-                        }
-                    }
-                    else
-                    {
-                        Order_Items std = new Order_Items(id_order, item.id, amount, item.price, amount * item.price);
-                        DbOrderItem.AddOrderItem(std);
-                        total += double.Parse((item.price.ToString()));
-
-                    }
-
+                    option_ice_name = item1.title;
                 }
             }
+            else
+            {
+                option_ice_name = "Mặc định";
+            }
+
         }
+
+
+        public void optionSugarName()
+        {
+
+            if (DbOption.CheckOption(sugar_id.ToString()) == true)
+            {
+                List<OptionShow> option_Show_List = DbOption.OptionShow(sugar_id.ToString());
+                foreach (OptionShow item1 in option_Show_List)
+                {
+                    option_sugar_name = item1.title;
+                }
+            }
+            else
+            {
+                option_sugar_name = "Mặc định";
+            }
+
+        }
+
+
+        public void optionDrinkTypeName()
+        {
+
+            if (DbOption.CheckOption(drink_type_id.ToString()) == true)
+            {
+                List<OptionShow> option_Show_List = DbOption.OptionShow(drink_type_id.ToString());
+                foreach (OptionShow item1 in option_Show_List)
+                {
+                    option_drink_type_name = item1.title;
+                }
+            }
+            else
+            {
+                option_drink_type_name = "Mặc định";
+            }
+
+        }
+
+        public void toppingName()
+        {
+
+            if (DbTopping.CheckTopping(topping_id.ToString()) == true)
+            {
+                List<Topping> toppping_Show_List = DbTopping.LoadTopping(topping_id.ToString());
+                foreach (Topping item1 in toppping_Show_List)
+                {
+                    topping_name = item1.title;
+                }
+            }
+            else
+            {
+                topping_name = "Mặc định";
+            }
+
+        }
+
 
         public void Display()
         {
-            id_table = Form.tag_id;
-            id_order = Form.order_id;
-            DbOrderItem.DisplayAndSearch("SELECT oi.id,p.title,oi.count,oi.price,oi.provisional,oi.id_order,oi.id_product FROM order_items oi, orders o ,products p  WHERE  oi.id_order = o.id  AND oi.id_order = '" + id_order + "' AND o.status='" + 0 + "' AND o.id_table ='" + id_table + "' AND p.id = oi.id_product ", dgvOrder);
+            List<Order_Items> order_Items_List = DbOrderItem.order_Items_List(id_order.ToString());
+            foreach (Order_Items item in order_Items_List)
+            {
+                grandTotal += item.total_product;
+                LoadJson(item.item_detail);
+                optionIceName();
+                optionSugarName();
+                optionDrinkTypeName();
+                toppingName();
+                List<OptionShow> option_Show_List = DbOption.OptionShow(size_id.ToString());
+                foreach (OptionShow item1 in option_Show_List)
+                {
+                    dgvOrder.Rows.Add(new object[]
+                    {
+                            item.title,
+                            item.quantity,
+                            item1.title,
+                            string.Format("{0:#,##0} đ",item.price),
+                            string.Format("{0:#,##0} đ",item.total_product),
+                            "Topping :"+topping_name+" , "+"Đá :"+option_ice_name+" , "+"Đường :"+option_sugar_name+" , "+"Kiểu nước:"+option_drink_type_name
+                    });
+                }
+            }
+
+
+            lblGrandTotal.Text = string.Format("{0:#,##0} đ", double.Parse(grandTotal.ToString()));
         }
+          
 
 
         public void Onclick(object sender, EventArgs e)
         {
             string tag = ((PictureBox)sender).Tag.ToString();
-            id_table = Form.tag_id;
-            id_order = Form.order_id;
-            LoadProduct(tag);
         }
 
 
@@ -200,10 +218,11 @@ namespace SquiredCoffee
         public void OnclickCategory(object sender, EventArgs e)
         {
             string tag = ((Button)sender).Tag.ToString();
-            flpProducts.Controls.Clear();
-            LoadProductListOnCategory(tag);
             clear();
         }
+
+
+
 
         private void FormStaff_Load(object sender, EventArgs e)
         {
@@ -211,8 +230,11 @@ namespace SquiredCoffee
             timer.Interval = (1 * 450); // 1 secs
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
-            LoadProductList();
-            LoadCategory();
+
+            UC_ProductList uC_ProductList = new UC_ProductList(this);
+            AddControlsToPanel(uC_ProductList);
+            lblFullName.Text = fullName;
+            lblRole.Text = roleName;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -222,7 +244,7 @@ namespace SquiredCoffee
 
         private void btnListTable_Click(object sender, EventArgs e)
         {
-            Form.ShowDialog();
+           
         }
 
         private void pbClose_Click(object sender, EventArgs e)
@@ -230,81 +252,14 @@ namespace SquiredCoffee
             this.Close();
         }
 
-        public void LoadCategory()
-        {
-            List<Category> categoryList = DbCategory.LoadCategoryList();
-            foreach (Category item in categoryList)
-            {
-                btn = new Button();
-                btn.Text = item.title;
-                btn.Width = 112;
-                btn.Height = 41;
-                btn.FlatStyle = FlatStyle.Flat;
-                btn.BackColor = Color.FromArgb(242, 169, 136);
-                btn.FlatAppearance.BorderSize = 1;
-                btn.ForeColor = Color.DarkRed;
-                btn.TextAlign = ContentAlignment.MiddleCenter;
-                flpCategory.Controls.Add(btn);
+       
 
-                btn.Tag = item.id.ToString();
+     
 
-                btn.Click += new EventHandler(OnclickCategory);
-            }
-        }
-
-        public void LoadProductList(string query)
-        {
-            List<Product> productList = DbProduct.LoadProductList(query);
-
-            foreach (Product item in productList)
-            {
-                pic = new PictureBox();
-                pic.Width = 207;
-                pic.Height = 207;
-                pic.BackColor = Color.SaddleBrown;
-                pic.BackgroundImageLayout = ImageLayout.Stretch;
-                pic.BackgroundImage = LoadBase64(item.image);
-                pic.Tag = item.id.ToString();
-
-                price = new Label();
-                price.Text = string.Format("{0:#,##0} Đ", double.Parse((item.price).ToString()));
-                price.BackColor = Color.FromArgb(255, 121, 121);
-                price.TextAlign = ContentAlignment.MiddleCenter;
-                price.ForeColor = Color.White;
-                price.Dock = DockStyle.Bottom;
-
-                title = new Label();
-                title.Text = (item.title).ToString();
-                title.BackColor = Color.FromArgb(46, 134, 222);
-                title.TextAlign = ContentAlignment.MiddleCenter;
-                title.ForeColor = Color.White;
-                title.Dock = DockStyle.Bottom;
-                pic.Controls.Add(title);
-                pic.Controls.Add(price);
-                flpProducts.Controls.Add(pic);
-
-                pic.Click += new EventHandler(Onclick);
-            }
-        }
-
-        public void LoadTable()
-        {
-            if (Form.status_form == 1)
-            {
-                lblTableName.Show();
-                lblTableName.Text = Form.tag_title;
-                Display();
-            }
-            else
-            {
-                lblTableName.Hide();
-            }
-
-        }
-
+      
         private void timer_Tick(object sender, EventArgs e)
         {
-            LoadTable();
+            showTableName();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -314,82 +269,159 @@ namespace SquiredCoffee
 
         private void txtSearch_TextChanged_1(object sender, EventArgs e)
         {
-            flpProducts.Controls.Clear();
-            LoadProductList(txtSearch.Text);
 
         }
 
-        private void dgvOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 0)
-            {
-                //Sửa
-                Form1.Clear();
-                Form1.id = dgvOrder.Rows[e.RowIndex].Cells[2].Value.ToString();
-                Form1.id_order = dgvOrder.Rows[e.RowIndex].Cells[7].Value.ToString();
-                Form1.id_product = dgvOrder.Rows[e.RowIndex].Cells[8].Value.ToString();
-                Form1.count = dgvOrder.Rows[e.RowIndex].Cells[4].Value.ToString();
-                Form1.price = dgvOrder.Rows[e.RowIndex].Cells[5].Value.ToString();
-                Form1.provisional = dgvOrder.Rows[e.RowIndex].Cells[6].Value.ToString();
-                Form1.UpdateOrderItem();
-                Form1.ShowDialog();
-                return;
-            }
-
-            if (e.ColumnIndex == 1)
-            {
-                // Xóa
-                if (MessageBox.Show("Bạn có muốn xóa Loại Sản Phẩm Này", "Infomation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
-                {
-                    DbOrderItem.DeleteIngredient(dgvOrder.Rows[e.RowIndex].Cells[2].Value.ToString());
-                    Display();
-                }
-                return;
-            }
-        }
+    
 
         public void clear()
         {
             txtSearch.Text = string.Empty;
+            grandTotal = 0;
+            lblGrandTotal.Text = string.Empty;
+            dgvOrder.Rows.Clear();
         }
 
         private void btnAllProduct_Click(object sender, EventArgs e)
         {
-            flpProducts.Controls.Clear();
-            LoadProductList();
+           // flpProducts.Controls.Clear();
+         
             clear();
         }
-
-        private void btnOrder_Click(object sender, EventArgs e)
+        private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-            Form.ShowDialog();
+            Form5.ShowDialog();
         }
 
         private void btnAccumulatePoints_Click(object sender, EventArgs e)
         {
-            Form2.ShowDialog();
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form.ShowDialog();
+            
         }
 
         private void btnChangeTable_Click(object sender, EventArgs e)
         {
-            Form3.ShowDialog();
-            id_tableChange = Form3.tagTable_id;
-            List<Product> productList = DbProduct.LoadProductList();
+          
+        }
 
-            foreach (Product item in productList)
+        private void btnListTable_Click_2(object sender, EventArgs e)
+        {
+            UC_TableList uC_TableList = new UC_TableList(this);
+            AddControlsToPanel(uC_TableList);
+        }
+
+        public void showTableName()
+        {
+            lblTableName.Show();
+            lblTableNumber.Text = table_name;
+        }
+
+        private void lblTableNumber_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListProduct_Click(object sender, EventArgs e)
+        {
+            UC_ProductList uC_ProductList = new UC_ProductList(this);
+            AddControlsToPanel(uC_ProductList);
+        }
+
+        private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvOrder_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string price = dgvOrder.Rows[e.RowIndex].Cells[6].Value.ToString();
+            MessageBox.Show("Xin Chào Bạn !!!" + price);
+            return;
+        }
+
+        private void dgvOrder_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn Logout hay không !!!", "Infomation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                if (id_table == 0)
+                this.Close();
+            }
+            _parent.clear();
+            return;
+           
+        }
+
+        private void dgvOrder_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnPayment_Click(object sender, EventArgs e)
+        {
+            Form1.provisional = grandTotal.ToString();
+            Form1.id_order = id_order;
+            Form1.id_staff = id_staff;
+            Form1.tableName = table_name;
+            Form1.ShowDialog();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            Form6.Search = (txtSearch.Text).ToString();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            if(id_order == 0)
+            {
+                if (MessageBox.Show("Bạn chưa chọn bàn để làm mới !!!", "Infomation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    MessageBox.Show("Bạn Chưa Chọn ( BÀN ) !!!");
-                    return;
                 }
+            }
+            else
+            {
+                List<Order_Items> order_Items_List = DbOrderItem.order_Items_List(id_order.ToString());
+                foreach (Order_Items item in order_Items_List)
+                {
+                    DbOrderItem.DeleteOrderItem(item.id.ToString());
+                }
+                DbOrder.DeleteOrder(id_order.ToString());
+                table_name = "";
+                Display();
+                clear();
             }
         }
 
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            if (DbTransaction.CheckDb(id_order.ToString()) == true)
+            {
+
+            }
+            else
+            {
+                string code = "code" + id_order.ToString();
+                Trannsaction std = new Trannsaction(id_order, code, "", "offline", "", "received");
+                DbTransaction.AddTransaction(std);
+            }
+        }
     }
 }

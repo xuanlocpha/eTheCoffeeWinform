@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using SquiredCoffee.Class;
+using SquiredCoffee.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -110,6 +111,21 @@ namespace SquiredCoffee.DB
         }
 
 
+        public static List<ProductShow> LoadProductList1()
+        {
+            List<ProductShow> productShowList = new List<ProductShow>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT p.id,p.category_id,p.title,p.price,p.image,p.content,p.status,c.title as title_category FROM products p,categories c WHERE p.category_id = c.id ");
+
+            foreach (DataRow item in data.Rows)
+            {
+                ProductShow productShow = new ProductShow(item);
+                productShowList.Add(productShow);
+            }
+
+            return productShowList;
+        }
+
         public static List<Product> LoadProductList()
         {
             List<Product> productList = new List<Product>();
@@ -124,6 +140,9 @@ namespace SquiredCoffee.DB
 
             return productList;
         }
+
+
+
 
         public static List<Product> LoadProductList(string query)
         {
@@ -167,5 +186,92 @@ namespace SquiredCoffee.DB
 
             return productList;
         }
+
+
+        public static List<ProductShow> LoadProductStatusList(string @status)
+        {
+            List<ProductShow> productShowList = new List<ProductShow>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT p.id,p.category_id,p.title,p.price,p.image,p.content,p.status,c.title as title_category FROM products p,categories c WHERE p.category_id = c.id AND p.status ='"+@status+"'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                ProductShow productShow = new ProductShow(item);
+                productShowList.Add(productShow);
+            }
+
+            return productShowList;
+        }
+
+
+        public static List<ProductShow> LoadProductSearchList(string @key)
+        {
+            List<ProductShow> productShowList = new List<ProductShow>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT p.id,p.category_id,p.title,p.price,p.image,p.content,p.status,c.title as title_category FROM products p INNER JOIN categories c ON p.category_id = c.id WHERE c.title LIKE'%" + @key + "%' OR p.title LIKE'%" + @key + "%' OR p.price LIKE'%" + @key + "%'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                ProductShow productShow = new ProductShow(item);
+                productShowList.Add(productShow);
+            }
+
+            return productShowList;
+        }
+
+
+        public static List<ProductShow> LoadProductSearchList1(string @key)
+        {
+            List<ProductShow> productShowList = new List<ProductShow>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT p.id,p.category_id,p.title,p.price,p.image,p.content,p.status,c.title as title_category FROM products p INNER JOIN categories c ON p.category_id = c.id WHERE c.title LIKE'%" + @key + "%' ");
+
+            foreach (DataRow item in data.Rows)
+            {
+                ProductShow productShow = new ProductShow(item);
+                productShowList.Add(productShow);
+            }
+
+            return productShowList;
+        }
+
+
+
+        public static List<ProductShow> LoadProductList2(string @key)
+        {
+            List<ProductShow> productShowList = new List<ProductShow>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT p.id,p.category_id,p.title,p.price,p.image,p.content,p.status,c.title as title_category FROM products p INNER JOIN categories c ON p.category_id = c.id WHERE p.id ='" + @key + "%' ");
+
+            foreach (DataRow item in data.Rows)
+            {
+                ProductShow productShow = new ProductShow(item);
+                productShowList.Add(productShow);
+            }
+
+            return productShowList;
+        }
+
+
+
+        public static bool CheckProduct(string @key)
+        {
+            string sql = "select * from products where title = '" + @key + "'";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
     }
 }

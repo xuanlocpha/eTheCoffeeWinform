@@ -48,19 +48,19 @@ namespace SquiredCoffee.FormManage
                 MessageBox.Show("Tên Loại Sản Phẩm đang trống");
                 return;
             }
-            if (btnSave.Text == "Lưu")
-            {
-                Category std = new Category(txtCategoryName.Text.Trim());
-                DbCategory.AddCategory(std);
-                Clear();
-            }
+            //if (btnSave.Text == "Lưu")
+            //{
+            //    Category std = new Category(txtCategoryName.Text.Trim());
+            //    DbCategory.AddCategory(std);
+            //    Clear();
+            //}
 
-            if (btnSave.Text == "Sửa")
-            {
-                Category std = new Category(txtCategoryName.Text.Trim());
-                DbCategory.UpdateCategory(std,id);
-                Clear();
-            }
+            //if (btnSave.Text == "Sửa")
+            //{
+            //    Category std = new Category(txtCategoryName.Text.Trim());
+            //    DbCategory.UpdateCategory(std,id);
+            //    Clear();
+            //}
             _parent.Display();
         }
 

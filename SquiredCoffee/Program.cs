@@ -17,7 +17,7 @@ namespace SquiredCoffee
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormStaff());
+            Application.Run(new FormLogin());
         }
     }
 }

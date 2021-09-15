@@ -30,12 +30,13 @@ namespace SquiredCoffee.DB
 
         public static void AddCategory(Category std)
         {
-            string sql = "INSERT INTO categories (title) VALUES(@title)";
+            string sql = "INSERT INTO categories (title,type,status) VALUES(@title,@type,@status)";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
-           
+            cmd.Parameters.Add("@type", MySqlDbType.VarChar).Value = std.type;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
             try
             {
                 cmd.ExecuteNonQuery();
@@ -51,24 +52,47 @@ namespace SquiredCoffee.DB
 
         public static void UpdateCategory(Category std, string id)
         {
-            string sql = "UPDATE categories SET title = @title  WHERE id = @id";
+            string sql = "UPDATE categories SET title = @title,type = @type,status = @status  WHERE id = @id";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
             cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
-            
+            cmd.Parameters.Add("@type", MySqlDbType.VarChar).Value = std.type;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Chỉnh Sửa Thành Công", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chỉnh sửa loại sản phẩm  ( Thành công !)", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("Chỉnh Sửa Không Thành Công! \n" + ex.Message, " Cảnh Báo Lỗi ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chỉnh sửa loại sản phẩm  ( Không thành công !) \n" + ex.Message, " Cảnh Báo Lỗi ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
            
+        }
+
+
+        public static void LockCategory(string id)
+        {
+            string sql = "UPDATE categories SET status = @status  WHERE id = @id";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = 0;
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Khóa loại sản phẩm  ( Thành công !)", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Khóa loại sản phẩm  ( Không thành công !) \n" + ex.Message, " Cảnh Báo Lỗi ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+
         }
 
 
@@ -96,7 +120,53 @@ namespace SquiredCoffee.DB
         {
             List<Category> categoryList = new List<Category>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,type,status FROM categories WHERE status = '"+1+"'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,type,status FROM categories ");
+            foreach (DataRow item in data.Rows)
+            {
+                Category category = new Category(item);
+                categoryList.Add(category);
+            }
+
+            return categoryList;
+        }
+
+
+        public static List<Category> LoadCategoryList(string @id_category)
+        {
+            List<Category> categoryList = new List<Category>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,type,status FROM categories WHERE id = '"+id_category+"' ");
+            foreach (DataRow item in data.Rows)
+            {
+                Category category = new Category(item);
+                categoryList.Add(category);
+            }
+
+            return categoryList;
+        }
+
+
+        public static List<Category> LoadCategorySearchList(string @key)
+        {
+            List<Category> categoryList = new List<Category>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,type,status FROM categories WHERE title LIKE'%" + @key + "%' OR type LIKE'%" + @key + "%'");
+            foreach (DataRow item in data.Rows)
+            {
+                Category category = new Category(item);
+                categoryList.Add(category);
+            }
+
+            return categoryList;
+        }
+
+
+
+        public static List<Category> LoadCategoryStatusList(string @status)
+        {
+            List<Category> categoryList = new List<Category>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,type,status FROM categories WHERE status = '"+@status+"'");
             foreach (DataRow item in data.Rows)
             {
                 Category category = new Category(item);
@@ -116,6 +186,25 @@ namespace SquiredCoffee.DB
             adp.Fill(tbl);
             dgv.DataSource = tbl;
             con.Close();
+        }
+
+        public static bool CheckTitleCategory(string @titleCategory)
+        {
+            string sql = "select * from categories where title ='"+titleCategory+"'";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
         }
 
 

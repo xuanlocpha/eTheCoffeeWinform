@@ -82,8 +82,8 @@ namespace SquiredCoffee.UC_ManageSysterm
             }
             if (btnInsert.Text == "Thêm")
             {
-                Option std = new Option(txtOptionName.Text.Trim(), status);
-                DbOption.UpdateOption(std,id.ToString());
+              //  Option std = new Option(txtOptionName.Text.Trim(), status);
+               // DbOption.UpdateOption(std,id.ToString());
                 Clear();
                 Display();
             }
@@ -124,8 +124,8 @@ namespace SquiredCoffee.UC_ManageSysterm
             }
             if (btnInsert.Text == "Thêm")
             {
-                Option std = new Option(txtOptionName.Text.Trim(),status);
-                DbOption.AddOption(std);
+             //   Option std = new Option(txtOptionName.Text.Trim(),status);
+              //  DbOption.AddOption(std);
                 Clear();
                 Display();
             }
