@@ -8,10 +8,7 @@ namespace SquiredCoffee.Class
 {
     class ItemDetail
     {
-       public int size { get; set; }
-       public int ice { get; set; }
-       public int sugar { get; set; }
-       public int drink_type { get; set; }
-       public int topping { get; set; }
+       public List<int> options { get; set; }
+       public List<int> toppings { get; set; }
     }
 }

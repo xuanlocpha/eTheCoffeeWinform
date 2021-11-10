@@ -53,7 +53,7 @@ namespace SquiredCoffee.UC_ManageSysterm
                     item.id,
                     item.title,
                     item.content,
-                    item.coupen_code,
+                    item.coupon_code,
                     String.Format("{0:dd/MM/yyyy}",start_date),
                     String.Format("{0:dd/MM/yyyy}",expiry_date),
                     item.discount_unit,
@@ -83,7 +83,7 @@ namespace SquiredCoffee.UC_ManageSysterm
                     item.id,
                     item.title,
                     item.content,
-                    item.coupen_code,
+                    item.coupon_code,
                     String.Format("{0:dd/MM/yyyy}",start_date),
                     String.Format("{0:dd/MM/yyyy}",expiry_date),
                     item.discount_unit,
@@ -132,7 +132,7 @@ namespace SquiredCoffee.UC_ManageSysterm
                     item.id,
                     item.title,
                     item.content,
-                    item.coupen_code,
+                    item.coupon_code,
                     String.Format("{0:dd/MM/yyyy}",start_date),
                     String.Format("{0:dd/MM/yyyy}",expiry_date),
                     item.discount_unit,
@@ -155,6 +155,42 @@ namespace SquiredCoffee.UC_ManageSysterm
             string id_voucher = dgvVoucher.Rows[e.RowIndex].Cells[1].Value.ToString();
             Form1.id_voucher = Convert.ToInt32(id_voucher);
             Form1.ShowDialog();
+        }
+
+        private void dgvVoucher_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            try
+            {
+                bunifuVScrollBar1.Maximum = dgvVoucher.RowCount - 1;
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void dgvVoucher_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            try
+            {
+                bunifuVScrollBar1.Maximum = dgvVoucher.RowCount - 1;
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void bunifuVScrollBar1_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            try
+            {
+                dgvVoucher.FirstDisplayedScrollingRowIndex = dgvVoucher.Rows[e.Value].Index;
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

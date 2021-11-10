@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using SquiredCoffee.Class;
+using SquiredCoffee.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,7 +15,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -120,7 +121,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm Topping ( Thành Công )", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+              
             }
             catch (MySqlException ex)
             {
@@ -144,7 +145,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Chỉnh sửa  ( Thành Công )", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
             }
             catch (MySqlException ex)
             {
@@ -164,7 +165,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa Thành Công ", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
             }
             catch (MySqlException ex)
             {
@@ -178,6 +179,95 @@ namespace SquiredCoffee.DB
             string sql = "select * from toppings where title = '" + @key + "'";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+
+
+        public static List<ToppingShow> LoadToppingClick(string @key)
+        {
+            List<ToppingShow> toppingShows = new List<ToppingShow>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT t.id,t.title,t.description,t.price,t.status FROM toppings t WHERE t.id = '"+ @key + "'");
+            foreach (DataRow item in data.Rows)
+            {
+                ToppingShow toppingShow = new ToppingShow(item);
+                toppingShows.Add(toppingShow);
+            }
+
+            return toppingShows;
+        }
+
+
+        public static bool CheckCreateTopping(Topping std)
+        {
+            AddTopping(std);
+            string sql = "select * from toppings where title = @title";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+        public static bool CheckUpdateTopping(Topping std,string id)
+        {
+            UpdateTopping(std,id);
+            string sql = "select * from toppings where id=@id and title = @title and description = @description and price = @price and status = @status";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            cmd.Parameters.Add("@description", MySqlDbType.VarChar).Value = std.description;
+            cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = std.price;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+        public static bool CheckDeleteTopping(string id)
+        {
+            DeleteTopping(id);
+            string sql = "select * from toppings where id = @id";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
             MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
             DataSet tbl = new DataSet();
             adp.Fill(tbl);

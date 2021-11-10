@@ -10,6 +10,7 @@ namespace SquiredCoffee.Class
     class ImportInvoice
     {
         public int id { get; set; }
+        public int staff_id { get; set; }
         public int stockproduct_id { get; set; }
         public int supplier_id { get; set; }
         public int quantity { get; set; }
@@ -22,8 +23,9 @@ namespace SquiredCoffee.Class
         public string nameSupplier { get; set; }
 
 
-        public ImportInvoice(int StockProduct_Id, int Supplier_Id, int Quantity, string Unit, decimal Unit_Price, string Start_Date, string Expiry_Date, int Status)
+        public ImportInvoice(int Staff_Id,int StockProduct_Id, int Supplier_Id, int Quantity, string Unit, decimal Unit_Price, string Start_Date, string Expiry_Date, int Status)
         {
+            staff_id = Staff_Id;
             stockproduct_id = StockProduct_Id;
             supplier_id = Supplier_Id;
             quantity = Quantity;
@@ -37,6 +39,7 @@ namespace SquiredCoffee.Class
         public ImportInvoice(DataRow row)
         {
             id = Convert.ToInt32(row["id"]);
+            staff_id = Convert.ToInt32(row["staff_id"]);
             stockproduct_id = Convert.ToInt32(row["stockproduct_id"]);
             supplier_id = Convert.ToInt32(row["supplier_id"]);
             quantity = Convert.ToInt32(row["quantity"]);

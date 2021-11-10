@@ -22,18 +22,22 @@ namespace SquiredCoffee.FormManage
         public int status = 1;
         public int id_product_topping;
         public static UC_ManageProductTopping _parent;
+        FormSuccess Form1;
+        FormError Form2;
         public FormInformationProductTopping(UC_ManageProductTopping parent)
         {
             InitializeComponent();
             ListTopping();
             ListProduct();
             _parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
 
         void ketnoi()
         {
-            con.ConnectionString = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            con.ConnectionString = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             if (con.State == ConnectionState.Closed)
                 con.Open();
         }
@@ -94,26 +98,38 @@ namespace SquiredCoffee.FormManage
         {
             if (cbProductName.Text == null)
             {
-                MessageBox.Show("Bạn Chưa Chọn Tên Sản Phẩm !");
+                Form2.title = "Bạn Chưa Chọn Tên Sản Phẩm ";
+                Form2.ShowDialog();
                 return;
             }
             if (cbToppingName.Text == null)
             {
-                MessageBox.Show("Bạn Chưa Chọn Tên Topping !");
+                Form2.title = "Bạn Chưa Chọn Tên Topping ";
+                Form2.ShowDialog();
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn chỉnh sửa topping sản phẩm  này không !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
                 if (btnEdit.Text == "Sửa")
                 {
-                    ProductTopping std = new ProductTopping(Convert.ToInt32(cbProductName.SelectedValue), Convert.ToInt32(cbToppingName.SelectedValue), status);
-                    DbProductTopping.UpdateProductTopping(std, id_product_topping.ToString());
-                    this.Close();
-                    _parent.clear();
-                    _parent.clear1();
-                    _parent.Display();
+                   ProductTopping std = new ProductTopping(Convert.ToInt32(cbProductName.SelectedValue), Convert.ToInt32(cbToppingName.SelectedValue), status);
+                   if(DbProductTopping.CheckUpdateProductTopping(std,id_product_topping.ToString())== true)
+                    {
+                        Form1.title = "Sửa Thành Công ";
+                        Form1.ShowDialog();
+                        this.Close();
+                        _parent.clear();
+                        _parent.clear1();
+                        _parent.Display();
+                    }
+                    else
+                    {
+                        Form2.title = "Sửa Không Thành Công ";
+                        Form2.ShowDialog();
+                        this.Close();
+                        _parent.clear();
+                        _parent.clear1();
+                        _parent.Display();
+                    }
                 }
-            }
         }
 
         private void rdStatus1_CheckedChanged(object sender, EventArgs e)
@@ -138,17 +154,28 @@ namespace SquiredCoffee.FormManage
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa topping sản phẩm  này không . Vì nó có thể anh hưởng tới dữ liệu của bạn!", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
+           
                 if (btnDelete.Text == "Xóa")
                 {
-                    DbProductTopping.DeleteProductTopping(id_product_topping.ToString());
-                    this.Close();
-                    _parent.clear();
-                    _parent.clear1();
-                    _parent.Display();
+                   if(DbProductTopping.CheckDeleteProductTopping(id_product_topping.ToString())== false)
+                    {
+                        Form1.title = "Xóa Thành Công ";
+                        Form1.ShowDialog();
+                        this.Close();
+                        _parent.clear();
+                        _parent.clear1();
+                        _parent.Display();
+                    }
+                    else
+                    {
+                        Form2.title = "Xóa Không Thành Công ";
+                        Form2.ShowDialog();
+                        this.Close();
+                        _parent.clear();
+                        _parent.clear1();
+                        _parent.Display();
+                    }
                 }
-            }
         }
     }
 }

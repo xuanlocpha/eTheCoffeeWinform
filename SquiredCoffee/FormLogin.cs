@@ -23,8 +23,8 @@ namespace SquiredCoffee
         public FormLogin()
         {
             InitializeComponent();
-            Form = new FormStaff(this);
-            //Form1 = new FormMain(this);
+            //Form = new FormStaff(this);
+           // Form1 = new FormMain(this);
         }
 
         public string userName;
@@ -234,13 +234,13 @@ namespace SquiredCoffee
                     }
                     else if (item.role_id == 2)
                     {
-                        Form.fullName = fullName;
-                        Form.roleName = roleName;
-                        Form.id_staff = id_staff;
-                        this.Hide();
-                        Form.ShowDialog();
-                        this.Show();
-                        return;
+                        //Form.fullName = fullName;
+                        //Form.roleName = roleName;
+                        //Form.id_staff = id_staff;
+                        //this.Hide();
+                        //Form.ShowDialog();
+                        //this.Show();
+                        //return;
                     }
                     else
                     {

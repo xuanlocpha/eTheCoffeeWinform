@@ -58,14 +58,14 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnBlock = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnActive = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnAll = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Column12 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
@@ -103,55 +103,55 @@ namespace SquiredCoffee.UC_ManageSysterm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Quicksand", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(76, 17);
+            this.label1.Location = new System.Drawing.Point(76, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(247, 25);
+            this.label1.Size = new System.Drawing.Size(266, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lý Loại Sản Phẩm";
             // 
             // lblTotalCategorySearch
             // 
             this.lblTotalCategorySearch.AutoSize = true;
-            this.lblTotalCategorySearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCategorySearch.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalCategorySearch.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalCategorySearch.Location = new System.Drawing.Point(529, 168);
+            this.lblTotalCategorySearch.Location = new System.Drawing.Point(563, 158);
             this.lblTotalCategorySearch.Name = "lblTotalCategorySearch";
-            this.lblTotalCategorySearch.Size = new System.Drawing.Size(20, 23);
+            this.lblTotalCategorySearch.Size = new System.Drawing.Size(25, 30);
             this.lblTotalCategorySearch.TabIndex = 26;
             this.lblTotalCategorySearch.Text = "0";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(286, 168);
+            this.label4.Location = new System.Drawing.Point(286, 158);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(237, 23);
+            this.label4.Size = new System.Drawing.Size(271, 30);
             this.label4.TabIndex = 25;
             this.label4.Text = "Số kết quả tìm kiếm được :";
             // 
             // lblTotalCategory
             // 
             this.lblTotalCategory.AutoSize = true;
-            this.lblTotalCategory.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCategory.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalCategory.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalCategory.Location = new System.Drawing.Point(160, 168);
+            this.lblTotalCategory.Location = new System.Drawing.Point(173, 158);
             this.lblTotalCategory.Name = "lblTotalCategory";
-            this.lblTotalCategory.Size = new System.Drawing.Size(20, 23);
+            this.lblTotalCategory.Size = new System.Drawing.Size(25, 30);
             this.lblTotalCategory.TabIndex = 24;
             this.lblTotalCategory.Text = "0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(46, 168);
+            this.label2.Location = new System.Drawing.Point(46, 158);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 23);
+            this.label2.Size = new System.Drawing.Size(121, 30);
             this.label2.TabIndex = 23;
             this.label2.Text = "Tổng Loại :";
             // 
@@ -160,13 +160,14 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnSearch.BorderRadius = 15;
             this.btnSearch.CheckedState.Parent = this.btnSearch;
             this.btnSearch.CustomImages.Parent = this.btnSearch;
-            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.btnSearch.DisabledState.Parent = this.btnSearch;
+            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.HoverState.Parent = this.btnSearch;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnSearch.Location = new System.Drawing.Point(1025, 105);
+            this.btnSearch.Location = new System.Drawing.Point(1025, 81);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.ShadowDecoration.Parent = this.btnSearch;
             this.btnSearch.Size = new System.Drawing.Size(67, 48);
@@ -177,12 +178,13 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnAddStaff.BorderRadius = 20;
             this.btnAddStaff.CheckedState.Parent = this.btnAddStaff;
             this.btnAddStaff.CustomImages.Parent = this.btnAddStaff;
-            this.btnAddStaff.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.btnAddStaff.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStaff.DisabledState.Parent = this.btnAddStaff;
+            this.btnAddStaff.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
+            this.btnAddStaff.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStaff.ForeColor = System.Drawing.Color.White;
             this.btnAddStaff.HoverState.Parent = this.btnAddStaff;
             this.btnAddStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnAddStaff.Image")));
-            this.btnAddStaff.Location = new System.Drawing.Point(39, 105);
+            this.btnAddStaff.Location = new System.Drawing.Point(39, 81);
             this.btnAddStaff.Name = "btnAddStaff";
             this.btnAddStaff.ShadowDecoration.Parent = this.btnAddStaff;
             this.btnAddStaff.Size = new System.Drawing.Size(186, 48);
@@ -239,21 +241,21 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.dgvCategory.AllowUserToDeleteRows = false;
             this.dgvCategory.AllowUserToOrderColumns = true;
             this.dgvCategory.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.dgvCategory.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCategory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
+            this.dgvCategory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.dgvCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCategory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvCategory.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
@@ -266,15 +268,15 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.Column3,
             this.Column4});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Quicksand", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(63)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCategory.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCategory.EnableHeadersVisualStyles = false;
-            this.dgvCategory.Location = new System.Drawing.Point(39, 211);
+            this.dgvCategory.Location = new System.Drawing.Point(39, 201);
             this.dgvCategory.Name = "dgvCategory";
             this.dgvCategory.ReadOnly = true;
             this.dgvCategory.RowHeadersVisible = false;
@@ -283,7 +285,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.dgvCategory.RowTemplate.Height = 50;
             this.dgvCategory.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCategory.Size = new System.Drawing.Size(1531, 525);
+            this.dgvCategory.Size = new System.Drawing.Size(1531, 535);
             this.dgvCategory.TabIndex = 19;
             this.dgvCategory.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategory_CellClick);
             this.dgvCategory.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvStaff_RowsAdded);
@@ -319,7 +321,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnBlock.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnBlock.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnBlock.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnBlock.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBlock.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBlock.ForeColor = System.Drawing.Color.Black;
             this.btnBlock.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBlock.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -337,7 +339,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnBlock.IdleIconLeftImage = null;
             this.btnBlock.IdleIconRightImage = null;
             this.btnBlock.IndicateFocus = false;
-            this.btnBlock.Location = new System.Drawing.Point(1419, 105);
+            this.btnBlock.Location = new System.Drawing.Point(1419, 81);
             this.btnBlock.Name = "btnBlock";
             this.btnBlock.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnBlock.OnDisabledState.BorderRadius = 30;
@@ -410,7 +412,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnActive.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnActive.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnActive.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnActive.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActive.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActive.ForeColor = System.Drawing.Color.Black;
             this.btnActive.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnActive.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -428,7 +430,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnActive.IdleIconLeftImage = null;
             this.btnActive.IdleIconRightImage = null;
             this.btnActive.IndicateFocus = false;
-            this.btnActive.Location = new System.Drawing.Point(1263, 105);
+            this.btnActive.Location = new System.Drawing.Point(1263, 81);
             this.btnActive.Name = "btnActive";
             this.btnActive.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnActive.OnDisabledState.BorderRadius = 30;
@@ -501,7 +503,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnAll.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnAll.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnAll.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnAll.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAll.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAll.ForeColor = System.Drawing.Color.Black;
             this.btnAll.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAll.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
@@ -519,7 +521,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnAll.IdleIconLeftImage = null;
             this.btnAll.IdleIconRightImage = null;
             this.btnAll.IndicateFocus = false;
-            this.btnAll.Location = new System.Drawing.Point(1164, 105);
+            this.btnAll.Location = new System.Drawing.Point(1164, 81);
             this.btnAll.Name = "btnAll";
             this.btnAll.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAll.OnDisabledState.BorderRadius = 30;
@@ -562,14 +564,6 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnAll.UseDefaultRadiusAndThickness = true;
             this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "icons8_summer_25px.png");
-            this.imageList1.Images.SetKeyName(1, "icons8_ok_50px.png");
-            this.imageList1.Images.SetKeyName(2, "icons8_cancel_50px.png");
-            // 
             // txtSearch
             // 
             this.txtSearch.AcceptsReturn = false;
@@ -598,7 +592,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.txtSearch.IconRight = null;
             this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(290, 105);
+            this.txtSearch.Location = new System.Drawing.Point(290, 81);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSearch.Modified = false;
@@ -646,6 +640,19 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.txtSearch.WordWrap = true;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged_1);
             // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 15;
+            this.guna2Elipse2.TargetControl = this.dgvCategory;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "icons8_summer_23px_1.png");
+            this.imageList1.Images.SetKeyName(1, "icons8_ok_50px.png");
+            this.imageList1.Images.SetKeyName(2, "icons8_cancel_50px.png");
+            // 
             // Column12
             // 
             this.Column12.FillWeight = 50F;
@@ -684,18 +691,13 @@ namespace SquiredCoffee.UC_ManageSysterm
             // 
             // Column4
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle5.NullValue")));
             this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column4.HeaderText = "Trạng Thái";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.BorderRadius = 15;
-            this.guna2Elipse2.TargetControl = this.dgvCategory;
             // 
             // UC_ManageCategory
             // 
@@ -743,13 +745,13 @@ namespace SquiredCoffee.UC_ManageSysterm
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnBlock;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnActive;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAll;
-        private System.Windows.Forms.ImageList imageList1;
         private Bunifu.UI.WinForms.BunifuTextBox txtSearch;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.DataGridViewImageColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewImageColumn Column4;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
     }
 }

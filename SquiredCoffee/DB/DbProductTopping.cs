@@ -15,7 +15,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -42,7 +42,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm Topping Sản Phẩm  ( Thành Công ) ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             catch (MySqlException ex)
             {
@@ -65,7 +65,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Chỉnh sửa Topping Sản Phẩm  ( Thành Công ) ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+              
             }
             catch (MySqlException ex)
             {
@@ -112,7 +112,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa Thành Công ", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             catch (MySqlException ex)
             {
@@ -182,6 +182,77 @@ namespace SquiredCoffee.DB
             }
 
             return productListToppings;
+        }
+
+        public static bool CheckCreateProductTopping(ProductTopping std)
+        {
+            AddProductTopping(std);
+            string sql = "select * from product_toppings where product_id = @product_id and topping_id = @topping_id";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@product_id", MySqlDbType.VarChar).Value = std.product_id;
+            cmd.Parameters.Add("@topping_id", MySqlDbType.VarChar).Value = std.topping_id;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+        public static bool CheckUpdateProductTopping(ProductTopping std,string id)
+        {
+            UpdateProductTopping(std,id);
+            string sql = "select * from product_toppings where id = @id and product_id = @product_id and topping_id = @topping_id";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = std.id;
+            cmd.Parameters.Add("@product_id", MySqlDbType.VarChar).Value = std.product_id;
+            cmd.Parameters.Add("@topping_id", MySqlDbType.VarChar).Value = std.topping_id;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+        public static bool CheckDeleteProductTopping(string id)
+        {
+            DeleteProductTopping(id);
+            string sql = "select * from product_toppings where id = @id";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
         }
     }
 }

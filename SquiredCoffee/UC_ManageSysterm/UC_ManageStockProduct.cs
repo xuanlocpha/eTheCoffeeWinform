@@ -1,4 +1,5 @@
 ﻿using SquiredCoffee.Class;
+using SquiredCoffee.CustomControls;
 using SquiredCoffee.DB;
 using SquiredCoffee.FormManage;
 using System;
@@ -123,14 +124,70 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void btnAddOptionGroup_Click(object sender, EventArgs e)
         {
-            Form.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormAddStockProduct Form = new FormAddStockProduct(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
+            //Form.ShowDialog();
         }
 
         private void dgvStockProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string id_stockProduct = dgvStockProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
-            Form1.id_stockProduct = Convert.ToInt32(id_stockProduct);
-            Form1.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormInformationStockProduct Form = new FormInformationStockProduct(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    string id_stockProduct = dgvStockProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    Form.id_stockProduct = Convert.ToInt32(id_stockProduct);
+                    Form.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
+          
         }
     }
 }

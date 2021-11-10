@@ -31,14 +31,6 @@ namespace SquiredCoffee.UC_ManageSysterm
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ManageProduct));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -55,26 +47,17 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddStaff = new Guna.UI2.WinForms.Guna2Button();
-            this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.Column12 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBlock = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnActive = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnAll = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.bunifuVScrollBar1 = new Bunifu.UI.WinForms.BunifuVScrollBar();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.flpProduct = new System.Windows.Forms.FlowLayoutPanel();
             this.cbListCategory = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.gunaVScrollBar1 = new Guna.UI.WinForms.GunaVScrollBar();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuGradientPanel1
@@ -109,55 +92,55 @@ namespace SquiredCoffee.UC_ManageSysterm
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Quicksand", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(76, 17);
+            this.label1.Location = new System.Drawing.Point(76, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 25);
+            this.label1.Size = new System.Drawing.Size(215, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lý Sản Phẩm";
             // 
             // lblTotalProductSearch
             // 
             this.lblTotalProductSearch.AutoSize = true;
-            this.lblTotalProductSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProductSearch.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalProductSearch.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalProductSearch.Location = new System.Drawing.Point(542, 144);
+            this.lblTotalProductSearch.Location = new System.Drawing.Point(576, 137);
             this.lblTotalProductSearch.Name = "lblTotalProductSearch";
-            this.lblTotalProductSearch.Size = new System.Drawing.Size(20, 23);
+            this.lblTotalProductSearch.Size = new System.Drawing.Size(25, 30);
             this.lblTotalProductSearch.TabIndex = 25;
             this.lblTotalProductSearch.Text = "0";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(299, 144);
+            this.label4.Location = new System.Drawing.Point(299, 137);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(237, 23);
+            this.label4.Size = new System.Drawing.Size(271, 30);
             this.label4.TabIndex = 24;
             this.label4.Text = "Số kết quả tìm kiếm được :";
             // 
             // lblTotalProduct
             // 
             this.lblTotalProduct.AutoSize = true;
-            this.lblTotalProduct.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProduct.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalProduct.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalProduct.Location = new System.Drawing.Point(219, 144);
+            this.lblTotalProduct.Location = new System.Drawing.Point(242, 137);
             this.lblTotalProduct.Name = "lblTotalProduct";
-            this.lblTotalProduct.Size = new System.Drawing.Size(20, 23);
+            this.lblTotalProduct.Size = new System.Drawing.Size(25, 30);
             this.lblTotalProduct.TabIndex = 23;
             this.lblTotalProduct.Text = "0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(59, 144);
+            this.label2.Location = new System.Drawing.Point(59, 137);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 23);
+            this.label2.Size = new System.Drawing.Size(177, 30);
             this.label2.TabIndex = 22;
             this.label2.Text = "Tổng sản phẩm :";
             // 
@@ -166,7 +149,8 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnSearch.BorderRadius = 15;
             this.btnSearch.CheckedState.Parent = this.btnSearch;
             this.btnSearch.CustomImages.Parent = this.btnSearch;
-            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.btnSearch.DisabledState.Parent = this.btnSearch;
+            this.btnSearch.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.HoverState.Parent = this.btnSearch;
@@ -183,8 +167,9 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnAddStaff.BorderRadius = 20;
             this.btnAddStaff.CheckedState.Parent = this.btnAddStaff;
             this.btnAddStaff.CustomImages.Parent = this.btnAddStaff;
-            this.btnAddStaff.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.btnAddStaff.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStaff.DisabledState.Parent = this.btnAddStaff;
+            this.btnAddStaff.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
+            this.btnAddStaff.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStaff.ForeColor = System.Drawing.Color.White;
             this.btnAddStaff.HoverState.Parent = this.btnAddStaff;
             this.btnAddStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnAddStaff.Image")));
@@ -195,146 +180,6 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnAddStaff.TabIndex = 20;
             this.btnAddStaff.Text = "Thêm mới";
             this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
-            // 
-            // dgvProduct
-            // 
-            this.dgvProduct.AllowUserToAddRows = false;
-            this.dgvProduct.AllowUserToDeleteRows = false;
-            this.dgvProduct.AllowUserToOrderColumns = true;
-            this.dgvProduct.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(35)))));
-            this.dgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvProduct.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            this.dgvProduct.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvProduct.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvProduct.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvProduct.ColumnHeadersHeight = 50;
-            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column12,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(31)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(43)))), ((int)(((byte)(63)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvProduct.EnableHeadersVisualStyles = false;
-            this.dgvProduct.Location = new System.Drawing.Point(51, 200);
-            this.dgvProduct.Name = "dgvProduct";
-            this.dgvProduct.ReadOnly = true;
-            this.dgvProduct.RowHeadersVisible = false;
-            this.dgvProduct.RowHeadersWidth = 50;
-            this.dgvProduct.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvProduct.RowTemplate.Height = 50;
-            this.dgvProduct.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgvProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProduct.Size = new System.Drawing.Size(1531, 532);
-            this.dgvProduct.TabIndex = 19;
-            this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
-            this.dgvProduct.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvProduct_RowsAdded);
-            this.dgvProduct.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvProduct_RowsRemoved);
-            // 
-            // Column12
-            // 
-            this.Column12.FillWeight = 50F;
-            this.Column12.HeaderText = "";
-            this.Column12.MinimumWidth = 6;
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Id";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column2
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column2.HeaderText = "Loại Sản Phẩm";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column3.FillWeight = 120F;
-            this.Column3.HeaderText = "Tên Sản Phẩm";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column4.FillWeight = 70F;
-            this.Column4.HeaderText = "Giá";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column5.FillWeight = 140F;
-            this.Column5.HeaderText = "Giới thiệu";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle7.NullValue")));
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column6.FillWeight = 50F;
-            this.Column6.HeaderText = "Trạng Thái";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Image";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Visible = false;
             // 
             // btnBlock
             // 
@@ -366,7 +211,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnBlock.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnBlock.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnBlock.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnBlock.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBlock.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBlock.ForeColor = System.Drawing.Color.Black;
             this.btnBlock.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBlock.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -457,7 +302,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnActive.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnActive.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnActive.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnActive.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActive.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActive.ForeColor = System.Drawing.Color.Black;
             this.btnActive.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnActive.IconLeftCursor = System.Windows.Forms.Cursors.Default;
@@ -548,7 +393,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnAll.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnAll.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnAll.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnAll.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAll.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAll.ForeColor = System.Drawing.Color.Black;
             this.btnAll.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAll.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
@@ -693,53 +538,24 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.imageList1.Images.SetKeyName(1, "icons8_ok_50px.png");
             this.imageList1.Images.SetKeyName(2, "icons8_cancel_50px.png");
             // 
-            // bunifuVScrollBar1
-            // 
-            this.bunifuVScrollBar1.AllowCursorChanges = true;
-            this.bunifuVScrollBar1.AllowHomeEndKeysDetection = false;
-            this.bunifuVScrollBar1.AllowIncrementalClickMoves = true;
-            this.bunifuVScrollBar1.AllowMouseDownEffects = true;
-            this.bunifuVScrollBar1.AllowMouseHoverEffects = true;
-            this.bunifuVScrollBar1.AllowScrollingAnimations = true;
-            this.bunifuVScrollBar1.AllowScrollKeysDetection = true;
-            this.bunifuVScrollBar1.AllowScrollOptionsMenu = true;
-            this.bunifuVScrollBar1.AllowShrinkingOnFocusLost = false;
-            this.bunifuVScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuVScrollBar1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(36)))), ((int)(((byte)(50)))));
-            this.bunifuVScrollBar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuVScrollBar1.BackgroundImage")));
-            this.bunifuVScrollBar1.BindingContainer = null;
-            this.bunifuVScrollBar1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(36)))), ((int)(((byte)(50)))));
-            this.bunifuVScrollBar1.BorderRadius = 14;
-            this.bunifuVScrollBar1.BorderThickness = 1;
-            this.bunifuVScrollBar1.DurationBeforeShrink = 2000;
-            this.bunifuVScrollBar1.LargeChange = 10;
-            this.bunifuVScrollBar1.Location = new System.Drawing.Point(1589, 250);
-            this.bunifuVScrollBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.bunifuVScrollBar1.Maximum = 100;
-            this.bunifuVScrollBar1.Minimum = 0;
-            this.bunifuVScrollBar1.MinimumThumbLength = 18;
-            this.bunifuVScrollBar1.Name = "bunifuVScrollBar1";
-            this.bunifuVScrollBar1.OnDisable.ScrollBarBorderColor = System.Drawing.Color.Silver;
-            this.bunifuVScrollBar1.OnDisable.ScrollBarColor = System.Drawing.Color.Transparent;
-            this.bunifuVScrollBar1.OnDisable.ThumbColor = System.Drawing.Color.Silver;
-            this.bunifuVScrollBar1.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(36)))), ((int)(((byte)(50)))));
-            this.bunifuVScrollBar1.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(36)))), ((int)(((byte)(50)))));
-            this.bunifuVScrollBar1.ShrinkSizeLimit = 3;
-            this.bunifuVScrollBar1.Size = new System.Drawing.Size(20, 482);
-            this.bunifuVScrollBar1.SmallChange = 1;
-            this.bunifuVScrollBar1.TabIndex = 26;
-            this.bunifuVScrollBar1.ThumbColor = System.Drawing.Color.Gray;
-            this.bunifuVScrollBar1.ThumbLength = 47;
-            this.bunifuVScrollBar1.ThumbMargin = 1;
-            this.bunifuVScrollBar1.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
-            this.bunifuVScrollBar1.Value = 0;
-            this.bunifuVScrollBar1.Scroll += new System.EventHandler<Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs>(this.bunifuVScrollBar1_Scroll);
-            // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 15;
-            this.guna2Elipse1.TargetControl = this.dgvProduct;
+            this.guna2Elipse1.TargetControl = this.flpProduct;
+            // 
+            // flpProduct
+            // 
+            this.flpProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flpProduct.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flpProduct.ForeColor = System.Drawing.Color.White;
+            this.flpProduct.Location = new System.Drawing.Point(18, 177);
+            this.flpProduct.Margin = new System.Windows.Forms.Padding(7, 3, 3, 3);
+            this.flpProduct.Name = "flpProduct";
+            this.flpProduct.Padding = new System.Windows.Forms.Padding(9, 5, 0, 7);
+            this.flpProduct.Size = new System.Drawing.Size(1582, 579);
+            this.flpProduct.TabIndex = 28;
             // 
             // cbListCategory
             // 
@@ -751,7 +567,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.cbListCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbListCategory.FocusedColor = System.Drawing.Color.Empty;
             this.cbListCategory.FocusedState.Parent = this.cbListCategory;
-            this.cbListCategory.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbListCategory.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbListCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbListCategory.FormattingEnabled = true;
             this.cbListCategory.HoverState.Parent = this.cbListCategory;
@@ -765,20 +581,39 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.cbListCategory.SelectedIndexChanged += new System.EventHandler(this.cbListProduct_SelectedIndexChanged);
             this.cbListCategory.TextChanged += new System.EventHandler(this.cbListCategory_TextChanged);
             // 
+            // gunaVScrollBar1
+            // 
+            this.gunaVScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaVScrollBar1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaVScrollBar1.LargeChange = 10;
+            this.gunaVScrollBar1.Location = new System.Drawing.Point(1606, 177);
+            this.gunaVScrollBar1.Maximum = 100;
+            this.gunaVScrollBar1.Name = "gunaVScrollBar1";
+            this.gunaVScrollBar1.Radius = 8;
+            this.gunaVScrollBar1.ScrollbarSize = 20;
+            this.gunaVScrollBar1.ScrollIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(218)))));
+            this.gunaVScrollBar1.Size = new System.Drawing.Size(27, 579);
+            this.gunaVScrollBar1.TabIndex = 29;
+            this.gunaVScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
+            this.gunaVScrollBar1.ThumbHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(128)))), ((int)(((byte)(36)))));
+            this.gunaVScrollBar1.ThumbPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(128)))), ((int)(((byte)(36)))));
+            this.gunaVScrollBar1.ThumbSize = 50;
+            // 
             // UC_ManageProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(210)))), ((int)(((byte)(254)))));
+            this.Controls.Add(this.gunaVScrollBar1);
+            this.Controls.Add(this.flpProduct);
             this.Controls.Add(this.cbListCategory);
-            this.Controls.Add(this.bunifuVScrollBar1);
             this.Controls.Add(this.lblTotalProductSearch);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblTotalProduct);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnAddStaff);
-            this.Controls.Add(this.dgvProduct);
             this.Controls.Add(this.btnBlock);
             this.Controls.Add(this.btnActive);
             this.Controls.Add(this.btnAll);
@@ -790,7 +625,6 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -807,22 +641,14 @@ namespace SquiredCoffee.UC_ManageSysterm
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2Button btnAddStaff;
-        private System.Windows.Forms.DataGridView dgvProduct;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnBlock;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnActive;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAll;
         private Bunifu.UI.WinForms.BunifuTextBox txtSearch;
         private System.Windows.Forms.ImageList imageList1;
-        private Bunifu.UI.WinForms.BunifuVScrollBar bunifuVScrollBar1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private System.Windows.Forms.DataGridViewImageColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewImageColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private Guna.UI2.WinForms.Guna2ComboBox cbListCategory;
+        private System.Windows.Forms.FlowLayoutPanel flpProduct;
+        public Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar1;
     }
 }

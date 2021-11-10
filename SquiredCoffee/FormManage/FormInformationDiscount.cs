@@ -17,13 +17,13 @@ namespace SquiredCoffee.FormManage
     public partial class FormInformationDiscount : Form
     {
         MySqlConnection con = new MySqlConnection();
-        public static UC_ManageDiscount _parent;
+        //public static UC_ManageDiscount _parent;
         public int status ;
         public int id_discount;
-        public FormInformationDiscount(UC_ManageDiscount parent)
+        public FormInformationDiscount(/*UC_ManageDiscount parent*/)
         {
             InitializeComponent();
-            _parent = parent;
+            //_parent = parent;
             ListDiscount();
         }
 
@@ -68,23 +68,23 @@ namespace SquiredCoffee.FormManage
 
         public void Display()
         {
-            List<Discount> discountList = DbDiscount.LoadDiscountList(id_discount.ToString());
-            foreach (Discount item in discountList)
-            {
-                cbDiscount.Text = item.title_product;
-                txtDiscount.Text = item.discount.ToString();
-                dtpStartDate.Text = String.Format("{0:dd/MM/yyyy}", item.start_date);
-                dtpExpiryeDate.Text = String.Format("{0:dd/MM/yyyy}", item.expiry_date);
-                if (item.status == 1)
-                {
-                    rdStatus1.Checked = true;
-                }
-                else if (item.status == 0)
-                {
-                    rdStatus2.Checked = true;
-                }
-                status = item.status;
-            }
+            //List<Discount> discountList = DbDiscount.LoadDiscountList(id_discount.ToString());
+            //foreach (Discount item in discountList)
+            //{
+            //    cbDiscount.Text = item.title_product;
+            //    txtDiscount.Text = item.discount.ToString();
+            //    dtpStartDate.Text = String.Format("{0:dd/MM/yyyy}", item.start_date);
+            //    dtpExpiryeDate.Text = String.Format("{0:dd/MM/yyyy}", item.expiry_date);
+            //    if (item.status == 1)
+            //    {
+            //        rdStatus1.Checked = true;
+            //    }
+            //    else if (item.status == 0)
+            //    {
+            //        rdStatus2.Checked = true;
+            //    }
+            //    status = item.status;
+            //}
         }
 
         private void FormInformationDiscount_Load(object sender, EventArgs e)
@@ -132,13 +132,13 @@ namespace SquiredCoffee.FormManage
             {
                 if (btnEdit.Text == "Sửa")
                 {
-                    string start_date = dtpStartDate.Value.Date.ToString("yyyy-MM-dd");
-                    string expiry_date = dtpExpiryeDate.Value.Date.ToString("yyyy-MM-dd");
-                    Discount std = new Discount(Convert.ToDouble(txtDiscount.Text), Convert.ToInt32(cbDiscount.SelectedValue), start_date, expiry_date, status);
-                    DbDiscount.UpdateDiscount(std, id_discount.ToString());
-                    this.Close();
-                    clear();
-                    _parent.Display();
+                    //string start_date = dtpStartDate.Value.Date.ToString("yyyy-MM-dd");
+                    //string expiry_date = dtpExpiryeDate.Value.Date.ToString("yyyy-MM-dd");
+                    //Discount std = new Discount(Convert.ToDouble(txtDiscount.Text), Convert.ToInt32(cbDiscount.SelectedValue), start_date, expiry_date, status);
+                    //DbDiscount.UpdateDiscount(std, id_discount.ToString());
+                    //this.Close();
+                    //clear();
+                    //_parent.Display();
                 }
             }
         }
@@ -157,7 +157,7 @@ namespace SquiredCoffee.FormManage
                     DbDiscount.DeleteDiscount(id_discount.ToString());
                     this.Close();
                     clear();
-                    _parent.Display();
+                    //_parent.Display();
                 }
             }
         }

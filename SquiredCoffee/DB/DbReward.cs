@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using SquiredCoffee.Class;
+using SquiredCoffee.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,7 +15,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -112,5 +113,107 @@ namespace SquiredCoffee.DB
             dgv.DataSource = tbl;
             con.Close();
         }
+
+
+        public static List<RewardShow> LoadReward()
+        {
+            List<RewardShow> rewardShowsList = new List<RewardShow>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,voucher_id,title,brand_name,content,image,point,quantity,status FROM rewards");
+            foreach (DataRow item in data.Rows)
+            {
+                RewardShow rewardShow = new RewardShow(item);
+                rewardShowsList.Add(rewardShow);
+            }
+
+            return rewardShowsList  ;
+        }
+
+
+        public static List<RewardShow> LoadReward(string id)
+        {
+            List<RewardShow> rewardShowsList = new List<RewardShow>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,voucher_id,title,brand_name,content,image,point,quantity,status FROM rewards WHERE id = '"+id+"'");
+            foreach (DataRow item in data.Rows)
+            {
+                RewardShow rewardShow = new RewardShow(item);
+                rewardShowsList.Add(rewardShow);
+            }
+
+            return rewardShowsList;
+        }
+
+
+        public static List<RewardShow> LoadRewardVoucher(string voucher_id)
+        {
+            List<RewardShow> rewardShowsList = new List<RewardShow>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,voucher_id,title,brand_name,content,image,point,quantity,status FROM rewards WHERE voucher_id = '" + voucher_id + "'");
+            foreach (DataRow item in data.Rows)
+            {
+                RewardShow rewardShow = new RewardShow(item);
+                rewardShowsList.Add(rewardShow);
+            }
+
+            return rewardShowsList;
+        }
+
+
+        public static void UpdatePointUser(string point, string id)
+        {
+            string sql = "UPDATE users SET point='"+point+"' WHERE id='"+id+"'";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Chỉnh Sửa Không Thành Công! \n" + ex.Message, " Cảnh Báo Lỗi ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+        public static void UpdateQuantityRewards(string quantity, string id)
+        {
+            string sql = "UPDATE rewards SET quantity='" + quantity + "' WHERE id='" + id + "'";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Chỉnh Sửa Không Thành Công! \n" + ex.Message, " Cảnh Báo Lỗi ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+
+        public static bool CheckPointUser(string point,string id)
+        {
+            UpdatePointUser(point, id);
+            string sql = "select * from users where point = '" + point + "' and id ='"+id+"'";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
     }
 }

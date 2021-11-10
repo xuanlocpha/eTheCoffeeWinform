@@ -31,6 +31,7 @@ namespace SquiredCoffee.FormManage
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInformationOptionGroup));
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.txtOptionGroupName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,19 +44,38 @@ namespace SquiredCoffee.FormManage
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.panel1.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(210)))), ((int)(((byte)(254)))));
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.txtOptionGroupName);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.rdStatus1);
+            this.panel1.Controls.Add(this.rdStatus2);
+            this.panel1.Controls.Add(this.bunifuGradientPanel1);
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(10, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(677, 344);
+            this.panel1.TabIndex = 0;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Quicksand", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.label12.Location = new System.Drawing.Point(92, 211);
+            this.label12.Location = new System.Drawing.Point(92, 195);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(137, 25);
-            this.label12.TabIndex = 136;
+            this.label12.Size = new System.Drawing.Size(151, 34);
+            this.label12.TabIndex = 149;
             this.label12.Text = "Trạng Thái  :";
             // 
             // txtOptionGroupName
@@ -75,7 +95,7 @@ namespace SquiredCoffee.FormManage
             this.txtOptionGroupName.ForeColor = System.Drawing.Color.Black;
             this.txtOptionGroupName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtOptionGroupName.HoverState.Parent = this.txtOptionGroupName;
-            this.txtOptionGroupName.Location = new System.Drawing.Point(246, 117);
+            this.txtOptionGroupName.Location = new System.Drawing.Point(246, 108);
             this.txtOptionGroupName.Margin = new System.Windows.Forms.Padding(4);
             this.txtOptionGroupName.Name = "txtOptionGroupName";
             this.txtOptionGroupName.PasswordChar = '\0';
@@ -84,29 +104,29 @@ namespace SquiredCoffee.FormManage
             this.txtOptionGroupName.SelectedText = "";
             this.txtOptionGroupName.ShadowDecoration.Parent = this.txtOptionGroupName;
             this.txtOptionGroupName.Size = new System.Drawing.Size(411, 47);
-            this.txtOptionGroupName.TabIndex = 135;
+            this.txtOptionGroupName.TabIndex = 148;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Quicksand", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.label2.Location = new System.Drawing.Point(12, 126);
+            this.label2.Location = new System.Drawing.Point(12, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(217, 25);
-            this.label2.TabIndex = 132;
-            this.label2.Text = "Tên Tùy Chọn Món  :";
+            this.label2.Size = new System.Drawing.Size(222, 34);
+            this.label2.TabIndex = 145;
+            this.label2.Text = "Tên Nhóm Option  :";
             // 
             // rdStatus1
             // 
             this.rdStatus1.AutoSize = true;
             this.rdStatus1.Checked = true;
-            this.rdStatus1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdStatus1.Font = new System.Drawing.Font("Quicksand SemiBold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdStatus1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.rdStatus1.Location = new System.Drawing.Point(256, 211);
+            this.rdStatus1.Location = new System.Drawing.Point(256, 195);
             this.rdStatus1.Name = "rdStatus1";
-            this.rdStatus1.Size = new System.Drawing.Size(128, 29);
-            this.rdStatus1.TabIndex = 133;
+            this.rdStatus1.Size = new System.Drawing.Size(147, 38);
+            this.rdStatus1.TabIndex = 146;
             this.rdStatus1.TabStop = true;
             this.rdStatus1.Text = "Kích Hoạt ";
             this.rdStatus1.UseVisualStyleBackColor = true;
@@ -115,12 +135,12 @@ namespace SquiredCoffee.FormManage
             // rdStatus2
             // 
             this.rdStatus2.AutoSize = true;
-            this.rdStatus2.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdStatus2.Font = new System.Drawing.Font("Quicksand SemiBold", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdStatus2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.rdStatus2.Location = new System.Drawing.Point(444, 211);
+            this.rdStatus2.Location = new System.Drawing.Point(444, 195);
             this.rdStatus2.Name = "rdStatus2";
-            this.rdStatus2.Size = new System.Drawing.Size(125, 29);
-            this.rdStatus2.TabIndex = 134;
+            this.rdStatus2.Size = new System.Drawing.Size(145, 38);
+            this.rdStatus2.TabIndex = 147;
             this.rdStatus2.Text = "Tạm Khóa";
             this.rdStatus2.UseVisualStyleBackColor = true;
             this.rdStatus2.CheckedChanged += new System.EventHandler(this.rdStatus2_CheckedChanged);
@@ -142,8 +162,8 @@ namespace SquiredCoffee.FormManage
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(697, 60);
-            this.bunifuGradientPanel1.TabIndex = 131;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(677, 60);
+            this.bunifuGradientPanel1.TabIndex = 144;
             // 
             // btnClose
             // 
@@ -151,7 +171,7 @@ namespace SquiredCoffee.FormManage
             this.btnClose.AutoSize = true;
             this.btnClose.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnClose.Location = new System.Drawing.Point(658, 17);
+            this.btnClose.Location = new System.Drawing.Point(638, 17);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(27, 25);
             this.btnClose.TabIndex = 3;
@@ -171,13 +191,13 @@ namespace SquiredCoffee.FormManage
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Quicksand", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(76, 17);
+            this.label1.Location = new System.Drawing.Point(76, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 25);
+            this.label1.Size = new System.Drawing.Size(274, 34);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Thông Tin Tùy Chọn Món";
+            this.label1.Text = "Thông Tin Nhóm Option";
             // 
             // guna2Elipse1
             // 
@@ -189,18 +209,18 @@ namespace SquiredCoffee.FormManage
             this.btnDelete.BorderRadius = 15;
             this.btnDelete.CheckedState.Parent = this.btnDelete;
             this.btnDelete.CustomImages.Parent = this.btnDelete;
+            this.btnDelete.DisabledState.Parent = this.btnDelete;
             this.btnDelete.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Font = new System.Drawing.Font("Quicksand", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.HoverState.Parent = this.btnDelete;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.ImageOffset = new System.Drawing.Point(0, -4);
-            this.btnDelete.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnDelete.Location = new System.Drawing.Point(388, 280);
+            this.btnDelete.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnDelete.Location = new System.Drawing.Point(388, 264);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
             this.btnDelete.Size = new System.Drawing.Size(250, 57);
-            this.btnDelete.TabIndex = 143;
+            this.btnDelete.TabIndex = 151;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -209,49 +229,52 @@ namespace SquiredCoffee.FormManage
             this.btnEdit.BorderRadius = 15;
             this.btnEdit.CheckedState.Parent = this.btnEdit;
             this.btnEdit.CustomImages.Parent = this.btnEdit;
+            this.btnEdit.DisabledState.Parent = this.btnEdit;
             this.btnEdit.FillColor = System.Drawing.Color.Tomato;
-            this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Font = new System.Drawing.Font("Quicksand", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.HoverState.Parent = this.btnEdit;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.ImageOffset = new System.Drawing.Point(0, -4);
-            this.btnEdit.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnEdit.Location = new System.Drawing.Point(69, 280);
+            this.btnEdit.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnEdit.Location = new System.Drawing.Point(69, 264);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ShadowDecoration.Parent = this.btnEdit;
             this.btnEdit.Size = new System.Drawing.Size(250, 57);
-            this.btnEdit.TabIndex = 142;
+            this.btnEdit.TabIndex = 150;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 15;
+            this.guna2Elipse2.TargetControl = this.panel1;
             // 
             // FormInformationOptionGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(210)))), ((int)(((byte)(254)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
             this.ClientSize = new System.Drawing.Size(697, 364);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtOptionGroupName);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.rdStatus1);
-            this.Controls.Add(this.rdStatus2);
-            this.Controls.Add(this.bunifuGradientPanel1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormInformationOptionGroup";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInformationOptionGroup";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormInformationOptionGroup_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label12;
         private Guna.UI2.WinForms.Guna2TextBox txtOptionGroupName;
         private System.Windows.Forms.Label label2;
@@ -261,8 +284,9 @@ namespace SquiredCoffee.FormManage
         private System.Windows.Forms.Label btnClose;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
     }
 }

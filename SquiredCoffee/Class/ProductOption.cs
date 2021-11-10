@@ -15,13 +15,13 @@ namespace SquiredCoffee.Class
         public int defaults { get; set; }
         public int status { get; set; }
 
-        public ProductOption(int Product_Id,int Option_Id,string Title,decimal Price,int Defaults, int Status)
+        public ProductOption(int Product_Id,int Option_Id,string Title,decimal Price,int Default, int Status)
         {
             product_id = Product_Id;
             option_id = Option_Id;
             title = Title;
             price = Price;
-            defaults = Defaults;
+            defaults = Default;
             status = Status;
         }
     }

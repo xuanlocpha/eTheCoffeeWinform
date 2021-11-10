@@ -36,7 +36,7 @@ namespace SquiredCoffee.ViewModels
             option_id = Convert.ToInt32(row["option_id"]);
             title = row["title"].ToString();
             price = Convert.ToDecimal(row["price"]);
-            defaults = Convert.ToInt32(row["defaults"]);
+            defaults = Convert.ToInt32(row["default"]);
             status = Convert.ToInt32(row["status"]);
             name_option = row["name_option"].ToString();
             name_product = row["name_product"].ToString();

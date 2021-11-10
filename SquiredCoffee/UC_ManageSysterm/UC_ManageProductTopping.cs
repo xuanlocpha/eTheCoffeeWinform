@@ -1,4 +1,5 @@
 ﻿using SquiredCoffee.Class;
+using SquiredCoffee.CustomControls;
 using SquiredCoffee.DB;
 using SquiredCoffee.FormManage;
 using SquiredCoffee.ViewModels;
@@ -122,7 +123,34 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
-            Form.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormAddProductTopping Form = new FormAddProductTopping(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
         }
 
         private void dgvProductTopping_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -163,9 +191,36 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void dgvProductTopping_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string id_product_topping = dgvProductTopping.Rows[e.RowIndex].Cells[1].Value.ToString();
-            Form1.id_product_topping = Convert.ToInt32(id_product_topping);
-            Form1.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormInformationProductTopping Form = new FormInformationProductTopping(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    string id_product_topping = dgvProductTopping.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    Form.id_product_topping = Convert.ToInt32(id_product_topping);
+                    Form.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
         }
     }
 }

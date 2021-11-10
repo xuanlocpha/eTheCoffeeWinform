@@ -1,4 +1,5 @@
 ﻿using SquiredCoffee.Class;
+using SquiredCoffee.CustomControls;
 using SquiredCoffee.DB;
 using SquiredCoffee.FormManage;
 using System;
@@ -158,16 +159,71 @@ namespace SquiredCoffee.UC_ManageSysterm
             }
         }
 
-        private void btnAddStaff_Click(object sender, EventArgs e)
-        {
-            Form.ShowDialog();
-        }
 
         private void dgvTopping_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string id_topping = dgvTopping.Rows[e.RowIndex].Cells[1].Value.ToString();
-            Form1.id_topping = Convert.ToInt32(id_topping);
-            Form1.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormInformationTopping Form = new FormInformationTopping(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    string id_topping = dgvTopping.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    Form.id_topping = Convert.ToInt32(id_topping);
+                    Form.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
+           
+        }
+
+        private void btnAddTopping_Click(object sender, EventArgs e)
+        {
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormAddTopping Form = new FormAddTopping(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
         }
     }
 }

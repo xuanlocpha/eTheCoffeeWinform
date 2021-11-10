@@ -17,10 +17,14 @@ namespace SquiredCoffee.FormManage
     {
         public int status = 1;
         public static UC_ManageCategory _parent;
+        FormSuccess Form1;
+        FormError Form2;
         public FormAddCategory(UC_ManageCategory parent)
         {
             InitializeComponent();
             _parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         private void rdStatus1_CheckedChanged(object sender, EventArgs e)
@@ -44,30 +48,45 @@ namespace SquiredCoffee.FormManage
         {
             if (txtTitleCategory.Text.Trim() == "")
             {
-                MessageBox.Show("Tên loại sản phẩm không được để ( Trống )");
+                Form1.title = "Tên Loại Sản Phẩm Không Được (Trống) ";
+                Form1.ShowDialog();
                 return;
             }
             if (txtTitleCategory.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên loại sản phẩm phải lớn hơn  ( 1 ký tự )");
+                Form2.title = "Tên Loại Sản Phẩm  (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if(cbType.Text == "")
             {
-                MessageBox.Show("Ô Thể Loại đang  ( Trống )");
+                Form2.title = "Thể Loại Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (DbCategory.CheckTitleCategory(txtTitleCategory.Text) == true)
             {
-                MessageBox.Show("Tên loại sản phẩm đã  ( Tồn tại )");
+                Form2.title = "Tên Loại Sản Phẩm Đã Tồn Tại";
+                Form2.ShowDialog();
                 return;
             }
             if (btnSave.Text == "Lưu")
             {
                 Category std = new Category(txtTitleCategory.Text,cbType.Text,status);
-                DbCategory.AddCategory(std);
-                this.Close();
-                _parent.Display();
+                if(DbCategory.CheckCreateCategory(std) == true)
+                {
+                    Form1.title = "Tạo Thành Công";
+                    Form1.ShowDialog();
+                    this.Close();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Tạo Không Thành Công";
+                    Form2.ShowDialog();
+                    this.Close();
+                    _parent.Display();
+                }
             }
         }
 

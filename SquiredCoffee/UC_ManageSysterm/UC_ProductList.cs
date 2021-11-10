@@ -23,7 +23,7 @@ namespace SquiredCoffee.UC_ManageSysterm
         {
             InitializeComponent();
             _parent = parent;
-            Form = new FormOrderProduct(this, _parent);
+            //Form = new FormOrderProduct(this, _parent);
         }
 
         private PictureBox pic = new PictureBox();
@@ -121,9 +121,9 @@ namespace SquiredCoffee.UC_ManageSysterm
         public void Onclick(object sender, EventArgs e)
         {
             string tag = ((PictureBox)sender).Tag.ToString();
-            Form.idProduct = tag;
+            //Form.idProduct = tag;
             id_order = _parent.id_order;
-            Form.ShowDialog();
+            //Form.ShowDialog();
             return;
         }
 

@@ -31,15 +31,15 @@ namespace SquiredCoffee
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStaff));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblRole = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -98,24 +98,24 @@ namespace SquiredCoffee
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(46)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(128)))), ((int)(((byte)(36)))));
             this.panel1.Controls.Add(this.lblRole);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.lblFullName);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1688, 93);
+            this.panel1.Size = new System.Drawing.Size(1668, 93);
             this.panel1.TabIndex = 2;
             // 
             // lblRole
             // 
             this.lblRole.AutoSize = true;
             this.lblRole.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(166)))), ((int)(((byte)(48)))));
-            this.lblRole.Location = new System.Drawing.Point(251, 52);
+            this.lblRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblRole.Location = new System.Drawing.Point(280, 52);
             this.lblRole.Name = "lblRole";
             this.lblRole.Size = new System.Drawing.Size(66, 21);
             this.lblRole.TabIndex = 5;
@@ -125,8 +125,8 @@ namespace SquiredCoffee
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(166)))), ((int)(((byte)(48)))));
-            this.label3.Location = new System.Drawing.Point(233, 52);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(249, 52);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(13, 21);
             this.label3.TabIndex = 4;
@@ -136,7 +136,7 @@ namespace SquiredCoffee
             // 
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(166)))), ((int)(((byte)(48)))));
+            this.lblFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblFullName.Location = new System.Drawing.Point(89, 52);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(127, 21);
@@ -147,7 +147,7 @@ namespace SquiredCoffee
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(88, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 26);
@@ -174,9 +174,9 @@ namespace SquiredCoffee
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Location = new System.Drawing.Point(0, 159);
+            this.panel2.Location = new System.Drawing.Point(10, 169);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1688, 718);
+            this.panel2.Size = new System.Drawing.Size(1668, 698);
             this.panel2.TabIndex = 3;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -187,7 +187,7 @@ namespace SquiredCoffee
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelList.Location = new System.Drawing.Point(4, 5);
             this.panelList.Name = "panelList";
-            this.panelList.Size = new System.Drawing.Size(1056, 619);
+            this.panelList.Size = new System.Drawing.Size(1036, 599);
             this.panelList.TabIndex = 6;
             // 
             // panel9
@@ -195,9 +195,9 @@ namespace SquiredCoffee
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel9.Location = new System.Drawing.Point(3, 617);
+            this.panel9.Location = new System.Drawing.Point(3, 597);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1057, 10);
+            this.panel9.Size = new System.Drawing.Size(1037, 10);
             this.panel9.TabIndex = 5;
             // 
             // panel7
@@ -211,9 +211,9 @@ namespace SquiredCoffee
             this.panel7.Controls.Add(this.btnChangeTable);
             this.panel7.Controls.Add(this.btnListProduct);
             this.panel7.Controls.Add(this.btnListTable);
-            this.panel7.Location = new System.Drawing.Point(4, 631);
+            this.panel7.Location = new System.Drawing.Point(4, 611);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1056, 84);
+            this.panel7.Size = new System.Drawing.Size(1036, 84);
             this.panel7.TabIndex = 3;
             // 
             // btnLogout1
@@ -304,18 +304,18 @@ namespace SquiredCoffee
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(46)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.dgvOrder);
             this.panel4.Controls.Add(this.panel6);
-            this.panel4.Location = new System.Drawing.Point(1066, 4);
+            this.panel4.Location = new System.Drawing.Point(1046, 4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(619, 711);
+            this.panel4.Size = new System.Drawing.Size(619, 691);
             this.panel4.TabIndex = 2;
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(171)))), ((int)(((byte)(121)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(128)))), ((int)(((byte)(36)))));
             this.panel5.Controls.Add(this.label5);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 0);
@@ -343,8 +343,8 @@ namespace SquiredCoffee
             this.dgvOrder.AllowUserToDeleteRows = false;
             this.dgvOrder.AllowUserToOrderColumns = true;
             this.dgvOrder.AllowUserToResizeRows = false;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.White;
-            this.dgvOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -353,14 +353,14 @@ namespace SquiredCoffee
             this.dgvOrder.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvOrder.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvOrder.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle29.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle29.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvOrder.ColumnHeadersHeight = 45;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -370,14 +370,14 @@ namespace SquiredCoffee
             this.Column3,
             this.Column6,
             this.Column5});
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvOrder.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvOrder.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvOrder.EnableHeadersVisualStyles = false;
             this.dgvOrder.Location = new System.Drawing.Point(0, 41);
             this.dgvOrder.Name = "dgvOrder";
@@ -388,14 +388,14 @@ namespace SquiredCoffee
             this.dgvOrder.RowTemplate.Height = 50;
             this.dgvOrder.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrder.Size = new System.Drawing.Size(619, 463);
+            this.dgvOrder.Size = new System.Drawing.Size(619, 443);
             this.dgvOrder.TabIndex = 24;
             // 
             // Column1
             // 
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle12;
             this.Column1.FillWeight = 150F;
             this.Column1.HeaderText = "Tên Sản Phẩm";
             this.Column1.MinimumWidth = 6;
@@ -404,9 +404,9 @@ namespace SquiredCoffee
             // 
             // Column2
             // 
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle13;
             this.Column2.FillWeight = 50F;
             this.Column2.HeaderText = "SL";
             this.Column2.MinimumWidth = 6;
@@ -415,9 +415,9 @@ namespace SquiredCoffee
             // 
             // Column4
             // 
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle14;
             this.Column4.FillWeight = 60F;
             this.Column4.HeaderText = "Size";
             this.Column4.MinimumWidth = 6;
@@ -426,11 +426,11 @@ namespace SquiredCoffee
             // 
             // Column3
             // 
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Green;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.Green;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Green;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Green;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle15;
             this.Column3.FillWeight = 90F;
             this.Column3.HeaderText = "Giá";
             this.Column3.MinimumWidth = 6;
@@ -439,11 +439,11 @@ namespace SquiredCoffee
             // 
             // Column6
             // 
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle16;
             this.Column6.FillWeight = 90F;
             this.Column6.HeaderText = "Thành Tiền";
             this.Column6.MinimumWidth = 6;
@@ -452,8 +452,8 @@ namespace SquiredCoffee
             // 
             // Column5
             // 
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle17;
             this.Column5.HeaderText = "Chi Tiết";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
@@ -461,14 +461,14 @@ namespace SquiredCoffee
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(46)))));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
             this.panel6.Controls.Add(this.btnReset);
             this.panel6.Controls.Add(this.btnOrder);
             this.panel6.Controls.Add(this.btnPayment);
             this.panel6.Controls.Add(this.lblGrandTotal);
             this.panel6.Controls.Add(this.label6);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 510);
+            this.panel6.Location = new System.Drawing.Point(0, 490);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(619, 201);
             this.panel6.TabIndex = 10;
@@ -479,6 +479,7 @@ namespace SquiredCoffee
             this.btnReset.BorderRadius = 15;
             this.btnReset.CheckedState.Parent = this.btnReset;
             this.btnReset.CustomImages.Parent = this.btnReset;
+            this.btnReset.DisabledState.Parent = this.btnReset;
             this.btnReset.FillColor = System.Drawing.Color.Teal;
             this.btnReset.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset.ForeColor = System.Drawing.Color.White;
@@ -500,6 +501,7 @@ namespace SquiredCoffee
             this.btnOrder.BorderRadius = 15;
             this.btnOrder.CheckedState.Parent = this.btnOrder;
             this.btnOrder.CustomImages.Parent = this.btnOrder;
+            this.btnOrder.DisabledState.Parent = this.btnOrder;
             this.btnOrder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnOrder.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrder.ForeColor = System.Drawing.Color.White;
@@ -521,6 +523,7 @@ namespace SquiredCoffee
             this.btnPayment.BorderRadius = 15;
             this.btnPayment.CheckedState.Parent = this.btnPayment;
             this.btnPayment.CustomImages.Parent = this.btnPayment;
+            this.btnPayment.DisabledState.Parent = this.btnPayment;
             this.btnPayment.FillColor = System.Drawing.Color.Tomato;
             this.btnPayment.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPayment.ForeColor = System.Drawing.Color.White;
@@ -559,7 +562,7 @@ namespace SquiredCoffee
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(171)))), ((int)(((byte)(121)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
             this.panel3.Controls.Add(this.txtSearch);
             this.panel3.Controls.Add(this.btnCreateOrder);
             this.panel3.Controls.Add(this.lblTableNumber);
@@ -567,9 +570,9 @@ namespace SquiredCoffee
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 93);
+            this.panel3.Location = new System.Drawing.Point(10, 103);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1688, 50);
+            this.panel3.Size = new System.Drawing.Size(1668, 50);
             this.panel3.TabIndex = 4;
             // 
             // txtSearch
@@ -600,20 +603,20 @@ namespace SquiredCoffee
             this.txtSearch.PlaceholderText = "Tìm Kiếm ...";
             this.txtSearch.SelectedText = "";
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
-            this.txtSearch.Size = new System.Drawing.Size(751, 39);
+            this.txtSearch.Size = new System.Drawing.Size(731, 39);
             this.txtSearch.TabIndex = 126;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnCreateOrder
             // 
             this.btnCreateOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCreateOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(171)))), ((int)(((byte)(121)))));
+            this.btnCreateOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
             this.btnCreateOrder.FlatAppearance.BorderSize = 0;
             this.btnCreateOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateOrder.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateOrder.ForeColor = System.Drawing.Color.White;
             this.btnCreateOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnCreateOrder.Image")));
-            this.btnCreateOrder.Location = new System.Drawing.Point(1491, 3);
+            this.btnCreateOrder.Location = new System.Drawing.Point(1475, 0);
             this.btnCreateOrder.Name = "btnCreateOrder";
             this.btnCreateOrder.Size = new System.Drawing.Size(193, 47);
             this.btnCreateOrder.TabIndex = 21;
@@ -627,10 +630,10 @@ namespace SquiredCoffee
             this.lblTableNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTableNumber.AutoSize = true;
-            this.lblTableNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(171)))), ((int)(((byte)(121)))));
+            this.lblTableNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
             this.lblTableNumber.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTableNumber.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblTableNumber.Location = new System.Drawing.Point(1161, 9);
+            this.lblTableNumber.Location = new System.Drawing.Point(1150, 6);
             this.lblTableNumber.Name = "lblTableNumber";
             this.lblTableNumber.Size = new System.Drawing.Size(105, 29);
             this.lblTableNumber.TabIndex = 11;
@@ -642,10 +645,10 @@ namespace SquiredCoffee
             this.lblTableName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTableName.AutoSize = true;
-            this.lblTableName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(171)))), ((int)(((byte)(121)))));
+            this.lblTableName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
             this.lblTableName.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTableName.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblTableName.Location = new System.Drawing.Point(1061, 8);
+            this.lblTableName.Location = new System.Drawing.Point(1041, 8);
             this.lblTableName.Name = "lblTableName";
             this.lblTableName.Size = new System.Drawing.Size(103, 29);
             this.lblTableName.TabIndex = 5;
@@ -657,7 +660,7 @@ namespace SquiredCoffee
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(46)))));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(958, 6);
+            this.pictureBox2.Location = new System.Drawing.Point(938, 6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(41, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -702,13 +705,14 @@ namespace SquiredCoffee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(45)))), ((int)(((byte)(46)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1688, 889);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormStaff";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "32;32";
             this.Text = "FormStaff";

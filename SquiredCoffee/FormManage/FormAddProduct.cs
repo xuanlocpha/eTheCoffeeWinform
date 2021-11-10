@@ -22,10 +22,14 @@ namespace SquiredCoffee.FormManage
         public string image_product;
         public int status = 1;
         public static UC_ManageProduct _parent;
+        FormSuccess Form1;
+        FormError Form2;
         public FormAddProduct(UC_ManageProduct parent)
         {
             InitializeComponent();
             _parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
         
 
@@ -109,56 +113,77 @@ namespace SquiredCoffee.FormManage
         {
             if (cbCategoryName.Text == "")
             {
-                MessageBox.Show("Loại sản phẩm đang ( Trống )");
+                Form2.title = "Loại Sản Phẩm Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtProductName.Text.Trim() == "")
             {
-                MessageBox.Show("Tên sản phẩm không được để ( Trống )");
+                Form2.title = "Tên Sản Phẩm Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtProductName.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên sản phẩm phải lớn hơn (  1 ký tự )");
+                Form2.title = "Tên Sản Phẩm (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPriceProduct.Text.Trim() == "")
             {
-                MessageBox.Show("Giá sản phẩm không được để ( Trống )");
+                Form2.title = "Giá Sản Phẩm Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPriceProduct.Text.Trim().Length < 3)
             {
-                MessageBox.Show("Giá sản phẩm phải lớn hơn (  3 ký tự )");
+                Form2.title = "Giá Sản Phẩm  (> 3 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtContent.Text.Trim() == "")
             {
-                MessageBox.Show("Giới thiệu sản phẩm không được để ( Trống )");
+                Form2.title = "Giới Thiệu Sản Phẩm Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtContent.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Giới thiệu sản phẩm phải lớn hơn (  1 ký tự )");
+                Form2.title = "Giới Thiệu San Phẩm (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if(image_product == "")
             {
-                MessageBox.Show("Hình ảnh sản phẩm không được (  Trống )");
+                Form2.title = "Hình Ảnh Sản Phẩm Không Để (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (DbProduct.CheckProduct(txtProductName.Text) == true)
             {
-                MessageBox.Show("Sản phẩm ( Đã tồn tại )");
+                Form2.title = "Sản Phẩm Đã Tồn Tại ";
+                Form2.ShowDialog();
                 return;
             }
             if (btnSave.Text == "Lưu")
-            {
+            {      
                 Product std = new Product(Convert.ToInt32(cbCategoryName.SelectedValue),txtProductName.Text,Convert.ToDecimal(txtPriceProduct.Text),image_product,txtContent.Text,status);
-                DbProduct.AddProduct(std);
-                this.Close();
-                clear();
-                _parent.Display();
+                if (DbProduct.CheckCreateProduct(std) == true)
+                {
+                    Form1.title = "Tạo Thành Công";
+                    Form1.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Tạo Không Thành Công";
+                    Form2.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.Display();
+                }
             }
         }
 

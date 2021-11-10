@@ -24,11 +24,15 @@ namespace SquiredCoffee.FormManage
         public int id_product;
         public int status;
         public string image_product;
+        FormSuccess Form1;
+        FormError Form2;
         public FormInformationProduct(UC_ManageProduct parent)
         {
             InitializeComponent();
             _parent = parent;
             ListCategory();
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         void ketnoi()
@@ -124,50 +128,67 @@ namespace SquiredCoffee.FormManage
         {
             if (cbCategoryName.Text == "")
             {
-                MessageBox.Show("Loại sản phẩm đang ( Trống )");
+                Form2.title = "Loại Sản Phẩm Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtProductName.Text.Trim() == "")
             {
-                MessageBox.Show("Tên sản phẩm không được để ( Trống )");
+                Form2.title = "Tên Sản Phẩm Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtProductName.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên sản phẩm phải lớn hơn (  1 ký tự )");
+                Form2.title = "Tên Sản Phẩm (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPriceProduct.Text.Trim() == "")
             {
-                MessageBox.Show("Giá sản phẩm không được để ( Trống )");
+                Form2.title = "Giá Sản Phẩm Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPriceProduct.Text.Trim().Length < 3)
             {
-                MessageBox.Show("Giá sản phẩm phải lớn hơn (  3 ký tự )");
+                Form2.title = "Giá Sản Phẩm  (> 3 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtContent.Text.Trim() == "")
             {
-                MessageBox.Show("Giới thiệu sản phẩm không được để ( Trống )");
+                Form2.title = "Giới Thiệu Sản Phẩm Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtContent.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Giới thiệu sản phẩm phải lớn hơn (  1 ký tự )");
+                Form2.title = "Giới Thiệu San Phẩm (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (image_product == "")
             {
-                MessageBox.Show("Hình ảnh sản phẩm không được (  Trống )");
+                Form2.title = "Hình Ảnh Sản Phẩm Không Để (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn chỉnh sửa sản phẩm  này không !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (btnEdit.Text == "Sửa")
             {
-                if (btnEdit.Text == "Sửa")
+               Product std = new Product(Convert.ToInt32(cbCategoryName.SelectedValue), txtProductName.Text, Convert.ToDecimal(txtPriceProduct.Text), image_product, txtContent.Text, status);
+               if(DbProduct.CheckUpdateProduct(std,id_product.ToString()) == true)
+               {
+                    Form1.title = "Sửa Thành Công";
+                    Form1.ShowDialog();
+                    this.Close();
+                    _parent.Display();
+                    _parent.clear1();
+               }
+                else
                 {
-                    Product std = new Product(Convert.ToInt32(cbCategoryName.SelectedValue), txtProductName.Text, Convert.ToDecimal(txtPriceProduct.Text), image_product, txtContent.Text, status);
-                    DbProduct.UpdateProduct(std, id_product.ToString());
+                    Form2.title = "Sửa Không Thành Công";
+                    Form2.ShowDialog();
                     this.Close();
                     _parent.Display();
                     _parent.clear1();
@@ -177,16 +198,35 @@ namespace SquiredCoffee.FormManage
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa sản phẩm  này không ,vì nó có thể ảnh hưởng tới dữ liệu của bạn !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (btnDelete.Text == "Xóa")
             {
-                if (btnDelete.Text == "Xóa")
+               if(DbProduct.CheckDeleteProduct(id_product.ToString())== false)
                 {
-                    DbProduct.DeleteProduct(id_product.ToString());
+                    Form1.title = "Xóa Thành Công";
+                    Form1.ShowDialog();
+                    this.Close();
+                    _parent.Display();
+                    _parent.clear1();
+                }
+                else
+                {
+                    Form2.title = "Xóa Không Thành Công";
+                    Form2.ShowDialog();
                     this.Close();
                     _parent.Display();
                     _parent.clear1();
                 }
             }
+        }
+
+        private void rdStatus2_CheckedChanged(object sender, EventArgs e)
+        {
+            status = 0;
+        }
+
+        private void rdStatus1_CheckedChanged(object sender, EventArgs e)
+        {
+            status = 1;
         }
     }
 }

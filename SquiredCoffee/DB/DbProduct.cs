@@ -1,9 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
 using SquiredCoffee.Class;
+using SquiredCoffee.CustomControls;
 using SquiredCoffee.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +18,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -43,7 +46,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm Sản Phẩm Thành Công ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
             }
             catch (MySqlException ex)
             {
@@ -68,7 +71,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Chỉnh Sửa Thành Công", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
             }
             catch (MySqlException ex)
             {
@@ -88,7 +91,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa Thành Công ", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+              
             }
             catch (MySqlException ex)
             {
@@ -224,7 +227,7 @@ namespace SquiredCoffee.DB
         {
             List<ProductShow> productShowList = new List<ProductShow>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT p.id,p.category_id,p.title,p.price,p.image,p.content,p.status,c.title as title_category FROM products p INNER JOIN categories c ON p.category_id = c.id WHERE c.title LIKE'%" + @key + "%' ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT p.id,p.category_id,p.title,p.price,p.image,p.content,p.status,c.title as title_category FROM products p INNER JOIN categories c ON p.category_id = c.id WHERE c.title = '" + @key + "' ");
 
             foreach (DataRow item in data.Rows)
             {
@@ -273,5 +276,109 @@ namespace SquiredCoffee.DB
             }
         }
 
+        public static Image LoadBase64(string base64)
+        {
+            byte[] bytes = Convert.FromBase64String(base64);
+            Image image;
+            using (MemoryStream ms = new MemoryStream(bytes))
+            {
+                image = Image.FromStream(ms);
+            }
+            return image;
+        }
+
+
+        public static List<ProductShow> LoadProductListTop()
+        {
+            List<ProductShow> productShowList = new List<ProductShow>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT p.id,p.category_id,p.title,p.price,p.image,p.content,p.status,c.title as title_category FROM products p,categories c WHERE p.category_id = c.id ");
+
+            foreach (DataRow item in data.Rows)
+            {
+                ProductShow productShow = new ProductShow(item);
+                productShowList.Add(productShow);
+            }
+
+            return productShowList;
+        }
+
+
+
+        public static bool CheckCreateProduct(Product std)
+        {
+            AddProduct(std);
+            string sql = "select * from products where title = @title";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+        public static bool CheckUpdateProduct(Product std,string id)
+        {
+            UpdateProduct(std,id);
+            string sql = "select * from products where category_id = @category_id and title = @title and title = @title and price = @price and image = @image and content = @content and status = @status";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@category_id", MySqlDbType.VarChar).Value = std.category_id;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = std.price;
+            cmd.Parameters.Add("@image", MySqlDbType.VarChar).Value = std.image;
+            cmd.Parameters.Add("@content", MySqlDbType.VarChar).Value = std.content;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+        public static bool CheckDeleteProduct(string id)
+        {
+            DeleteProduct(id);
+            string sql = "select * from products where id = @id";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
     }
+
+
 }

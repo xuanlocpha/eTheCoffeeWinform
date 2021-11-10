@@ -23,10 +23,14 @@ namespace SquiredCoffee.FormManage
         public int defaults = 1;
         public int id_product_option;
         public static UC_ManageProductOption _parent;
+        FormSuccess Form1;
+        FormError Form2;
         public FormAddProductOption(UC_ManageProductOption parent)
         {
             InitializeComponent();
             _parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
 
@@ -132,46 +136,66 @@ namespace SquiredCoffee.FormManage
         {
             if (cbOptionName.Text == "")
             {
-                MessageBox.Show("Tên tùy chọn không được để ( Trống )");
+                Form2.title = "Tên Option Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (cbProductName.Text == "")
             {
-                MessageBox.Show("Tên sản phẩm không được để ( Trống )");
+                Form2.title = "Tên Sản Phẩm Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtTitle.Text.Trim() == "")
             {
-                MessageBox.Show("Tiêu đề không được ( Trống )");
+                Form2.title = "Tiêu Đề Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtTitle.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tiêu đề phải lớn hơn (  1 ký tự )");
+                Form2.title = "Tiêu Đề Phải (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPrice.Text.Trim() == "")
             {
-                MessageBox.Show("Giá tiền không được ( Trống )");
+                Form2.title = "Giá Tiền Không  (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if(defaults == null)
             {
-                MessageBox.Show("Chưa xét mặc định cho tùy chọn ");
+                Form2.title = "Chưa Xét Mặc Định ";
+                Form2.ShowDialog();
                 return;
             }
             if(DbProductOption.CheckProductOption((cbProductName.SelectedValue).ToString(),(cbOptionName.SelectedValue).ToString())== true)
             {
-                MessageBox.Show("Tùy chọn này đã tồn tại ");
+                Form2.title = "Option này đã tồn tại";
+                Form2.ShowDialog();
                 return;
             }
             if (btnSave.Text == "Lưu")
             {
                 ProductOption std = new ProductOption(Convert.ToInt32(cbProductName.SelectedValue), Convert.ToInt32(cbOptionName.SelectedValue),txtTitle.Text,Convert.ToDecimal(txtPrice.Text),defaults,status);
-                DbProductOption.AddProductOption(std);
-                this.Close();
-                clear();
-                _parent.Display();
+                if(DbProductOption.CheckCreateProductOption(std)== true)
+                {
+                    Form1.title = "Tạo Thành Công";
+                    Form1.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Tạo Không Thành Công";
+                    Form2.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.Display();
+                }
+               
             }
         }
 
@@ -180,9 +204,9 @@ namespace SquiredCoffee.FormManage
             defaults = 1;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void chkDefault2_CheckedChanged(object sender, EventArgs e)
         {
-            defaults = 2;
+            defaults = 0;
         }
     }
 }

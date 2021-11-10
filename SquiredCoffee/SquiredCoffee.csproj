@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
@@ -159,21 +161,39 @@
     <Reference Include="Guna.UI">
       <HintPath>C:\Users\Dell\Downloads\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Guna.UI2">
-      <HintPath>C:\Users\Dell\Downloads\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    <Reference Include="Guna.UI2, Version=2.0.2.3, Culture=neutral, PublicKeyToken=e4b9cdd7b4cde4b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.2.3\lib\net40\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
-      <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
     </Reference>
-    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
-      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
     </Reference>
     <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="MySql.Data, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.25\lib\net452\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.27\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Nancy, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nancy.2.0.0\lib\net452\Nancy.dll</HintPath>
@@ -200,14 +220,14 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Transactions" />
@@ -222,11 +242,11 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.25\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+      <HintPath>..\packages\MySql.Data.8.0.27\lib\net452\Ubiety.Dns.Core.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
-    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.0.25\lib\net452\Zstandard.Net.dll</HintPath>
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.27\lib\net452\ZstdNet.dll</HintPath>
     </Reference>
     <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <HintPath>..\packages\ZXing.Net.0.16.6\lib\net47\zxing.dll</HintPath>
@@ -259,6 +279,42 @@
     <Compile Include="Class\Trannsaction.cs" />
     <Compile Include="Class\User.cs" />
     <Compile Include="Class\Voucher.cs" />
+    <Compile Include="CustomControls\btnProductList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\btnProductList.Designer.cs">
+      <DependentUpon>btnProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\CartItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CartItem.Designer.cs">
+      <DependentUpon>CartItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\CartItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CartItems.Designer.cs">
+      <DependentUpon>CartItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\FormBackGround.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomControls\FormBackGround.Designer.cs">
+      <DependentUpon>FormBackGround.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ItemDetailOption.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ItemDetailOption.Designer.cs">
+      <DependentUpon>ItemDetailOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\ItemDetailTopping.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ItemDetailTopping.Designer.cs">
+      <DependentUpon>ItemDetailTopping.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB\DataProvider.cs" />
     <Compile Include="DB\DbBill.cs" />
     <Compile Include="DB\DbCategory.cs" />
@@ -287,6 +343,12 @@
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLoginSysterm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoginSysterm.Designer.cs">
+      <DependentUpon>FormLoginSysterm.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -378,17 +440,29 @@
     <Compile Include="FormManage\FormAddVoucher.Designer.cs">
       <DependentUpon>FormAddVoucher.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManage\FormCategory.cs">
+    <Compile Include="FormManage\FormCheckUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManage\FormCategory.Designer.cs">
-      <DependentUpon>FormCategory.cs</DependentUpon>
+    <Compile Include="FormManage\FormCheckUser.Designer.cs">
+      <DependentUpon>FormCheckUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormCheckVoucherReward.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormCheckVoucherReward.Designer.cs">
+      <DependentUpon>FormCheckVoucherReward.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManage\FormEditOrderItems.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormManage\FormEditOrderItems.Designer.cs">
       <DependentUpon>FormEditOrderItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormError.Designer.cs">
+      <DependentUpon>FormError.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManage\FormInfomationStaff.cs">
       <SubType>Form</SubType>
@@ -444,6 +518,12 @@
     <Compile Include="FormManage\FormInformationProductTopping.Designer.cs">
       <DependentUpon>FormInformationProductTopping.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManage\FormInformationRewardUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationRewardUser.Designer.cs">
+      <DependentUpon>FormInformationRewardUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManage\FormInformationRole.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -468,6 +548,12 @@
     <Compile Include="FormManage\FormInformationTopping.Designer.cs">
       <DependentUpon>FormInformationTopping.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManage\FormInformationUserSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationUserSale.Designer.cs">
+      <DependentUpon>FormInformationUserSale.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManage\FormInformationVoucher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -480,11 +566,17 @@
     <Compile Include="FormManage\FormInputTableNumber.Designer.cs">
       <DependentUpon>FormInputTableNumber.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManage\FormListTableChange.cs">
+    <Compile Include="FormManage\FormInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManage\FormListTableChange.Designer.cs">
-      <DependentUpon>FormListTableChange.cs</DependentUpon>
+    <Compile Include="FormManage\FormInvoice.Designer.cs">
+      <DependentUpon>FormInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormOrderOnline.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormOrderOnline.Designer.cs">
+      <DependentUpon>FormOrderOnline.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManage\FormOrderProduct.cs">
       <SubType>Form</SubType>
@@ -492,17 +584,23 @@
     <Compile Include="FormManage\FormOrderProduct.Designer.cs">
       <DependentUpon>FormOrderProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManage\FormPayment.cs">
+    <Compile Include="FormManage\FormPaymentSale.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManage\FormPayment.Designer.cs">
-      <DependentUpon>FormPayment.cs</DependentUpon>
+    <Compile Include="FormManage\FormPaymentSale.Designer.cs">
+      <DependentUpon>FormPaymentSale.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManage\FormRole.cs">
+    <Compile Include="FormManage\FormQRReward.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManage\FormRole.Designer.cs">
-      <DependentUpon>FormRole.cs</DependentUpon>
+    <Compile Include="FormManage\FormQRReward.Designer.cs">
+      <DependentUpon>FormQRReward.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormReward.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormReward.Designer.cs">
+      <DependentUpon>FormReward.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManage\FormScannerBarCode.cs">
       <SubType>Form</SubType>
@@ -516,11 +614,17 @@
     <Compile Include="FormManage\FormScannerQR.Designer.cs">
       <DependentUpon>FormScannerQR.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManage\FormTableList.cs">
+    <Compile Include="FormManage\FormSuccess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManage\FormTableList.Designer.cs">
-      <DependentUpon>FormTableList.cs</DependentUpon>
+    <Compile Include="FormManage\FormSuccess.Designer.cs">
+      <DependentUpon>FormSuccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSale.Designer.cs">
+      <DependentUpon>FormSale.cs</DependentUpon>
     </Compile>
     <Compile Include="FormStaff.cs">
       <SubType>Form</SubType>
@@ -530,6 +634,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\PrintPaymentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\PrintPaymentForm.Designer.cs">
+      <DependentUpon>PrintPaymentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UC_Controls\UC_AddProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -542,23 +653,23 @@
     <Compile Include="UC_Controls\UC_Home.Designer.cs">
       <DependentUpon>UC_Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_Controls\UC_ManageSysterms.cs">
+    <Compile Include="UC_ManageSysterm\UC_Dashbroad.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_Controls\UC_ManageSysterms.Designer.cs">
-      <DependentUpon>UC_ManageSysterms.cs</DependentUpon>
+    <Compile Include="UC_ManageSysterm\UC_Dashbroad.Designer.cs">
+      <DependentUpon>UC_Dashbroad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_InformationUserSale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_InformationUserSale.Designer.cs">
+      <DependentUpon>UC_InformationUserSale.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageCategory.Designer.cs">
       <DependentUpon>UC_ManageCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_ManageDiscount.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_ManageDiscount.Designer.cs">
-      <DependentUpon>UC_ManageDiscount.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageImportInvoice.cs">
       <SubType>UserControl</SubType>
@@ -584,6 +695,12 @@
     <Compile Include="UC_ManageSysterm\UC_ManageOptionGroup.Designer.cs">
       <DependentUpon>UC_ManageOptionGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageProductCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageProductCategory.Designer.cs">
+      <DependentUpon>UC_ManageProductCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageProductOption.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -608,6 +725,12 @@
     <Compile Include="UC_ManageSysterm\UC_ManageProduct.Designer.cs">
       <DependentUpon>UC_ManageProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageStaffRole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageStaffRole.Designer.cs">
+      <DependentUpon>UC_ManageStaffRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageStockProduct.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -626,6 +749,12 @@
     <Compile Include="UC_ManageSysterm\UC_ManageTopping.Designer.cs">
       <DependentUpon>UC_ManageTopping.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageToppingProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageToppingProduct.Designer.cs">
+      <DependentUpon>UC_ManageToppingProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -637,6 +766,12 @@
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageVoucher.Designer.cs">
       <DependentUpon>UC_ManageVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageVoucherReward.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageVoucherReward.Designer.cs">
+      <DependentUpon>UC_ManageVoucherReward.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageWareHouse.cs">
       <SubType>UserControl</SubType>
@@ -656,53 +791,17 @@
     <Compile Include="UC_ManageSysterm\UC_ProductOption.Designer.cs">
       <DependentUpon>UC_ProductOption.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Category.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Category.Designer.cs">
-      <DependentUpon>UC_Category.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Option.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Option.Designer.cs">
-      <DependentUpon>UC_Option.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Product.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Product.Designer.cs">
-      <DependentUpon>UC_Product.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageProductTopping.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageProductTopping.Designer.cs">
       <DependentUpon>UC_ManageProductTopping.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Reward.cs">
+    <Compile Include="UC_ManageSysterm\UC_SearchInformationUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Reward.Designer.cs">
-      <DependentUpon>UC_Reward.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Role.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Role.Designer.cs">
-      <DependentUpon>UC_Role.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Staff.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Staff.Designer.cs">
-      <DependentUpon>UC_Staff.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Table.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Table.Designer.cs">
-      <DependentUpon>UC_Table.cs</DependentUpon>
+    <Compile Include="UC_ManageSysterm\UC_SearchInformationUser.Designer.cs">
+      <DependentUpon>UC_SearchInformationUser.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_TableList.cs">
       <SubType>UserControl</SubType>
@@ -716,31 +815,45 @@
     <Compile Include="UC_ManageSysterm\UC_ManageTopping1.Designer.cs">
       <DependentUpon>UC_ManageTopping1.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_ManageSysterm\UC_User.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_User.Designer.cs">
-      <DependentUpon>UC_User.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_ManageSysterm\UC_UserList.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_UserList.Designer.cs">
       <DependentUpon>UC_UserList.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Voucher.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_ManageSysterm\UC_Voucher.Designer.cs">
-      <DependentUpon>UC_Voucher.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewModels\OptionShow.cs" />
     <Compile Include="ViewModels\OptionShow1.cs" />
+    <Compile Include="ViewModels\OrderShow.cs" />
     <Compile Include="ViewModels\ProductOptionShow.cs" />
     <Compile Include="ViewModels\ProductShow.cs" />
+    <Compile Include="ViewModels\ProductShowTop.cs" />
     <Compile Include="ViewModels\ProductToppingShow.cs" />
+    <Compile Include="ViewModels\ReceiptShow.cs" />
+    <Compile Include="ViewModels\RewardShow.cs" />
+    <Compile Include="ViewModels\ToppingShow.cs" />
+    <EmbeddedResource Include="CustomControls\btnProductList.resx">
+      <DependentUpon>btnProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\CartItem.resx">
+      <DependentUpon>CartItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\CartItems.resx">
+      <DependentUpon>CartItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\FormBackGround.resx">
+      <DependentUpon>FormBackGround.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ItemDetailOption.resx">
+      <DependentUpon>ItemDetailOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomControls\ItemDetailTopping.resx">
+      <DependentUpon>ItemDetailTopping.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoginSysterm.resx">
+      <DependentUpon>FormLoginSysterm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -787,11 +900,17 @@
     <EmbeddedResource Include="FormManage\FormAddVoucher.resx">
       <DependentUpon>FormAddVoucher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManage\FormCategory.resx">
-      <DependentUpon>FormCategory.cs</DependentUpon>
+    <EmbeddedResource Include="FormManage\FormCheckUser.resx">
+      <DependentUpon>FormCheckUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormCheckVoucherReward.resx">
+      <DependentUpon>FormCheckVoucherReward.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormEditOrderItems.resx">
       <DependentUpon>FormEditOrderItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormError.resx">
+      <DependentUpon>FormError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInfomationStaff.resx">
       <DependentUpon>FormInfomationStaff.cs</DependentUpon>
@@ -820,6 +939,9 @@
     <EmbeddedResource Include="FormManage\FormInformationProductTopping.resx">
       <DependentUpon>FormInformationProductTopping.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationRewardUser.resx">
+      <DependentUpon>FormInformationRewardUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationRole.resx">
       <DependentUpon>FormInformationRole.cs</DependentUpon>
     </EmbeddedResource>
@@ -832,23 +954,32 @@
     <EmbeddedResource Include="FormManage\FormInformationTopping.resx">
       <DependentUpon>FormInformationTopping.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationUserSale.resx">
+      <DependentUpon>FormInformationUserSale.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationVoucher.resx">
       <DependentUpon>FormInformationVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInputTableNumber.resx">
       <DependentUpon>FormInputTableNumber.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManage\FormListTableChange.resx">
-      <DependentUpon>FormListTableChange.cs</DependentUpon>
+    <EmbeddedResource Include="FormManage\FormInvoice.resx">
+      <DependentUpon>FormInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormOrderOnline.resx">
+      <DependentUpon>FormOrderOnline.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormOrderProduct.resx">
       <DependentUpon>FormOrderProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManage\FormPayment.resx">
-      <DependentUpon>FormPayment.cs</DependentUpon>
+    <EmbeddedResource Include="FormManage\FormPaymentSale.resx">
+      <DependentUpon>FormPaymentSale.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManage\FormRole.resx">
-      <DependentUpon>FormRole.cs</DependentUpon>
+    <EmbeddedResource Include="FormManage\FormQRReward.resx">
+      <DependentUpon>FormQRReward.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormReward.resx">
+      <DependentUpon>FormReward.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormScannerBarCode.resx">
       <DependentUpon>FormScannerBarCode.cs</DependentUpon>
@@ -856,8 +987,11 @@
     <EmbeddedResource Include="FormManage\FormScannerQR.resx">
       <DependentUpon>FormScannerQR.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManage\FormTableList.resx">
-      <DependentUpon>FormTableList.cs</DependentUpon>
+    <EmbeddedResource Include="FormManage\FormSuccess.resx">
+      <DependentUpon>FormSuccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSale.resx">
+      <DependentUpon>FormSale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStaff.resx">
       <DependentUpon>FormStaff.cs</DependentUpon>
@@ -872,20 +1006,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report\PrintPaymentForm.resx">
+      <DependentUpon>PrintPaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptReceipt.rdlc" />
     <EmbeddedResource Include="UC_Controls\UC_AddProduct.resx">
       <DependentUpon>UC_AddProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_Controls\UC_Home.resx">
       <DependentUpon>UC_Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_Controls\UC_ManageSysterms.resx">
-      <DependentUpon>UC_ManageSysterms.cs</DependentUpon>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_Dashbroad.resx">
+      <DependentUpon>UC_Dashbroad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_InformationUserSale.resx">
+      <DependentUpon>UC_InformationUserSale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageCategory.resx">
       <DependentUpon>UC_ManageCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageDiscount.resx">
-      <DependentUpon>UC_ManageDiscount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageImportInvoice.resx">
       <DependentUpon>UC_ManageImportInvoice.cs</DependentUpon>
@@ -899,6 +1037,9 @@
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageOptionGroup.resx">
       <DependentUpon>UC_ManageOptionGroup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageProductCategory.resx">
+      <DependentUpon>UC_ManageProductCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageProductOption.resx">
       <DependentUpon>UC_ManageProductOption.cs</DependentUpon>
     </EmbeddedResource>
@@ -911,6 +1052,9 @@
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageProduct.resx">
       <DependentUpon>UC_ManageProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageStaffRole.resx">
+      <DependentUpon>UC_ManageStaffRole.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageStockProduct.resx">
       <DependentUpon>UC_ManageStockProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -920,11 +1064,17 @@
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageTopping.resx">
       <DependentUpon>UC_ManageTopping.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageToppingProduct.resx">
+      <DependentUpon>UC_ManageToppingProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageUser.resx">
       <DependentUpon>UC_ManageUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageVoucher.resx">
       <DependentUpon>UC_ManageVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageVoucherReward.resx">
+      <DependentUpon>UC_ManageVoucherReward.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageWareHouse.resx">
       <DependentUpon>UC_ManageWareHouse.cs</DependentUpon>
@@ -935,29 +1085,11 @@
     <EmbeddedResource Include="UC_ManageSysterm\UC_ProductOption.resx">
       <DependentUpon>UC_ProductOption.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_ManageSysterm\UC_Category.resx">
-      <DependentUpon>UC_Category.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_ManageSysterm\UC_Option.resx">
-      <DependentUpon>UC_Option.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_ManageSysterm\UC_Product.resx">
-      <DependentUpon>UC_Product.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageProductTopping.resx">
       <DependentUpon>UC_ManageProductTopping.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_ManageSysterm\UC_Reward.resx">
-      <DependentUpon>UC_Reward.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_ManageSysterm\UC_Role.resx">
-      <DependentUpon>UC_Role.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_ManageSysterm\UC_Staff.resx">
-      <DependentUpon>UC_Staff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_ManageSysterm\UC_Table.resx">
-      <DependentUpon>UC_Table.cs</DependentUpon>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_SearchInformationUser.resx">
+      <DependentUpon>UC_SearchInformationUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_TableList.resx">
       <DependentUpon>UC_TableList.cs</DependentUpon>
@@ -965,19 +1097,14 @@
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageTopping1.resx">
       <DependentUpon>UC_ManageTopping1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_ManageSysterm\UC_User.resx">
-      <DependentUpon>UC_User.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_UserList.resx">
       <DependentUpon>UC_UserList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_ManageSysterm\UC_Voucher.resx">
-      <DependentUpon>UC_Voucher.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SquiredCoffee.ViewModels.ReceiptShow.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1003,6 +1130,19 @@
     <Content Include="Resource\table %281%29.png" />
     <Content Include="Resource\table %282%29.png" />
     <Content Include="Resource\table.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

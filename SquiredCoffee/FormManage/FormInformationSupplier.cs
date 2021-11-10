@@ -15,6 +15,8 @@ namespace SquiredCoffee.FormManage
 {
     public partial class FormInformationSupplier : Form
     {
+        FormSuccess Form1;
+        FormError Form2;
         public int id_supplier;
         public int status;
         public readonly UC_ManageSupplier _parent;
@@ -22,6 +24,8 @@ namespace SquiredCoffee.FormManage
         {
             InitializeComponent();
             _parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         private void rdStatus1_CheckedChanged(object sender, EventArgs e)
@@ -70,76 +74,116 @@ namespace SquiredCoffee.FormManage
         {
             if (txtSupplierName.Text.Trim() == "")
             {
-                MessageBox.Show("Tên nhà cung cấp không được để ( Trống )");
+                Form2.title = "Tên Nhà Cung Cấp Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtSupplierName.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên nhà cung cấp  lớn hơn (  1 ký tự )");
+                Form2.title = "Tên Nhà Cung Cấp (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtAddress.Text.Trim() == "")
             {
-                MessageBox.Show("Địa chỉ nhà cung cấp không được để ( Trống )");
+                Form2.title = "Địa Chỉ Nhà Cung Cấp (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtAddress.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Địa chỉ nhà cung cấp  lớn hơn (  1 ký tự )");
+                Form2.title = "Địa Chỉ Nhà Cung Cấp (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPhone.Text.Trim() == "")
             {
-                MessageBox.Show("Số điện thoại nhà cung cấp không được để ( Trống )");
+                Form2.title = "Số Điện Thoại Nhà Cung Cấp Không Để (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPhone.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Số điện thoại nhà cung cấp  lớn hơn (  1 ký tự )");
+                Form2.title = "Số Điện Thoại NCung Cấp (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtEmail.Text.Trim() == "")
             {
-                MessageBox.Show("Email nhà cung cấp không được để ( Trống )");
+                Form2.title = "Email Nhà Cung Cấp Không Để (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtEmail.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Email nhà cung cấp  lớn hơn (  1 ký tự )");
+                Form2.title = "Email Nhà Cung Cấp (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (!this.txtEmail.Text.Contains('@') || !this.txtEmail.Text.Contains('.'))
             {
-                MessageBox.Show("Email nhập vào không hợp lệ");
+                Form2.title = "Không Hợp Lệ ";
+                Form2.ShowDialog();
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn chỉnh sửa thông tin của ( Nhà cung cấp ) này không !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (btnEdit.Text == "Sửa")
             {
-                if (btnEdit.Text == "Sửa")
+                Supplier std = new Supplier(txtSupplierName.Text, txtAddress.Text, txtPhone.Text, txtEmail.Text, status);
+                if ((DbSupplier.CheckUpdateSupplier(std,id_supplier.ToString())) == true)
                 {
-                    Supplier std = new Supplier(txtSupplierName.Text, txtAddress.Text, txtPhone.Text, txtEmail.Text, status);
-                    DbSupplier.UpdateSupplier(std, id_supplier.ToString());
+                    Form1.title = "Chỉnh sửa Thành Công";
+                    Form1.ShowDialog();
+                    this.Close();
+                    _parent.clear();
+                    _parent.clear1();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Chỉnh Sửa Không Thành Công";
+                    Form2.ShowDialog();
                     this.Close();
                     _parent.clear();
                     _parent.clear1();
                     _parent.Display();
                 }
             }
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa thông tin của ( Nhà cung cấp  ) này không . Vì nó có thể ảnh hưởng tới dữ liệu của bạn!", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
                 if (btnDelete.Text == "Xóa")
                 {
-                    DbSupplier.DeleteSupplier(id_supplier.ToString());
-                    this.Close();
-                    _parent.clear();
-                    _parent.clear1();
-                    _parent.Display();
+                    if ((DbSupplier.CheckDeleteSupplier(id_supplier.ToString())) == false)
+                    {
+                        Form1.title = "Xóa Thành Công";
+                        Form1.ShowDialog();
+                        this.Close();
+                        _parent.clear();
+                        _parent.clear1();
+                        _parent.Display();
+                    }
+                    else
+                    {
+                        Form2.title = "Xóa Không Thành Công";
+                        Form2.ShowDialog();
+                        this.Close();
+                        _parent.clear();
+                        _parent.clear1();
+                        _parent.Display();
+                    }
                 }
-            }
+        }
+
+        private void rdStatus1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            status = 1;
+        }
+
+        private void rdStatus2_CheckedChanged_1(object sender, EventArgs e)
+        {
+            status = 0;
         }
     }
 }

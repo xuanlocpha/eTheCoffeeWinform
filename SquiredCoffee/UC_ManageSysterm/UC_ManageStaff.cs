@@ -1,4 +1,5 @@
 ﻿using SquiredCoffee.Class;
+using SquiredCoffee.CustomControls;
 using SquiredCoffee.DB;
 using SquiredCoffee.FormManage;
 using System;
@@ -103,7 +104,35 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
-            Form.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormAddStaff Form = new FormAddStaff(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
+           // Form.ShowDialog();
         }
         public void clear()
         {
@@ -112,32 +141,7 @@ namespace SquiredCoffee.UC_ManageSysterm
         }
 
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            clear();
-            dgvStaff.Rows.Clear();
-            List<Staff> staffList = DbStaff.Search(txtSearch.Text);
-            foreach (Staff item in staffList)
-            {
-                DateTime birthday = Convert.ToDateTime(item.birthday);
-                totalSearch += 1;
-                dgvStaff.Rows.Add(new object[] {
-                    imageList1.Images[0],
-                    item.id,
-                    item.first_name,
-                    item.last_name,
-                    item.gender,
-                    String.Format("{0:dd/MM/yyyy}",birthday),
-                    item.title,
-                    item.phone,
-                    item.email,
-                    item.username,
-                    item.password,
-                    Convert.ToBoolean(item.status)?  imageList1.Images[1] : imageList1.Images[2],
-                });
-            }
-            lblTotalStaffSearch.Text = totalSearch.ToString();
-        }
+      
 
         public void resetForm()
         {
@@ -212,11 +216,68 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            id_staff = dgvStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
-            role_name = dgvStaff.Rows[e.RowIndex].Cells[6].Value.ToString();
-            Form1.id_staff = Convert.ToInt32(id_staff);
-            Form1.roleName = role_name;
-            Form1.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormInfomationStaff Form = new FormInfomationStaff(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    id_staff = dgvStaff.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    role_name = dgvStaff.Rows[e.RowIndex].Cells[6].Value.ToString();
+                    Form.id_staff = Convert.ToInt32(id_staff);
+                    Form.roleName = role_name;
+                    Form.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
+            //Form1.id_staff = Convert.ToInt32(dgvStaff.Rows[e.RowIndex].Cells[1].Value);
+            //Form1.roleName = role_name;
+            //Form1.ShowDialog();
+        }
+
+        private void txtSearch_TextChanged_1(object sender, EventArgs e)
+        {
+            clear();
+            dgvStaff.Rows.Clear();
+            List<Staff> staffList = DbStaff.Search(txtSearch.Text);
+            foreach (Staff item in staffList)
+            {
+                DateTime birthday = Convert.ToDateTime(item.birthday);
+                totalSearch += 1;
+                dgvStaff.Rows.Add(new object[] {
+                    imageList1.Images[0],
+                    item.id,
+                    item.first_name,
+                    item.last_name,
+                    item.gender,
+                    String.Format("{0:dd/MM/yyyy}",birthday),
+                    item.title,
+                    item.phone,
+                    item.email,
+                    item.username,
+                    item.password,
+                    Convert.ToBoolean(item.status)?  imageList1.Images[1] : imageList1.Images[2],
+                });
+            }
+            lblTotalStaffSearch.Text = totalSearch.ToString();
         }
     }
 }

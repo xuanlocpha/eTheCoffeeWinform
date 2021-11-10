@@ -78,6 +78,36 @@ namespace SquiredCoffee.FormManage
             status = 0;
         }
 
+        private string RandomString()
+        {
+            int size = 120;
+            bool lowerCase = false;
+            StringBuilder sb = new StringBuilder();
+            char c;
+            Random rand = new Random();
+            for (int i = 0; i < size; i++)
+            {
+                c = Convert.ToChar(Convert.ToInt32(rand.Next(65, 87)));
+                sb.Append(c);
+            }
+            if (lowerCase)
+                return sb.ToString().ToLower();
+            return sb.ToString();
+
+        }
+
+        private string stringCouponCode()
+        {
+            var s = RandomString();
+            var list = Enumerable
+                .Range(0, s.Length / 6)
+                .Select(i => s.Substring(i * 6, 6))
+                .ToList();
+            var res = string.Join(",", list);
+            return res;
+        }
+
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtTitle.Text.Trim() == "")
@@ -149,7 +179,8 @@ namespace SquiredCoffee.FormManage
             {
                 string start_date = dtpStartDate.Value.Date.ToString("yyyy-MM-dd");
                 string expiry_date = dtpExpiryDate.Value.Date.ToString("yyyy-MM-dd");
-                Voucher std = new Voucher(txtTitle.Text,txtContent.Text,txtCoupenCode.Text,image,image_QrCode,start_date,expiry_date,cbDiscountUnit.Text,Convert.ToInt32(txtDiscount.Text),cbApply.Text,Convert.ToInt32(txtQuantityRule.Text),Convert.ToInt32(txtPriceRule.Text),status) ;
+                string coupen_code = stringCouponCode();
+                Voucher std = new Voucher(txtTitle.Text,txtContent.Text,coupen_code,image,image_QrCode,start_date,expiry_date,cbDiscountUnit.Text,Convert.ToInt32(txtDiscount.Text),cbApply.Text,Convert.ToInt32(txtQuantityRule.Text),Convert.ToInt32(txtPriceRule.Text),status) ;
                 DbVoucher.AddVoucher(std);
                 this.Close();
                 _parent.Display();

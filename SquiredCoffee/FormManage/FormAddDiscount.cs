@@ -17,12 +17,12 @@ namespace SquiredCoffee.FormManage
     public partial class FormAddDiscount : Form
     {
         MySqlConnection con = new MySqlConnection();
-        public static UC_ManageDiscount _parent;
+        //public static UC_ManageDiscount _parent;
         public int status = 1;
-        public FormAddDiscount(UC_ManageDiscount parent)
+        public FormAddDiscount(/*UC_ManageDiscount parent*/)
         {
             InitializeComponent();
-            _parent = parent;
+            //_parent = parent;
         }
 
 
@@ -116,11 +116,11 @@ namespace SquiredCoffee.FormManage
             {
                 string start_date = dtpStartDate.Value.Date.ToString("yyyy-MM-dd");
                 string expiry_date = dtpExpiryeDate.Value.Date.ToString("yyyy-MM-dd");
-                Discount std = new Discount(Convert.ToDouble(txtDiscount.Text), Convert.ToInt32(cbDiscount.SelectedValue),start_date,expiry_date,status);
-                DbDiscount.AddDiscount(std);
+                //Discount std = new Discount(Convert.ToDouble(txtDiscount.Text), Convert.ToInt32(cbDiscount.SelectedValue),start_date,expiry_date,status);
+                //DbDiscount.AddDiscount(std);
                 this.Close();
                 clear();
-                _parent.Display();
+                //_parent.Display();
             }
         }
 

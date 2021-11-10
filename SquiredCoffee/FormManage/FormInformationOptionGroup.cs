@@ -18,10 +18,14 @@ namespace SquiredCoffee.FormManage
         public int id_option_group;
         public int status;
         public static UC_ManageOptionGroup _parent;
+        FormSuccess Form1;
+        FormError Form2;
         public FormInformationOptionGroup(UC_ManageOptionGroup parent)
         {
             _parent = parent;
             InitializeComponent();
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         public void clear()
@@ -58,25 +62,37 @@ namespace SquiredCoffee.FormManage
         {
             if (txtOptionGroupName.Text == "")
             {
-                MessageBox.Show("Tên tùy chọn món không được ( Trống )");
+                Form2.title = "Tên Nhóm Option Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtOptionGroupName.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên tùy chọn món phải lớn hơn ( 1 ký tự )");
+                Form2.title = "Tên Nhóm Option Phải (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn chỉnh sửa tùy chọn sản phẩm này không !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (btnEdit.Text == "Sửa")
             {
-                if (btnEdit.Text == "Sửa")
+                OptionGroup std = new OptionGroup(txtOptionGroupName.Text, status);
+                if ((DbOptionGroup.CheckUpdateOptionGroup(std,id_option_group.ToString())) == true)
                 {
-                    OptionGroup std = new OptionGroup(txtOptionGroupName.Text, status);
-                    DbOptionGroup.UpdateOptionGroup(std, id_option_group.ToString());
+                    Form1.title = "Sửa Thành Công";
+                    Form1.ShowDialog();
                     this.Close();
                     clear();
                     _parent.clear1();
                     _parent.clear();
                     _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Sửa Không Thành Công";
+                    Form2.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.clear1();
+                    _parent.clear();
                 }
             }
         }
@@ -98,12 +114,25 @@ namespace SquiredCoffee.FormManage
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa tùy chọn sản phẩm này không . Vì nó có thể ảnh hưởng tới dữ liệu của bạn!", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+
+            if (btnDelete.Text == "Xóa")
             {
-                if (btnDelete.Text == "Xóa")
+                status = 0;
+                OptionGroup std = new OptionGroup(txtOptionGroupName.Text, status);
+                if ((DbOptionGroup.CheckLockOptionGroup(std, id_option_group.ToString())) == true)
                 {
-                   
-                    DbOptionGroup.DeleteOptionGroup(id_option_group.ToString());
+                    Form1.title = "Xóa Thành Công";
+                    Form1.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.clear1();
+                    _parent.clear();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form1.title = "Xóa Không Thành Công";
+                    Form1.ShowDialog();
                     this.Close();
                     clear();
                     _parent.clear1();

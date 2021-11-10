@@ -12,6 +12,7 @@ namespace SquiredCoffee.UC_ManageSysterm
 {
     public partial class UC_ManageWareHouse : UserControl
     {
+        public int staff_id;
         public UC_ManageWareHouse()
         {
             InitializeComponent();
@@ -38,8 +39,15 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void btnManageImportInvoice_Click(object sender, EventArgs e)
         {
-            UC_ManageImportInvoice uC_ManageImportInvoice = new UC_ManageImportInvoice();
+            UC_ManageImportInvoice uC_ManageImportInvoice = new UC_ManageImportInvoice(this);
             AddControlsToPanel(uC_ManageImportInvoice);
+            uC_ManageImportInvoice.staff_id = staff_id;
+        }
+
+        private void btnOptionGroup_Click(object sender, EventArgs e)
+        {
+            UC_ManageSupplier uC_ManageSupplier = new UC_ManageSupplier();
+            AddControlsToPanel(uC_ManageSupplier);
         }
     }
 }

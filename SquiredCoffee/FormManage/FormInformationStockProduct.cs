@@ -18,10 +18,14 @@ namespace SquiredCoffee.FormManage
         public int status;
         public int id_stockProduct;
         public static UC_ManageStockProduct _parent;
+        FormSuccess Form1;
+        FormError Form2;
         public FormInformationStockProduct(UC_ManageStockProduct parent)
         {
             InitializeComponent();
             _parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         private void rdStatus1_CheckedChanged(object sender, EventArgs e)
@@ -63,61 +67,92 @@ namespace SquiredCoffee.FormManage
         {
             if (txtTitle.Text.Trim() == "")
             {
-                MessageBox.Show("Tên sản phẩm kho không được để ( Trống )");
+                Form2.title = "Tên Sản Phẩm Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtTitle.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên sản phẩm kho phải lớn hơn (  1 ký tự )");
+                Form2.title = "Tên Sản Phẩm (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtQuantity.Text.Trim() == "")
             {
-                MessageBox.Show("Số lượng không được để ( Trống )");
+                Form2.title = "Số Lượng Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtQuantity.Text.Trim().Length < 1)
             {
-                MessageBox.Show(" Số lượng phải lớn hơn (  1 ký tự )");
+                Form2.title = "Số Lượng Phải (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtUnit.Text.Trim() == "")
             {
-                MessageBox.Show("Đơn vị không được để ( Trống )");
+                Form2.title = "Đơn Vị Không Được Để (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtQuantity.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Đơn vị phải lớn hơn (  1 ký tự )");
+                Form2.title = "Đơn Vị Phải Lớn Hơn (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn chỉnh sửa thông tin của ( Sản phẩm kho  ) này không !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
                 if (btnEdit.Text == "Sửa")
                 {
                     StockProduct std = new StockProduct(txtTitle.Text, Convert.ToInt32(txtQuantity.Text), txtUnit.Text, status);
-                    DbStockProduct.UpdateStockProduct(std, id_stockProduct.ToString());
-                    this.Close();
-                    _parent.clear();
-                    _parent.clear1();
-                    _parent.Display();
-                }
-            }
+                    if ((DbStockProduct.CheckUpdateStockProduct(std,id_stockProduct.ToString())) == true)
+                    {
+                        Form1.title = "Chỉnh Sửa Thành Công";
+                        Form1.ShowDialog();
+                        this.Close();
+                        _parent.clear();
+                        _parent.clear1();
+                        _parent.Display();
+                    }
+                    else
+                    {
+                        Form2.title = "Chỉnh Sửa Không Thành Công";
+                        Form2.ShowDialog();
+                        this.Close();
+                        _parent.clear();
+                        _parent.clear1();
+                        _parent.Display();
+                    }
+                } 
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa thông tin của ( Sản phẩm kho  ) này không !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                if (btnDelete.Text == "Xóa")
+           if (btnDelete.Text == "Xóa")
+           {
+                if ((DbStockProduct.CheckDeleteStockProduct(id_stockProduct.ToString())) == false)
                 {
-                    DbStockProduct.DeleteStockProduct(id_stockProduct.ToString());
+                    Form1.title = "Xóa Thành Công";
+                    Form1.ShowDialog();
                     this.Close();
                     _parent.clear();
                     _parent.clear1();
                     _parent.Display();
                 }
-            }
+                else
+                {
+                    Form2.title = "Xóa Không Thành Công";
+                    Form2.ShowDialog();
+                    this.Close();
+                    _parent.clear();
+                    _parent.clear1();
+                    _parent.Display();
+                }
+           }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

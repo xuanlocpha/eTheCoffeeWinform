@@ -14,7 +14,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -110,7 +110,7 @@ namespace SquiredCoffee.DB
 
         public static void AddStockProduct(StockProduct std)
         {
-            string sql = "INSERT INTO roles (title,quantity,unit,status) VALUES(@title,@quantity,@unit,@status)";
+            string sql = "INSERT INTO stock_products (title,quantity,unit,status) VALUES(@title,@quantity,@unit,@status)";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
@@ -121,7 +121,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm Sản Phẩm Kho ( Thành Công )", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          
             }
             catch (MySqlException ex)
             {
@@ -145,7 +145,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Chỉnh Sửa ( Thành Công )", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+    
             }
             catch (MySqlException ex)
             {
@@ -164,7 +164,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa Sản Phẩm Kho( Thành Công )", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+  
             }
             catch (MySqlException ex)
             {
@@ -173,7 +173,91 @@ namespace SquiredCoffee.DB
             con.Close();
         }
 
+        public static List<StockProduct> LoadStockProductCheck(string @key)
+        {
+            List<StockProduct> stockProductList = new List<StockProduct>();
 
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,quantity,unit,status FROM stock_products WHERE id ='"+@key+"' ");
+            foreach (DataRow item in data.Rows)
+            {
+                StockProduct stockProduct = new StockProduct(item);
+                stockProductList.Add(stockProduct);
+            }
+
+            return stockProductList;
+        }
+
+        public static bool CheckCreateStockProduct(StockProduct std)
+        {
+            AddStockProduct(std);
+            string sql = "select * from stock_products where title = @title";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+        public static bool CheckUpdateStockProduct(StockProduct std,string id)
+        {
+            UpdateStockProduct(std,id);
+            string sql = "select * from stock_products where id =@id and title=@title and quantity=@quantity and unit=@unit and status=@status";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            cmd.Parameters.Add("@quantity", MySqlDbType.VarChar).Value = std.quantity;
+            cmd.Parameters.Add("@unit", MySqlDbType.VarChar).Value = std.unit;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+        public static bool CheckDeleteStockProduct(string id)
+        {
+            DeleteStockProduct(id);
+            string sql = "select * from stock_products where id = @id";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
 
     }
 }

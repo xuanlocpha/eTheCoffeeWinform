@@ -1,4 +1,5 @@
 ﻿using SquiredCoffee.Class;
+using SquiredCoffee.CustomControls;
 using SquiredCoffee.DB;
 using SquiredCoffee.FormManage;
 using SquiredCoffee.ViewModels;
@@ -167,11 +168,71 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void btnAddProductOption_Click(object sender, EventArgs e)
         {
-            Form.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormAddProductOption Form = new FormAddProductOption(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
+           
         }
 
         private void dgvProductOption_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            //FormBackGround formBackGround = new FormBackGround();
+            //try
+            //{
+            //    using (FormInformationProductOption Form = new FormInformationProductOption(this))
+            //    {
+            //        formBackGround.StartPosition = FormStartPosition.Manual;
+            //        formBackGround.FormBorderStyle = FormBorderStyle.None;
+            //        formBackGround.Opacity = .70d;
+            //        formBackGround.BackColor = Color.Black;
+            //        formBackGround.WindowState = FormWindowState.Maximized;
+            //        formBackGround.TopMost = true;
+            //        formBackGround.Location = this.Location;
+            //        formBackGround.ShowInTaskbar = false;
+            //        formBackGround.Show();
+
+            //        Form.Owner = formBackGround;
+            //        string id_product_option = dgvProductOption.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //        Form.id_product_option = Convert.ToInt32(id_product_option);
+            //        Form.ShowDialog();
+
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw;
+            //}
+            //finally
+            //{
+            //    formBackGround.Dispose();
+            //}
+
+            
             string id_product_option = dgvProductOption.Rows[e.RowIndex].Cells[1].Value.ToString();
             Form1.id_product_option = Convert.ToInt32(id_product_option);
             Form1.ShowDialog();

@@ -24,7 +24,7 @@ namespace SquiredCoffee
     {
         UC_TableList Form4;
         FormInputTableNumber Form5;
-        FormPayment Form1;
+        FormPaymentSale Form1;
         UC_ProductList Form6;
 
         public string title_table;
@@ -49,15 +49,15 @@ namespace SquiredCoffee
         public string option_drink_type_name;
         public string topping_name;
 
-        private readonly FormLogin _parent;
+        private readonly FormLoginSysterm _parent;
         
-        public FormStaff(FormLogin parent)
+        public FormStaff(FormLoginSysterm parent)
         {
             InitializeComponent();
             _parent = parent;
-            Form1 = new FormPayment(this);
+            
             Form4 = new UC_TableList(this);
-            Form5 = new FormInputTableNumber(this);
+           
             Form6 = new UC_ProductList(this);
         }
 
@@ -84,57 +84,28 @@ namespace SquiredCoffee
             return image;
         }
         
-       
-
-
+      
         public void LoadJson(string file)
         {
             JavaScriptSerializer js = new JavaScriptSerializer();
             ItemDetail[] itemDetails = js.Deserialize<ItemDetail[]>(file);
             foreach (ItemDetail item in itemDetails)
             {
-                size_id = item.size;
-                ice_id = item.ice;
-                topping_id = item.topping;
-                sugar_id = item.sugar;
-                drink_type_id = item.drink_type;
+               
             }
         }
 
         public void optionIceName()
         {
 
-            if (DbOption.CheckOption(ice_id.ToString()) == true)
-            {
-                List<OptionShow> option_Show_List = DbOption.OptionShow(ice_id.ToString());
-                foreach (OptionShow item1 in option_Show_List)
-                {
-                    option_ice_name = item1.title;
-                }
-            }
-            else
-            {
-                option_ice_name = "Mặc định";
-            }
-
+           
         }
 
 
         public void optionSugarName()
         {
 
-            if (DbOption.CheckOption(sugar_id.ToString()) == true)
-            {
-                List<OptionShow> option_Show_List = DbOption.OptionShow(sugar_id.ToString());
-                foreach (OptionShow item1 in option_Show_List)
-                {
-                    option_sugar_name = item1.title;
-                }
-            }
-            else
-            {
-                option_sugar_name = "Mặc định";
-            }
+           
 
         }
 
@@ -142,18 +113,7 @@ namespace SquiredCoffee
         public void optionDrinkTypeName()
         {
 
-            if (DbOption.CheckOption(drink_type_id.ToString()) == true)
-            {
-                List<OptionShow> option_Show_List = DbOption.OptionShow(drink_type_id.ToString());
-                foreach (OptionShow item1 in option_Show_List)
-                {
-                    option_drink_type_name = item1.title;
-                }
-            }
-            else
-            {
-                option_drink_type_name = "Mặc định";
-            }
+           
 
         }
 
@@ -175,35 +135,35 @@ namespace SquiredCoffee
 
         }
 
-
+       
         public void Display()
         {
-            List<Order_Items> order_Items_List = DbOrderItem.order_Items_List(id_order.ToString());
-            foreach (Order_Items item in order_Items_List)
-            {
-                grandTotal += item.total_product;
-                LoadJson(item.item_detail);
-                optionIceName();
-                optionSugarName();
-                optionDrinkTypeName();
-                toppingName();
-                List<OptionShow> option_Show_List = DbOption.OptionShow(size_id.ToString());
-                foreach (OptionShow item1 in option_Show_List)
-                {
-                    dgvOrder.Rows.Add(new object[]
-                    {
-                            item.title,
-                            item.quantity,
-                            item1.title,
-                            string.Format("{0:#,##0} đ",item.price),
-                            string.Format("{0:#,##0} đ",item.total_product),
-                            "Topping :"+topping_name+" , "+"Đá :"+option_ice_name+" , "+"Đường :"+option_sugar_name+" , "+"Kiểu nước:"+option_drink_type_name
-                    });
-                }
-            }
+            //List<Order_Items> order_Items_List = DbOrderItem.order_Items_List(id_order.ToString());
+            //foreach (Order_Items item in order_Items_List)
+            //{
+            //   // grandTotal += item.total_product;
+            //    LoadJson(item.item_detail);
+            //    optionIceName();
+            //    optionSugarName();
+            //    optionDrinkTypeName();
+            //    toppingName();
+            //    List<OptionShow> option_Show_List = DbOption.OptionShow(size_id.ToString());
+            //    foreach (OptionShow item1 in option_Show_List)
+            //    {
+            //        dgvOrder.Rows.Add(new object[]
+            //        {
+            //                item.title,
+            //                item.quantity,
+            //                item1.title,
+            //                string.Format("{0:#,##0} đ",item.price),
+            //               // string.Format("{0:#,##0} đ",item.total_product),
+            //                "Topping :"+topping_name+" , "+"Đá :"+option_ice_name+" , "+"Đường :"+option_sugar_name+" , "+"Kiểu nước:"+option_drink_type_name
+            //        });
+            //    }
+            //}
 
 
-            lblGrandTotal.Text = string.Format("{0:#,##0} đ", double.Parse(grandTotal.ToString()));
+            //lblGrandTotal.Text = string.Format("{0:#,##0} đ", double.Parse(grandTotal.ToString()));
         }
           
 
@@ -290,7 +250,7 @@ namespace SquiredCoffee
         }
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-            Form5.ShowDialog();
+            //Form5.ShowDialog();
         }
 
         private void btnAccumulatePoints_Click(object sender, EventArgs e)
@@ -354,7 +314,7 @@ namespace SquiredCoffee
             {
                 this.Close();
             }
-            _parent.clear();
+            _parent.clearForm1();
             return;
            
         }
@@ -366,11 +326,12 @@ namespace SquiredCoffee
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            Form1.provisional = grandTotal.ToString();
-            Form1.id_order = id_order;
-            Form1.id_staff = id_staff;
-            Form1.tableName = table_name;
-            Form1.ShowDialog();
+            //Form1.provisional = grandTotal.ToString();
+            //Form1.id_order = id_order;
+            //Form1.id_staff = id_staff;
+            //Form1.tableName = table_name;
+            //Form1.name_staff = lblFullName.Text;
+            //Form1.ShowDialog();
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -410,18 +371,16 @@ namespace SquiredCoffee
 
         }
 
+        public void clearOrder()
+        {
+            dgvOrder.Rows.Clear();
+            lblGrandTotal.Text = string.Empty;
+            lblTableNumber.Text = string.Empty;
+        }
+
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            if (DbTransaction.CheckDb(id_order.ToString()) == true)
-            {
-
-            }
-            else
-            {
-                string code = "code" + id_order.ToString();
-                Trannsaction std = new Trannsaction(id_order, code, "", "offline", "", "received");
-                DbTransaction.AddTransaction(std);
-            }
+            
         }
     }
 }
