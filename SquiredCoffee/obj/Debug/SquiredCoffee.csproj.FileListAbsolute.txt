@@ -1,77 +1,14 @@
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\SquiredCoffee.exe.config
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\SquiredCoffee.exe
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\SquiredCoffee.pdb
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormMain.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.Properties.Resources.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.csproj.GenerateResource.cache
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.csproj.CoreCompileInputs.cache
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.exe
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.pdb
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_Controls.UC_Home.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_Controls.UC_AddProduct.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\BouncyCastle.Crypto.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Google.Protobuf.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Compression.LZ4.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Compression.LZ4.Streams.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Hash.xxHash.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\MySql.Data.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Buffers.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Memory.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Numerics.Vectors.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Ubiety.Dns.Core.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Zstandard.Net.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Google.Protobuf.pdb
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Google.Protobuf.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Compression.LZ4.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Compression.LZ4.Streams.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Hash.xxHash.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\MySql.Data.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Buffers.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Memory.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Numerics.Vectors.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.exe.config
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.csproj.CopyComplete
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_Category.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_Controls.UC_ManageSysterms.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormCategory.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_Role.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormRole.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_Product.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormImage.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_Staff.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_User.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_Option.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_Controls.UC_ProductOption.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_Table.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_Reward.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_Voucher.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\QRCoder.dll
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.dll
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.Video.DirectShow.dll
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.Video.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zxing.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zxing.presentation.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.Video.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.Video.DirectShow.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zxing.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zxing.presentation.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormScannerQR.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormStaff.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.csprojAssemblyReference.cache
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormEditOrderItems.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormScannerBarCode.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormListTableChange.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ProductList.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_TableList.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormTableList.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInputTableNumber.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormOrderProduct.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu_UI_v1.52.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageStaff.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.exe.licenses
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\BouncyCastle.Crypto.dll
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.Charts.WinForms.dll
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.Dataviz.WinForms.dll
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.Licensing.dll
@@ -107,7 +44,42 @@ B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.Bu
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.dll
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.Deprecated.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu_UI_v1.52.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Google.Protobuf.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Guna.UI.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Guna.UI2.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Compression.LZ4.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Compression.LZ4.Streams.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Hash.xxHash.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.ReportViewer.Common.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.ReportViewer.Design.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.SqlServer.Types.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\MySql.Data.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Nancy.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Newtonsoft.Json.dll
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\OpenHtmlToPdf.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\QRCoder.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Buffers.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Memory.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Numerics.Vectors.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Ubiety.Dns.Core.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zxing.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zxing.presentation.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\EnvDTE.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\stdole.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.MSXML.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.xml
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.Video.xml
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.Video.DirectShow.xml
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.Charts.WinForms.xml
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.Dataviz.WinForms.xml
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
@@ -141,56 +113,409 @@ B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.Bu
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuToolTip.xml
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Newtonsoft.Json.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Newtonsoft.Json.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormLogin.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Nancy.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Google.Protobuf.pdb
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Google.Protobuf.xml
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Compression.LZ4.xml
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Compression.LZ4.Streams.xml
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Hash.xxHash.xml
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\MySql.Data.xml
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Nancy.xml
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Guna.UI.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Guna.UI2.dll
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddStaff.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInfomationStaff.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormPayment.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageCategory.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\Newtonsoft.Json.xml
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Buffers.xml
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Memory.xml
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Numerics.Vectors.xml
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zxing.xml
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zxing.presentation.xml
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.exe.config
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.CustomControls.btnProductList.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.CustomControls.CartItem.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.CustomControls.CartItems.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.CustomControls.FormBackGround.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormLogin.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormLoginSysterm.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormMain.resources
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddCategory.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationCategory.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageProduct.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddProduct.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationProduct.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageRole.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageUser.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddRole.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationRole.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageDiscount.resources
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddDiscount.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationDiscount.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageOptionGroup.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageOption.resources
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddGroupOption.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationOptionGroup.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageOption1.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddOption.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationOption.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageProductOption.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddProductOption.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationProductOption.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageTopping.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageTopping1.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddTopping.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationTopping.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageProductTopping.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddProductTopping.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationProductTopping.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageVoucher.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddVoucher.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationVoucher.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageWareHouse.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageSupplier.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddSupplier.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationSupplier.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageStockProduct.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddStockProduct.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationStockProduct.resources
-B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageImportInvoice.resources
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddImportInvoice.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddOption.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddProduct.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddProductOption.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddProductTopping.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddRole.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddStaff.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddStockProduct.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddSupplier.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddTopping.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddVoucher.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormCheckUser.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormEditOrderItems.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormError.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInfomationStaff.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormImage.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationCategory.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationDiscount.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationOption.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationOptionGroup.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationProduct.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationProductOption.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationProductTopping.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationRole.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationStockProduct.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationSupplier.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationTopping.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationVoucher.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInputTableNumber.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInvoice.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormOrderProduct.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormPayment.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormScannerBarCode.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormScannerQR.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormSuccess.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormSale.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormStaff.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.Properties.Resources.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_Controls.UC_AddProduct.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_Controls.UC_Home.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageCategory.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageDiscount.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageImportInvoice.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageOption.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageOption1.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageOptionGroup.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageProductOption.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageRole.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageStaff.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageProduct.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageStockProduct.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageSupplier.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageTopping.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageUser.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageVoucher.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageWareHouse.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ProductList.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_Controls.UC_ProductOption.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageProductTopping.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_TableList.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageTopping1.resources
 B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_UserList.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.csproj.GenerateResource.cache
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.exe.licenses
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.csproj.CoreCompileInputs.cache
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.exe
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.pdb
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_Dashbroad.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.CustomControls.ItemDetailTopping.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.CustomControls.ItemDetailOption.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageStaffRole.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageProductCategory.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageVoucherReward.resources
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\bin\Debug\ZstdNet.dll
+B:\Đồ án\Winform\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageToppingProduct.resources
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\SquiredCoffee.exe.config
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\SquiredCoffee.exe
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\SquiredCoffee.pdb
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.Video.DirectShow.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.Video.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\BouncyCastle.Crypto.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.Charts.WinForms.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.Dataviz.WinForms.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.Licensing.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.1.5.3.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuButton.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuColorTransition.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuGauge.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuPages.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuProgressBar.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuRating.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuScrollBar.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuSeparator.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuShapes.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuSnackbar.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuTextBox.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuToggleSwitch.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuToolTip.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.Deprecated.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu_UI_v1.52.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Google.Protobuf.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Guna.UI.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Guna.UI2.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Compression.LZ4.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Compression.LZ4.Streams.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Hash.xxHash.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.ReportViewer.Common.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.ReportViewer.Design.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.SqlServer.Types.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\MySql.Data.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Nancy.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Newtonsoft.Json.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\OpenHtmlToPdf.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\QRCoder.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\System.Buffers.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\System.Memory.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\System.Numerics.Vectors.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Ubiety.Dns.Core.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\ZstdNet.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\zxing.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\zxing.presentation.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\EnvDTE.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\stdole.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Microsoft.MSXML.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.Video.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\AForge.Video.DirectShow.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.Charts.WinForms.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.Dataviz.WinForms.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuButton.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuCheckBox.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuCircleProgress.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuColorTransition.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuDataGridView.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuDatePicker.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuDropdown.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuFormDock.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuGauge.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuGradientPanel.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuGroupBox.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuImageButton.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuLabel.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuPages.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuPanel.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuPictureBox.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuProgressBar.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuRadioButton.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuRating.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuScrollBar.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuSeparator.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuShadowPanel.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuShapes.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuSlider.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuSnackbar.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuTextBox.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuToggleSwitch.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuToolTip.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuTransition.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Google.Protobuf.pdb
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Google.Protobuf.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Compression.LZ4.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Compression.LZ4.Streams.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\K4os.Hash.xxHash.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\MySql.Data.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Nancy.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\Newtonsoft.Json.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\System.Buffers.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\System.Memory.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\System.Numerics.Vectors.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\zxing.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\zxing.presentation.xml
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+B:\SquiredCoffee\SquiredCoffee\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.exe.config
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.CustomControls.btnProductList.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.CustomControls.CartItem.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.CustomControls.CartItems.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.CustomControls.FormBackGround.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.CustomControls.ItemDetailOption.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.CustomControls.ItemDetailTopping.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormLogin.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormLoginSysterm.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormMain.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddCategory.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddDiscount.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddGroupOption.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddImportInvoice.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddOption.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddProduct.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddProductOption.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddProductTopping.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddRole.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddStaff.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddStockProduct.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddSupplier.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddTopping.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddVoucher.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormCheckUser.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormEditOrderItems.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormError.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInfomationStaff.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormImage.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationCategory.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationDiscount.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationOption.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationOptionGroup.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationProduct.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationProductOption.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationProductTopping.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationRole.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationStockProduct.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationSupplier.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationTopping.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationVoucher.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInputTableNumber.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInvoice.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormOrderProduct.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormScannerBarCode.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormScannerQR.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormSuccess.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormSale.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormStaff.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.Properties.Resources.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_Controls.UC_AddProduct.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_Controls.UC_Home.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_Dashbroad.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageCategory.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageImportInvoice.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageOption.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageOption1.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageOptionGroup.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageProductCategory.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageProductOption.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageRole.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageStaff.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageProduct.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageStaffRole.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageStockProduct.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageSupplier.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageTopping.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageToppingProduct.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageUser.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageVoucher.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageVoucherReward.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageWareHouse.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ProductList.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_Controls.UC_ProductOption.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageProductTopping.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_TableList.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageTopping1.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_UserList.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.csproj.GenerateResource.cache
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.exe.licenses
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.csproj.CoreCompileInputs.cache
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.exe
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.pdb
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormOrderOnline.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_InformationUserSale.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationUserSale.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_SearchInformationUser.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormPaymentSale.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.Report.PrintPaymentForm.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\RdlCompile.cache
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\RdlCompile.compiled
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.csproj.AssemblyReference.cache
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormReward.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationRewardUser.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormQRReward.resources
+B:\SquiredCoffee\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormCheckVoucherReward.resources

@@ -1,4 +1,5 @@
 ﻿using SquiredCoffee.Class;
+using SquiredCoffee.CustomControls;
 using SquiredCoffee.DB;
 using SquiredCoffee.FormManage;
 using System;
@@ -18,9 +19,12 @@ namespace SquiredCoffee.UC_ManageSysterm
         FormAddImportInvoice Form;
         public int total;
         public int totalSearch;
-        public UC_ManageImportInvoice()
+        public int staff_id;
+        public static UC_ManageWareHouse _parent;
+        public UC_ManageImportInvoice(UC_ManageWareHouse parent)
         {
             InitializeComponent();
+            _parent = parent;
             Form = new FormAddImportInvoice(this);
         }
 
@@ -168,7 +172,36 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void btnAddImportInvoice_Click(object sender, EventArgs e)
         {
-            Form.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormAddImportInvoice Form = new FormAddImportInvoice(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.staff_id = staff_id;
+                    Form.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
+             
         }
     }
 }

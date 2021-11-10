@@ -268,6 +268,7 @@ namespace SquiredCoffee.FormManage
             this.btnSave.BorderRadius = 15;
             this.btnSave.CheckedState.Parent = this.btnSave;
             this.btnSave.CustomImages.Parent = this.btnSave;
+            this.btnSave.DisabledState.Parent = this.btnSave;
             this.btnSave.FillColor = System.Drawing.Color.Tomato;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
@@ -275,7 +276,7 @@ namespace SquiredCoffee.FormManage
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageOffset = new System.Drawing.Point(0, -4);
             this.btnSave.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnSave.Location = new System.Drawing.Point(415, 764);
+            this.btnSave.Location = new System.Drawing.Point(409, 754);
             this.btnSave.Name = "btnSave";
             this.btnSave.ShadowDecoration.Parent = this.btnSave;
             this.btnSave.Size = new System.Drawing.Size(560, 57);
@@ -569,6 +570,7 @@ namespace SquiredCoffee.FormManage
             this.btnChooseImage.BorderRadius = 15;
             this.btnChooseImage.CheckedState.Parent = this.btnChooseImage;
             this.btnChooseImage.CustomImages.Parent = this.btnChooseImage;
+            this.btnChooseImage.DisabledState.Parent = this.btnChooseImage;
             this.btnChooseImage.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseImage.ForeColor = System.Drawing.Color.White;
             this.btnChooseImage.HoverState.Parent = this.btnChooseImage;

@@ -15,7 +15,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -75,7 +75,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm Tùy Chọn Thành Công ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
             }
             catch (MySqlException ex)
             {
@@ -86,7 +86,7 @@ namespace SquiredCoffee.DB
 
         public static void UpdateProductOption(ProductOption std, string id)
         {
-            string sql = "UPDATE product_options SET product_id=@product_id,option_id=@option_id,title=@title,price=@price,defaults=@defaults,status=@status  WHERE id = @id";
+            string sql = "UPDATE product_options SET product_id=@product_id,option_id=@option_id,title=@title,price=@price,default=@defaults,status=@status  WHERE id = @id";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
@@ -95,12 +95,12 @@ namespace SquiredCoffee.DB
             cmd.Parameters.Add("@option_id", MySqlDbType.VarChar).Value = std.option_id;
             cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
             cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = std.price;
-            cmd.Parameters.Add("@defaults", MySqlDbType.VarChar).Value = std.defaults;
+            cmd.Parameters.Add("@defaults", MySqlDbType.VarChar).Value = 0;
             cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Chỉnh Sửa Thành Công", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             catch (MySqlException ex)
             {
@@ -121,7 +121,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa Thành Công ", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
             }
             catch (MySqlException ex)
             {
@@ -133,7 +133,7 @@ namespace SquiredCoffee.DB
         {
             List<ProductOptionShow> productOptionShowLists = new List<ProductOptionShow>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT po.id,po.product_id,po.option_id,po.title,po.price,po.defaults,po.status,p.title as name_product ,o.title as name_option FROM product_options po,products p,options o WHERE po.product_id = p.id AND po.option_id = o.id");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT po.id,po.product_id,po.option_id,po.title,po.price,po.default,po.status,p.title as name_product ,o.title as name_option FROM product_options po,products p,options o WHERE po.product_id = p.id AND po.option_id = o.id");
             foreach (DataRow item in data.Rows)
             {
                 ProductOptionShow productOptionShow = new ProductOptionShow(item);
@@ -149,7 +149,7 @@ namespace SquiredCoffee.DB
         {
             List<ProductOptionShow> productOptionShowLists = new List<ProductOptionShow>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT po.id,po.product_id,po.option_id,po.title,po.price,po.defaults,po.status,p.title as name_product ,o.title as name_option FROM product_options po,products p,options o WHERE po.product_id = p.id AND po.option_id = o.id AND po.id ='" + @key+"'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT po.id,po.product_id,po.option_id,po.title,po.price,po.default,po.status,p.title as name_product ,o.title as name_option FROM product_options po,products p,options o WHERE po.product_id = p.id AND po.option_id = o.id AND po.id ='" + @key+"'");
             foreach (DataRow item in data.Rows)
             {
                 ProductOptionShow productOptionShow = new ProductOptionShow(item);
@@ -163,7 +163,7 @@ namespace SquiredCoffee.DB
         {
             List<ProductOptionShow> productOptionShowLists = new List<ProductOptionShow>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT po.id,po.product_id,po.option_id,po.title,po.price,po.defaults,po.status,p.title as name_product ,o.title as name_option FROM product_options po,products p,options o WHERE po.product_id = p.id AND po.option_id = o.id AND po.status ='" + @key+"'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT po.id,po.product_id,po.option_id,po.title,po.price,po.default,po.status,p.title as name_product ,o.title as name_option FROM product_options po,products p,options o WHERE po.product_id = p.id AND po.option_id = o.id AND po.status ='" + @key+"'");
             foreach (DataRow item in data.Rows)
             {
                 ProductOptionShow productOptionShow = new ProductOptionShow(item);
@@ -178,7 +178,7 @@ namespace SquiredCoffee.DB
         {
             List<ProductOptionShow> productOptionShowLists = new List<ProductOptionShow>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT po.id,po.product_id,po.option_id,po.title,po.price,po.defaults,po.status,p.title as name_product ,o.title as name_option FROM product_options po INNER JOIN products p ON po.product_id = p.id INNER JOIN options o ON po.option_id = o.id WHERE  p.title LIKE'%" + @key + "%' OR o.title LIKE'%" + @key + "%'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT po.id,po.product_id,po.option_id,po.title,po.price,po.default,po.status,p.title as name_product ,o.title as name_option FROM product_options po INNER JOIN products p ON po.product_id = p.id INNER JOIN options o ON po.option_id = o.id WHERE  p.title LIKE'%" + @key + "%' OR o.title LIKE'%" + @key + "%'");
             foreach (DataRow item in data.Rows)
             {
                 ProductOptionShow productOptionShow = new ProductOptionShow(item);
@@ -186,6 +186,96 @@ namespace SquiredCoffee.DB
             }
 
             return productOptionShowLists;
+        }
+
+
+        public static List<ProductOptionShow> SearchProductOption(string @key)
+        {
+            List<ProductOptionShow> productOptionShowLists = new List<ProductOptionShow>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT po.id,po.product_id,po.option_id,po.title,po.price,po.default,po.status,p.title as name_product ,o.title as name_option FROM product_options po INNER JOIN products p ON po.product_id = p.id INNER JOIN options o ON po.option_id = o.id WHERE  po.id ='"+@key+"'");
+            foreach (DataRow item in data.Rows)
+            {
+                ProductOptionShow productOptionShow = new ProductOptionShow(item);
+                productOptionShowLists.Add(productOptionShow);
+            }
+
+            return productOptionShowLists;
+        }
+
+
+        public static bool CheckCreateProductOption(ProductOption std )
+        {
+            AddProductOption(std);
+            string sql = "select * from product_options where title = @title";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;    
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title; 
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+        public static bool CheckUpdateProductOption(ProductOption std, string id)
+        {
+            UpdateProductOption(std, id);
+            string sql = "select * from product_options where product_id=@product_id and option_id=@option_id and title=@title and price=@price and default='"+std.defaults+"' and status=@status";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@product_id", MySqlDbType.VarChar).Value = std.product_id;
+            cmd.Parameters.Add("@option_id", MySqlDbType.VarChar).Value = std.option_id;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = std.price;
+            cmd.Parameters.Add("@defaults", MySqlDbType.VarChar).Value = std.defaults;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+        public static bool CheckDeleteProductOption(string id)
+        {
+            DeleteProductOption(id);
+            string sql = "select * from product_options where id = @id";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
         }
 
     }

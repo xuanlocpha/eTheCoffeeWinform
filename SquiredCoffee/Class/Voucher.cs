@@ -12,7 +12,7 @@ namespace SquiredCoffee.Class
         public int id { get; set; }
         public string title { get; set; }
         public string content { get; set; }
-        public string coupen_code { get; set; }
+        public string coupon_code { get; set; }
         public string image { get; set; }
         public string qr_code { get; set; }
         public string start_date { get; set; }
@@ -25,11 +25,11 @@ namespace SquiredCoffee.Class
         public int status { get; set; }
 
 
-        public Voucher(string Title,string Content,string Coupen_Code,string Image,string Qr_Code,string Start_Date,string Expiry_Date,string Discount_Unit,int Discount,string Apply_For, int Quantity_Rule, int Price_Rule, int Status)
+        public Voucher(string Title,string Content,string Coupon_Code,string Image,string Qr_Code,string Start_Date,string Expiry_Date,string Discount_Unit,int Discount,string Apply_For, int Quantity_Rule, int Price_Rule, int Status)
         {
             title = Title;
             content = Content;
-            coupen_code = Coupen_Code;
+            coupon_code = Coupon_Code;
             image = Image;
             qr_code = Qr_Code;
             start_date = Start_Date;
@@ -47,7 +47,7 @@ namespace SquiredCoffee.Class
             id = Convert.ToInt32(row["id"]);
             title = row["title"].ToString();
             content = row["content"].ToString();
-            coupen_code = row["coupen_code"].ToString();
+            coupon_code = row["coupon_code"].ToString();
             image = row["image"].ToString();
             qr_code = row["qr_code"].ToString();
             start_date = row["start_date"].ToString();

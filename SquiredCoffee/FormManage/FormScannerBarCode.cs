@@ -17,17 +17,20 @@ namespace SquiredCoffee.FormManage
 {
     public partial class FormScannerBarCode : Form
     {
-
-        
-        public FormScannerBarCode()
-        {
-            InitializeComponent();
-        }
-
         public int discount;
-
+        public int quantity;
+        public decimal total;
+        private readonly FormPaymentSale _parent;
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice videoCaptureDevice;
+        FormError Form2;
+       
+        public FormScannerBarCode(FormPaymentSale parent)
+        {
+            InitializeComponent();
+            _parent = parent;
+            Form2 = new FormError();
+        }
 
         private void FormScannerBarCode_Load(object sender, EventArgs e)
         {
@@ -75,6 +78,8 @@ namespace SquiredCoffee.FormManage
         private void pbClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            videoCaptureDevice.Stop();
+            _parent.Show();
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
@@ -85,13 +90,44 @@ namespace SquiredCoffee.FormManage
             }
             else
             {
-                List<Voucher> voucherList = DbVoucher.LoadVoucherSearch(txtDisplay.Text);
-                foreach (Voucher item in voucherList)
+                if(DbVoucher.CheckVoucher(txtDisplay.Text, DateTime.Now.ToString("yyyy-MM-dd"))== true)
                 {
-                    discount = item.discount;
+                    List<Voucher> voucherList = DbVoucher.LoadVoucherSearch(txtDisplay.Text, DateTime.Now.ToString("yyyy-MM-dd"));
+                    foreach (Voucher item in voucherList)
+                    {
+                        if(quantity >= item.quantity_rule)
+                        {
+                            if (total >= item.price_rule)
+                            {
+                                discount = item.discount;
+                            }
+                            else
+                            {
+                                Form2.title = "Tổng Tiền Hóa Đơn Không Đủ Hạn Mức!";
+                                Form2.ShowDialog();
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            Form2.title = "Số Lượng Sản Phẩm Không Đủ Hạn Mức!";
+                            Form2.ShowDialog();
+                            return;
+                        }
+                      
+                    }
                 }
+                else
+                {
+                    Form2.title = "Voucher đã hết hạn sử dụng !";
+                    Form2.ShowDialog();
+                    return;
+                }
+                
             }
+            _parent.Voucher(discount);
             this.Close();
+            _parent.Show();
         }
     }
 }

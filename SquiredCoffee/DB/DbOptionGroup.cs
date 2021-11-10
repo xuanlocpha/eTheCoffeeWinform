@@ -14,7 +14,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -112,7 +112,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm tùy chọn sản phẩm ( Thành công )", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
             }
             catch (MySqlException ex)
             {
@@ -135,7 +135,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Chỉnh sửa ( Thành công )", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+  
             }
             catch (MySqlException ex)
             {
@@ -144,6 +144,27 @@ namespace SquiredCoffee.DB
             con.Close();
         }
 
+
+        public static void LockOptionGroup(OptionGroup std, string id)
+        {
+            string sql = "UPDATE option_groups SET title=@title,status=@status  WHERE id = @id";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = 0;
+            try
+            {
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Chỉnh sửa ( Không thành công ) ! \n" + ex.Message, "Cảnh Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
 
         public static void DeleteOptionGroup(string id)
         {
@@ -170,6 +191,76 @@ namespace SquiredCoffee.DB
             string sql = "select * from option_groups where title = '" + @title + "'";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+        public static bool CheckCreateOptionGroup(OptionGroup std)
+        {
+            AddOptionGoup(std);
+            string sql = "select * from option_groups where title = @title";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+        public static bool CheckUpdateOptionGroup(OptionGroup std, string id)
+        {
+            UpdateOptionGroup(std,id);
+            string sql = "select * from option_groups where title = @title and status = @status";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+        public static bool CheckLockOptionGroup(OptionGroup std, string id)
+        {
+            LockOptionGroup(std, id);
+            string sql = "select * from option_groups where title = @title and status = @status";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
             MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
             DataSet tbl = new DataSet();
             adp.Fill(tbl);

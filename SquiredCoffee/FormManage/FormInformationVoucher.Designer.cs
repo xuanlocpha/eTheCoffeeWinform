@@ -71,6 +71,7 @@ namespace SquiredCoffee.FormManage
             this.rdStatus1 = new System.Windows.Forms.RadioButton();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ptQr_Code)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -98,6 +99,7 @@ namespace SquiredCoffee.FormManage
             this.btnChooseImage.BorderRadius = 15;
             this.btnChooseImage.CheckedState.Parent = this.btnChooseImage;
             this.btnChooseImage.CustomImages.Parent = this.btnChooseImage;
+            this.btnChooseImage.DisabledState.Parent = this.btnChooseImage;
             this.btnChooseImage.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseImage.ForeColor = System.Drawing.Color.White;
             this.btnChooseImage.HoverState.Parent = this.btnChooseImage;
@@ -613,6 +615,7 @@ namespace SquiredCoffee.FormManage
             this.btnEdit.BorderRadius = 15;
             this.btnEdit.CheckedState.Parent = this.btnEdit;
             this.btnEdit.CustomImages.Parent = this.btnEdit;
+            this.btnEdit.DisabledState.Parent = this.btnEdit;
             this.btnEdit.FillColor = System.Drawing.Color.Tomato;
             this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
@@ -633,6 +636,7 @@ namespace SquiredCoffee.FormManage
             this.btnDelete.BorderRadius = 15;
             this.btnDelete.CheckedState.Parent = this.btnDelete;
             this.btnDelete.CustomImages.Parent = this.btnDelete;
+            this.btnDelete.DisabledState.Parent = this.btnDelete;
             this.btnDelete.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
@@ -647,6 +651,11 @@ namespace SquiredCoffee.FormManage
             this.btnDelete.TabIndex = 190;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // guna2Elipse6
+            // 
+            this.guna2Elipse6.BorderRadius = 15;
+            this.guna2Elipse6.TargetControl = this;
             // 
             // FormInformationVoucher
             // 
@@ -742,5 +751,6 @@ namespace SquiredCoffee.FormManage
         private System.Windows.Forms.RadioButton rdStatus1;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnDelete;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
     }
 }

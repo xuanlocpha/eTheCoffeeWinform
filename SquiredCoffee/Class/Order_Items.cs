@@ -14,32 +14,30 @@ namespace SquiredCoffee.Class
         public int order_id { get; set; }
         public string item_detail { get; set; }
         public int quantity{ get; set; }
-        public decimal total_product { get; set; } 
         public string content { get; set; }
         public string title { get; set; }
         public decimal price { get; set; }
 
-   public Order_Items(int Order_Id, int Product_Id,string Item_Detail, int Quantity,decimal Total_Product, string Content)
+        public Order_Items(int Product_Id,string Item_Detail, int Order_Id, int Quantity,decimal Price, string Content)
         {
             product_id = Product_Id;
             order_id = Order_Id;
             item_detail = Item_Detail;
             quantity = Quantity;
-            total_product = Total_Product;
             content = Content;
+            price = Price;
         }
 
         public Order_Items(DataRow row)
         {
             id = Convert.ToInt32(row["id"]);
             product_id = Convert.ToInt32(row["product_id"]);
-            order_id = Convert.ToInt32(row["order_id"]);
             item_detail = row["item_detail"].ToString();
+            order_id = Convert.ToInt32(row["order_id"]);
             quantity = Convert.ToInt32(row["quantity"]);
-            total_product = Convert.ToDecimal(row["total_product"]);
+            price = Convert.ToDecimal(row["price"]);
             content = row["content"].ToString();
             title = row["title"].ToString();
-            price = Convert.ToDecimal(row["price"]);
         }
     }
 }

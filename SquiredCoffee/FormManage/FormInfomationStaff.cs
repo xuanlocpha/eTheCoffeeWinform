@@ -19,11 +19,15 @@ namespace SquiredCoffee.FormManage
     {
         MySqlConnection con = new MySqlConnection();
         public static UC_ManageStaff _parent;
+        FormSuccess Form1;
+        FormError Form2;
         public FormInfomationStaff(UC_ManageStaff parent)
         {
             InitializeComponent();
             _parent = parent;
             ListRole();
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         Bitmap ImageProduct;
@@ -36,7 +40,7 @@ namespace SquiredCoffee.FormManage
 
         void ketnoi()
         {
-            con.ConnectionString = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            con.ConnectionString = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             if (con.State == ConnectionState.Closed)
                 con.Open();
         }
@@ -80,11 +84,11 @@ namespace SquiredCoffee.FormManage
             {
                 txtFirstName.Text = item.first_name;
                 txtlast_name.Text = item.last_name;
-                if(item.gender == "Nam")
+                if(item.gender == "male")
                 {
                     chkMale.Checked = true;
                 }
-                else if (item.gender == "Nữ")
+                else if (item.gender == "female")
                 {
                     chkFemale.Checked = true;
                 }
@@ -93,7 +97,7 @@ namespace SquiredCoffee.FormManage
                 txtEmail.Text = item.email;
                 txtUserName.Text = item.username;
                 txtPassword.Text = item.password;
-                cbRoleName.Text = roleName;
+                cbRoleName.Text = item.title;
                 if (item.status == 1)
                 {
                     rdStatus1.Checked = true;
@@ -140,106 +144,135 @@ namespace SquiredCoffee.FormManage
         {
             if (txtFirstName.Text.Trim() == "")
             {
-                MessageBox.Show("Họ nhân viên không được để ( Trống )");
+                Form2.title = "Tên Của Nhân Viên (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtFirstName.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Họ nhân viên lớn hơn (  1 ký tự )");
+                Form2.title = "Họ Của Nhân Viên Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtlast_name.Text.Trim() == "")
             {
-                MessageBox.Show("Tên lót & Tên nhân viên không được để ( Trống )");
+                Form2.title = "Tên Và Họ Nhân Viên Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtlast_name.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên lót & Tên nhân viên lớn hơn (  1 ký tự )");
+                Form2.title = "Tên Và Họ Nhân Viên (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (gender == "")
             {
-                MessageBox.Show("Giới tính không được để ( Trống )");
+                Form2.title = "Giới Tính Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (dtpBirthday.Value == DateTime.Now)
             {
-                MessageBox.Show("Ngày Sinh Không được trùng với ngày hiện tại ");
+                Form2.title = "Ngày Sinh Không Được Trùng Với Hiện Tại (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPhone.Text.Trim() == "")
             {
-                MessageBox.Show("Số điện thoại nhân viên không được để ( Trống )");
+                Form2.title = "Số Điện Thoại Nhân Viên Không Được Để ( Trống ) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPhone.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Số điện thoại  nhân viên lớn hơn  (  1 ký tự )");
+                Form2.title = "Số Điện Thoại Nhân Viên (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPhone.Text.Trim().Length > 11)
             {
-                MessageBox.Show("Số điện thoại  nhân viên chỉ được  bằng (  10 ký tự )");
+                Form2.title = "Số Điện Thoại Chỉ Tối Đa (10 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtEmail.Text.Trim() == "")
             {
-                MessageBox.Show("Email nhân viên không được để ( Trống )");
+                Form2.title = "Email Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtEmail.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Email nhân viên lớn hơn (  1 ký tự )");
+                Form2.title = "Email Phải (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (!this.txtEmail.Text.Contains('@') || !this.txtEmail.Text.Contains('.'))
             {
-                MessageBox.Show("Email nhập vào không hợp lệ");
+                Form2.title = "Email Nhập Không Hợp Lệ (@) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtUserName.Text.Trim() == "")
             {
-                MessageBox.Show("Tên đăng nhập không được để ( Trống )");
+                Form2.title = "Tên Đăng Nhập Không Để (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtUserName.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên đăng nhập lớn hơn (  1 ký tự )");
+                Form2.title = "Tên Đăng Nhập (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPassword.Text.Trim() == "")
             {
-                MessageBox.Show("Mật Khẩu không được để ( Trống )");
+                Form2.title = "Mật Khẩu Đang (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPassword.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Mật Khẩu lớn hơn (  1 ký tự )");
+                Form2.title = "Mật Khẩu (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (cbRoleName.ValueMember == "")
             {
-                MessageBox.Show("Bạn chưa phân quyền cho tài khoản");
+                Form2.title = "Bạn Chưa Phân Quyền Tài Khoản";
+                Form2.ShowDialog();
                 return;
             }
             if (image_staff == "")
             {
-                MessageBox.Show("Hình ảnh của nhân viên đang ( Trống )");
+                Form2.title = "Hình Ảnh Của Nhân Viên Đang (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn chỉnh sửa tài khoản này không !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
+            
                 if (btnEdit.Text == "Sửa")
                 {
                     string birthday = dtpBirthday.Value.Date.ToString("yyyy-MM-dd");
                     Staff std = new Staff(txtlast_name.Text, txtFirstName.Text, txtUserName.Text, txtPassword.Text, gender, birthday, image_staff, txtPhone.Text, txtEmail.Text, Convert.ToInt32(cbRoleName.SelectedValue), status);
-                    DbStaff.UpdateStaff(std, id_staff.ToString());
-                    this.Close();
-                    _parent.resetForm();
-                    _parent.Display();
+                    if(DbStaff.CheckUpdateStaff(std,id_staff.ToString())== true)
+                    {
+                        Form1.title = "Sửa Thành Công ";
+                        Form1.ShowDialog();
+                        this.Close();
+                        _parent.resetForm();
+                        _parent.Display();
+                    }
+                    else
+                    {
+                        Form2.title = "Sửa Không Thành Công ";
+                        Form2.ShowDialog();
+                        this.Close();
+                        _parent.resetForm();
+                        _parent.Display();
+                    }
                 }
-            }
+           
         }
 
         private void rdStatus1_CheckedChanged(object sender, EventArgs e)
@@ -254,21 +287,32 @@ namespace SquiredCoffee.FormManage
 
         private void chkMale_CheckedChanged(object sender, EventArgs e)
         {
-            gender = "Nam";
+            gender = "male";
+            chkFemale.Checked = false;
         }
 
         private void chkFemale_CheckedChanged(object sender, EventArgs e)
         {
-            gender = "Nữ";
+            gender = "female";
+            chkMale.Checked = false;
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa tài khoản này không !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (btnDelete.Text == "Xóa")
             {
-                if (btnDelete.Text == "Xóa")
+                if (DbStaff.CheckDeleteStaff(id_staff.ToString())==false)
                 {
-                    DbStaff.DeleteStaff(id_staff.ToString());
+                    Form1.title = "Xóa Thành Công ";
+                    Form1.ShowDialog();
+                    this.Close();
+                    _parent.resetForm();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form1.title = "Xóa Không Thành Công ";
+                    Form1.ShowDialog();
                     this.Close();
                     _parent.resetForm();
                     _parent.Display();

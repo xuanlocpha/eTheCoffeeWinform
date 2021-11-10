@@ -11,6 +11,7 @@ namespace SquiredCoffee.ViewModels
     {
         public int id { get; set; }
         public string title { get; set; }
+        public decimal price { get; set; }
         public int option_group_id { get; set; }
         public int status { get; set; }
 
@@ -21,6 +22,7 @@ namespace SquiredCoffee.ViewModels
             title = row["title"].ToString();
             option_group_id = Convert.ToInt32(row["option_group_id"]);
             status = Convert.ToInt32(row["status"]);
+            price = Convert.ToInt32(row["price"]);
         }
     }
 }

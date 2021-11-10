@@ -14,7 +14,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -29,19 +29,17 @@ namespace SquiredCoffee.DB
 
 
 
-        public static void UpdateUser(User std,string id)
+        public static void UpdateUser(string point,string id)
         {
-            string sql = "UPDATE users SET point = @point  WHERE id=@id AND phone = @phone";
+            string sql = "UPDATE users SET point = @point  WHERE id=@id ";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
-            cmd.Parameters.Add("@phone", MySqlDbType.VarChar).Value = std.phone;
-            cmd.Parameters.Add("@point", MySqlDbType.VarChar).Value = std.point;
+            cmd.Parameters.Add("@point", MySqlDbType.VarChar).Value = point;
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Tích Điểm  Thành Công", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {
@@ -66,5 +64,125 @@ namespace SquiredCoffee.DB
 
             return userList;
         }
+
+
+        public static List<User> ListUser(string phone)
+        {
+            List<User> userList = new List<User>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,display_name,gender,birthday,email,phone,image,point,total_point,level,bar_code,status,password FROM users  WHERE  phone = '" + phone + "'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                User user = new User(item);
+                userList.Add(user);
+            }
+
+            return userList;
+        }
+
+
+        public static List<User> ListUser()
+        {
+            List<User> userList = new List<User>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,display_name,gender,birthday,email,phone,image,point,total_point,level,bar_code,status,password FROM users   ");
+
+            foreach (DataRow item in data.Rows)
+            {
+                User user = new User(item);
+                userList.Add(user);
+            }
+
+            return userList;
+        }
+
+
+        public static List<User> ListUserSearchClick(string status)
+        {
+            List<User> userList = new List<User>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,display_name,gender,birthday,email,phone,image,point,total_point,level,bar_code,status,password FROM users WHERE status = '"+status+"'  ");
+
+            foreach (DataRow item in data.Rows)
+            {
+                User user = new User(item);
+                userList.Add(user);
+            }
+
+            return userList;
+        }
+
+
+        public static List<User> ListUserSearch(string key)
+        {
+            List<User> userList = new List<User>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,display_name,gender,birthday,email,phone,image,point,total_point,level,bar_code,status,password FROM users WHERE phone LIKE'%" + @key + "%' OR email LIKE'%" + @key + "%'  ");
+
+            foreach (DataRow item in data.Rows)
+            {
+                User user = new User(item);
+                userList.Add(user);
+            }
+
+            return userList;
+        }
+        
+        public static bool CheckDb(string @phone)
+        {
+            string sql = "select * from users where phone = '" + @phone + "'";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+        public static bool accumulatePoints(string @point,string @id)
+        {
+            UpdateUser(point, id);
+            string sql = "select * from users where point = '" +@point +"' and id ='"+@id+"'";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+        public static List<User> UserSearch(string phone)
+        {
+            List<User> userList = new List<User>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,display_name,gender,birthday,email,phone,image,point,total_point,level,bar_code,status,password FROM users  WHERE  phone = '" + phone + "'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                User user = new User(item);
+                userList.Add(user);
+            }
+
+            return userList;
+        }
+
     }
 }

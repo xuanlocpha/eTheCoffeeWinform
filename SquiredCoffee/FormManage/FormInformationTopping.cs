@@ -18,10 +18,14 @@ namespace SquiredCoffee.FormManage
         public int id_topping;
         public int status;
         public static UC_ManageTopping1 _parent;
+        FormSuccess Form1;
+        FormError Form2;
         public FormInformationTopping(UC_ManageTopping1 parent)
         {
             InitializeComponent();
             _parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         public void Display()
@@ -53,32 +57,49 @@ namespace SquiredCoffee.FormManage
         {
             if (txtTitle.Text.Trim() == "")
             {
-                MessageBox.Show("Tên topping không được để ( Trống )");
+                Form2.title = "Tên Topping Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtTitle.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên topping  phải lớn hơn  ( 1 ký tự )");
+                Form2.title = "Tên Topping (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPrice.Text.Trim() == "")
             {
-                MessageBox.Show("Giá topping không được để ( Trống )");
+                Form2.title = "Giá Topping Không Được Để (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPrice.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Giá topping  phải lớn hơn  ( 1 ký tự )");
+                Form2.title = "Giá Topping (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn chỉnh sửa topping  này không !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+            if(btnEdit.Text == "Sửa")
             {
                 Topping std = new Topping(txtTitle.Text, txtDescription.Text, Convert.ToDecimal(txtPrice.Text), status);
-                DbTopping.UpdateTopping(std,id_topping.ToString());
-                this.Close();
-                _parent.clear();
-                _parent.clear1();
-                _parent.Display();
+                if(DbTopping.CheckUpdateTopping(std,id_topping.ToString())== true)
+                {
+                    Form1.title = "Sửa Thành Công";
+                    Form1.ShowDialog();
+                    this.Close();
+                    _parent.clear();
+                    _parent.clear1();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Sửa Không Thành Công";
+                    Form2.ShowDialog();
+                    this.Close();
+                    _parent.clear();
+                    _parent.clear1();
+                    _parent.Display();
+                }
             }
         }
 
@@ -99,9 +120,19 @@ namespace SquiredCoffee.FormManage
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa topping  này không . Vì nó có thể ảnh hưởng tới dữ liệu của bạn !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (DbTopping.CheckDeleteTopping(id_topping.ToString()) == false)
             {
-                DbTopping.DeleteTopping(id_topping.ToString());
+                Form1.title = "Xóa Thành Công";
+                Form1.ShowDialog();
+                this.Close();
+                _parent.clear();
+                _parent.clear1();
+                _parent.Display();
+            }
+            else
+            {
+                Form2.title = "Xóa Không Thành Công";
+                Form2.ShowDialog();
                 this.Close();
                 _parent.clear();
                 _parent.clear1();

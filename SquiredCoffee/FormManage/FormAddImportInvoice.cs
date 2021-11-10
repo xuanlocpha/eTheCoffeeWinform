@@ -18,17 +18,22 @@ namespace SquiredCoffee.FormManage
     {
         MySqlConnection con = new MySqlConnection();
         public int status = 1;
+        public int staff_id;
         public static UC_ManageImportInvoice _parent;
+        FormSuccess Form1;
+        FormError Form2;
         public FormAddImportInvoice(UC_ManageImportInvoice parent)
         {
             InitializeComponent();
             _parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
 
         void ketnoi()
         {
-            con.ConnectionString = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            con.ConnectionString = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             if (con.State == ConnectionState.Closed)
                 con.Open();
         }
@@ -79,45 +84,68 @@ namespace SquiredCoffee.FormManage
         {
             if (cbStockProduct.Text == "")
             {
-                MessageBox.Show("Tên Sản Phẩm Đang Để ( Trống )");
+                Form2.title = "Tên Sản Phẩm Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (cbSupplier.Text == "")
             {
-                MessageBox.Show("Nhà Cung Cấp Đang Để ( Trống )");
+                Form2.title = "Tên Nhà Cung Cấp Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtQuantity.Text == "")
             {
-                MessageBox.Show("Số Lượng Sản Phẩm ( Trống )");
+                Form2.title = "Số Lượng Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtUnit.Text == "")
             {
-                MessageBox.Show("Đơn Vị Đang Để ( Trống )");
+                Form2.title = "Đơn Vị Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtUnitPrice.Text == "")
             {
-                MessageBox.Show("Giá Nhập Đang Để ( Trống )");
+                Form2.title = "Giá Nhập Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (dtpExpiryDate.Value == DateTime.Now)
             {
-                MessageBox.Show("Hạn Sử Dụng Không Được Trùng Với Ngày Hiện Tại ");
+                Form2.title = "Hạn Sử Dụng Không Được (Trùng với ngày hiện tại)";
+                Form2.ShowDialog();
                 return;
             }
             if (btnSave.Text == "Lưu")
             {
                 string StartDate = DateTime.Now.ToString("yyyy-MM-dd");
                 string ExpiryDate = dtpExpiryDate.Value.Date.ToString("yyyy-MM-dd");
-                ImportInvoice std = new ImportInvoice(Convert.ToInt32(cbStockProduct.SelectedValue), Convert.ToInt32(cbSupplier.SelectedValue), Convert.ToInt32(txtQuantity.Text),txtUnit.Text, Convert.ToDecimal(txtUnitPrice),StartDate,ExpiryDate,status);
-                DbImportInvoice.AddImportInvoice(std);
-                this.Close();
-                clear();
-                _parent.clear();
-                _parent.clear1();
-                _parent.Display();
+                ImportInvoice std = new ImportInvoice(staff_id,Convert.ToInt32(cbStockProduct.SelectedValue), Convert.ToInt32(cbSupplier.SelectedValue), Convert.ToInt32(txtQuantity.Text),txtUnit.Text, Convert.ToDecimal(txtUnitPrice.Text),StartDate,ExpiryDate,status);
+                if ((DbImportInvoice.CheckCreateImportInvoice(std)) == true)
+                {
+                    Form1.title = "Nhập Hàng Thành Công ";
+                    Form1.ShowDialog();
+                    List<StockProduct> stockProductList = DbStockProduct.LoadStockProductCheck(Convert.ToString(cbStockProduct.SelectedValue));
+                    foreach (StockProduct item in stockProductList)
+                    {
+                        int x = Convert.ToInt32(txtQuantity.Text) + item.quantity;
+                        StockProduct std1 = new StockProduct(item.title, x, item.unit, item.status);
+                        DbStockProduct.UpdateStockProduct(std1, Convert.ToString(cbStockProduct.SelectedValue));
+                    }
+                    this.Close();
+                    clear();
+                    _parent.clear();
+                    _parent.clear1();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Nhập Hàng Không Thành Công ";
+                    Form2.ShowDialog();
+                }
+                
             }
         }
 

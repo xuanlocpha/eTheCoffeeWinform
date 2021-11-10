@@ -14,13 +14,15 @@ namespace SquiredCoffee.FormManage
 {
     public partial class FormInputTableNumber : Form
     {
-        private readonly FormStaff _parent;
+        private readonly FormSale _parent;
         public string table_number;
-        public FormInputTableNumber(FormStaff parent)
+        public int staff_id;
+        FormError Form2;
+        public FormInputTableNumber(FormSale parent)
         {
             _parent = parent;
             InitializeComponent();
-           
+            Form2 = new FormError(); 
         }
 
         private void pbClose_Click(object sender, EventArgs e)
@@ -88,6 +90,8 @@ namespace SquiredCoffee.FormManage
             txtTableNumber.Text = string.Empty;
         }
 
+        
+
         private void btnSave_Click(object sender, EventArgs e)
         {
 
@@ -95,28 +99,34 @@ namespace SquiredCoffee.FormManage
            
             if (table_number == "")
             {
-                MessageBox.Show("Số bàn Không Được Để Trống !!! ");
+                Form2.title = "Số Bàn Đang Trống !";
+                Form2.ShowDialog();
                 txtTableNumber.Text = string.Empty;
                 return;
             }
             else if ((DbOrder.CheckDb(table_number)) == true)
             {
-                MessageBox.Show("Bàn đã có Order !!! ");
+                Form2.title = "Bàn Đã Có Order !";
+                Form2.ShowDialog();
                 txtTableNumber.Text = string.Empty;
                 return;
             } 
             else
             {
-                Order std = new Order(table_number, 1, 0, 0, 0, 0, null, 0, null, 0, null, null);
+                Order std = new Order(table_number,staff_id,1,2,0,0,0,0,"",0,"",0);
                 DbOrder.AddOrder(std);
-                _parent.table_name = table_number;
+                _parent.tableNumber = table_number;
                 _parent.clear();
                 clear();
                 List<Order> order_List = DbOrder.LoadOrder(table_number);
                 foreach (Order item in order_List)
                 {
-                    _parent.id_order = item.id;
+                    _parent.id_order = item.id.ToString();
+                    string x = "#000000" + item.id.ToString();
+                    Trannsaction std1 = new Trannsaction(18,item.id, x,"cash", "offline", "pickup", "", "packing");
+                    DbTransaction.AddTransaction(std1);
                 }
+                
                 this.Close();
             }
         }
@@ -129,6 +139,13 @@ namespace SquiredCoffee.FormManage
         private void btnReset_Click(object sender, EventArgs e)
         {
             clear();
+        }
+
+
+        private void pbClosse_click(object sender, EventArgs e)
+        {
+            clear();
+            this.Close();
         }
     }
 }

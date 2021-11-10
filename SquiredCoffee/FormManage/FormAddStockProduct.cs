@@ -15,12 +15,16 @@ namespace SquiredCoffee.FormManage
 {
     public partial class FormAddStockProduct : Form
     {
+        FormSuccess Form1;
+        FormError Form2;
         public int status = 1;
         public static UC_ManageStockProduct _parent;
         public FormAddStockProduct(UC_ManageStockProduct parent)
         {
             InitializeComponent();
             _parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         private void FormAddStockProduct_Load(object sender, EventArgs e)
@@ -30,6 +34,7 @@ namespace SquiredCoffee.FormManage
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            clear();
             this.Close();
         }
 
@@ -53,48 +58,70 @@ namespace SquiredCoffee.FormManage
         {
             if (txtTitle.Text.Trim() == "")
             {
-                MessageBox.Show("Tên sản phẩm kho không được để ( Trống )");
+                Form2.title = "Tên Sản Phẩm Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtTitle.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên sản phẩm kho phải lớn hơn (  1 ký tự )");
+                Form2.title = "Tên Sản Phẩm (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtQuantity.Text.Trim() == "")
             {
-                MessageBox.Show("Số lượng không được để ( Trống )");
+                Form2.title = "Số Lượng Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtQuantity.Text.Trim().Length < 1)
             {
-                MessageBox.Show(" Số lượng phải lớn hơn (  1 ký tự )");
+                Form2.title = "Số Lượng Phải (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtUnit.Text.Trim() == "")
             {
-                MessageBox.Show("Đơn vị không được để ( Trống )");
+                Form2.title = "Đơn Vị Không Được Để (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtQuantity.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Đơn vị phải lớn hơn (  1 ký tự )");
+                Form2.title = "Đơn Vị Phải Lớn Hơn (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (DbStockProduct.CheckAdd(txtTitle.Text)==true)
             {
-                MessageBox.Show("Sản phẩm này đã tồn tại trong kho !!!");
+                Form2.title = "Sản Phẩm Đã Tồn Tại Trong Kho ";
+                Form2.ShowDialog();
                 return;
             }
             if (btnSave.Text == "Lưu")
             {
                 StockProduct std = new StockProduct(txtTitle.Text,Convert.ToInt32(txtQuantity.Text),txtUnit.Text,status);
                 DbStockProduct.AddStockProduct(std);
-                this.Close();
-                clear();
-                _parent.clear();
-                _parent.clear1();
-                _parent.Display();
+                if (DbStockProduct.CheckCreateStockProduct(std) == true)
+                {
+                    Form1.title = "Tạo Thành Công";
+                    Form1.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.clear();
+                    _parent.clear1();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Tạo Không Thành Công";
+                    Form2.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.clear();
+                    _parent.clear1();
+                    _parent.Display();
+                }
             }
         }
 

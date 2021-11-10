@@ -17,10 +17,14 @@ namespace SquiredCoffee.FormManage
     {
         public int status = 1;
         public static UC_ManageTopping1 _parent;
+        FormSuccess Form1;
+        FormError Form2;
         public FormAddTopping(UC_ManageTopping1 parent)
         {
             InitializeComponent();
             _parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         private void FormAddTopping_Load(object sender, EventArgs e)
@@ -52,37 +56,56 @@ namespace SquiredCoffee.FormManage
         {
             if (txtTitle.Text.Trim() == "")
             {
-                MessageBox.Show("Tên topping không được để ( Trống )");
+                Form2.title = "Tên Topping Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtTitle.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên topping  phải lớn hơn  ( 1 ký tự )");
+                Form2.title = "Tên Topping (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPrice.Text.Trim() == "")
             {
-                MessageBox.Show("Giá topping không được để ( Trống )");
+                Form2.title = "Giá Topping Không Được Để (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtPrice.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Giá topping  phải lớn hơn  ( 1 ký tự )");
+                Form2.title = "Giá Topping (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if(DbTopping.CheckToppingForm(txtTitle.Text)== true)
             {
-                MessageBox.Show("Topping này đã tồn tại  phải lớn hơn  ( 1 ký tự )");
+                Form2.title = "Topping Này Đã Tồn Tại ";
+                Form2.ShowDialog();
                 return;
             }
             if (btnSave.Text == "Lưu")
             {
                 Topping std = new Topping(txtTitle.Text,txtDescription.Text,Convert.ToDecimal(txtPrice.Text),status);
-                DbTopping.AddTopping(std);
-                this.Close();
-                _parent.clear();
-                _parent.clear1();
-                _parent.Display();
+                if(DbTopping.CheckCreateTopping(std)== true)
+                {
+                    Form1.title = "Tạo Thành Công";
+                    Form1.ShowDialog();
+                    this.Close();
+                    _parent.clear();
+                    _parent.clear1();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Tạo Không Thành Công";
+                    Form2.ShowDialog();
+                    this.Close();
+                    _parent.clear();
+                    _parent.clear1();
+                    _parent.Display();
+                }
+               
             }
         }
 

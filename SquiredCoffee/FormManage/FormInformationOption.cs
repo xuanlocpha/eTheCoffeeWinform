@@ -21,16 +21,20 @@ namespace SquiredCoffee.FormManage
         public static UC_ManageOption1 _parent;
         public int status;
         public int id_option;
+        FormSuccess Form1;
+        FormError Form2;
         public FormInformationOption(UC_ManageOption1 parent)
         {
             InitializeComponent();
             _parent = parent;
             ListOptionGroup();
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         void ketnoi()
         {
-            con.ConnectionString = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            con.ConnectionString = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             if (con.State == ConnectionState.Closed)
                 con.Open();
         }
@@ -88,25 +92,39 @@ namespace SquiredCoffee.FormManage
         {
             if (cbOptionGroup.Text == "")
             {
-                MessageBox.Show("Tên tùy chọn món không được để ( Trống )");
+                Form2.title = "Tên Nhóm Option Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtTitleOption.Text.Trim() == "")
             {
-                MessageBox.Show("Tên của tùy chọn không được ( Trống )");
+                Form2.title = "Tên Option Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtTitleOption.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên của tùy chọn phải lớn hơn (  1 ký tự )");
+                Form2.title = "Tên Option Phải (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn chỉnh sửa tùy chọn  này không !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (btnEdit.Text == "Sửa")
             {
-                if (btnEdit.Text == "Sửa")
+                Option std = new Option(txtTitleOption.Text, Convert.ToInt32(cbOptionGroup.SelectedValue), status);
+                if ((DbOption.CheckUpdateOption(std,id_option.ToString())) == true)
                 {
-                    Option std = new Option(txtTitleOption.Text, Convert.ToInt32(cbOptionGroup.SelectedValue), status);
-                    DbOption.UpdateOption(std, id_option.ToString());
+                    Form1.title = "Sửa Thành Công";
+                    Form1.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.clear1();
+                    _parent.clear();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Sửa Không Thành Công";
+                    Form2.ShowDialog();
                     this.Close();
                     clear();
                     _parent.clear1();
@@ -114,6 +132,7 @@ namespace SquiredCoffee.FormManage
                     _parent.Display();
                 }
             }
+            
         }
 
         private void rdStatus1_CheckedChanged(object sender, EventArgs e)
@@ -133,11 +152,24 @@ namespace SquiredCoffee.FormManage
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn xóa tùy chọn  này không . Vì nó có thể anh hưởng tới dữ liệu !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+            status = 0;
+            Option std = new Option(txtTitleOption.Text, Convert.ToInt32(cbOptionGroup.SelectedValue), status);
+            if ((DbOption.CheckLockOption(std, id_option.ToString())) == true)
             {
                 if (btnDelete.Text == "Xóa")
                 {
-                    DbOption.DeleteOption(id_option.ToString());
+                    Form1.title = "Khóa Thành Công";
+                    Form1.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.clear1();
+                    _parent.clear();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Khóa Không Thành Công";
+                    Form2.ShowDialog();
                     this.Close();
                     clear();
                     _parent.clear1();

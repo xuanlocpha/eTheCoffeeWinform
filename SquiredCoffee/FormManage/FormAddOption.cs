@@ -19,15 +19,19 @@ namespace SquiredCoffee.FormManage
         MySqlConnection con = new MySqlConnection();
         public static UC_ManageOption1 _parent;
         public int status = 1;
+        FormSuccess Form1;
+        FormError Form2;
         public FormAddOption(UC_ManageOption1 parent)
         {
             InitializeComponent();
             _parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         void ketnoi()
         {
-            con.ConnectionString = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            con.ConnectionString = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             if (con.State == ConnectionState.Closed)
                 con.Open();
         }
@@ -73,33 +77,51 @@ namespace SquiredCoffee.FormManage
         {
             if (cbOptionGroup.Text == "")
             {
-                MessageBox.Show("Tên tùy chọn món không được để ( Trống )");
+                Form2.title = "Tên Nhóm Option Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtTitleOption.Text.Trim() == "")
             {
-                MessageBox.Show("Tên của tùy chọn không được ( Trống )");
+                Form2.title = "Tên Option Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtTitleOption.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên của tùy chọn phải lớn hơn (  1 ký tự )");
+                Form2.title = "Tên Option Phải (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (DbOption.CheckDb(txtTitleOption.Text) == true)
             {
-                MessageBox.Show("Tên của tùy chọn  (  Đã tồn tại )");
+                Form2.title = "Tên Option Đã Tồn Tại ";
+                Form2.ShowDialog();
                 return;
             }
             if (btnSave.Text == "Lưu")
             {
                 Option std = new Option(txtTitleOption.Text, Convert.ToInt32(cbOptionGroup.SelectedValue),status);
-                DbOption.AddOption(std);
-                this.Close();
-                clear();
-                _parent.clear1();
-                _parent.clear();
-                _parent.Display();
+                if ((DbOption.CheckCreateOption(std)) == true)
+                {
+                    Form1.title = "Tạo thành công ";
+                    Form1.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.clear1();
+                    _parent.clear();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Tạo Không Thành Công ";
+                    Form2.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.clear1();
+                    _parent.clear();
+                    _parent.Display();
+                }
             }
         }
 

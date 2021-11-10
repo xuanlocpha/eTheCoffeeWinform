@@ -35,7 +35,7 @@ namespace SquiredCoffee.FormManage
             {
                 txtTitle.Text = item.title;
                 txtContent.Text = item.content;
-                txtCoupenCode.Text = item.coupen_code;
+                txtCoupenCode.Text = item.coupon_code;
                 dtpStartDate.Text = String.Format("{0:dd/MM/yyyy}", item.start_date);
                 dtpExpiryDate.Text = String.Format("{0:dd/MM/yyyy}", item.expiry_date);
                 cbDiscountUnit.Text = item.discount_unit;

@@ -16,7 +16,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -126,7 +126,6 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Khởi tạo thành công !!! ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {
@@ -151,7 +150,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Chỉnh sửa thành công !!! ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+   
             }
             catch (MySqlException ex)
             {
@@ -171,7 +170,6 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa  ( Thành Công )", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {
@@ -179,5 +177,81 @@ namespace SquiredCoffee.DB
             }
             con.Close();
         }
+
+
+
+        public static bool CheckCreateSupplier(Supplier std)
+        {
+            AddSupplier(std);
+            string sql = "select * from suppliers where name_supplier = @name_supplier";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@name_supplier", MySqlDbType.VarChar).Value = std.name_supplier;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+        public static bool CheckUpdateSupplier(Supplier std,string id)
+        {
+            UpdateSupplier(std,id);
+            string sql = "select * from suppliers where id = @id and name_supplier = @name_supplier and address = @address and phone = @phone and email = @email and status = @status ";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@name_supplier", MySqlDbType.VarChar).Value = std.name_supplier;
+            cmd.Parameters.Add("@address", MySqlDbType.VarChar).Value = std.address;
+            cmd.Parameters.Add("@phone", MySqlDbType.VarChar).Value = std.phone;
+            cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = std.email;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+
+
+        public static bool CheckDeleteSupplier(string id)
+        {
+            DeleteSupplier(id);
+            string sql = "select * from suppliers where id = '"+id+"'";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
     }
 }

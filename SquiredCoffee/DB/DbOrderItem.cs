@@ -15,7 +15,7 @@ namespace SquiredCoffee.DB
 
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -65,8 +65,8 @@ namespace SquiredCoffee.DB
 
         public static void AddOrderItem(Order_Items std)
         {
-            string sql = "INSERT INTO order_items (product_id,order_id,item_detail,quantity,total_product,content) " +
-                "VALUES(@product_id,@order_id,@item_detail,@quantity,@total_product,@content)";
+            string sql = "INSERT INTO order_items (product_id,item_detail,order_id,quantity,price,content) " +
+                "VALUES(@product_id,@item_detail,@order_id,@quantity,@price,@content)";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
@@ -74,12 +74,11 @@ namespace SquiredCoffee.DB
             cmd.Parameters.Add("@product_id", MySqlDbType.VarChar).Value = std.product_id;
             cmd.Parameters.Add("@item_detail", MySqlDbType.VarChar).Value = std.item_detail;
             cmd.Parameters.Add("@quantity", MySqlDbType.VarChar).Value = std.quantity;
-            cmd.Parameters.Add("@total_product", MySqlDbType.VarChar).Value = std.total_product;
+            cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = std.price;
             cmd.Parameters.Add("@content", MySqlDbType.VarChar).Value = std.content;
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Order Thành Công ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {
@@ -142,7 +141,7 @@ namespace SquiredCoffee.DB
         {
             List<Order_Items> order_Items_List = new List<Order_Items>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT oi.id,oi.product_id,oi.order_id,oi.item_detail,oi.quantity,oi.total_product,oi.content,p.title,p.price FROM order_items oi, orders o , products p   WHERE  oi.order_id = '" + id_order + "' AND o.id ='" + id_order + "' AND p.id = oi.product_id");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT oi.id,oi.product_id,oi.order_id,oi.item_detail,oi.quantity,oi.content,p.title,p.price FROM order_items oi, orders o , products p   WHERE  oi.order_id = '" + id_order + "' AND o.id ='" + id_order + "' AND p.id = oi.product_id");
             foreach (DataRow item in data.Rows)
             {
                 Order_Items order_Items= new Order_Items(item);
@@ -163,7 +162,6 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa Thành Công ", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {

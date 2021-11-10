@@ -10,19 +10,23 @@ namespace SquiredCoffee.Class
     class Trannsaction
     {
         public int id { get; set; }
+        public int user_id { get; set; }
         public int order_id { get; set; }
         public string code { get; set; }
         public string type { get; set; }
         public string mode { get; set; }
+        public string delivery_method { get; set; }
         public string content { get; set; }
         public string status { get; set; }
 
-        public Trannsaction(int Order_Id, string Code, string Type, string Mode, string Content, string Status)
+        public Trannsaction(int User_Id,int Order_Id, string Code, string Type, string Mode ,string Delivery_Method, string Content, string Status)
         {
+            user_id = User_Id;
             order_id = Order_Id;
             code = Code;
             type = Type;
             mode = Mode;
+            delivery_method = Delivery_Method;
             content = Content;
             status = Status;
         }
@@ -30,11 +34,14 @@ namespace SquiredCoffee.Class
         public Trannsaction(DataRow Row)
         {
             id = Convert.ToInt32(Row["id"]);
+            user_id = Convert.ToInt32(Row["user_id"]);
             order_id = Convert.ToInt32(Row["order_id"]);
             code = Row["code"].ToString();
             type = Row["type"].ToString();
             mode = Row["mode"].ToString();
+            delivery_method = Row["delivery_method"].ToString();
             status = Row["status"].ToString();
+            content = Row["content"].ToString();
         }
     }
 }

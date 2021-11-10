@@ -18,10 +18,14 @@ namespace SquiredCoffee.FormManage
 
         public static UC_ManageOptionGroup _parent;
         public int status = 1;
+        FormSuccess Form1;
+        FormError Form2;
         public FormAddGroupOption(UC_ManageOptionGroup parent)
         {
             InitializeComponent();
             _parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         private void rdStatus1_CheckedChanged(object sender, EventArgs e)
@@ -49,28 +53,45 @@ namespace SquiredCoffee.FormManage
         {
             if(txtOptionGroupName.Text == "")
             {
-                MessageBox.Show("Tên tùy chọn món không được ( Trống )");
+                Form2.title = "Tên Nhóm Option Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtOptionGroupName.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên tùy chọn món phải lớn hơn ( 1 ký tự )");
+                Form2.title = "Tên Nhóm Option Phải (>1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (DbOptionGroup.CheckOptionGroup(txtOptionGroupName.Text)== true)
             {
-                MessageBox.Show("Tên tùy chọn món  ( Đã tồn tại )");
+                Form2.title = "Tên Nhóm Option (Đã Tồn Tại)";
+                Form2.ShowDialog();
                 return;
             }
             if (btnSave.Text == "Lưu")
             {
                 OptionGroup std = new OptionGroup(txtOptionGroupName.Text, status);
-                DbOptionGroup.AddOptionGoup(std);
-                this.Close();
-                clear();
-                _parent.clear1();
-                _parent.clear();
-                _parent.Display();
+                if ((DbOptionGroup.CheckCreateOptionGroup(std)) == true)
+                {
+                    Form1.title = "Tạo Thành Công";
+                    Form1.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.clear1();
+                    _parent.clear();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Tạo Không Thành Công";
+                    Form2.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.clear1();
+                    _parent.clear();
+                    _parent.Display();
+                }
             }
         }
     }

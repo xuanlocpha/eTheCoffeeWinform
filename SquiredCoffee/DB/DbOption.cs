@@ -16,7 +16,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -65,7 +65,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm Option Thành Công ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             catch (MySqlException ex)
             {
@@ -88,7 +88,7 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Chỉnh Sửa ( Thành Công )", " Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+              
             }
             catch (MySqlException ex)
             {
@@ -191,11 +191,11 @@ namespace SquiredCoffee.DB
         }
 
 
-        public static List<Option> LoadOption(string id_product,string id_group_product)
+        public static List<Option> LoadOption(string id_product,string nameOption)
         {
             List<Option> optionLists = new List<Option>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT o.id,o.title,o.option_group_id,o.status,po.title as name_product_option,po.price,po.defaults as default_product_option FROM options o,product_options po WHERE po.product_id ='"+id_product+ "' AND po.option_id = o.id AND o.option_group_id='"+id_group_product+"' ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT po.id,po.title,po.price,po.defaults,o.title as name_option,o.id as id_option  FROM products p INNER JOIN product_options po ON p.id = po.product_id , product_options po INNER JOIN options o ON po.option_id = o.id , options o INNER JOIN option_groups og ON o.option_group_id = og.id WHERE p.id ='"+id_product+"' AND og.title ='"+nameOption+"' ");
             foreach (DataRow item in data.Rows)
             {
                 Option option = new Option(item);
@@ -226,11 +226,11 @@ namespace SquiredCoffee.DB
         }
 
 
-        public static List<OptionShow> OptionShow(string @id_option)
+        public static List<OptionShow> OptionShow(string @id_option,string @id_product)
         {
             List<OptionShow> option_Show_List = new List<OptionShow>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,option_group_id,status FROM options WHERE id = '"+@id_option+"' ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT o.id,o.title,o.option_group_id,o.status,po.price as price FROM options o,product_options po WHERE o.id = '"+@id_option+ "' and po.option_id = '" + @id_option + "' and po.product_id = '"+@id_product+"'");
             foreach (DataRow item in data.Rows)
             {
                 OptionShow option_Show = new OptionShow(item);
@@ -240,5 +240,77 @@ namespace SquiredCoffee.DB
             return option_Show_List;
         }
 
+        public static bool CheckCreateOption(Option std)
+        {
+            AddOption(std);
+            string sql = "select * from options where title = @title";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+        public static bool CheckUpdateOption(Option std,string id)
+        {
+            UpdateOption(std,id);
+            string sql = "select * from options where id = @id and option_group_id = @option_group_id and title = @title  and status = @status";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@option_group_id", MySqlDbType.VarChar).Value = std.option_group_id;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
+        public static bool CheckLockOption(Option std, string id)
+        {
+            UpdateOption(std, id);
+            string sql = "select * from options where id = @id and option_group_id = @option_group_id and title = @title  and status = @status";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@option_group_id", MySqlDbType.VarChar).Value = std.option_group_id;
+            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
     }
 }

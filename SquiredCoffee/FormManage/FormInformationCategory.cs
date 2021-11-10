@@ -18,11 +18,14 @@ namespace SquiredCoffee.FormManage
         public static UC_ManageCategory _parent;
         public int id_category;
         public int status;
+        FormSuccess Form1;
+        FormError Form2;
         public FormInformationCategory(UC_ManageCategory parent)
         {
             _parent = parent;
             InitializeComponent();
-            
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         public void Display()
@@ -68,43 +71,67 @@ namespace SquiredCoffee.FormManage
         {
             if (txtTitleCategory.Text.Trim() == "")
             {
-                MessageBox.Show("Tên loại sản phẩm không được để ( Trống )");
+                Form1.title = "Tên Loại Sản Phẩm Không Được (Trống) ";
+                Form1.ShowDialog();
                 return;
             }
             if (txtTitleCategory.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Tên loại sản phẩm phải lớn hơn  ( 1 ký tự )");
+                Form2.title = "Tên Loại Sản Phẩm  (> 1 Ký Tự) ";
+                Form2.ShowDialog();
                 return;
             }
             if (cbType.Text == "")
             {
-                MessageBox.Show("Ô Thể Loại đang  ( Trống )");
+                Form2.title = "Thể Loại Không Được (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
-            if (MessageBox.Show("Bạn có muốn chỉnh sửa loại sản phẩm  này không !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
+           
                 if (btnEdit.Text == "Sửa")
                 {
                     Category std = new Category(txtTitleCategory.Text, cbType.Text, status);
-                    DbCategory.UpdateCategory(std, id_category.ToString());
-                    this.Close();
-                    _parent.Display();
+                    if(DbCategory.CheckUpdateCategory(std,id_category.ToString())== true)
+                    {
+                        Form1.title = "Sửa Thành Công ";
+                        Form1.ShowDialog();
+                        this.Close();
+                        _parent.Display();
+                    }
+                    else
+                    {
+                        Form2.title = "Sửa Không Thành Công ";
+                        Form2.ShowDialog();
+                        this.Close();
+                        _parent.Display();
+                    }
                 }
-            }
+            
         }
 
         private void btnLock_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn Khóa loại sản phẩm  này không !", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
+          
                 if (btnLock.Text == "Khóa")
                 {
+                    status = 0;
                     Category std = new Category(txtTitleCategory.Text, cbType.Text, status);
-                    DbCategory.LockCategory(id_category.ToString());
-                    this.Close();
-                    _parent.Display();
+                    if (DbCategory.CheckLockCategory(std, id_category.ToString()) == true)
+                    {
+                        Form1.title = "Sửa Thành Công ";
+                        Form1.ShowDialog();
+                        this.Close();
+                        _parent.Display();
+                    }
+                    else
+                    {
+                        Form2.title = "Sửa Không Thành Công ";
+                        Form2.ShowDialog();
+                        this.Close();
+                        _parent.Display();
+                    }
                 }
-            }
+         
         }
     }
 }

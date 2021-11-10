@@ -19,10 +19,14 @@ namespace SquiredCoffee.FormManage
         MySqlConnection con = new MySqlConnection();
         public int status = 1;
         public static UC_ManageProductTopping _parent;
+        FormSuccess Form1;
+        FormError Form2;
         public FormAddProductTopping(UC_ManageProductTopping parent)
         {
             InitializeComponent();
             _parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -32,7 +36,7 @@ namespace SquiredCoffee.FormManage
 
         void ketnoi()
         {
-            con.ConnectionString = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            con.ConnectionString = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             if (con.State == ConnectionState.Closed)
                 con.Open();
         }
@@ -96,28 +100,45 @@ namespace SquiredCoffee.FormManage
         {
             if (cbProductName.Text == null)
             {
-                MessageBox.Show("Bạn Chưa Chọn Tên Sản Phẩm !");
+                Form2.title = "Bạn Chưa Chọn Tên Sản Phẩm ";
+                Form2.ShowDialog();
                 return;
             }
             if (cbToppingName.Text == null)
             {
-                MessageBox.Show("Bạn Chưa Chọn Tên Topping !");
+                Form2.title = "Bạn Chưa Chọn Tên Topping ";
+                Form2.ShowDialog();
                 return;
             }
             if(DbProductTopping.CheckProductTopping(cbProductName.SelectedValue.ToString(), cbToppingName.SelectedValue.ToString())== true)
             {
-                MessageBox.Show(" Topping này đã tồn tại !");
+                Form2.title = "Topping Sản Phẩm Này Đã Tồn Tại ";
+                Form2.ShowDialog();
                 return;
             }
             if (btnSave.Text == "Lưu")
             {
                 ProductTopping std = new ProductTopping(Convert.ToInt32(cbProductName.SelectedValue), Convert.ToInt32(cbToppingName.SelectedValue),status);
-                DbProductTopping.AddProductTopping(std);
-                this.Close();
-                clear();
-                _parent.clear();
-                _parent.clear1();
-                _parent.Display();
+               if(DbProductTopping.CheckCreateProductTopping(std)== true)
+                {
+                    Form1.title = "Tạo Thành Công ";
+                    Form1.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.clear();
+                    _parent.clear1();
+                    _parent.Display();
+                }
+                else
+                {
+                    Form2.title = "Tạo Không Thành Công ";
+                    Form2.ShowDialog();
+                    this.Close();
+                    clear();
+                    _parent.clear();
+                    _parent.clear1();
+                    _parent.Display();
+                }
             }
         }
     }
