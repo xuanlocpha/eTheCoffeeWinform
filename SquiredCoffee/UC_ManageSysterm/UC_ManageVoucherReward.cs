@@ -34,7 +34,14 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void btnReward_Click(object sender, EventArgs e)
         {
-            
+            UC_ManageReward uC_ManageReward = new UC_ManageReward();
+            AddControlsToPanel(uC_ManageReward);
+        }
+
+        private void btnDiscountProduct_Click(object sender, EventArgs e)
+        {
+            UC_ManageDiscount uC_ManageDiscount = new UC_ManageDiscount();
+            AddControlsToPanel(uC_ManageDiscount);
         }
     }
 }

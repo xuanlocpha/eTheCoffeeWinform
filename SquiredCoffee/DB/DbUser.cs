@@ -14,7 +14,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9;charset=utf8";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -86,7 +86,38 @@ namespace SquiredCoffee.DB
         {
             List<User> userList = new List<User>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,display_name,gender,birthday,email,phone,image,point,total_point,level,bar_code,status,password FROM users   ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,display_name,gender,birthday,email,phone,image,point,total_point,level,bar_code,status,password FROM users  WHERE status = 1 OR status = 0");
+
+            foreach (DataRow item in data.Rows)
+            {
+                User user = new User(item);
+                userList.Add(user);
+            }
+
+            return userList;
+        }
+
+
+        public static List<User> ListUserSearchStatus(string status)
+        {
+            List<User> userList = new List<User>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,display_name,gender,birthday,email,phone,image,point,total_point,level,bar_code,status,password FROM users  WHERE status = '"+status+"' ");
+
+            foreach (DataRow item in data.Rows)
+            {
+                User user = new User(item);
+                userList.Add(user);
+            }
+
+            return userList;
+        }
+
+        public static List<User> ListUserInformation(string id)
+        {
+            List<User> userList = new List<User>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,display_name,gender,birthday,email,phone,image,point,total_point,level,bar_code,status,password FROM users  WHERE id = '"+id+"'");
 
             foreach (DataRow item in data.Rows)
             {
@@ -182,6 +213,51 @@ namespace SquiredCoffee.DB
             }
 
             return userList;
+        }
+
+        public static void UpdateUserShow(string status,string id)
+        {
+
+            string sql = "UPDATE users SET status=@status WHERE id = @id";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = status;
+            try
+            {
+                cmd.ExecuteNonQuery();
+         //       MessageBox.Show("Update Thành Công ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Update Không Thành Công ! \n" + ex.Message, "Cảnh Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+
+        public static bool CheckUpdateUser(string status, string id)
+        {
+            UpdateUserShow(status, id);
+            string sql = "select * from users where  id= '" + id + "' AND status = '" + status + "'";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = status;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
         }
 
     }

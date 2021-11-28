@@ -44,11 +44,6 @@ namespace SquiredCoffee.Class
             image = row["image"].ToString();
             content = row["content"].ToString();
             status = Convert.ToInt32(row["status"]);
-        }
-
-       
-
-
-        
+        }  
     }
 }

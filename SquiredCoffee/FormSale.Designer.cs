@@ -72,8 +72,8 @@ namespace SquiredCoffee
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            this.guna2GradientTileButton3 = new Guna.UI2.WinForms.Guna2GradientTileButton();
-            this.guna2GradientTileButton2 = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.btnHistoryOrder = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.btnVoucherDiscount = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.btnReward = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.btnAllProduct = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -667,8 +667,8 @@ namespace SquiredCoffee
             // panel9
             // 
             this.panel9.Controls.Add(this.btnLogout);
-            this.panel9.Controls.Add(this.guna2GradientTileButton3);
-            this.panel9.Controls.Add(this.guna2GradientTileButton2);
+            this.panel9.Controls.Add(this.btnHistoryOrder);
+            this.panel9.Controls.Add(this.btnVoucherDiscount);
             this.panel9.Controls.Add(this.btnReward);
             this.panel9.Controls.Add(this.btnAllProduct);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -707,63 +707,65 @@ namespace SquiredCoffee
             this.btnLogout.Text = "Đăng Xuất";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // guna2GradientTileButton3
+            // btnHistoryOrder
             // 
-            this.guna2GradientTileButton3.BorderRadius = 5;
-            this.guna2GradientTileButton3.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2GradientTileButton3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2GradientTileButton3.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(72)))), ((int)(((byte)(115)))));
-            this.guna2GradientTileButton3.CheckedState.Parent = this.guna2GradientTileButton3;
-            this.guna2GradientTileButton3.CustomImages.Parent = this.guna2GradientTileButton3;
-            this.guna2GradientTileButton3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientTileButton3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientTileButton3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientTileButton3.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientTileButton3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientTileButton3.DisabledState.Parent = this.guna2GradientTileButton3;
-            this.guna2GradientTileButton3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(112)))), ((int)(((byte)(34)))));
-            this.guna2GradientTileButton3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(112)))), ((int)(((byte)(34)))));
-            this.guna2GradientTileButton3.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2GradientTileButton3.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientTileButton3.HoverState.Parent = this.guna2GradientTileButton3;
-            this.guna2GradientTileButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientTileButton3.Image")));
-            this.guna2GradientTileButton3.ImageOffset = new System.Drawing.Point(0, 4);
-            this.guna2GradientTileButton3.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2GradientTileButton3.Location = new System.Drawing.Point(617, 4);
-            this.guna2GradientTileButton3.Name = "guna2GradientTileButton3";
-            this.guna2GradientTileButton3.ShadowDecoration.Parent = this.guna2GradientTileButton3;
-            this.guna2GradientTileButton3.Size = new System.Drawing.Size(193, 78);
-            this.guna2GradientTileButton3.TabIndex = 5;
-            this.guna2GradientTileButton3.Text = "Lịch Sử BH";
+            this.btnHistoryOrder.BorderRadius = 5;
+            this.btnHistoryOrder.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnHistoryOrder.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnHistoryOrder.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(72)))), ((int)(((byte)(115)))));
+            this.btnHistoryOrder.CheckedState.Parent = this.btnHistoryOrder;
+            this.btnHistoryOrder.CustomImages.Parent = this.btnHistoryOrder;
+            this.btnHistoryOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHistoryOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHistoryOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHistoryOrder.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHistoryOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHistoryOrder.DisabledState.Parent = this.btnHistoryOrder;
+            this.btnHistoryOrder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(112)))), ((int)(((byte)(34)))));
+            this.btnHistoryOrder.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(112)))), ((int)(((byte)(34)))));
+            this.btnHistoryOrder.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold);
+            this.btnHistoryOrder.ForeColor = System.Drawing.Color.White;
+            this.btnHistoryOrder.HoverState.Parent = this.btnHistoryOrder;
+            this.btnHistoryOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnHistoryOrder.Image")));
+            this.btnHistoryOrder.ImageOffset = new System.Drawing.Point(0, 4);
+            this.btnHistoryOrder.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnHistoryOrder.Location = new System.Drawing.Point(617, 4);
+            this.btnHistoryOrder.Name = "btnHistoryOrder";
+            this.btnHistoryOrder.ShadowDecoration.Parent = this.btnHistoryOrder;
+            this.btnHistoryOrder.Size = new System.Drawing.Size(193, 78);
+            this.btnHistoryOrder.TabIndex = 5;
+            this.btnHistoryOrder.Text = "Lịch Sử BH";
+            this.btnHistoryOrder.Click += new System.EventHandler(this.btnHistoryOrder_Click);
             // 
-            // guna2GradientTileButton2
+            // btnVoucherDiscount
             // 
-            this.guna2GradientTileButton2.BorderRadius = 5;
-            this.guna2GradientTileButton2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2GradientTileButton2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2GradientTileButton2.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(72)))), ((int)(((byte)(115)))));
-            this.guna2GradientTileButton2.CheckedState.Parent = this.guna2GradientTileButton2;
-            this.guna2GradientTileButton2.CustomImages.Parent = this.guna2GradientTileButton2;
-            this.guna2GradientTileButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientTileButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientTileButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientTileButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientTileButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientTileButton2.DisabledState.Parent = this.guna2GradientTileButton2;
-            this.guna2GradientTileButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(112)))), ((int)(((byte)(34)))));
-            this.guna2GradientTileButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(112)))), ((int)(((byte)(34)))));
-            this.guna2GradientTileButton2.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2GradientTileButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientTileButton2.HoverState.Parent = this.guna2GradientTileButton2;
-            this.guna2GradientTileButton2.Image = ((System.Drawing.Image)(resources.GetObject("guna2GradientTileButton2.Image")));
-            this.guna2GradientTileButton2.ImageOffset = new System.Drawing.Point(0, 4);
-            this.guna2GradientTileButton2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2GradientTileButton2.Location = new System.Drawing.Point(416, 4);
-            this.guna2GradientTileButton2.Name = "guna2GradientTileButton2";
-            this.guna2GradientTileButton2.ShadowDecoration.Parent = this.guna2GradientTileButton2;
-            this.guna2GradientTileButton2.Size = new System.Drawing.Size(193, 78);
-            this.guna2GradientTileButton2.TabIndex = 4;
-            this.guna2GradientTileButton2.Text = "Kho Hàng";
+            this.btnVoucherDiscount.BorderRadius = 5;
+            this.btnVoucherDiscount.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnVoucherDiscount.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnVoucherDiscount.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(72)))), ((int)(((byte)(115)))));
+            this.btnVoucherDiscount.CheckedState.Parent = this.btnVoucherDiscount;
+            this.btnVoucherDiscount.CustomImages.Parent = this.btnVoucherDiscount;
+            this.btnVoucherDiscount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVoucherDiscount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnVoucherDiscount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnVoucherDiscount.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnVoucherDiscount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnVoucherDiscount.DisabledState.Parent = this.btnVoucherDiscount;
+            this.btnVoucherDiscount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(112)))), ((int)(((byte)(34)))));
+            this.btnVoucherDiscount.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(112)))), ((int)(((byte)(34)))));
+            this.btnVoucherDiscount.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold);
+            this.btnVoucherDiscount.ForeColor = System.Drawing.Color.White;
+            this.btnVoucherDiscount.HoverState.Parent = this.btnVoucherDiscount;
+            this.btnVoucherDiscount.Image = ((System.Drawing.Image)(resources.GetObject("btnVoucherDiscount.Image")));
+            this.btnVoucherDiscount.ImageOffset = new System.Drawing.Point(0, 4);
+            this.btnVoucherDiscount.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnVoucherDiscount.Location = new System.Drawing.Point(416, 4);
+            this.btnVoucherDiscount.Name = "btnVoucherDiscount";
+            this.btnVoucherDiscount.ShadowDecoration.Parent = this.btnVoucherDiscount;
+            this.btnVoucherDiscount.Size = new System.Drawing.Size(193, 78);
+            this.btnVoucherDiscount.TabIndex = 4;
+            this.btnVoucherDiscount.Text = "Khuyến Mãi";
+            this.btnVoucherDiscount.Click += new System.EventHandler(this.btnVoucherDiscount_Click);
             // 
             // btnReward
             // 
@@ -950,8 +952,8 @@ namespace SquiredCoffee
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.FlowLayoutPanel flpProduct;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnLogout;
-        private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton3;
-        private Guna.UI2.WinForms.Guna2GradientTileButton guna2GradientTileButton2;
+        private Guna.UI2.WinForms.Guna2GradientTileButton btnHistoryOrder;
+        private Guna.UI2.WinForms.Guna2GradientTileButton btnVoucherDiscount;
         private Guna.UI2.WinForms.Guna2GradientTileButton btnReward;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblGrandTotal;

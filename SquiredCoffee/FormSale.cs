@@ -1,4 +1,7 @@
-﻿using Guna.UI.WinForms;
+﻿using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using Guna.UI.WinForms;
 using Guna.UI2.WinForms;
 using MySql.Data.MySqlClient;
 using Nancy.Json;
@@ -19,6 +22,14 @@ namespace SquiredCoffee
 {
     public partial class FormSale : Form
     {
+        IFirebaseConfig config = new FirebaseConfig
+        {
+            AuthSecret = "a9dcTERVqKjXumq650cZgtQelwv2uqFTmAejZjjj",
+            BasePath = "https://koffeeholic-75e48-default-rtdb.firebaseio.com/"
+        };
+
+        IFirebaseClient client;
+
         FormLoginSysterm _parent;
         public int id_staff;
         public string fullName;
@@ -39,17 +50,18 @@ namespace SquiredCoffee
         public string drink_type_name;
         public string option_name;
         public string option_price;
-        public decimal grandTotal;
+        public decimal grandTotal;   
         public string topping;
         public string options;
         public string mode;
         public decimal subTotal;
         public decimal shipping;
         public decimal grandTotalPayment;
+        public string code;
         public int quantityOrder;
         List<int> str1 = new List<int>();
         List<int> str2 = new List<int>();
-       
+
 
         FormInputTableNumber Form;
         FormOrderProduct Form1;
@@ -57,7 +69,8 @@ namespace SquiredCoffee
         FormOrderOnline Form3;
         FormError Form4;
         FormReward Form5;
-
+        FormVoucherDiscount Form6;
+        FormShowOrder Form7;
         MySqlConnection con = new MySqlConnection();
 
         public FormSale(FormLoginSysterm parent)
@@ -71,11 +84,12 @@ namespace SquiredCoffee
             Form3 = new FormOrderOnline(this);
             Form4 = new FormError();
             Form5 = new FormReward(this);
+            Form6 = new FormVoucherDiscount(this);
+            Form7 = new FormShowOrder(this);
         }
         private PictureBox pic = new PictureBox();
         public Label price;
         public Label title;
-        public CartItem cart = new CartItem();
 
 
 
@@ -109,9 +123,10 @@ namespace SquiredCoffee
         public void clear()
         {
             cbCategory.SelectedIndex = -1;
-            txtSearch.Text = string.Empty;   
+            txtSearch.Text = string.Empty;
         }
-       
+
+
 
         public void clearOrder()
         {
@@ -134,6 +149,12 @@ namespace SquiredCoffee
             shipping = 0;
             lblGrandTotal.Text = lblShipping.Text = lblSubtotal.Text = "0 đ";
             quantityOrder = 0;
+        }
+
+        public void clearProduct()
+        {
+            lblGrandTotal.Text = lblShipping.Text = lblSubtotal.Text = "0 đ";
+            grandTotalPayment = 0;
         }
 
         public void LoadStaff()
@@ -166,7 +187,7 @@ namespace SquiredCoffee
         }
 
 
-       public void LoadProductList()
+        public void LoadProductList()
         {
             List<ProductShow> productList = DbProduct.LoadProductList1();
 
@@ -199,7 +220,7 @@ namespace SquiredCoffee
 
                 title = new Label();
                 title.Text = (item.title).ToString();
-                title.BackColor = Color.FromArgb(130,255,255,255);
+                title.BackColor = Color.FromArgb(130, 255, 255, 255);
                 title.TextAlign = ContentAlignment.MiddleCenter;
                 title.ForeColor = Color.Black;
                 title.Font = new Font("Quicksand", 12, FontStyle.Bold);
@@ -278,16 +299,6 @@ namespace SquiredCoffee
             LoadOrderItem();
         }
 
-        public void LoadJson(string file)
-        {
-            JavaScriptSerializer js = new JavaScriptSerializer();
-            ItemDetail[] itemDetails = js.Deserialize<ItemDetail[]>(file);
-            foreach (ItemDetail item in itemDetails)
-            {        
-                str1 = item.options;
-                str2 = item.toppings;
-            }
-        }
 
 
         public void ReadFormDataFile(string fileLocation)
@@ -298,12 +309,12 @@ namespace SquiredCoffee
         }
 
 
-        public void OptionName(int id,string product_id,int quantity)
+        public void OptionName(int id, string product_id, int quantity)
         {
             if (DbOption.CheckOption(id.ToString()) == true)
             {
-               
-                List<OptionShow> option_Show_List = DbOption.OptionShow(id.ToString(),product_id);
+
+                List<OptionShow> option_Show_List = DbOption.OptionShow(id.ToString(), product_id);
                 foreach (OptionShow item1 in option_Show_List)
                 {
                     option_name = item1.title;
@@ -316,7 +327,7 @@ namespace SquiredCoffee
         }
 
 
-        public void ToppingName(int id,int quantity)
+        public void ToppingName(int id, int quantity)
         {
             if (DbTopping.CheckTopping(id.ToString()) == true)
             {
@@ -335,7 +346,7 @@ namespace SquiredCoffee
 
 
 
-        public void LoadOrderItem(string id,string shippingOrderOnline)
+        public void LoadOrderItem(string id, string shippingOrderOnline)
         {
             id_order = id;
             flpOrder.Controls.Clear();
@@ -345,8 +356,7 @@ namespace SquiredCoffee
                 quantityOrder = quantityOrder + 1;
                 ReadFormDataFile(item.item_detail);
                 string x = id_topping;
-
-                CartItem cart = new CartItem();
+                CartItem cart = new CartItem(this);
                 cart.ItemName = item.title;
                 cart.ItemPrice = string.Format("{0:#,##0} đ", item.price);
                 cart.ItemQuantity = item.quantity.ToString();
@@ -371,7 +381,7 @@ namespace SquiredCoffee
                 int length = str1.Count;
                 for (int i = 0; i < length; i++)
                 {
-                    OptionName(str1[i],item.product_id.ToString(),item.quantity);
+                    OptionName(str1[i], item.product_id.ToString(), item.quantity);
                     if (Convert.ToInt32(str1[i]) != 0)
                     {
                         ItemDetailOption itemDetailOption = new ItemDetailOption();
@@ -384,7 +394,7 @@ namespace SquiredCoffee
                 int length1 = str2.Count;
                 for (int i = 0; i < length1; i++)
                 {
-                    ToppingName(str2[i],item.quantity);
+                    ToppingName(str2[i], item.quantity);
                     if (Convert.ToInt32(str2[i]) != 0)
                     {
                         ItemDetailTopping itemDetailTopping = new ItemDetailTopping();
@@ -414,36 +424,36 @@ namespace SquiredCoffee
                 quantityOrder = quantityOrder + 1;
                 ReadFormDataFile(item.item_detail);
                 string x = id_topping;
-                cart = new CartItem();
+                CartItem cart = new CartItem(this);
                 cart.ItemName = item.title;
                 cart.ItemPrice = string.Format("{0:#,##0} đ", item.price);
                 cart.ItemQuantity = item.quantity.ToString();
                 cart.ItemId = item.id.ToString();
-               
 
-                    List<Discount> discounts = DbDiscount.LoadDiscountList(DateTime.Now.ToString("yyyy-MM-dd"));
-                    foreach (Discount item1 in discounts)
+
+                List<Discount> discounts = DbDiscount.LoadDiscountList(DateTime.Now.ToString("yyyy-MM-dd"));
+                foreach (Discount item1 in discounts)
+                {
+                    string k = Convert.ToString(item.product_id);
+                    if (item1.product.Contains(k) == true)
                     {
-                        string k = Convert.ToString(item.product_id);
-                        if (item1.product.Contains(k) == true)
-                        {
-                            decimal kq = (item.price * Convert.ToDecimal(item1.discount)) / 100;
-                            decimal discount = item.price - kq;
-                            cart.ItemDiscount = string.Format("{0:#,##0} đ", discount);
-                            grandTotal = grandTotal + (item.quantity * discount);
-                        }
-                        else
-                        {
-                            grandTotal = grandTotal + (item.quantity * item.price);
-                        }
-                    }    
-                
+                        decimal kq = (item.price * Convert.ToDecimal(item1.discount)) / 100;
+                        decimal discount = item.price - kq;
+                        cart.ItemDiscount = string.Format("{0:#,##0} đ", discount);
+                        grandTotal = grandTotal + (item.quantity * discount);
+                    }
+                    else
+                    {
+                        grandTotal = grandTotal + (item.quantity * item.price);
+                    }
+                }
+
                 flpOrder.Controls.Add(cart);
 
                 int length = str1.Count;
                 for (int i = 0; i < length; i++)
                 {
-                    OptionName(str1[i],item.product_id.ToString(),item.quantity);
+                    OptionName(str1[i], item.product_id.ToString(), item.quantity);
                     if (Convert.ToInt32(str1[i]) != 0)
                     {
                         ItemDetailOption itemDetailOption = new ItemDetailOption();
@@ -456,7 +466,7 @@ namespace SquiredCoffee
                 int length1 = str2.Count;
                 for (int i = 0; i < length1; i++)
                 {
-                    ToppingName(str2[i],item.quantity);
+                    ToppingName(str2[i], item.quantity);
                     if (Convert.ToInt32(str2[i]) != 0)
                     {
                         ItemDetailTopping itemDetailTopping = new ItemDetailTopping();
@@ -480,7 +490,7 @@ namespace SquiredCoffee
 
         private void FormSale_Load(object sender, EventArgs e)
         {
-            
+            client = new FireSharp.FirebaseClient(config);
             Timer timer = new Timer();
             timer.Interval = (1 * 450); // 1 secs
             timer.Tick += new EventHandler(timer1_Tick);
@@ -494,12 +504,12 @@ namespace SquiredCoffee
             LoadProductList();
             LoadOrderItem();
             LoadStaff();
-            
+
             Guna.UI.Lib.ScrollBar.PanelScrollHelper flowpan = new Guna.UI.Lib.ScrollBar.PanelScrollHelper(flpProduct, gunaVScrollBar1, true);
             Guna.UI.Lib.ScrollBar.PanelScrollHelper flowpan1 = new Guna.UI.Lib.ScrollBar.PanelScrollHelper(flpOrder, gunaVScrollBar2, true);
         }
 
-       
+
 
         private void btnAllProduct_Click(object sender, EventArgs e)
         {
@@ -601,7 +611,7 @@ namespace SquiredCoffee
                 price.Font = new Font("Quicksand", 12, FontStyle.Bold);
                 price.TextAlign = ContentAlignment.MiddleRight;
                 price.Dock = DockStyle.Bottom;
-                
+
 
                 title = new Label();
                 title.Text = (item.title).ToString();
@@ -711,11 +721,83 @@ namespace SquiredCoffee
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            if(grandTotalPayment == 0)
+            if (grandTotalPayment == 0)
             {
                 Form4.title = "Hóa Đơn Chưa Có Sản Phẩm!";
                 Form4.ShowDialog();
                 return;
+            }
+            //FormBackGround formBackGround = new FormBackGround();
+            //try
+            //{
+            //    using (FormPaymentSale Form = new FormPaymentSale(this))
+            //    {
+            //        formBackGround.StartPosition = FormStartPosition.Manual;
+            //        formBackGround.FormBorderStyle = FormBorderStyle.None;
+            //        formBackGround.Opacity = .70d;
+            //        formBackGround.BackColor = Color.Black;
+            //        formBackGround.WindowState = FormWindowState.Maximized;
+            //        formBackGround.TopMost = true;
+            //        formBackGround.Location = this.Location;
+            //        formBackGround.ShowInTaskbar = false;
+            //        formBackGround.Show();
+
+
+            //        if (mode == "online")
+            //        {
+
+            //            Trannsaction std1 = new Trannsaction(18, Convert.ToInt32(id_order), code, "cash", mode, "pickup", "", "packing");
+            //            DbTransaction.UpdateTransaction(std1, id_order.ToString());
+            //            notification();
+            //            Form.Owner = formBackGround;
+            //            Form.tableName = lblTableNumber.Text;
+            //            Form.provisional = grandTotalPayment.ToString();
+            //            Form.id_order = Convert.ToInt32(id_order);
+            //            Form.id_staff = id_staff;
+            //            Form.mode = mode;
+            //            Form.shipping = shipping;
+            //            Form.quantity = quantityOrder;
+            //            Form.ShowDialog();
+            //        }
+            //        else
+            //        {
+            //            Form.Owner = formBackGround;
+            //            Form.tableName = lblTableNumber.Text;
+            //            Form.provisional = grandTotalPayment.ToString();
+            //            Form.id_order = Convert.ToInt32(id_order);
+            //            Form.id_staff = id_staff;
+            //            Form.mode = mode;
+            //            Form.shipping = shipping;
+            //            Form.quantity = quantityOrder;
+            //            Form.ShowDialog();
+            //        }
+
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw;
+            //}
+            //finally
+            //{
+            //    formBackGround.Dispose();
+            //}
+            if (mode == "online")
+            {
+
+                Trannsaction std1 = new Trannsaction(18, Convert.ToInt32(id_order), code, "cash", mode, "pickup", "", "packing");
+                DbTransaction.UpdateTransaction(std1, id_order.ToString());
+                notification();
+                Form2 = new FormPaymentSale(this);
+                Form2.tableName = lblTableNumber.Text;
+                Form2.provisional = grandTotalPayment.ToString();
+                Form2.id_order = Convert.ToInt32(id_order);
+                Form2.id_staff = id_staff;
+                Form2.mode = mode;
+                Form2.shipping = shipping;
+                Form2.name_staff = lblFullName.Text;
+                Form2.quantity = quantityOrder;
+                Form2.ShowDialog();
             }
             else
             {
@@ -726,6 +808,7 @@ namespace SquiredCoffee
                 Form2.id_staff = id_staff;
                 Form2.mode = mode;
                 Form2.shipping = shipping;
+                Form2.name_staff = lblFullName.Text;
                 Form2.quantity = quantityOrder;
                 Form2.ShowDialog();
             }
@@ -753,9 +836,34 @@ namespace SquiredCoffee
             List<OrderShow> orderList = DbOrder.LoadOrderShow("online");
             foreach (OrderShow item in orderList)
             {
-                kq = +1;
+                kq = kq + 1;
             }
             lblCountOrderOnline.Text = Convert.ToString(kq);
+        }
+
+        private void btnHistoryOrder_Click(object sender, EventArgs e)
+        {
+           Form7.ShowDialog();
+        }
+
+        private void btnVoucherDiscount_Click(object sender, EventArgs e)
+        {
+            Form6.ShowDialog();
+        }
+
+        public async void notification()
+        {
+            var token = "fTmPozwiQeiDUIeLK-ofgE:APA91bFjFsINh6kbm_PuPWHRFY0M9XiR5S2Dt3lg-jeCdRgn24B0qRGj23tMkw44UAWHYfQC0MEKoKSpHv2ot5kyS1s_iCel09Ff80keHZskqT_vSgKMnHRYt-liJatnDrtNJyhIhSgg";
+            var data = new NotificationTransaction
+            {
+                id = id_order,
+                mode = mode,
+                delivery_method = "pickup",
+                status = "packing"
+            };
+            var result = client.DeleteAsync("notification");
+            SetResponse response = await client.SetAsync("notification_transaction", data);
+            SetResponse response1 = await client.SetAsync("token", token);
         }
     }
 }

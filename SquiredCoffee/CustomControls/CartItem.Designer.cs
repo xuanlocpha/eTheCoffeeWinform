@@ -155,7 +155,7 @@ namespace SquiredCoffee.CustomControls
             this.btnQuantity.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnQuantity.DisabledState.Parent = this.btnQuantity;
             this.btnQuantity.FillColor = System.Drawing.Color.Tomato;
-            this.btnQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnQuantity.ForeColor = System.Drawing.Color.White;
             this.btnQuantity.HoverState.Parent = this.btnQuantity;
             this.btnQuantity.Image = ((System.Drawing.Image)(resources.GetObject("btnQuantity.Image")));
@@ -166,6 +166,7 @@ namespace SquiredCoffee.CustomControls
             this.btnQuantity.ShadowDecoration.Parent = this.btnQuantity;
             this.btnQuantity.Size = new System.Drawing.Size(45, 45);
             this.btnQuantity.TabIndex = 0;
+            this.btnQuantity.Click += new System.EventHandler(this.btnQuantity_Click);
             // 
             // CartItem
             // 

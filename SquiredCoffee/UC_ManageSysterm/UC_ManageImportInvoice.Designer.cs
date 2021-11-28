@@ -31,9 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ManageImportInvoice));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
@@ -49,10 +51,6 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.bunifuVScrollBar1 = new Bunifu.UI.WinForms.BunifuVScrollBar();
@@ -70,7 +68,6 @@
             this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.dtpSearch = new System.Windows.Forms.DateTimePicker();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportInvoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -114,19 +111,15 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5,
-            this.Column7,
-            this.Column9,
-            this.Column8,
             this.Column6});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvImportInvoice.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvImportInvoice.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvImportInvoice.EnableHeadersVisualStyles = false;
             this.dgvImportInvoice.Location = new System.Drawing.Point(43, 196);
             this.dgvImportInvoice.Name = "dgvImportInvoice";
@@ -137,8 +130,9 @@
             this.dgvImportInvoice.RowTemplate.Height = 50;
             this.dgvImportInvoice.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvImportInvoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvImportInvoice.Size = new System.Drawing.Size(1531, 474);
+            this.dgvImportInvoice.Size = new System.Drawing.Size(1520, 474);
             this.dgvImportInvoice.TabIndex = 83;
+            this.dgvImportInvoice.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportInvoice_CellClick);
             // 
             // Column12
             // 
@@ -159,65 +153,38 @@
             // Column2
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column2.FillWeight = 130F;
-            this.Column2.HeaderText = "Tên Sản Phẩm";
+            this.Column2.HeaderText = "Tên Nhân Viên";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
-            this.Column3.FillWeight = 150F;
-            this.Column3.HeaderText = "Tên Nhà Cung Cấp";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Quicksand", 12F);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column3.HeaderText = "Tổng Tiền";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
-            this.Column4.FillWeight = 70F;
-            this.Column4.HeaderText = "Số Lượng";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Quicksand", 12F);
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column4.FillWeight = 80F;
+            this.Column4.HeaderText = "Ngày Nhập";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 70F;
-            this.Column5.HeaderText = "Đơn Vị";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 80F;
-            this.Column7.HeaderText = "Giá";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Hạn Sử Dụng";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Ngày Nhập";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
             // Column6
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle6.NullValue")));
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column6.FillWeight = 80F;
             this.Column6.HeaderText = "Trạng Thái";
             this.Column6.MinimumWidth = 6;
@@ -255,7 +222,7 @@
             this.bunifuVScrollBar1.BorderThickness = 1;
             this.bunifuVScrollBar1.DurationBeforeShrink = 2000;
             this.bunifuVScrollBar1.LargeChange = 10;
-            this.bunifuVScrollBar1.Location = new System.Drawing.Point(1581, 252);
+            this.bunifuVScrollBar1.Location = new System.Drawing.Point(1570, 251);
             this.bunifuVScrollBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuVScrollBar1.Maximum = 100;
             this.bunifuVScrollBar1.Minimum = 0;
@@ -267,11 +234,11 @@
             this.bunifuVScrollBar1.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(36)))), ((int)(((byte)(50)))));
             this.bunifuVScrollBar1.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(36)))), ((int)(((byte)(50)))));
             this.bunifuVScrollBar1.ShrinkSizeLimit = 3;
-            this.bunifuVScrollBar1.Size = new System.Drawing.Size(20, 407);
+            this.bunifuVScrollBar1.Size = new System.Drawing.Size(20, 419);
             this.bunifuVScrollBar1.SmallChange = 1;
             this.bunifuVScrollBar1.TabIndex = 90;
             this.bunifuVScrollBar1.ThumbColor = System.Drawing.Color.Gray;
-            this.bunifuVScrollBar1.ThumbLength = 40;
+            this.bunifuVScrollBar1.ThumbLength = 41;
             this.bunifuVScrollBar1.ThumbMargin = 1;
             this.bunifuVScrollBar1.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
             this.bunifuVScrollBar1.Value = 0;
@@ -333,7 +300,7 @@
             this.btnSearch.HoverState.Parent = this.btnSearch;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnSearch.Location = new System.Drawing.Point(1175, 140);
+            this.btnSearch.Location = new System.Drawing.Point(1156, 139);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.ShadowDecoration.Parent = this.btnSearch;
             this.btnSearch.Size = new System.Drawing.Size(60, 39);
@@ -388,7 +355,7 @@
             this.btnBlock.IdleIconLeftImage = null;
             this.btnBlock.IdleIconRightImage = null;
             this.btnBlock.IndicateFocus = false;
-            this.btnBlock.Location = new System.Drawing.Point(1423, 84);
+            this.btnBlock.Location = new System.Drawing.Point(1407, 84);
             this.btnBlock.Name = "btnBlock";
             this.btnBlock.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnBlock.OnDisabledState.BorderRadius = 30;
@@ -479,7 +446,7 @@
             this.btnActive.IdleIconLeftImage = null;
             this.btnActive.IdleIconRightImage = null;
             this.btnActive.IndicateFocus = false;
-            this.btnActive.Location = new System.Drawing.Point(1267, 84);
+            this.btnActive.Location = new System.Drawing.Point(1251, 84);
             this.btnActive.Name = "btnActive";
             this.btnActive.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnActive.OnDisabledState.BorderRadius = 30;
@@ -570,7 +537,7 @@
             this.btnAll.IdleIconLeftImage = null;
             this.btnAll.IdleIconRightImage = null;
             this.btnAll.IndicateFocus = false;
-            this.btnAll.Location = new System.Drawing.Point(1168, 84);
+            this.btnAll.Location = new System.Drawing.Point(1152, 84);
             this.btnAll.Name = "btnAll";
             this.btnAll.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btnAll.OnDisabledState.BorderRadius = 30;
@@ -677,7 +644,7 @@
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
             this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(792, 48);
+            this.txtSearch.Size = new System.Drawing.Size(838, 48);
             this.txtSearch.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtSearch.TabIndex = 79;
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -735,7 +702,7 @@
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1644, 60);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1612, 60);
             this.bunifuGradientPanel1.TabIndex = 78;
             // 
             // guna2Elipse2
@@ -749,29 +716,11 @@
             this.dtpSearch.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke;
             this.dtpSearch.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpSearch.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpSearch.Location = new System.Drawing.Point(1245, 142);
+            this.dtpSearch.Location = new System.Drawing.Point(1222, 142);
             this.dtpSearch.Name = "dtpSearch";
-            this.dtpSearch.Size = new System.Drawing.Size(341, 32);
+            this.dtpSearch.Size = new System.Drawing.Size(348, 32);
             this.dtpSearch.TabIndex = 110;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.DisabledState.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button1.Location = new System.Drawing.Point(1084, 84);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(53, 48);
-            this.guna2Button1.TabIndex = 111;
+            this.dtpSearch.ValueChanged += new System.EventHandler(this.dtpSearch_ValueChanged);
             // 
             // imageList1
             // 
@@ -786,7 +735,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(210)))), ((int)(((byte)(254)))));
-            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.dtpSearch);
             this.Controls.Add(this.dgvImportInvoice);
             this.Controls.Add(this.bunifuVScrollBar1);
@@ -802,7 +750,7 @@
             this.Controls.Add(this.lblTotalSearch);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Name = "UC_ManageImportInvoice";
-            this.Size = new System.Drawing.Size(1644, 701);
+            this.Size = new System.Drawing.Size(1612, 701);
             this.Load += new System.EventHandler(this.UC_ManageImportInvoice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportInvoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -831,19 +779,14 @@
         private Guna.UI2.WinForms.Guna2Button btnAddImportInvoice;
         private System.Windows.Forms.Label lblTotalSearch;
         private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
+        private System.Windows.Forms.DateTimePicker dtpSearch;
+        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.DataGridViewImageColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewImageColumn Column6;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
-        private System.Windows.Forms.DateTimePicker dtpSearch;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.ImageList imageList1;
     }
 }

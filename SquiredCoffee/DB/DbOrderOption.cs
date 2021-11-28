@@ -14,7 +14,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            string sql = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop;charset=utf8";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {

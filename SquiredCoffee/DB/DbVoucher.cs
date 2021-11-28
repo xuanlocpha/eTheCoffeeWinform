@@ -16,7 +16,7 @@ namespace SquiredCoffee.DB
 
         public static MySqlConnection GetConnection()
         {
-            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9;charset=utf8";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -117,6 +117,20 @@ namespace SquiredCoffee.DB
             con.Close();
         }
 
+        public static List<Voucher> LoadVoucherListToday(string date, string type)
+        {
+
+            List<Voucher> voucherList = new List<Voucher>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,type,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE '" + date + "' >= start_date and '" + date + "' <= expiry_date and type = '" + type + "'");
+            foreach (DataRow item in data.Rows)
+            {
+                Voucher voucher = new Voucher(item);
+                voucherList.Add(voucher);
+            }
+
+            return voucherList;
+        }
 
 
         public static bool CheckAdd(string discount,string couponcode)
@@ -203,11 +217,26 @@ namespace SquiredCoffee.DB
             return voucherList;
         }
 
+
+        public static List<Voucher> SearchVoucherListWithReward(string coupon_code)
+        {
+
+            List<Voucher> voucherList = new List<Voucher>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE coupon_code = '"+coupon_code+"' ");
+            foreach (DataRow item in data.Rows)
+            {
+                Voucher voucher = new Voucher(item);
+                voucherList.Add(voucher);
+            }
+            return voucherList;
+        }
+
         public static List<Voucher> LoadVoucherList(string @key)
         {
             List<Voucher> voucherList = new List<Voucher>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,coupen_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE id='"+@key+"'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE id='"+@key+"'");
             foreach (DataRow item in data.Rows)
             {
                 Voucher voucher = new Voucher(item);
@@ -221,7 +250,7 @@ namespace SquiredCoffee.DB
         {
             List<Voucher> voucherList = new List<Voucher>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,coupen_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE status ='"+@key+"' ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE status ='"+@key+"' ");
             foreach (DataRow item in data.Rows)
             {
                 Voucher voucher = new Voucher(item);

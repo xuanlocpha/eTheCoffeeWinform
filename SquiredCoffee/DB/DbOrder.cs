@@ -15,7 +15,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9;charset=utf8";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -125,6 +125,23 @@ namespace SquiredCoffee.DB
             return orderList;
         }
 
+
+        public static List<OrderShow2> LoadShowOrder()
+        {
+            List<OrderShow2> orderList = new List<OrderShow2>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT o.id,o.table_number,o.staff_id,o.user_id,o.address_id,o.subtotal,o.voucher_discount,o.shipping_discount,o.shipping,o.grandtotal,s.first_name,s.last_name,u.display_name as user_name ,t.mode,a.address,o.created_at FROM  orders o , staffs s ,users u, address a, transactions t WHERE o.staff_id = s.id AND o.user_id = u.id AND o.address_id = a.id AND t.order_id = o.id ");
+
+            foreach (DataRow item in data.Rows)
+            {
+                OrderShow2 orderShow2 = new OrderShow2(item);
+                orderList.Add(orderShow2);
+            }
+
+            return orderList;
+        }
+
+
         public static List<Order> LoadOrderUpdate(string id)
         {
             List<Order> orderList = new List<Order>();
@@ -141,6 +158,54 @@ namespace SquiredCoffee.DB
         }
 
 
+        public static List<OrderShow2> LoadShowOrderShowDate(string start_date, string end_date)
+        {
+            List<OrderShow2> orderList = new List<OrderShow2>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT o.id,o.table_number,o.staff_id,o.user_id,o.address_id,o.subtotal,o.voucher_discount,o.shipping_discount,o.shipping,o.grandtotal,s.first_name,s.last_name,u.display_name as user_name ,t.mode,a.address,o.created_at FROM  orders o , staffs s ,users u, address a, transactions t WHERE o.staff_id = s.id AND o.user_id = u.id AND o.address_id = a.id AND t.order_id = o.id and o.created_at BETWEEN '"+start_date+"' AND '"+end_date+"'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                OrderShow2 orderShow2 = new OrderShow2(item);
+                orderList.Add(orderShow2);
+            }
+
+            return orderList;
+        }
+
+
+        public static List<OrderShow2> LoadShowOrderShowDateNow(string start_date)
+        {
+            List<OrderShow2> orderList = new List<OrderShow2>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT o.id,o.table_number,o.staff_id,o.user_id,o.address_id,o.subtotal,o.voucher_discount,o.shipping_discount,o.shipping,o.grandtotal,s.first_name,s.last_name,u.display_name as user_name ,t.mode,a.address,o.created_at FROM  orders o , staffs s ,users u, address a, transactions t WHERE o.staff_id = s.id AND o.user_id = u.id AND o.address_id = a.id AND t.order_id = o.id and o.created_at = '" + start_date + "'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                OrderShow2 orderShow2 = new OrderShow2(item);
+                orderList.Add(orderShow2);
+            }
+
+            return orderList;
+        }
+
+
+        public static List<OrderShow2> LoadShowOrderShowCancel()
+        {
+            List<OrderShow2> orderList = new List<OrderShow2>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT o.id,o.table_number,o.staff_id,o.user_id,o.address_id,o.subtotal,o.voucher_discount,o.shipping_discount,o.shipping,o.grandtotal,s.first_name,s.last_name,u.display_name as user_name ,t.mode,a.address,o.created_at FROM  orders o , staffs s ,users u, address a, transactions t WHERE o.staff_id = s.id AND o.user_id = u.id AND o.address_id = a.id AND t.order_id = o.id and o.status = 2");
+
+            foreach (DataRow item in data.Rows)
+            {
+                OrderShow2 orderShow2 = new OrderShow2(item);
+                orderList.Add(orderShow2);
+            }
+
+            return orderList;
+        }
+
+        
         public static List<Order> LoadOrder(string table_number)
         {
             List<Order> orderList = new List<Order>();

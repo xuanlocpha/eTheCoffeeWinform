@@ -15,7 +15,7 @@ namespace SquiredCoffee.DB
         
         public static MySqlConnection GetConnection()
         {
-            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9;charset=utf8";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -32,7 +32,21 @@ namespace SquiredCoffee.DB
         {
             List<ImportInvoice> importInvoiceList = new List<ImportInvoice>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT ii.id,ii.staff_id,ii.stockproduct_id,ii.supplier_id,ii.quantity,ii.unit,ii.unit_price,ii.start_date,ii.expiry_date,ii.status,sp.title as nameStockProduct, s.name_supplier as nameSupplier FROM import_invoice ii INNER JOIN stock_products sp ON ii.stockproduct_id = sp.id  INNER JOIN suppliers s ON ii.supplier_id = s.id  ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT ii.id,ii.staff_id,ii.total_money,ii.create_date,ii.status,CONCAT(s.first_name,s.last_name) as name_staff FROM import_invoices ii , staffs s WHERE ii.staff_id = s.id");
+            foreach (DataRow item in data.Rows)
+            {
+                ImportInvoice importInvoice = new ImportInvoice(item);
+                importInvoiceList.Add(importInvoice);
+            }
+
+            return importInvoiceList;
+        }
+
+        public static List<ImportInvoice> LoadImportInvoice(string id_staff,string status)
+        {
+            List<ImportInvoice> importInvoiceList = new List<ImportInvoice>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT ii.id,ii.staff_id,ii.total_money,ii.create_date,ii.status,CONCAT(s.first_name,s.last_name) as name_staff FROM import_invoices ii , staffs s WHERE ii.staff_id = s.id AND ii.staff_id = '" + id_staff+"' AND ii.status = '"+status+"'");
             foreach (DataRow item in data.Rows)
             {
                 ImportInvoice importInvoice = new ImportInvoice(item);
@@ -47,7 +61,7 @@ namespace SquiredCoffee.DB
         {
             List<ImportInvoice> importInvoiceList = new List<ImportInvoice>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT ii.id,ii.staff_id,ii.stockproduct_id,ii.supplier_id,ii.quantity,ii.unit,ii.unit_price,ii.start_date,ii.expiry_date,ii.status,sp.title as nameStockProduct, s.name_supplier as nameSupplier FROM import_invoice ii INNER JOIN stock_products sp ON ii.stockproduct_id = sp.id  INNER JOIN suppliers s ON ii.supplier_id = s.id  WHERE ii.status = '" + @key+"' ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT ii.id,ii.staff_id,ii.total_money,ii.create_date,ii.status,CONCAT(s.first_name,s.last_name) as name_staff FROM import_invoices ii , staffs s WHERE ii.staff_id = s.id AND ii.status = '" + @key+"' ");
             foreach (DataRow item in data.Rows)
             {
                 ImportInvoice importInvoice = new ImportInvoice(item);
@@ -63,7 +77,7 @@ namespace SquiredCoffee.DB
         {
             List<ImportInvoice> importInvoiceList = new List<ImportInvoice>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT ii.id,ii.staff_id,ii.stockproduct_id,ii.supplier_id,ii.quantity,ii.unit,ii.unit_price,ii.start_date,ii.expiry_date,ii.status,sp.title as nameStockProduct, s.name_supplier as nameSupplier FROM import_invoice ii INNER JOIN stock_products sp ON ii.stockproduct_id = sp.id  INNER JOIN suppliers s ON ii.supplier_id = s.id  WHERE sp.title LIKE'%" + @key + "%' OR s.name_supplier LIKE'%" + @key + "%'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT ii.id,ii.staff_id,ii.total_money,ii.create_date,ii.status,CONCAT(s.first_name,s.last_name) as name_staff FROM import_invoices ii , staffs s WHERE ii.staff_id = s.id AND ii.total_money LIKE'%" + @key + "%' ");
             foreach (DataRow item in data.Rows)
             {
                 ImportInvoice importInvoice = new ImportInvoice(item);
@@ -78,7 +92,7 @@ namespace SquiredCoffee.DB
         {
             List<ImportInvoice> importInvoiceList = new List<ImportInvoice>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT ii.id,ii.staff_id,ii.stockproduct_id,ii.supplier_id,ii.quantity,ii.unit,ii.unit_price,ii.start_date,ii.expiry_date,ii.status,sp.title as nameStockProduct, s.name_supplier as nameSupplier FROM import_invoice ii INNER JOIN stock_products sp ON ii.stockproduct_id = sp.id  INNER JOIN suppliers s ON ii.supplier_id = s.id  WHERE ii.start_date = '" + @key+"'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT ii.id,ii.staff_id,ii.total_money,ii.create_date,ii.status,CONCAT(s.first_name,s.last_name) as name_staff FROM import_invoices ii , staffs s WHERE ii.staff_id = s.id AND ii.create_date = '" + @key+"'");
             foreach (DataRow item in data.Rows)
             {
                 ImportInvoice importInvoice = new ImportInvoice(item);
@@ -91,23 +105,18 @@ namespace SquiredCoffee.DB
 
         public static void AddImportInvoice(ImportInvoice std)
         {
-            string sql = "INSERT INTO import_invoice (staff_id,stockproduct_id,supplier_id,quantity,unit,unit_price,start_date,expiry_date,status) VALUES(@staff_id,@stockproduct_id,@supplier_id,@quantity,@unit,@unit_price,@start_date,@expiry_date,@status)";
+            string sql = "INSERT INTO import_invoices (staff_id,total_money,create_date,status) VALUES(@staff_id,@total_money,@create_date,@status)";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@staff_id", MySqlDbType.VarChar).Value = std.staff_id;
-            cmd.Parameters.Add("@stockproduct_id", MySqlDbType.VarChar).Value = std.stockproduct_id;
-            cmd.Parameters.Add("@supplier_id", MySqlDbType.VarChar).Value = std.supplier_id;
-            cmd.Parameters.Add("@quantity", MySqlDbType.VarChar).Value = std.quantity;
-            cmd.Parameters.Add("@unit", MySqlDbType.VarChar).Value = std.unit;
-            cmd.Parameters.Add("@unit_price", MySqlDbType.VarChar).Value = std.unit_price;
-            cmd.Parameters.Add("@start_date", MySqlDbType.VarChar).Value = std.start_date;
-            cmd.Parameters.Add("@expiry_date", MySqlDbType.VarChar).Value = std.expiry_date;
+            cmd.Parameters.Add("@total_money", MySqlDbType.VarChar).Value = std.total_money;
+            cmd.Parameters.Add("@create_date", MySqlDbType.VarChar).Value = std.create_date;
             cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
             try
             {
                 cmd.ExecuteNonQuery();
-              
+
             }
             catch (MySqlException ex)
             {
@@ -117,35 +126,45 @@ namespace SquiredCoffee.DB
         }
 
 
-        public static bool CheckCreateImportInvoice(ImportInvoice std)
+
+        public static void UpdateImportInvoice(ImportInvoice std,string id)
         {
-            AddImportInvoice(std);
-            string sql = "select * from import_invoice where staff_id = @staff_id and stockproduct_id = @stockproduct_id and supplier_id = @supplier_id  and quantity = @quantity and unit = @unit and unit_price = @unit_price and start_date = @start_date and expiry_date = @expiry_date and status = @status";
+            string sql = "UPDATE import_invoices SET staff_id = @staff_id,total_money = @total_money,create_date = @create_date,status = @status WHERE id = @id";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
             cmd.Parameters.Add("@staff_id", MySqlDbType.VarChar).Value = std.staff_id;
-            cmd.Parameters.Add("@stockproduct_id", MySqlDbType.VarChar).Value = std.stockproduct_id;
-            cmd.Parameters.Add("@supplier_id", MySqlDbType.VarChar).Value = std.supplier_id;
-            cmd.Parameters.Add("@quantity", MySqlDbType.VarChar).Value = std.quantity;
-            cmd.Parameters.Add("@unit", MySqlDbType.VarChar).Value = std.unit;
-            cmd.Parameters.Add("@unit_price", MySqlDbType.VarChar).Value = std.unit_price;
-            cmd.Parameters.Add("@start_date", MySqlDbType.VarChar).Value = std.start_date;
-            cmd.Parameters.Add("@expiry_date", MySqlDbType.VarChar).Value = std.expiry_date;
+            cmd.Parameters.Add("@total_money", MySqlDbType.VarChar).Value = std.total_money;
+            cmd.Parameters.Add("@create_date", MySqlDbType.VarChar).Value = std.create_date;
             cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
-            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
-            DataSet tbl = new DataSet();
-            adp.Fill(tbl);
-            int i = tbl.Tables[0].Rows.Count;
-            if (i > 0)
+            try
             {
-                return true;  // data exist
+                cmd.ExecuteNonQuery();
             }
-            else
+            catch (MySqlException ex)
             {
-                return false; //data not exist
+                MessageBox.Show("Không Hoàn Thành ! \n" + ex.Message, "Cảnh Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            con.Close();
         }
 
+        public static void DeleteImportInvoice(string id)
+        {
+            string sql = "Delete From import_invoices  WHERE id = @id";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Không Hoàn Thành ! \n" + ex.Message, "Cảnh Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
     }
 }

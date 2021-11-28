@@ -39,9 +39,10 @@ namespace SquiredCoffee
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnTopping = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             this.btnVoucher = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnOrder = new Guna.UI2.WinForms.Guna2Button();
             this.btnWareHouse = new Guna.UI2.WinForms.Guna2Button();
             this.btnUser = new Guna.UI2.WinForms.Guna2Button();
             this.btnProduct = new Guna.UI2.WinForms.Guna2Button();
@@ -50,12 +51,13 @@ namespace SquiredCoffee
             this.lblRoleName = new System.Windows.Forms.Label();
             this.lblNameStaff = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnNotification = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnTopping = new Guna.UI2.WinForms.Guna2Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
@@ -158,7 +160,7 @@ namespace SquiredCoffee
             this.panel5.Controls.Add(this.btnTopping);
             this.panel5.Controls.Add(this.guna2Button6);
             this.panel5.Controls.Add(this.btnVoucher);
-            this.panel5.Controls.Add(this.guna2Button4);
+            this.panel5.Controls.Add(this.btnOrder);
             this.panel5.Controls.Add(this.btnWareHouse);
             this.panel5.Controls.Add(this.btnUser);
             this.panel5.Controls.Add(this.btnProduct);
@@ -169,6 +171,38 @@ namespace SquiredCoffee
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(313, 797);
             this.panel5.TabIndex = 26;
+            // 
+            // btnTopping
+            // 
+            this.btnTopping.BorderRadius = 20;
+            this.btnTopping.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnTopping.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnTopping.CheckedState.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTopping.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.btnTopping.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnTopping.CheckedState.Parent = this.btnTopping;
+            this.btnTopping.CustomImages.Parent = this.btnTopping;
+            this.btnTopping.CustomizableEdges.BottomRight = false;
+            this.btnTopping.CustomizableEdges.TopRight = false;
+            this.btnTopping.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnTopping.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnTopping.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnTopping.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTopping.DisabledState.Parent = this.btnTopping;
+            this.btnTopping.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
+            this.btnTopping.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold);
+            this.btnTopping.ForeColor = System.Drawing.Color.White;
+            this.btnTopping.HoverState.Parent = this.btnTopping;
+            this.btnTopping.Image = ((System.Drawing.Image)(resources.GetObject("btnTopping.Image")));
+            this.btnTopping.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTopping.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnTopping.Location = new System.Drawing.Point(17, 602);
+            this.btnTopping.Name = "btnTopping";
+            this.btnTopping.ShadowDecoration.Parent = this.btnTopping;
+            this.btnTopping.Size = new System.Drawing.Size(301, 66);
+            this.btnTopping.TabIndex = 32;
+            this.btnTopping.Text = "Q.Lý Topping";
+            this.btnTopping.Click += new System.EventHandler(this.btnTopping_Click_1);
             // 
             // guna2Button6
             // 
@@ -230,39 +264,40 @@ namespace SquiredCoffee
             this.btnVoucher.ShadowDecoration.Parent = this.btnVoucher;
             this.btnVoucher.Size = new System.Drawing.Size(301, 66);
             this.btnVoucher.TabIndex = 30;
-            this.btnVoucher.Text = "QLý Khuyến Mãi";
+            this.btnVoucher.Text = "Q.Lý Khuyến Mãi";
             this.btnVoucher.Click += new System.EventHandler(this.btnVoucher_Click);
             // 
-            // guna2Button4
+            // btnOrder
             // 
-            this.guna2Button4.BorderRadius = 20;
-            this.guna2Button4.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button4.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2Button4.CheckedState.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button4.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.guna2Button4.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.guna2Button4.CheckedState.Parent = this.guna2Button4;
-            this.guna2Button4.CustomImages.Parent = this.guna2Button4;
-            this.guna2Button4.CustomizableEdges.BottomRight = false;
-            this.guna2Button4.CustomizableEdges.TopRight = false;
-            this.guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button4.DisabledState.Parent = this.guna2Button4;
-            this.guna2Button4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
-            this.guna2Button4.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button4.ForeColor = System.Drawing.Color.White;
-            this.guna2Button4.HoverState.Parent = this.guna2Button4;
-            this.guna2Button4.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button4.Image")));
-            this.guna2Button4.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button4.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2Button4.Location = new System.Drawing.Point(17, 426);
-            this.guna2Button4.Name = "guna2Button4";
-            this.guna2Button4.ShadowDecoration.Parent = this.guna2Button4;
-            this.guna2Button4.Size = new System.Drawing.Size(301, 66);
-            this.guna2Button4.TabIndex = 29;
-            this.guna2Button4.Text = "QLý Hóa Đơn";
+            this.btnOrder.BorderRadius = 20;
+            this.btnOrder.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnOrder.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnOrder.CheckedState.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrder.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.btnOrder.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnOrder.CheckedState.Parent = this.btnOrder;
+            this.btnOrder.CustomImages.Parent = this.btnOrder;
+            this.btnOrder.CustomizableEdges.BottomRight = false;
+            this.btnOrder.CustomizableEdges.TopRight = false;
+            this.btnOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOrder.DisabledState.Parent = this.btnOrder;
+            this.btnOrder.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
+            this.btnOrder.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold);
+            this.btnOrder.ForeColor = System.Drawing.Color.White;
+            this.btnOrder.HoverState.Parent = this.btnOrder;
+            this.btnOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnOrder.Image")));
+            this.btnOrder.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnOrder.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnOrder.Location = new System.Drawing.Point(17, 426);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.ShadowDecoration.Parent = this.btnOrder;
+            this.btnOrder.Size = new System.Drawing.Size(301, 66);
+            this.btnOrder.TabIndex = 29;
+            this.btnOrder.Text = "Q.Lý Bán Hàng";
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnWareHouse
             // 
@@ -293,7 +328,7 @@ namespace SquiredCoffee
             this.btnWareHouse.ShadowDecoration.Parent = this.btnWareHouse;
             this.btnWareHouse.Size = new System.Drawing.Size(301, 66);
             this.btnWareHouse.TabIndex = 28;
-            this.btnWareHouse.Text = "QLý Kho";
+            this.btnWareHouse.Text = "Q.Lý Kho";
             this.btnWareHouse.Click += new System.EventHandler(this.btnWareHouse_Click);
             // 
             // btnUser
@@ -325,7 +360,7 @@ namespace SquiredCoffee
             this.btnUser.ShadowDecoration.Parent = this.btnUser;
             this.btnUser.Size = new System.Drawing.Size(301, 66);
             this.btnUser.TabIndex = 27;
-            this.btnUser.Text = "QLý Khách Hàng";
+            this.btnUser.Text = "Q.Lý Khách Hàng";
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
             // 
             // btnProduct
@@ -357,7 +392,7 @@ namespace SquiredCoffee
             this.btnProduct.ShadowDecoration.Parent = this.btnProduct;
             this.btnProduct.Size = new System.Drawing.Size(301, 66);
             this.btnProduct.TabIndex = 26;
-            this.btnProduct.Text = "QLý Sản Phẩm";
+            this.btnProduct.Text = "Q.Lý Sản Phẩm";
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // btnStaff
@@ -389,7 +424,7 @@ namespace SquiredCoffee
             this.btnStaff.ShadowDecoration.Parent = this.btnStaff;
             this.btnStaff.Size = new System.Drawing.Size(301, 66);
             this.btnStaff.TabIndex = 25;
-            this.btnStaff.Text = "QLý Nhân Viên";
+            this.btnStaff.Text = "Q.Lý Nhân Viên";
             this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
             // btnHome
@@ -430,7 +465,7 @@ namespace SquiredCoffee
             this.lblRoleName.AutoSize = true;
             this.lblRoleName.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoleName.ForeColor = System.Drawing.Color.Maroon;
-            this.lblRoleName.Location = new System.Drawing.Point(1145, 39);
+            this.lblRoleName.Location = new System.Drawing.Point(984, 39);
             this.lblRoleName.Name = "lblRoleName";
             this.lblRoleName.Size = new System.Drawing.Size(58, 19);
             this.lblRoleName.TabIndex = 19;
@@ -442,7 +477,7 @@ namespace SquiredCoffee
             this.lblNameStaff.AutoSize = true;
             this.lblNameStaff.Font = new System.Drawing.Font("Quicksand", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNameStaff.ForeColor = System.Drawing.Color.Black;
-            this.lblNameStaff.Location = new System.Drawing.Point(1128, 7);
+            this.lblNameStaff.Location = new System.Drawing.Point(967, 7);
             this.lblNameStaff.Name = "lblNameStaff";
             this.lblNameStaff.Size = new System.Drawing.Size(104, 28);
             this.lblNameStaff.TabIndex = 18;
@@ -451,6 +486,8 @@ namespace SquiredCoffee
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.Controls.Add(this.btnNotification);
+            this.panel2.Controls.Add(this.guna2CircleButton1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.lblRoleName);
@@ -461,6 +498,45 @@ namespace SquiredCoffee
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1357, 66);
             this.panel2.TabIndex = 1;
+            // 
+            // btnNotification
+            // 
+            this.btnNotification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNotification.CheckedState.Parent = this.btnNotification;
+            this.btnNotification.CustomImages.Parent = this.btnNotification;
+            this.btnNotification.DisabledState.Parent = this.btnNotification;
+            this.btnNotification.FillColor = System.Drawing.Color.Transparent;
+            this.btnNotification.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnNotification.ForeColor = System.Drawing.Color.White;
+            this.btnNotification.HoverState.Parent = this.btnNotification;
+            this.btnNotification.Image = ((System.Drawing.Image)(resources.GetObject("btnNotification.Image")));
+            this.btnNotification.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnNotification.Location = new System.Drawing.Point(1233, 7);
+            this.btnNotification.Name = "btnNotification";
+            this.btnNotification.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnNotification.ShadowDecoration.Parent = this.btnNotification;
+            this.btnNotification.Size = new System.Drawing.Size(52, 51);
+            this.btnNotification.TabIndex = 23;
+            this.btnNotification.Click += new System.EventHandler(this.btnNotification_Click);
+            // 
+            // guna2CircleButton1
+            // 
+            this.guna2CircleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CircleButton1.CheckedState.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.CustomImages.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.DisabledState.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
+            this.guna2CircleButton1.HoverState.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton1.Image")));
+            this.guna2CircleButton1.ImageSize = new System.Drawing.Size(30, 30);
+            this.guna2CircleButton1.Location = new System.Drawing.Point(1175, 7);
+            this.guna2CircleButton1.Name = "guna2CircleButton1";
+            this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
+            this.guna2CircleButton1.Size = new System.Drawing.Size(52, 51);
+            this.guna2CircleButton1.TabIndex = 22;
             // 
             // label3
             // 
@@ -496,7 +572,7 @@ namespace SquiredCoffee
             this.guna2CircleButton3.HoverState.Parent = this.guna2CircleButton3;
             this.guna2CircleButton3.Image = ((System.Drawing.Image)(resources.GetObject("guna2CircleButton3.Image")));
             this.guna2CircleButton3.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2CircleButton3.Location = new System.Drawing.Point(1061, 7);
+            this.guna2CircleButton3.Location = new System.Drawing.Point(900, 7);
             this.guna2CircleButton3.Name = "guna2CircleButton3";
             this.guna2CircleButton3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton3.ShadowDecoration.Parent = this.guna2CircleButton3;
@@ -516,38 +592,6 @@ namespace SquiredCoffee
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(1357, 1036);
             this.panelMenu.TabIndex = 13;
-            // 
-            // btnTopping
-            // 
-            this.btnTopping.BorderRadius = 20;
-            this.btnTopping.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnTopping.CheckedState.FillColor = System.Drawing.Color.White;
-            this.btnTopping.CheckedState.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTopping.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.btnTopping.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnTopping.CheckedState.Parent = this.btnTopping;
-            this.btnTopping.CustomImages.Parent = this.btnTopping;
-            this.btnTopping.CustomizableEdges.BottomRight = false;
-            this.btnTopping.CustomizableEdges.TopRight = false;
-            this.btnTopping.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTopping.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTopping.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTopping.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTopping.DisabledState.Parent = this.btnTopping;
-            this.btnTopping.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
-            this.btnTopping.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold);
-            this.btnTopping.ForeColor = System.Drawing.Color.White;
-            this.btnTopping.HoverState.Parent = this.btnTopping;
-            this.btnTopping.Image = ((System.Drawing.Image)(resources.GetObject("btnTopping.Image")));
-            this.btnTopping.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnTopping.ImageSize = new System.Drawing.Size(32, 32);
-            this.btnTopping.Location = new System.Drawing.Point(17, 602);
-            this.btnTopping.Name = "btnTopping";
-            this.btnTopping.ShadowDecoration.Parent = this.btnTopping;
-            this.btnTopping.Size = new System.Drawing.Size(301, 66);
-            this.btnTopping.TabIndex = 32;
-            this.btnTopping.Text = "QLý Topping";
-            this.btnTopping.Click += new System.EventHandler(this.btnTopping_Click_1);
             // 
             // FormMain
             // 
@@ -583,7 +627,7 @@ namespace SquiredCoffee
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2Button btnVoucher;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private Guna.UI2.WinForms.Guna2Button btnOrder;
         private Guna.UI2.WinForms.Guna2Button btnWareHouse;
         private Guna.UI2.WinForms.Guna2Button btnUser;
         private Guna.UI2.WinForms.Guna2Button btnProduct;
@@ -603,6 +647,8 @@ namespace SquiredCoffee
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelMenu;
         private Guna.UI2.WinForms.Guna2Button btnTopping;
+        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
+        private Guna.UI2.WinForms.Guna2CircleButton btnNotification;
     }
 }
 

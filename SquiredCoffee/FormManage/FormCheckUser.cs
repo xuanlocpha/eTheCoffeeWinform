@@ -86,7 +86,6 @@ namespace SquiredCoffee.FormManage
                         Form1.title = "Tích Điểm Thành Công";
                         Form1.ShowDialog();
                         txtDisplay.Text = string.Empty;
-                        videoCaptureDevice.Stop();
                         this.Close();
                         _parent.Show();
                     }
@@ -97,7 +96,6 @@ namespace SquiredCoffee.FormManage
                 Form2.title = "Khách hàng không tồn tại ! ";
                 Form2.ShowDialog();
                 txtDisplay.Text = string.Empty;
-                videoCaptureDevice.Stop();
             }
         }
 

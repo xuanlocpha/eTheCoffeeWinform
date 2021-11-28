@@ -35,7 +35,7 @@ namespace SquiredCoffee.FormManage
 
         void ketnoi()
         {
-            con.ConnectionString = "datasource=localhost;port=3306;username=root;password=;database=coffeeshop";
+            con.ConnectionString = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             if (con.State == ConnectionState.Closed)
                 con.Open();
         }
@@ -91,22 +91,11 @@ namespace SquiredCoffee.FormManage
             }
         }
 
-        private void rdStatus1_CheckedChanged(object sender, EventArgs e)
-        {
-            status = 1;
-        }
-
-        private void rdStatus2_CheckedChanged(object sender, EventArgs e)
-        {
-            status = 1;
-        }
-
         public void clear()
         {
             txtPriceProduct.Text = txtContent.Text = txtProductName.Text = string.Empty;
             cbCategoryName.SelectedIndex = -1;
             ptImage.Image = new Bitmap(Application.StartupPath + "\\Resource\\no_img.jpg");
-            rdStatus1.Checked = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -167,7 +156,7 @@ namespace SquiredCoffee.FormManage
             }
             if (btnSave.Text == "Lưu")
             {      
-                Product std = new Product(Convert.ToInt32(cbCategoryName.SelectedValue),txtProductName.Text,Convert.ToDecimal(txtPriceProduct.Text),image_product,txtContent.Text,status);
+                Product std = new Product(Convert.ToInt32(cbCategoryName.SelectedValue),txtProductName.Text,Convert.ToDecimal(txtPriceProduct.Text),image_product,txtContent.Text,1);
                 if (DbProduct.CheckCreateProduct(std) == true)
                 {
                     Form1.title = "Tạo Thành Công";

@@ -113,7 +113,7 @@ namespace SquiredCoffee.FormManage
             } 
             else
             {
-                Order std = new Order(table_number,staff_id,1,2,0,0,0,0,"",0,"",0);
+                Order std = new Order(table_number,staff_id,18,2,0,0,0,0,"",0,"",0);
                 DbOrder.AddOrder(std);
                 _parent.tableNumber = table_number;
                 _parent.clear();

@@ -16,6 +16,7 @@ namespace SquiredCoffee.UC_ManageSysterm
 {
     public partial class UC_ManageProduct : UserControl
     {
+
         MySqlConnection con = new MySqlConnection();
         FormAddProduct Form;
         FormInformationProduct Form1;

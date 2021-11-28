@@ -32,6 +32,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ManageVoucherReward));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDiscountProduct = new Guna.UI2.WinForms.Guna2Button();
             this.btnReward = new Guna.UI2.WinForms.Guna2Button();
             this.btnVoucher = new Guna.UI2.WinForms.Guna2Button();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -44,6 +45,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.btnDiscountProduct);
             this.panel1.Controls.Add(this.btnReward);
             this.panel1.Controls.Add(this.btnVoucher);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -51,6 +53,36 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1624, 63);
             this.panel1.TabIndex = 39;
+            // 
+            // btnDiscountProduct
+            // 
+            this.btnDiscountProduct.BorderRadius = 4;
+            this.btnDiscountProduct.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnDiscountProduct.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
+            this.btnDiscountProduct.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
+            this.btnDiscountProduct.CheckedState.Parent = this.btnDiscountProduct;
+            this.btnDiscountProduct.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 6);
+            this.btnDiscountProduct.CustomImages.Parent = this.btnDiscountProduct;
+            this.btnDiscountProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDiscountProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDiscountProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDiscountProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDiscountProduct.DisabledState.Parent = this.btnDiscountProduct;
+            this.btnDiscountProduct.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDiscountProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
+            this.btnDiscountProduct.Font = new System.Drawing.Font("Quicksand SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscountProduct.ForeColor = System.Drawing.Color.White;
+            this.btnDiscountProduct.HoverState.Parent = this.btnDiscountProduct;
+            this.btnDiscountProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnDiscountProduct.Image")));
+            this.btnDiscountProduct.ImageSize = new System.Drawing.Size(28, 28);
+            this.btnDiscountProduct.Location = new System.Drawing.Point(640, 0);
+            this.btnDiscountProduct.Name = "btnDiscountProduct";
+            this.btnDiscountProduct.Padding = new System.Windows.Forms.Padding(4);
+            this.btnDiscountProduct.ShadowDecoration.Parent = this.btnDiscountProduct;
+            this.btnDiscountProduct.Size = new System.Drawing.Size(320, 63);
+            this.btnDiscountProduct.TabIndex = 8;
+            this.btnDiscountProduct.Text = "Q.Lý Giảm Giá Sản Phẩm";
+            this.btnDiscountProduct.Click += new System.EventHandler(this.btnDiscountProduct_Click);
             // 
             // btnReward
             // 
@@ -79,7 +111,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnReward.ShadowDecoration.Parent = this.btnReward;
             this.btnReward.Size = new System.Drawing.Size(320, 63);
             this.btnReward.TabIndex = 7;
-            this.btnReward.Text = "Đổi Quà";
+            this.btnReward.Text = "Quản Lý Quà Tặng";
             this.btnReward.Click += new System.EventHandler(this.btnReward_Click);
             // 
             // btnVoucher
@@ -110,7 +142,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnVoucher.ShadowDecoration.Parent = this.btnVoucher;
             this.btnVoucher.Size = new System.Drawing.Size(320, 63);
             this.btnVoucher.TabIndex = 6;
-            this.btnVoucher.Text = "Quản Lý Khách Hàng";
+            this.btnVoucher.Text = "Quản Lý Khuyến Mãi";
             this.btnVoucher.Click += new System.EventHandler(this.btnVoucher_Click);
             // 
             // panelMenu
@@ -164,5 +196,6 @@ namespace SquiredCoffee.UC_ManageSysterm
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
+        private Guna.UI2.WinForms.Guna2Button btnDiscountProduct;
     }
 }

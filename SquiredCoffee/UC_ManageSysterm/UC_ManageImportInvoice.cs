@@ -47,19 +47,13 @@ namespace SquiredCoffee.UC_ManageSysterm
             List<ImportInvoice> importInvoiceList = DbImportInvoice.LoadImportInvoice();
             foreach (ImportInvoice item in importInvoiceList)
             {
-                DateTime start_date = Convert.ToDateTime(item.start_date);
-                DateTime expiry_date = Convert.ToDateTime(item.expiry_date);
                 total += 1;
                 dgvImportInvoice.Rows.Add(new object[] {
                     imageList1.Images[0], 
                     item.id,
-                    item.nameStockProduct,
-                    item.nameSupplier,
-                    item.quantity,
-                    item.unit,
-                    string.Format("{0:#,##0} đ", item.unit_price),
-                    string.Format("{0:dd/MM/yyyy}",expiry_date),
-                    string.Format("{0:dd/MM/yyyy}",start_date),
+                    item.name_staff,
+                    string.Format("{0:#,##0} đ",item.total_money),
+                    string.Format("{0:dd/MM/yyyy}",item.create_date),
                     Convert.ToBoolean(item.status)?  imageList1.Images[1] : imageList1.Images[2],
                 });
             }
@@ -75,19 +69,13 @@ namespace SquiredCoffee.UC_ManageSysterm
             List<ImportInvoice> importInvoiceList = DbImportInvoice.LoadImportInvoiceSearchClick(status);
             foreach (ImportInvoice item in importInvoiceList)
             {
-                DateTime start_date = Convert.ToDateTime(item.start_date);
-                DateTime expiry_date = Convert.ToDateTime(item.expiry_date);
                 totalSearch += 1;
                 dgvImportInvoice.Rows.Add(new object[] {
                     imageList1.Images[0],
                     item.id,
-                    item.nameStockProduct,
-                    item.nameSupplier,
-                    item.quantity,
-                    item.unit,
-                    string.Format("{0:#,##0} đ", item.unit_price),
-                    string.Format("{0:dd/MM/yyyy}",expiry_date),
-                    string.Format("{0:dd/MM/yyyy}",start_date),
+                    item.name_staff,
+                    string.Format("{0:#,##0} đ",item.total_money),
+                    string.Format("{0:dd/MM/yyyy}",item.create_date),
                     Convert.ToBoolean(item.status)?  imageList1.Images[1] : imageList1.Images[2],
                 });
             }
@@ -123,19 +111,13 @@ namespace SquiredCoffee.UC_ManageSysterm
             List<ImportInvoice> importInvoiceList = DbImportInvoice.LoadImportInvoiceSearch(txtSearch.Text);
             foreach (ImportInvoice item in importInvoiceList)
             {
-                DateTime start_date = Convert.ToDateTime(item.start_date);
-                DateTime expiry_date = Convert.ToDateTime(item.expiry_date);
                 totalSearch += 1;
                 dgvImportInvoice.Rows.Add(new object[] {
                     imageList1.Images[0],
                     item.id,
-                    item.nameStockProduct,
-                    item.nameSupplier,
-                    item.quantity,
-                    item.unit,
-                    string.Format("{0:#,##0} đ", item.unit_price),
-                    string.Format("{0:dd/MM/yyyy}",expiry_date),
-                    string.Format("{0:dd/MM/yyyy}",start_date),
+                    item.name_staff,
+                    string.Format("{0:#,##0} đ",item.total_money),
+                    string.Format("{0:dd/MM/yyyy}",item.create_date),
                     Convert.ToBoolean(item.status)?  imageList1.Images[1] : imageList1.Images[2],
                 });
             }
@@ -151,19 +133,13 @@ namespace SquiredCoffee.UC_ManageSysterm
             List<ImportInvoice> importInvoiceList = DbImportInvoice.LoadImportInvoiceButtonSearch(x);
             foreach (ImportInvoice item in importInvoiceList)
             {
-                DateTime start_date = Convert.ToDateTime(item.start_date);
-                DateTime expiry_date = Convert.ToDateTime(item.expiry_date);
                 totalSearch += 1;
                 dgvImportInvoice.Rows.Add(new object[] {
                     imageList1.Images[0],
                     item.id,
-                    item.nameStockProduct,
-                    item.nameSupplier,
-                    item.quantity,
-                    item.unit,
-                    string.Format("{0:#,##0} đ", item.unit_price),
-                    string.Format("{0:dd/MM/yyyy}",expiry_date),
-                    string.Format("{0:dd/MM/yyyy}",start_date),
+                    item.name_staff,
+                    string.Format("{0:#,##0} đ", item.total_money),
+                    string.Format("{0:dd/MM/yyyy}",item.create_date),
                     Convert.ToBoolean(item.status)?  imageList1.Images[1] : imageList1.Images[2],
                 });
             }
@@ -172,10 +148,46 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void btnAddImportInvoice_Click(object sender, EventArgs e)
         {
+            ImportInvoice std = new ImportInvoice(staff_id, 0, DateTime.Now.ToString("yyyy-MM-dd"), 0);
+            DbImportInvoice.AddImportInvoice(std);
+            Form.staff_id = staff_id;
+            Form.ShowDialog();
+            //FormBackGround formBackGround = new FormBackGround();
+            //try
+            //{
+            //    using (FormAddImportInvoice Form = new FormAddImportInvoice(this))
+            //    {
+            //        formBackGround.StartPosition = FormStartPosition.Manual;
+            //        formBackGround.FormBorderStyle = FormBorderStyle.None;
+            //        formBackGround.Opacity = .70d;
+            //        formBackGround.BackColor = Color.Black;
+            //        formBackGround.WindowState = FormWindowState.Maximized;
+            //        formBackGround.TopMost = true;
+            //        formBackGround.Location = this.Location;
+            //        formBackGround.ShowInTaskbar = false;
+            //        formBackGround.Show();
+
+            //        Form.Owner = formBackGround;
+            //        Form.staff_id = staff_id;
+            //        Form.ShowDialog();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw;
+            //}
+            //finally
+            //{
+            //    formBackGround.Dispose();
+            //}
+        }
+
+        private void dgvImportInvoice_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             FormBackGround formBackGround = new FormBackGround();
             try
             {
-                using (FormAddImportInvoice Form = new FormAddImportInvoice(this))
+                using (FormInformationImportInvoice Form = new FormInformationImportInvoice(this))
                 {
                     formBackGround.StartPosition = FormStartPosition.Manual;
                     formBackGround.FormBorderStyle = FormBorderStyle.None;
@@ -188,9 +200,9 @@ namespace SquiredCoffee.UC_ManageSysterm
                     formBackGround.Show();
 
                     Form.Owner = formBackGround;
-                    Form.staff_id = staff_id;
+                    string id_import_invoice = dgvImportInvoice.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    Form.id_import_invoice = id_import_invoice;
                     Form.ShowDialog();
-
                 }
             }
             catch (Exception ex)
@@ -201,7 +213,11 @@ namespace SquiredCoffee.UC_ManageSysterm
             {
                 formBackGround.Dispose();
             }
-             
+        }
+
+        private void dtpSearch_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

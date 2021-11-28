@@ -8,22 +8,24 @@ namespace SquiredCoffee.Class
 {
     class Rewards
     {
+        public int voucher_id { get; set; }
         public string title { get; set; }
+        public string brand_name { get; set; }
         public string content { get; set; }
         public string image { get; set; }
-        public string start_date { get; set; }
-        public string expiry_date { get; set; }
         public int point { get; set; }
+        public int quantity { get; set; }
         public int status { get; set; }
 
-        public Rewards(string Title ,string Content,string Image,string Start_Date,string Expiry_Date,int Point,int Status)
+        public Rewards(int Voucher_Id,string Title ,string Brand_Name,string Content,string Image,int Point,int Quantity,int Status)
         {
+            voucher_id = Voucher_Id;
             title = Title;
+            brand_name = Brand_Name;
             content = Content;
             image = Image;
-            start_date = Start_Date;
-            expiry_date = Expiry_Date;
             point = Point;
+            quantity = Quantity;
             status = Status;
         }
     }

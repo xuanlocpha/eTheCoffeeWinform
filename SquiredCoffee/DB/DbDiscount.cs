@@ -14,7 +14,7 @@ namespace SquiredCoffee.DB
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
+            string sql = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9;charset=utf8";
             MySqlConnection con = new MySqlConnection(sql);
             try
             {
@@ -25,6 +25,21 @@ namespace SquiredCoffee.DB
                 MessageBox.Show("MySQL Connection! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return con;
+        }
+
+
+        public static List<Discount> LoadDiscountList()
+        {
+            List<Discount> discountList = new List<Discount>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,discount,products,start_date,expiry_date FROM discounts WHERE '" + date + "' >= start_date and '" + date + "' <= expiry_date");
+            foreach (DataRow item in data.Rows)
+            {
+                Discount discount = new Discount(item);
+                discountList.Add(discount);
+            }
+
+            return discountList;
         }
 
         public static List<Discount> LoadDiscountList(string date)

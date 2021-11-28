@@ -155,6 +155,9 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>C:\Users\Dell\Downloads\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="FireSharp, Version=2.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FireSharp.2.0.4\lib\portable-net45+sl5+wp8+win8\FireSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -191,6 +194,15 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.27\lib\net452\MySql.Data.dll</HintPath>
@@ -222,6 +234,14 @@
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -260,7 +280,10 @@
     <Compile Include="Class\Category.cs" />
     <Compile Include="Class\Discount.cs" />
     <Compile Include="Class\ImportInvoice.cs" />
+    <Compile Include="Class\ImportInvoiceItem.cs" />
     <Compile Include="Class\ItemDetail.cs" />
+    <Compile Include="Class\NotificationSystem.cs" />
+    <Compile Include="Class\NotificationTransaction.cs" />
     <Compile Include="Class\Option.cs" />
     <Compile Include="Class\OptionGroup.cs" />
     <Compile Include="Class\Order.cs" />
@@ -320,6 +343,8 @@
     <Compile Include="DB\DbCategory.cs" />
     <Compile Include="DB\DbDiscount.cs" />
     <Compile Include="DB\DbImportInvoice.cs" />
+    <Compile Include="DB\DbImportInvoiceItem.cs" />
+    <Compile Include="DB\DbNotification.cs" />
     <Compile Include="DB\DbOption.cs" />
     <Compile Include="DB\DbOptionGroup.cs" />
     <Compile Include="DB\DbOrder.cs" />
@@ -380,6 +405,12 @@
     <Compile Include="FormManage\FormAddImportInvoice.Designer.cs">
       <DependentUpon>FormAddImportInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManage\FormAddNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddNotification.Designer.cs">
+      <DependentUpon>FormAddNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManage\FormAddOption.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -403,6 +434,12 @@
     </Compile>
     <Compile Include="FormManage\FormAddProductTopping.Designer.cs">
       <DependentUpon>FormAddProductTopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormAddReward.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormAddReward.Designer.cs">
+      <DependentUpon>FormAddReward.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManage\FormAddRole.cs">
       <SubType>Form</SubType>
@@ -488,6 +525,12 @@
     <Compile Include="FormManage\FormInformationDiscount.Designer.cs">
       <DependentUpon>FormInformationDiscount.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManage\FormInformationImportInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationImportInvoice.Designer.cs">
+      <DependentUpon>FormInformationImportInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManage\FormInformationOption.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -499,6 +542,12 @@
     </Compile>
     <Compile Include="FormManage\FormInformationOptionGroup.Designer.cs">
       <DependentUpon>FormInformationOptionGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationOrder.Designer.cs">
+      <DependentUpon>FormInformationOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManage\FormInformationProduct.cs">
       <SubType>Form</SubType>
@@ -517,6 +566,12 @@
     </Compile>
     <Compile Include="FormManage\FormInformationProductTopping.Designer.cs">
       <DependentUpon>FormInformationProductTopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationReward.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationReward.Designer.cs">
+      <DependentUpon>FormInformationReward.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManage\FormInformationRewardUser.cs">
       <SubType>Form</SubType>
@@ -547,6 +602,12 @@
     </Compile>
     <Compile Include="FormManage\FormInformationTopping.Designer.cs">
       <DependentUpon>FormInformationTopping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationUser.Designer.cs">
+      <DependentUpon>FormInformationUser.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManage\FormInformationUserSale.cs">
       <SubType>Form</SubType>
@@ -614,11 +675,23 @@
     <Compile Include="FormManage\FormScannerQR.Designer.cs">
       <DependentUpon>FormScannerQR.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManage\FormShowOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormShowOrder.Designer.cs">
+      <DependentUpon>FormShowOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManage\FormSuccess.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormManage\FormSuccess.Designer.cs">
       <DependentUpon>FormSuccess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormVoucherDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormVoucherDiscount.Designer.cs">
+      <DependentUpon>FormVoucherDiscount.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSale.cs">
       <SubType>Form</SubType>
@@ -671,11 +744,23 @@
     <Compile Include="UC_ManageSysterm\UC_ManageCategory.Designer.cs">
       <DependentUpon>UC_ManageCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageDiscount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageDiscount.Designer.cs">
+      <DependentUpon>UC_ManageDiscount.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageImportInvoice.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageImportInvoice.Designer.cs">
       <DependentUpon>UC_ManageImportInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageNotification.Designer.cs">
+      <DependentUpon>UC_ManageNotification.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageOption.cs">
       <SubType>UserControl</SubType>
@@ -695,6 +780,12 @@
     <Compile Include="UC_ManageSysterm\UC_ManageOptionGroup.Designer.cs">
       <DependentUpon>UC_ManageOptionGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageOrder.Designer.cs">
+      <DependentUpon>UC_ManageOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageProductCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -706,6 +797,12 @@
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageProductOption.Designer.cs">
       <DependentUpon>UC_ManageProductOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageReward.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageReward.Designer.cs">
+      <DependentUpon>UC_ManageReward.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageRole.cs">
       <SubType>UserControl</SubType>
@@ -803,6 +900,18 @@
     <Compile Include="UC_ManageSysterm\UC_SearchInformationUser.Designer.cs">
       <DependentUpon>UC_SearchInformationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ShowDiscount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ShowDiscount.Designer.cs">
+      <DependentUpon>UC_ShowDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ShowVoucher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ShowVoucher.Designer.cs">
+      <DependentUpon>UC_ShowVoucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ManageSysterm\UC_TableList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -821,15 +930,19 @@
     <Compile Include="UC_ManageSysterm\UC_UserList.Designer.cs">
       <DependentUpon>UC_UserList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Data.cs" />
+    <Compile Include="ViewModels\Notification.cs" />
     <Compile Include="ViewModels\OptionShow.cs" />
     <Compile Include="ViewModels\OptionShow1.cs" />
     <Compile Include="ViewModels\OrderShow.cs" />
+    <Compile Include="ViewModels\OrderShow2.cs" />
     <Compile Include="ViewModels\ProductOptionShow.cs" />
     <Compile Include="ViewModels\ProductShow.cs" />
     <Compile Include="ViewModels\ProductShowTop.cs" />
     <Compile Include="ViewModels\ProductToppingShow.cs" />
     <Compile Include="ViewModels\ReceiptShow.cs" />
     <Compile Include="ViewModels\RewardShow.cs" />
+    <Compile Include="ViewModels\Token.cs" />
     <Compile Include="ViewModels\ToppingShow.cs" />
     <EmbeddedResource Include="CustomControls\btnProductList.resx">
       <DependentUpon>btnProductList.cs</DependentUpon>
@@ -870,6 +983,9 @@
     <EmbeddedResource Include="FormManage\FormAddImportInvoice.resx">
       <DependentUpon>FormAddImportInvoice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddNotification.resx">
+      <DependentUpon>FormAddNotification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormAddOption.resx">
       <DependentUpon>FormAddOption.cs</DependentUpon>
     </EmbeddedResource>
@@ -881,6 +997,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormAddProductTopping.resx">
       <DependentUpon>FormAddProductTopping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormAddReward.resx">
+      <DependentUpon>FormAddReward.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormAddRole.resx">
       <DependentUpon>FormAddRole.cs</DependentUpon>
@@ -924,11 +1043,17 @@
     <EmbeddedResource Include="FormManage\FormInformationDiscount.resx">
       <DependentUpon>FormInformationDiscount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationImportInvoice.resx">
+      <DependentUpon>FormInformationImportInvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationOption.resx">
       <DependentUpon>FormInformationOption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationOptionGroup.resx">
       <DependentUpon>FormInformationOptionGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationOrder.resx">
+      <DependentUpon>FormInformationOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationProduct.resx">
       <DependentUpon>FormInformationProduct.cs</DependentUpon>
@@ -938,6 +1063,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationProductTopping.resx">
       <DependentUpon>FormInformationProductTopping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationReward.resx">
+      <DependentUpon>FormInformationReward.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationRewardUser.resx">
       <DependentUpon>FormInformationRewardUser.cs</DependentUpon>
@@ -953,6 +1081,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationTopping.resx">
       <DependentUpon>FormInformationTopping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationUser.resx">
+      <DependentUpon>FormInformationUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationUserSale.resx">
       <DependentUpon>FormInformationUserSale.cs</DependentUpon>
@@ -987,8 +1118,14 @@
     <EmbeddedResource Include="FormManage\FormScannerQR.resx">
       <DependentUpon>FormScannerQR.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormShowOrder.resx">
+      <DependentUpon>FormShowOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormSuccess.resx">
       <DependentUpon>FormSuccess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormVoucherDiscount.resx">
+      <DependentUpon>FormVoucherDiscount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSale.resx">
       <DependentUpon>FormSale.cs</DependentUpon>
@@ -1025,8 +1162,14 @@
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageCategory.resx">
       <DependentUpon>UC_ManageCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageDiscount.resx">
+      <DependentUpon>UC_ManageDiscount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageImportInvoice.resx">
       <DependentUpon>UC_ManageImportInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageNotification.resx">
+      <DependentUpon>UC_ManageNotification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageOption.resx">
       <DependentUpon>UC_ManageOption.cs</DependentUpon>
@@ -1037,11 +1180,17 @@
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageOptionGroup.resx">
       <DependentUpon>UC_ManageOptionGroup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageOrder.resx">
+      <DependentUpon>UC_ManageOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageProductCategory.resx">
       <DependentUpon>UC_ManageProductCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageProductOption.resx">
       <DependentUpon>UC_ManageProductOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageReward.resx">
+      <DependentUpon>UC_ManageReward.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageRole.resx">
       <DependentUpon>UC_ManageRole.cs</DependentUpon>
@@ -1090,6 +1239,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_SearchInformationUser.resx">
       <DependentUpon>UC_SearchInformationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ShowDiscount.resx">
+      <DependentUpon>UC_ShowDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ShowVoucher.resx">
+      <DependentUpon>UC_ShowVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_TableList.resx">
       <DependentUpon>UC_TableList.cs</DependentUpon>
@@ -1145,4 +1300,9 @@
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SquiredCoffee.DB;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,9 +38,19 @@ namespace SquiredCoffee.CustomControls
             set { lblDiscount.Text = value; }
         }
 
-        public CartItem()
+        FormSale _parent;
+
+        public CartItem(FormSale parent)
         {
             InitializeComponent();
+            _parent = parent;
+        }
+
+        private void btnQuantity_Click(object sender, EventArgs e)
+        {
+            DbOrderItem.DeleteOrderItem(ItemId.ToString());
+            _parent.LoadOrderItem();
+            _parent.clearProduct();
         }
     }
 }

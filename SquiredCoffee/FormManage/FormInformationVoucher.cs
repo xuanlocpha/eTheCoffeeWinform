@@ -54,7 +54,14 @@ namespace SquiredCoffee.FormManage
                 status = item.status;
                 image = item.image;
                 image_QrCode = item.qr_code;
-                ptImage.Image = ConvertBase64ToImage(image);
+                if (image != "")
+                {
+                    ptImage.Image = ConvertBase64ToImage(item.image);
+                }
+                else
+                {
+                    ptImage.Image = new Bitmap(Application.StartupPath + "\\Resource\\no_img.jpg");
+                }
             }
         }
 

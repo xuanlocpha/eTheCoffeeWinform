@@ -45,7 +45,7 @@ namespace SquiredCoffee
 
         public void clearForm2()
         {
-            txtUserNameForm2.Text = txtPasswordOldForm2.Text = txtChangePasswordNewForm2.Text = txtChangePasswordNewCoverForm2.Text =string.Empty;
+            txtUserNameForm2.Text = txtPasswordOldForm2.Text = txtChangePasswordNewForm2.Text = txtChangePasswordNewCoverForm2.Text = string.Empty;
             switchForm2.Checked = false;
         }
 
@@ -61,6 +61,19 @@ namespace SquiredCoffee
             pnlChangePassword.Visible = false;
             guna2Transition1.HideSync(pnlChangePassword);
             clearForm1();
+        }
+
+        private string GetMD5(string txt)
+        {
+            string str = "";
+            Byte[] buffer = System.Text.Encoding.UTF8.GetBytes(txt);
+            System.Security.Cryptography.MD5CryptoServiceProvider md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            buffer = md5.ComputeHash(buffer);
+            foreach (Byte b in buffer)
+            {
+                str += b.ToString("X2");
+            }
+            return str;
         }
 
         private void btnLoginForm1_Click(object sender, EventArgs e)
@@ -89,14 +102,15 @@ namespace SquiredCoffee
                 Form2.ShowDialog();
                 return;
             }
-            if ((DbStaff.CheckLoginStaff(txtUserNameForm1.Text, txtPasswordForm1.Text)) == true)
+            string password = GetMD5(txtPasswordForm1.Text);
+            if ((DbStaff.CheckLoginStaff(txtUserNameForm1.Text, password)) == true)
             {
                 List<Staff> staffList = DbStaff.CheckRole(txtUserNameForm1.Text);
                 foreach (Staff item in staffList)
                 {
                     if (item.role_id == 2)
                     {
-                        Form5.fullName =  item.first_name+" "+ item.last_name ;
+                        Form5.fullName = item.first_name + " " + item.last_name;
                         Form5.roleName = item.title;
                         Form5.imageStaff = item.image;
                         Form5.id_staff = item.id;
@@ -121,7 +135,7 @@ namespace SquiredCoffee
                 Form2.ShowDialog();
                 return;
             }
-           
+
         }
 
         private void btnUpdatePassword_Click(object sender, EventArgs e)
@@ -168,24 +182,27 @@ namespace SquiredCoffee
                 Form2.ShowDialog();
                 return;
             }
-            if (txtChangePasswordNewForm2.Text != txtChangePasswordNewCoverForm2.Text )
+            string PasswordOld = GetMD5(txtPasswordOldForm2.Text);
+            string PasswordNewForm = GetMD5(txtChangePasswordNewForm2.Text);
+            string ChangePasswordNewCoverForm = GetMD5(txtChangePasswordNewCoverForm2.Text);
+            if (PasswordNewForm != ChangePasswordNewCoverForm)
             {
                 Form2.title = "MK Mới Và MK Nhập Lại (Không Khớp) ";
                 Form2.ShowDialog();
                 return;
             }
-            if ((DbStaff.CheckLoginStaff(txtUserNameForm2.Text, txtPasswordOldForm2.Text)) == false)
+            if ((DbStaff.CheckLoginStaff(txtUserNameForm2.Text, PasswordOld)) == false)
             {
                 Form2.title = "Kiểm tra lại (Tên đăng nhập và MK Cũ)";
                 Form2.ShowDialog();
                 return;
             }
-            if((DbStaff.CheckUpdatePasswordStaff(txtUserNameForm2.Text, txtChangePasswordNewForm2.Text)) == true)
+            if ((DbStaff.CheckUpdatePasswordStaff(txtUserNameForm2.Text, ChangePasswordNewCoverForm)) == true)
             {
                 Form1.title = "Cập Nhật Thành Công";
                 Form1.ShowDialog();
-                return;
-            }    
+
+            }
             clearForm2();
         }
 

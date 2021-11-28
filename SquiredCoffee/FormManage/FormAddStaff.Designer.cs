@@ -172,7 +172,7 @@ namespace SquiredCoffee.FormManage
             this.txtFirstName.ForeColor = System.Drawing.Color.Black;
             this.txtFirstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtFirstName.HoverState.Parent = this.txtFirstName;
-            this.txtFirstName.Location = new System.Drawing.Point(217, 78);
+            this.txtFirstName.Location = new System.Drawing.Point(217, 83);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.PasswordChar = '\0';
@@ -273,11 +273,11 @@ namespace SquiredCoffee.FormManage
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Quicksand", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(76, 17);
+            this.label1.Location = new System.Drawing.Point(76, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(216, 25);
+            this.label1.Size = new System.Drawing.Size(232, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thêm Mới Nhân Viên";
             // 
@@ -439,7 +439,7 @@ namespace SquiredCoffee.FormManage
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(210)))), ((int)(((byte)(254)))));
             this.label2.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.label2.Location = new System.Drawing.Point(125, 91);
+            this.label2.Location = new System.Drawing.Point(125, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 30);
             this.label2.TabIndex = 114;
@@ -463,7 +463,7 @@ namespace SquiredCoffee.FormManage
             this.txtlast_name.ForeColor = System.Drawing.Color.Black;
             this.txtlast_name.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtlast_name.HoverState.Parent = this.txtlast_name;
-            this.txtlast_name.Location = new System.Drawing.Point(214, 151);
+            this.txtlast_name.Location = new System.Drawing.Point(214, 158);
             this.txtlast_name.Margin = new System.Windows.Forms.Padding(4);
             this.txtlast_name.Name = "txtlast_name";
             this.txtlast_name.PasswordChar = '\0';

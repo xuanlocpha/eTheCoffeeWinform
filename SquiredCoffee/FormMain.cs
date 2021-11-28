@@ -1,4 +1,5 @@
-﻿using SquiredCoffee.UC_Controls;
+﻿using SquiredCoffee.FormManage;
+using SquiredCoffee.UC_Controls;
 using SquiredCoffee.UC_ManageSysterm;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace SquiredCoffee
         public string fullName;
         public string roleName;
         public int id_staff;
+        UC_ManageNotification UC_1;
 
         private readonly FormLoginSysterm _parent;
         public FormMain(FormLoginSysterm parent)
@@ -101,6 +103,19 @@ namespace SquiredCoffee
         {
             UC_ManageToppingProduct uC_ManageToppingProduct = new UC_ManageToppingProduct();
             AddControlsToPanel(uC_ManageToppingProduct);
+        }
+
+        private void btnNotification_Click(object sender, EventArgs e)
+        {
+            UC_ManageNotification uC_ManageNotification = new UC_ManageNotification();
+            uC_ManageNotification.id_staff = id_staff;
+            AddControlsToPanel(uC_ManageNotification);
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            UC_ManageOrder uC_ManageOrder = new UC_ManageOrder();
+            AddControlsToPanel(uC_ManageOrder);
         }
     }
 }
