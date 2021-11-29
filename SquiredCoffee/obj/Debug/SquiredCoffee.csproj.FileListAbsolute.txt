@@ -1076,7 +1076,7 @@ B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.Fo
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationUser.resources
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageOrder.resources
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageReward.resources
-B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.csproj.AssemblyReference.cache
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormAddReward.resources
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationReward.resources
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationOrder.resources
+B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageDiscount.resources

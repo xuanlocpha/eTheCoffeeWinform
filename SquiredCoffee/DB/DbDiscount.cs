@@ -28,19 +28,19 @@ namespace SquiredCoffee.DB
         }
 
 
-        public static List<Discount> LoadDiscountList()
-        {
-            List<Discount> discountList = new List<Discount>();
+        //public static List<Discount> LoadDiscountList()
+        //{
+        //    List<Discount> discountList = new List<Discount>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,discount,products,start_date,expiry_date FROM discounts WHERE '" + date + "' >= start_date and '" + date + "' <= expiry_date");
-            foreach (DataRow item in data.Rows)
-            {
-                Discount discount = new Discount(item);
-                discountList.Add(discount);
-            }
+        //    DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,discount,products,start_date,expiry_date FROM discounts WHERE '" + date + "' >= start_date and '" + date + "' <= expiry_date");
+        //    foreach (DataRow item in data.Rows)
+        //    {
+        //        Discount discount = new Discount(item);
+        //        discountList.Add(discount);
+        //    }
 
-            return discountList;
-        }
+        //    return discountList;
+        //}
 
         public static List<Discount> LoadDiscountList(string date)
         {
