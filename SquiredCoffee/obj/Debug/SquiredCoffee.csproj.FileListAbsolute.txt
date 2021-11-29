@@ -1002,7 +1002,6 @@ B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.Fo
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInfomationStaff.resources
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormImage.resources
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationCategory.resources
-B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationDiscount.resources
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationOption.resources
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationOptionGroup.resources
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationProduct.resources
@@ -1080,3 +1079,5 @@ B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.Fo
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationReward.resources
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationOrder.resources
 B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageDiscount.resources
+B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInformationDiscount.resources
+B:\eTheCoffeeWinform2\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.csproj.CopyComplete

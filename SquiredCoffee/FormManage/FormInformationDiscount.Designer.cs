@@ -31,28 +31,32 @@ namespace SquiredCoffee.FormManage
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInformationDiscount));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
-            this.btnClose = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpExpiryeDate = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtDiscount = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbDiscount = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.rdStatus1 = new System.Windows.Forms.RadioButton();
-            this.rdStatus2 = new System.Windows.Forms.RadioButton();
-            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.dgvDiscount = new System.Windows.Forms.DataGridView();
+            this.Column12 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.bunifuVScrollBar1 = new Bunifu.UI.WinForms.BunifuVScrollBar();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDiscount)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuGradientPanel1
@@ -61,7 +65,6 @@ namespace SquiredCoffee.FormManage
             this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
             this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuGradientPanel1.BorderRadius = 1;
-            this.bunifuGradientPanel1.Controls.Add(this.btnClose);
             this.bunifuGradientPanel1.Controls.Add(this.pictureBox1);
             this.bunifuGradientPanel1.Controls.Add(this.label1);
             this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -72,22 +75,8 @@ namespace SquiredCoffee.FormManage
             this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
             this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(672, 60);
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(1334, 60);
             this.bunifuGradientPanel1.TabIndex = 4;
-            this.bunifuGradientPanel1.Click += new System.EventHandler(this.bunifuGradientPanel1_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.AutoSize = true;
-            this.btnClose.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnClose.Location = new System.Drawing.Point(633, 17);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(27, 25);
-            this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "X";
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // pictureBox1
             // 
@@ -102,278 +91,239 @@ namespace SquiredCoffee.FormManage
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Quicksand", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(76, 17);
+            this.label1.Location = new System.Drawing.Point(76, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(311, 25);
+            this.label1.Size = new System.Drawing.Size(237, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Thêm Mới Sản Phẩm Giảm Giá";
+            this.label1.Text = "Quản Lý Khách Hàng";
             // 
-            // dtpExpiryeDate
+            // dgvDiscount
             // 
-            this.dtpExpiryeDate.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke;
-            this.dtpExpiryeDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpExpiryeDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExpiryeDate.Location = new System.Drawing.Point(233, 300);
-            this.dtpExpiryeDate.Name = "dtpExpiryeDate";
-            this.dtpExpiryeDate.Size = new System.Drawing.Size(403, 30);
-            this.dtpExpiryeDate.TabIndex = 139;
+            this.dgvDiscount.AllowUserToAddRows = false;
+            this.dgvDiscount.AllowUserToDeleteRows = false;
+            this.dgvDiscount.AllowUserToOrderColumns = true;
+            this.dgvDiscount.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.dgvDiscount.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDiscount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDiscount.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.dgvDiscount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDiscount.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvDiscount.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDiscount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDiscount.ColumnHeadersHeight = 50;
+            this.dgvDiscount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvDiscount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column12,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column7,
+            this.Column8,
+            this.Column6});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Quicksand", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDiscount.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvDiscount.EnableHeadersVisualStyles = false;
+            this.dgvDiscount.Location = new System.Drawing.Point(12, 86);
+            this.dgvDiscount.Name = "dgvDiscount";
+            this.dgvDiscount.ReadOnly = true;
+            this.dgvDiscount.RowHeadersVisible = false;
+            this.dgvDiscount.RowHeadersWidth = 50;
+            this.dgvDiscount.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvDiscount.RowTemplate.Height = 50;
+            this.dgvDiscount.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvDiscount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDiscount.Size = new System.Drawing.Size(1280, 521);
+            this.dgvDiscount.TabIndex = 82;
             // 
-            // label3
+            // Column12
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.label3.Location = new System.Drawing.Point(59, 301);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 25);
-            this.label3.TabIndex = 138;
-            this.label3.Text = "Ngày Kết Thúc:";
+            this.Column12.FillWeight = 50F;
+            this.Column12.HeaderText = "";
+            this.Column12.MinimumWidth = 6;
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
             // 
-            // dtpStartDate
+            // Column1
             // 
-            this.dtpStartDate.CalendarMonthBackground = System.Drawing.Color.WhiteSmoke;
-            this.dtpStartDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStartDate.Location = new System.Drawing.Point(233, 230);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(403, 30);
-            this.dtpStartDate.TabIndex = 137;
+            this.Column1.HeaderText = "Id";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
             // 
-            // label7
+            // Column2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.label7.Location = new System.Drawing.Point(59, 231);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(151, 25);
-            this.label7.TabIndex = 136;
-            this.label7.Text = "Ngày Bắt Đầu:";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column2.FillWeight = 120F;
+            this.Column2.HeaderText = "Tên Khách Hàng";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
-            // label12
+            // Column3
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.label12.Location = new System.Drawing.Point(73, 374);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(137, 25);
-            this.label12.TabIndex = 135;
-            this.label12.Text = "Trạng Thái  :";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Quicksand", 12F);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column3.FillWeight = 60F;
+            this.Column3.HeaderText = "Giới Tính";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
-            // txtDiscount
+            // Column4
             // 
-            this.txtDiscount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
-            this.txtDiscount.BorderRadius = 15;
-            this.txtDiscount.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDiscount.DefaultText = "";
-            this.txtDiscount.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDiscount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDiscount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDiscount.DisabledState.Parent = this.txtDiscount;
-            this.txtDiscount.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDiscount.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDiscount.FocusedState.Parent = this.txtDiscount;
-            this.txtDiscount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.ForeColor = System.Drawing.Color.Black;
-            this.txtDiscount.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDiscount.HoverState.Parent = this.txtDiscount;
-            this.txtDiscount.Location = new System.Drawing.Point(233, 145);
-            this.txtDiscount.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.PasswordChar = '\0';
-            this.txtDiscount.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtDiscount.PlaceholderText = "...";
-            this.txtDiscount.SelectedText = "";
-            this.txtDiscount.ShadowDecoration.Parent = this.txtDiscount;
-            this.txtDiscount.Size = new System.Drawing.Size(403, 47);
-            this.txtDiscount.TabIndex = 134;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Quicksand", 12F);
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Column4.FillWeight = 90F;
+            this.Column4.HeaderText = "ĐThoại";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
-            // label6
+            // Column5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.label6.Location = new System.Drawing.Point(46, 81);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(164, 25);
-            this.label6.TabIndex = 129;
-            this.label6.Text = "Tên Sản Phẩm :";
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Quicksand", 12F);
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Column5.FillWeight = 120F;
+            this.Column5.HeaderText = "Email";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
-            // label2
+            // Column7
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.label2.Location = new System.Drawing.Point(104, 156);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 25);
-            this.label2.TabIndex = 130;
-            this.label2.Text = "% Giảm :";
+            this.Column7.FillWeight = 60F;
+            this.Column7.HeaderText = "Điểm";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
-            // cbDiscount
+            // Column8
             // 
-            this.cbDiscount.BackColor = System.Drawing.Color.Transparent;
-            this.cbDiscount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
-            this.cbDiscount.BorderRadius = 15;
-            this.cbDiscount.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbDiscount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDiscount.FocusedColor = System.Drawing.Color.Empty;
-            this.cbDiscount.FocusedState.Parent = this.cbDiscount;
-            this.cbDiscount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbDiscount.FormattingEnabled = true;
-            this.cbDiscount.HoverState.Parent = this.cbDiscount;
-            this.cbDiscount.ItemHeight = 30;
-            this.cbDiscount.Items.AddRange(new object[] {
-            "Nước",
-            "Thức ăn"});
-            this.cbDiscount.ItemsAppearance.Parent = this.cbDiscount;
-            this.cbDiscount.Location = new System.Drawing.Point(233, 78);
-            this.cbDiscount.Name = "cbDiscount";
-            this.cbDiscount.ShadowDecoration.Parent = this.cbDiscount;
-            this.cbDiscount.Size = new System.Drawing.Size(403, 36);
-            this.cbDiscount.TabIndex = 133;
+            this.Column8.FillWeight = 80F;
+            this.Column8.HeaderText = "Level";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
-            // rdStatus1
+            // Column6
             // 
-            this.rdStatus1.AutoSize = true;
-            this.rdStatus1.Checked = true;
-            this.rdStatus1.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdStatus1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.rdStatus1.Location = new System.Drawing.Point(250, 372);
-            this.rdStatus1.Name = "rdStatus1";
-            this.rdStatus1.Size = new System.Drawing.Size(128, 29);
-            this.rdStatus1.TabIndex = 131;
-            this.rdStatus1.TabStop = true;
-            this.rdStatus1.Text = "Kích Hoạt ";
-            this.rdStatus1.UseVisualStyleBackColor = true;
-            this.rdStatus1.CheckedChanged += new System.EventHandler(this.rdStatus1_CheckedChanged);
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle7.NullValue")));
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Column6.FillWeight = 80F;
+            this.Column6.HeaderText = "Trạng Thái";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
-            // rdStatus2
+            // bunifuVScrollBar1
             // 
-            this.rdStatus2.AutoSize = true;
-            this.rdStatus2.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdStatus2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.rdStatus2.Location = new System.Drawing.Point(427, 374);
-            this.rdStatus2.Name = "rdStatus2";
-            this.rdStatus2.Size = new System.Drawing.Size(125, 29);
-            this.rdStatus2.TabIndex = 132;
-            this.rdStatus2.Text = "Tạm Khóa";
-            this.rdStatus2.UseVisualStyleBackColor = true;
-            this.rdStatus2.CheckedChanged += new System.EventHandler(this.rdStatus2_CheckedChanged);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BorderRadius = 15;
-            this.btnDelete.CheckedState.Parent = this.btnDelete;
-            this.btnDelete.CustomImages.Parent = this.btnDelete;
-            this.btnDelete.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.ImageOffset = new System.Drawing.Point(0, -4);
-            this.btnDelete.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnDelete.Location = new System.Drawing.Point(370, 432);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
-            this.btnDelete.Size = new System.Drawing.Size(250, 57);
-            this.btnDelete.TabIndex = 141;
-            this.btnDelete.Text = "Xóa";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BorderRadius = 15;
-            this.btnEdit.CheckedState.Parent = this.btnEdit;
-            this.btnEdit.CustomImages.Parent = this.btnEdit;
-            this.btnEdit.FillColor = System.Drawing.Color.Tomato;
-            this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.HoverState.Parent = this.btnEdit;
-            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
-            this.btnEdit.ImageOffset = new System.Drawing.Point(0, -4);
-            this.btnEdit.ImageSize = new System.Drawing.Size(22, 22);
-            this.btnEdit.Location = new System.Drawing.Point(51, 432);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.ShadowDecoration.Parent = this.btnEdit;
-            this.btnEdit.Size = new System.Drawing.Size(250, 57);
-            this.btnEdit.TabIndex = 140;
-            this.btnEdit.Text = "Sửa";
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.bunifuVScrollBar1.AllowCursorChanges = true;
+            this.bunifuVScrollBar1.AllowHomeEndKeysDetection = false;
+            this.bunifuVScrollBar1.AllowIncrementalClickMoves = true;
+            this.bunifuVScrollBar1.AllowMouseDownEffects = true;
+            this.bunifuVScrollBar1.AllowMouseHoverEffects = true;
+            this.bunifuVScrollBar1.AllowScrollingAnimations = true;
+            this.bunifuVScrollBar1.AllowScrollKeysDetection = true;
+            this.bunifuVScrollBar1.AllowScrollOptionsMenu = true;
+            this.bunifuVScrollBar1.AllowShrinkingOnFocusLost = false;
+            this.bunifuVScrollBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuVScrollBar1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(36)))), ((int)(((byte)(50)))));
+            this.bunifuVScrollBar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuVScrollBar1.BackgroundImage")));
+            this.bunifuVScrollBar1.BindingContainer = null;
+            this.bunifuVScrollBar1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(36)))), ((int)(((byte)(50)))));
+            this.bunifuVScrollBar1.BorderRadius = 14;
+            this.bunifuVScrollBar1.BorderThickness = 1;
+            this.bunifuVScrollBar1.DurationBeforeShrink = 2000;
+            this.bunifuVScrollBar1.LargeChange = 10;
+            this.bunifuVScrollBar1.Location = new System.Drawing.Point(1299, 141);
+            this.bunifuVScrollBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuVScrollBar1.Maximum = 100;
+            this.bunifuVScrollBar1.Minimum = 0;
+            this.bunifuVScrollBar1.MinimumThumbLength = 18;
+            this.bunifuVScrollBar1.Name = "bunifuVScrollBar1";
+            this.bunifuVScrollBar1.OnDisable.ScrollBarBorderColor = System.Drawing.Color.Silver;
+            this.bunifuVScrollBar1.OnDisable.ScrollBarColor = System.Drawing.Color.Transparent;
+            this.bunifuVScrollBar1.OnDisable.ThumbColor = System.Drawing.Color.Silver;
+            this.bunifuVScrollBar1.ScrollBarBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(36)))), ((int)(((byte)(50)))));
+            this.bunifuVScrollBar1.ScrollBarColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(36)))), ((int)(((byte)(50)))));
+            this.bunifuVScrollBar1.ShrinkSizeLimit = 3;
+            this.bunifuVScrollBar1.Size = new System.Drawing.Size(22, 466);
+            this.bunifuVScrollBar1.SmallChange = 1;
+            this.bunifuVScrollBar1.TabIndex = 89;
+            this.bunifuVScrollBar1.ThumbColor = System.Drawing.Color.Gray;
+            this.bunifuVScrollBar1.ThumbLength = 45;
+            this.bunifuVScrollBar1.ThumbMargin = 1;
+            this.bunifuVScrollBar1.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
+            this.bunifuVScrollBar1.Value = 0;
             // 
             // guna2Elipse1
             // 
             this.guna2Elipse1.BorderRadius = 15;
-            this.guna2Elipse1.TargetControl = this;
-            // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.BorderRadius = 15;
-            this.guna2Elipse2.TargetControl = this.dtpStartDate;
-            // 
-            // guna2Elipse3
-            // 
-            this.guna2Elipse3.BorderRadius = 15;
-            this.guna2Elipse3.TargetControl = this.dtpExpiryeDate;
+            this.guna2Elipse1.TargetControl = this.dgvDiscount;
             // 
             // FormInformationDiscount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(210)))), ((int)(((byte)(254)))));
-            this.ClientSize = new System.Drawing.Size(672, 510);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.dtpExpiryeDate);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dtpStartDate);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtDiscount);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.cbDiscount);
-            this.Controls.Add(this.rdStatus1);
-            this.Controls.Add(this.rdStatus2);
+            this.ClientSize = new System.Drawing.Size(1334, 637);
+            this.Controls.Add(this.bunifuVScrollBar1);
+            this.Controls.Add(this.dgvDiscount);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormInformationDiscount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInformationDiscount";
-            this.Load += new System.EventHandler(this.FormInformationDiscount_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDiscount)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel1;
-        private System.Windows.Forms.Label btnClose;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpExpiryeDate;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtpStartDate;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label12;
-        private Guna.UI2.WinForms.Guna2TextBox txtDiscount;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2ComboBox cbDiscount;
-        private System.Windows.Forms.RadioButton rdStatus1;
-        private System.Windows.Forms.RadioButton rdStatus2;
-        private Guna.UI2.WinForms.Guna2Button btnDelete;
-        private Guna.UI2.WinForms.Guna2Button btnEdit;
+        private System.Windows.Forms.DataGridView dgvDiscount;
+        private System.Windows.Forms.DataGridViewImageColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewImageColumn Column6;
+        private Bunifu.UI.WinForms.BunifuVScrollBar bunifuVScrollBar1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
     }
 }
