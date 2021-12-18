@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using SquiredCoffee.Class;
+using SquiredCoffee.CustomControls;
 using SquiredCoffee.DB;
 using SquiredCoffee.ViewModels;
 using System;
@@ -125,36 +126,7 @@ namespace SquiredCoffee.FormManage
 
         public void Onclick(object sender, EventArgs e)
         {
-            //FormBackGround formBackGround = new FormBackGround();
-            //try
-            //{
-            //    using (FormOrderProduct Form = new FormOrderProduct(this))
-            //    {
-            //        formBackGround.StartPosition = FormStartPosition.Manual;
-            //        formBackGround.FormBorderStyle = FormBorderStyle.None;
-            //        formBackGround.Opacity = .70d;
-            //        formBackGround.BackColor = Color.Black;
-            //        formBackGround.WindowState = FormWindowState.Maximized;
-            //        formBackGround.TopMost = true;
-            //        formBackGround.Location = this.Location;
-            //        formBackGround.ShowInTaskbar = false;
-            //        formBackGround.Show();
-
-            //        string tag = ((PictureBox)sender).Tag.ToString();
-            //        Form.idProduct = tag;
-            //        Form.Owner = formBackGround;
-            //        Form.ShowDialog();
-            //        return;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw;
-            //}
-            //finally
-            //{
-            //    formBackGround.Dispose();
-            //}
+            
             if(lblNameUser.Text == "name")
             {
                 Form1.title = "Thông Tin Khách Hàng Đang ( Trống )!";
@@ -163,13 +135,40 @@ namespace SquiredCoffee.FormManage
             }
             else
             {
-                string tag = ((PictureBox)sender).Tag.ToString();
-                Form.id_user = id_user;
-                Form.id_reward = Convert.ToInt32(tag);
-                Form.point_user = point_user;
-                this.Hide();
-                Form.ShowDialog();
-                return;
+                FormBackGround formBackGround = new FormBackGround();
+                try
+                {
+                    using (FormInformationRewardUser Form = new FormInformationRewardUser(this))
+                    {
+                        formBackGround.StartPosition = FormStartPosition.Manual;
+                        formBackGround.FormBorderStyle = FormBorderStyle.None;
+                        formBackGround.Opacity = .70d;
+                        formBackGround.BackColor = Color.Black;
+                        formBackGround.WindowState = FormWindowState.Maximized;
+                        formBackGround.TopMost = true;
+                        formBackGround.Location = this.Location;
+                        formBackGround.ShowInTaskbar = false;
+                        formBackGround.Show();
+
+                        string tag = ((PictureBox)sender).Tag.ToString();
+                        Form.id_user = id_user;
+                        Form.id_reward = Convert.ToInt32(tag);
+                        Form.point_user = point_user;
+                        this.Hide();
+                        Form.Owner = formBackGround;
+                        Form.ShowDialog();
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+                finally
+                {
+                    formBackGround.Dispose();
+                }
+                
             }
           
         }
@@ -195,22 +194,31 @@ namespace SquiredCoffee.FormManage
             List<User> userList = DbUser.UserSearch(txtSearch.Text);
             foreach (User item in userList)
             {
-                lblNameUser.Text = item.display_name;
-                lblPoint.Text = string.Format("{0:#,##0} Point", item.point);
-                point_user = item.point;
-                id_user = item.id;
-                if (item.point >= 0 && item.point <= 300)
+                if(item != null)
                 {
-                    lblLevel.Text = "Bạc";
+                    lblNameUser.Text = item.display_name;
+                    lblPoint.Text = string.Format("{0:#,##0} Point", item.point);
+                    point_user = item.point;
+                    id_user = item.id;
+                    if (item.point >= 0 && item.point <= 300)
+                    {
+                        lblLevel.Text = "Bạc";
+                    }
+                    if (item.point >= 301 && item.point <= 1000)
+                    {
+                        lblLevel.Text = "Vàng";
+                    }
+                    if (item.point > 1000)
+                    {
+                        lblLevel.Text = "Kim Cương";
+                    }
                 }
-                if (item.point >= 301 && item.point <= 1000)
+                else
                 {
-                    lblLevel.Text = "Vàng";
+                    Form1.title = "Tài khoản không tồn tại";
+                    Form1.ShowDialog();
                 }
-                if(item.point > 1000)
-                {
-                    lblLevel.Text = "Kim Cương";
-                }
+               
             }
         }
 
@@ -228,10 +236,40 @@ namespace SquiredCoffee.FormManage
                 Form1.ShowDialog();
                 return;
             }
-            Form3.id_user = id_user;
-            Form3.point_user = point_user;
-            this.Hide();
-            Form3.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormQRReward Form = new FormQRReward(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.id_user = id_user;
+                    Form.point_user = point_user;
+                    this.Hide();
+                    Form.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
+            //Form3.id_user = id_user;
+            //Form3.point_user = point_user;
+            //this.Hide();
+            //Form3.ShowDialog();
         }
     }
 }

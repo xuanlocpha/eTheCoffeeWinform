@@ -129,6 +129,39 @@ namespace SquiredCoffee.DB
             return productShowList;
         }
 
+
+        public static List<ProductShow2> LoadProductList2()
+        {
+            List<ProductShow2> productShow2List = new List<ProductShow2>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT p.id,p.category_id,p.title,p.price,p.image,p.content,p.status,c.title as title_category,c.type as type_category FROM products p,categories c WHERE p.category_id = c.id ");
+
+            foreach (DataRow item in data.Rows)
+            {
+                ProductShow2 productShow2 = new ProductShow2(item);
+                productShow2List.Add(productShow2);
+            }
+
+            return productShow2List;
+        }
+
+        public static List<ProductShow> LoadProductList1(string id)
+        {
+            List<ProductShow> productShowList = new List<ProductShow>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT p.id,p.category_id,p.title,p.price,p.image,p.content,p.status,c.title as title_category FROM products p,categories c WHERE p.category_id = c.id AND p.id = '"+id+"' ");
+
+            foreach (DataRow item in data.Rows)
+            {
+                ProductShow productShow = new ProductShow(item);
+                productShowList.Add(productShow);
+            }
+
+            return productShowList;
+        }
+
+
+
         public static List<Product> LoadProductList()
         {
             List<Product> productList = new List<Product>();

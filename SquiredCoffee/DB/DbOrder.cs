@@ -130,7 +130,37 @@ namespace SquiredCoffee.DB
         {
             List<OrderShow2> orderList = new List<OrderShow2>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT o.id,o.table_number,o.staff_id,o.user_id,o.address_id,o.subtotal,o.voucher_discount,o.shipping_discount,o.shipping,o.grandtotal,s.first_name,s.last_name,u.display_name as user_name ,t.mode,a.address,o.created_at FROM  orders o , staffs s ,users u, address a, transactions t WHERE o.staff_id = s.id AND o.user_id = u.id AND o.address_id = a.id AND t.order_id = o.id ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT o.id,o.table_number,o.staff_id,o.user_id,o.address_id,o.subtotal,o.voucher_discount,o.shipping_discount,o.shipping,o.grandtotal,s.first_name,s.last_name,u.display_name as user_name ,t.mode,a.address,o.created_at FROM  orders o , staffs s ,users u, address a, transactions t WHERE o.staff_id = s.id AND o.user_id = u.id AND o.address_id = a.id AND t.order_id = o.id AND o.status = '"+"1"+"' ");
+
+            foreach (DataRow item in data.Rows)
+            {
+                OrderShow2 orderShow2 = new OrderShow2(item);
+                orderList.Add(orderShow2);
+            }
+
+            return orderList;
+        }
+
+        public static List<OrderShow2> LoadShowOrder(string id)
+        {
+            List<OrderShow2> orderList = new List<OrderShow2>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT o.id,o.table_number,o.staff_id,o.user_id,o.address_id,o.subtotal,o.voucher_discount,o.shipping_discount,o.shipping,o.grandtotal,s.first_name,s.last_name,u.display_name as user_name ,t.mode,a.address,o.created_at FROM  orders o , staffs s ,users u, address a, transactions t WHERE o.staff_id = s.id AND o.user_id = u.id AND o.address_id = a.id AND t.order_id = o.id AND o.id = '"+id+"'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                OrderShow2 orderShow2 = new OrderShow2(item);
+                orderList.Add(orderShow2);
+            }
+
+            return orderList;
+        }
+
+        public static List<OrderShow2> LoadShowOrderSearch(string date)
+        {
+            List<OrderShow2> orderList = new List<OrderShow2>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT o.id,o.table_number,o.staff_id,o.user_id,o.address_id,o.subtotal,o.voucher_discount,o.shipping_discount,o.shipping,o.grandtotal,s.first_name,s.last_name,u.display_name as user_name ,t.mode,a.address,o.created_at FROM  orders o , staffs s ,users u, address a, transactions t WHERE o.staff_id = s.id AND o.user_id = u.id AND o.address_id = a.id AND t.order_id = o.id AND o.created_at like'%" + date + "%' AND o.status = '"+1+"'");
 
             foreach (DataRow item in data.Rows)
             {
@@ -194,7 +224,7 @@ namespace SquiredCoffee.DB
         {
             List<OrderShow2> orderList = new List<OrderShow2>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT o.id,o.table_number,o.staff_id,o.user_id,o.address_id,o.subtotal,o.voucher_discount,o.shipping_discount,o.shipping,o.grandtotal,s.first_name,s.last_name,u.display_name as user_name ,t.mode,a.address,o.created_at FROM  orders o , staffs s ,users u, address a, transactions t WHERE o.staff_id = s.id AND o.user_id = u.id AND o.address_id = a.id AND t.order_id = o.id and o.status = 2");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT o.id,o.table_number,o.staff_id,o.user_id,o.address_id,o.subtotal,o.voucher_discount,o.shipping_discount,o.shipping,o.grandtotal,s.first_name,s.last_name,u.display_name as user_name ,t.mode,a.address,o.created_at FROM  orders o , staffs s ,users u, address a, transactions t WHERE o.staff_id = s.id AND o.user_id = u.id AND o.address_id = a.id AND t.order_id = o.id AND t.status = '"+"cancelled"+"'");
 
             foreach (DataRow item in data.Rows)
             {

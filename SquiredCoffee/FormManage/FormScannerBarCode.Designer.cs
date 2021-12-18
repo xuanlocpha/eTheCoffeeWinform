@@ -40,7 +40,6 @@ namespace SquiredCoffee.FormManage
             this.ptCamera = new System.Windows.Forms.PictureBox();
             this.cbCamera = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnStart = new System.Windows.Forms.Button();
             this.btnCheck = new System.Windows.Forms.Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -63,12 +62,11 @@ namespace SquiredCoffee.FormManage
             this.panel1.Controls.Add(this.ptCamera);
             this.panel1.Controls.Add(this.cbCamera);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.btnStart);
             this.panel1.Controls.Add(this.btnCheck);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(814, 625);
+            this.panel1.Size = new System.Drawing.Size(814, 575);
             this.panel1.TabIndex = 0;
             // 
             // guna2GradientPanel1
@@ -117,7 +115,7 @@ namespace SquiredCoffee.FormManage
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Quicksand", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(21, 513);
+            this.label2.Location = new System.Drawing.Point(18, 518);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 33);
             this.label2.TabIndex = 18;
@@ -126,10 +124,10 @@ namespace SquiredCoffee.FormManage
             // txtDisplay
             // 
             this.txtDisplay.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDisplay.Location = new System.Drawing.Point(160, 510);
+            this.txtDisplay.Location = new System.Drawing.Point(157, 515);
             this.txtDisplay.Multiline = true;
             this.txtDisplay.Name = "txtDisplay";
-            this.txtDisplay.Size = new System.Drawing.Size(637, 40);
+            this.txtDisplay.Size = new System.Drawing.Size(460, 40);
             this.txtDisplay.TabIndex = 17;
             // 
             // ptCamera
@@ -164,21 +162,6 @@ namespace SquiredCoffee.FormManage
             this.label1.TabIndex = 14;
             this.label1.Text = "Camera :";
             // 
-            // btnStart
-            // 
-            this.btnStart.BackColor = System.Drawing.Color.Tomato;
-            this.btnStart.FlatAppearance.BorderSize = 0;
-            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStart.Font = new System.Drawing.Font("Quicksand", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.Location = new System.Drawing.Point(398, 559);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(193, 55);
-            this.btnStart.TabIndex = 21;
-            this.btnStart.Text = "Bắt đầu";
-            this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
             // btnCheck
             // 
             this.btnCheck.BackColor = System.Drawing.Color.Green;
@@ -186,9 +169,9 @@ namespace SquiredCoffee.FormManage
             this.btnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheck.Font = new System.Drawing.Font("Quicksand", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCheck.ForeColor = System.Drawing.Color.White;
-            this.btnCheck.Location = new System.Drawing.Point(604, 559);
+            this.btnCheck.Location = new System.Drawing.Point(623, 513);
             this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(193, 55);
+            this.btnCheck.Size = new System.Drawing.Size(179, 43);
             this.btnCheck.TabIndex = 19;
             this.btnCheck.Text = "Kiểm tra";
             this.btnCheck.UseVisualStyleBackColor = false;
@@ -212,7 +195,6 @@ namespace SquiredCoffee.FormManage
             // guna2Elipse4
             // 
             this.guna2Elipse4.BorderRadius = 15;
-            this.guna2Elipse4.TargetControl = this.btnStart;
             // 
             // guna2Elipse5
             // 
@@ -229,13 +211,14 @@ namespace SquiredCoffee.FormManage
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(834, 645);
+            this.ClientSize = new System.Drawing.Size(834, 595);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormScannerBarCode";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormScannerBarCode";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormScannerBarCode_FormClosing);
             this.Load += new System.EventHandler(this.FormScannerBarCode_Load);
             this.panel1.ResumeLayout(false);
@@ -256,7 +239,6 @@ namespace SquiredCoffee.FormManage
         private System.Windows.Forms.PictureBox ptCamera;
         private System.Windows.Forms.ComboBox cbCamera;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnCheck;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;

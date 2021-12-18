@@ -49,11 +49,12 @@ namespace SquiredCoffee.DB
 
         public static void AddTransaction(Trannsaction std)
         {
-            string sql = "INSERT INTO transactions (user_id,order_id,code,type,mode,delivery_method,status,content) VALUES(@user_id,@order_id,@code,@type,@mode,@delivery_method,@status,@content)";
+            string sql = "INSERT INTO transactions (user_id,token,order_id,code,type,mode,delivery_method,status,content) VALUES(@user_id,@token,@order_id,@code,@type,@mode,@delivery_method,@status,@content)";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@user_id", MySqlDbType.VarChar).Value = std.user_id;
+            cmd.Parameters.Add("@token", MySqlDbType.VarChar).Value = std.token;
             cmd.Parameters.Add("@order_id", MySqlDbType.VarChar).Value = std.order_id;
             cmd.Parameters.Add("@code", MySqlDbType.VarChar).Value = std.code;
             cmd.Parameters.Add("@type", MySqlDbType.VarChar).Value = std.type;
@@ -77,12 +78,13 @@ namespace SquiredCoffee.DB
 
         public static void UpdateTransaction(Trannsaction std,string id)
         {
-            string sql = "UPDATE transactions SET user_id = @user_id ,order_id=@order_id,code=@code,type=@type,mode=@mode,delivery_method=@delivery_method,status=@status,content=@content WHERE id = @id";
+            string sql = "UPDATE transactions SET user_id = @user_id,token = @token ,order_id=@order_id,code=@code,type=@type,mode=@mode,delivery_method=@delivery_method,status=@status,content=@content WHERE id = @id";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
             cmd.Parameters.Add("@user_id", MySqlDbType.VarChar).Value = std.user_id;
+            cmd.Parameters.Add("@token", MySqlDbType.VarChar).Value = std.token;
             cmd.Parameters.Add("@order_id", MySqlDbType.VarChar).Value = std.order_id;
             cmd.Parameters.Add("@code", MySqlDbType.VarChar).Value = std.code;
             cmd.Parameters.Add("@type", MySqlDbType.VarChar).Value = std.type;
@@ -106,7 +108,7 @@ namespace SquiredCoffee.DB
         {
             List<Trannsaction> transactionLists = new List<Trannsaction>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,user_id,order_id,code,type,mode,delivery_method,status,content FROM transactions WHERE order_id ='"+@id+"' ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,user_id,token,order_id,code,type,mode,delivery_method,status,content FROM transactions WHERE order_id ='"+@id+"' ");
             foreach (DataRow item in data.Rows)
             {
                 Trannsaction trannsaction = new Trannsaction(item);
@@ -115,6 +117,7 @@ namespace SquiredCoffee.DB
 
             return transactionLists;
         }
+
 
     }
 }

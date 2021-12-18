@@ -22,6 +22,7 @@ namespace SquiredCoffee.FormManage
         public int status = 1;
         public int id_voucher;
         public string image, image_QrCode;
+        public string type;
         public FormInformationVoucher(UC_ManageVoucher parent)
         {
             InitializeComponent();
@@ -62,6 +63,7 @@ namespace SquiredCoffee.FormManage
                 {
                     ptImage.Image = new Bitmap(Application.StartupPath + "\\Resource\\no_img.jpg");
                 }
+                type = item.type;
             }
         }
 
@@ -219,7 +221,7 @@ namespace SquiredCoffee.FormManage
                 {
                     string start_date = dtpStartDate.Value.Date.ToString("yyyy-MM-dd");
                     string expiry_date = dtpExpiryDate.Value.Date.ToString("yyyy-MM-dd");
-                    Voucher std = new Voucher(txtTitle.Text, txtContent.Text, txtCoupenCode.Text, image, image_QrCode,start_date,expiry_date, cbDiscountUnit.Text, Convert.ToInt32(txtDiscount.Text), cbApply.Text, Convert.ToInt32(txtQuantityRule.Text), Convert.ToInt32(txtPriceRule.Text), status);
+                    Voucher std = new Voucher(txtTitle.Text,type,txtContent.Text, txtCoupenCode.Text, image, image_QrCode,start_date,expiry_date, cbDiscountUnit.Text, Convert.ToInt32(txtDiscount.Text), cbApply.Text, Convert.ToInt32(txtQuantityRule.Text), Convert.ToInt32(txtPriceRule.Text), status);
                     DbVoucher.UpdateVoucher(std, id_voucher.ToString());
                     this.Close();
                     _parent.clear();

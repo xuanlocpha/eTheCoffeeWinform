@@ -40,13 +40,19 @@ namespace SquiredCoffee.FormManage
                 cbCamera.Items.Add(device.Name);
                 cbCamera.SelectedIndex = 0;
             }
+            start_video();
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        public void start_video()
         {
             videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cbCamera.SelectedIndex].MonikerString);
             videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
             videoCaptureDevice.Start();
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+           
         }
 
         private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -77,8 +83,8 @@ namespace SquiredCoffee.FormManage
 
         private void pbClose_Click(object sender, EventArgs e)
         {
-            this.Close();
             videoCaptureDevice.Stop();
+            this.Close();
             _parent.Show();
         }
 
@@ -125,6 +131,7 @@ namespace SquiredCoffee.FormManage
                 }
                 
             }
+            videoCaptureDevice.Stop();
             _parent.Voucher(discount);
             this.Close();
             _parent.Show();

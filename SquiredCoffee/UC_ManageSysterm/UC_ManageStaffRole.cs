@@ -41,5 +41,11 @@ namespace SquiredCoffee.UC_ManageSysterm
             UC_ManageRole uC_ManageRole = new UC_ManageRole();
             AddControlsToPanel(uC_ManageRole);
         }
+
+        private void btnAssignment_Click(object sender, EventArgs e)
+        {
+            UC_ManageAssignment uC_ManageAssignment = new UC_ManageAssignment();
+            AddControlsToPanel(uC_ManageAssignment);
+        }
     }
 }

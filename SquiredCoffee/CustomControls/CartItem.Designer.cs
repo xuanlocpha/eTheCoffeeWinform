@@ -70,35 +70,35 @@ namespace SquiredCoffee.CustomControls
             // 
             this.lblDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDiscount.AutoSize = true;
-            this.lblDiscount.Font = new System.Drawing.Font("Quicksand", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscount.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiscount.ForeColor = System.Drawing.Color.White;
-            this.lblDiscount.Location = new System.Drawing.Point(328, 36);
+            this.lblDiscount.Location = new System.Drawing.Point(340, 37);
             this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(70, 28);
+            this.lblDiscount.Size = new System.Drawing.Size(44, 30);
             this.lblDiscount.TabIndex = 22;
-            this.lblDiscount.Text = "0 VNĐ";
+            this.lblDiscount.Text = "0 đ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Quicksand", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(226, 36);
+            this.label3.Location = new System.Drawing.Point(226, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 25);
+            this.label3.Size = new System.Drawing.Size(112, 30);
             this.label3.TabIndex = 21;
             this.label3.Text = "Giảm Giá :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Quicksand", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(261, 6);
+            this.label2.Location = new System.Drawing.Point(238, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 25);
+            this.label2.Size = new System.Drawing.Size(100, 30);
             this.label2.TabIndex = 20;
-            this.label2.Text = "ĐGiá :";
+            this.label2.Text = "Đơn Giá :";
             // 
             // lblQuantity
             // 
@@ -126,13 +126,13 @@ namespace SquiredCoffee.CustomControls
             // 
             this.lblPrice.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Quicksand", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(328, 6);
+            this.lblPrice.Location = new System.Drawing.Point(339, 7);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(121, 28);
+            this.lblPrice.Size = new System.Drawing.Size(44, 30);
             this.lblPrice.TabIndex = 17;
-            this.lblPrice.Text = "42.000 VNĐ";
+            this.lblPrice.Text = "0 đ";
             // 
             // lblItemName
             // 

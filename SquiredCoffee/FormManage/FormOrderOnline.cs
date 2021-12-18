@@ -61,5 +61,10 @@ namespace SquiredCoffee.FormManage
             _parent.grandTotal = 0;
             this.Close();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -36,6 +36,7 @@ namespace SquiredCoffee.FormManage
         public string topping ="";
         public decimal price;
         public string voucher;
+        public decimal discount;
         FormSuccess Form1;
         FormError Form2;
 
@@ -302,15 +303,30 @@ namespace SquiredCoffee.FormManage
                 ItemDetail itemDetails = new ItemDetail();
                 itemDetails.options = str1;
                 itemDetails.toppings = str2;
- 
+
                 // Kiểm tra trước khi chọn 
                 string jsonString = JsonConvert.SerializeObject(itemDetails);
-                Order_Items std = new Order_Items(Convert.ToInt32(idProduct), jsonString, Convert.ToInt32(_parent.id_order), Convert.ToInt32(txtAmount.Text), price, "");
-                DbOrderItem.AddOrderItem(std);
-                clear();
-                this.Close();              
-                _parent.LoadOrderItem();
-             }
+                if (DbOrderItem.CheckOrderItem(_parent.id_order.ToString(), idProduct.ToString(), jsonString) == true)
+                {
+                    List<Order_Items> order_Items = DbOrderItem.order_Items_Load_Check(_parent.id_order, idProduct, jsonString);
+                    foreach (Order_Items item in order_Items)
+                    {
+                        int kq = item.quantity + Convert.ToInt32(txtAmount.Text);
+                        DbOrderItem.UpdateOrderItem(item.id.ToString(), idProduct, _parent.id_order, kq.ToString());
+                        clear();
+                        this.Close();
+                        _parent.LoadOrderItem();
+                    }
+                }
+                else
+                {
+                    Order_Items std = new Order_Items(Convert.ToInt32(idProduct), jsonString, Convert.ToInt32(_parent.id_order), Convert.ToInt32(txtAmount.Text), price, "");
+                    DbOrderItem.AddOrderItem(std);
+                    clear();
+                    this.Close();
+                    _parent.LoadOrderItem();
+                }
+            }
         }
 
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)

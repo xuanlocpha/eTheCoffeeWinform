@@ -35,10 +35,10 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.btnOptionGroup = new Guna.UI2.WinForms.Guna2Button();
-            this.btnManageStockProduct = new Guna.UI2.WinForms.Guna2Button();
             this.btnManageImportInvoice = new Guna.UI2.WinForms.Guna2Button();
+            this.btnManageStockProduct = new Guna.UI2.WinForms.Guna2Button();
+            this.btnOptionGroup = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,10 +76,65 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.panel1.Size = new System.Drawing.Size(1624, 63);
             this.panel1.TabIndex = 33;
             // 
-            // guna2Elipse3
+            // btnManageImportInvoice
             // 
-            this.guna2Elipse3.BorderRadius = 10;
-            this.guna2Elipse3.TargetControl = this.panel1;
+            this.btnManageImportInvoice.BorderRadius = 4;
+            this.btnManageImportInvoice.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnManageImportInvoice.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
+            this.btnManageImportInvoice.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
+            this.btnManageImportInvoice.CheckedState.Parent = this.btnManageImportInvoice;
+            this.btnManageImportInvoice.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 6);
+            this.btnManageImportInvoice.CustomImages.Parent = this.btnManageImportInvoice;
+            this.btnManageImportInvoice.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageImportInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageImportInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnManageImportInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnManageImportInvoice.DisabledState.Parent = this.btnManageImportInvoice;
+            this.btnManageImportInvoice.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnManageImportInvoice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
+            this.btnManageImportInvoice.Font = new System.Drawing.Font("Quicksand SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageImportInvoice.ForeColor = System.Drawing.Color.White;
+            this.btnManageImportInvoice.HoverState.Parent = this.btnManageImportInvoice;
+            this.btnManageImportInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnManageImportInvoice.Image")));
+            this.btnManageImportInvoice.ImageSize = new System.Drawing.Size(23, 23);
+            this.btnManageImportInvoice.Location = new System.Drawing.Point(640, 0);
+            this.btnManageImportInvoice.Name = "btnManageImportInvoice";
+            this.btnManageImportInvoice.Padding = new System.Windows.Forms.Padding(4);
+            this.btnManageImportInvoice.ShadowDecoration.Parent = this.btnManageImportInvoice;
+            this.btnManageImportInvoice.Size = new System.Drawing.Size(320, 63);
+            this.btnManageImportInvoice.TabIndex = 8;
+            this.btnManageImportInvoice.Text = "Quản Lý Nhập Kho";
+            this.btnManageImportInvoice.Click += new System.EventHandler(this.btnManageImportInvoice_Click);
+            // 
+            // btnManageStockProduct
+            // 
+            this.btnManageStockProduct.BorderRadius = 4;
+            this.btnManageStockProduct.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnManageStockProduct.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
+            this.btnManageStockProduct.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
+            this.btnManageStockProduct.CheckedState.Parent = this.btnManageStockProduct;
+            this.btnManageStockProduct.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 6);
+            this.btnManageStockProduct.CustomImages.Parent = this.btnManageStockProduct;
+            this.btnManageStockProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageStockProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageStockProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnManageStockProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnManageStockProduct.DisabledState.Parent = this.btnManageStockProduct;
+            this.btnManageStockProduct.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnManageStockProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
+            this.btnManageStockProduct.Font = new System.Drawing.Font("Quicksand SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageStockProduct.ForeColor = System.Drawing.Color.White;
+            this.btnManageStockProduct.HoverState.Parent = this.btnManageStockProduct;
+            this.btnManageStockProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnManageStockProduct.Image")));
+            this.btnManageStockProduct.ImageSize = new System.Drawing.Size(23, 23);
+            this.btnManageStockProduct.Location = new System.Drawing.Point(320, 0);
+            this.btnManageStockProduct.Name = "btnManageStockProduct";
+            this.btnManageStockProduct.Padding = new System.Windows.Forms.Padding(4);
+            this.btnManageStockProduct.ShadowDecoration.Parent = this.btnManageStockProduct;
+            this.btnManageStockProduct.Size = new System.Drawing.Size(320, 63);
+            this.btnManageStockProduct.TabIndex = 7;
+            this.btnManageStockProduct.Text = "Quản Lý Sản Phẩm Kho";
+            this.btnManageStockProduct.Click += new System.EventHandler(this.btnManageStockProduct_Click);
             // 
             // btnOptionGroup
             // 
@@ -112,65 +167,10 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnOptionGroup.Text = "Quản Lý Nhà  Cung Cấp";
             this.btnOptionGroup.Click += new System.EventHandler(this.btnOptionGroup_Click);
             // 
-            // btnManageStockProduct
+            // guna2Elipse3
             // 
-            this.btnManageStockProduct.BorderRadius = 4;
-            this.btnManageStockProduct.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnManageStockProduct.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
-            this.btnManageStockProduct.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
-            this.btnManageStockProduct.CheckedState.Parent = this.btnManageStockProduct;
-            this.btnManageStockProduct.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 6);
-            this.btnManageStockProduct.CustomImages.Parent = this.btnManageStockProduct;
-            this.btnManageStockProduct.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnManageStockProduct.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnManageStockProduct.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnManageStockProduct.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnManageStockProduct.DisabledState.Parent = this.btnManageStockProduct;
-            this.btnManageStockProduct.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnManageStockProduct.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
-            this.btnManageStockProduct.Font = new System.Drawing.Font("Quicksand SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageStockProduct.ForeColor = System.Drawing.Color.White;
-            this.btnManageStockProduct.HoverState.Parent = this.btnManageStockProduct;
-            this.btnManageStockProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnManageStockProduct.Image")));
-            this.btnManageStockProduct.ImageSize = new System.Drawing.Size(23, 23);
-            this.btnManageStockProduct.Location = new System.Drawing.Point(320, 0);
-            this.btnManageStockProduct.Name = "btnManageStockProduct";
-            this.btnManageStockProduct.Padding = new System.Windows.Forms.Padding(4);
-            this.btnManageStockProduct.ShadowDecoration.Parent = this.btnManageStockProduct;
-            this.btnManageStockProduct.Size = new System.Drawing.Size(320, 63);
-            this.btnManageStockProduct.TabIndex = 7;
-            this.btnManageStockProduct.Text = "Quản Lý Sản Phẩm Kho";
-            this.btnManageStockProduct.Click += new System.EventHandler(this.btnManageStockProduct_Click);
-            // 
-            // btnManageImportInvoice
-            // 
-            this.btnManageImportInvoice.BorderRadius = 4;
-            this.btnManageImportInvoice.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btnManageImportInvoice.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
-            this.btnManageImportInvoice.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
-            this.btnManageImportInvoice.CheckedState.Parent = this.btnManageImportInvoice;
-            this.btnManageImportInvoice.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 6);
-            this.btnManageImportInvoice.CustomImages.Parent = this.btnManageImportInvoice;
-            this.btnManageImportInvoice.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnManageImportInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnManageImportInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnManageImportInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnManageImportInvoice.DisabledState.Parent = this.btnManageImportInvoice;
-            this.btnManageImportInvoice.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnManageImportInvoice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
-            this.btnManageImportInvoice.Font = new System.Drawing.Font("Quicksand SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageImportInvoice.ForeColor = System.Drawing.Color.White;
-            this.btnManageImportInvoice.HoverState.Parent = this.btnManageImportInvoice;
-            this.btnManageImportInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnManageImportInvoice.Image")));
-            this.btnManageImportInvoice.ImageSize = new System.Drawing.Size(23, 23);
-            this.btnManageImportInvoice.Location = new System.Drawing.Point(640, 0);
-            this.btnManageImportInvoice.Name = "btnManageImportInvoice";
-            this.btnManageImportInvoice.Padding = new System.Windows.Forms.Padding(4);
-            this.btnManageImportInvoice.ShadowDecoration.Parent = this.btnManageImportInvoice;
-            this.btnManageImportInvoice.Size = new System.Drawing.Size(320, 63);
-            this.btnManageImportInvoice.TabIndex = 8;
-            this.btnManageImportInvoice.Text = "Quản Lý Nhập Kho";
-            this.btnManageImportInvoice.Click += new System.EventHandler(this.btnManageImportInvoice_Click);
+            this.guna2Elipse3.BorderRadius = 10;
+            this.guna2Elipse3.TargetControl = this.panel1;
             // 
             // UC_ManageWareHouse
             // 

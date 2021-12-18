@@ -82,6 +82,7 @@ namespace SquiredCoffee.FormManage
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            clear();
             this.Close();
         }
 

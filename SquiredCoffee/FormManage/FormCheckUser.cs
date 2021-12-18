@@ -35,7 +35,7 @@ namespace SquiredCoffee.FormManage
 
         private void pbClose_Click(object sender, EventArgs e)
         {
-            videoCaptureDevice.Start();
+            videoCaptureDevice.Stop();
             this.Close();
             _parent.Show();
         }
@@ -48,6 +48,14 @@ namespace SquiredCoffee.FormManage
                 cbCamera.Items.Add(device.Name);
                 cbCamera.SelectedIndex = 0;
             }
+            start_video();
+        }
+
+        public void start_video()
+        {
+            videoCaptureDevice = new VideoCaptureDevice(filterInfoCollection[cbCamera.SelectedIndex].MonikerString);
+            videoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
+            videoCaptureDevice.Start();
         }
 
         private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
@@ -83,6 +91,7 @@ namespace SquiredCoffee.FormManage
                     decimal kq1 = kq + item.point;
                     if(DbUser.accumulatePoints(kq1.ToString(),item.id.ToString())== true)
                     {
+                        videoCaptureDevice.Stop();
                         Form1.title = "Tích Điểm Thành Công";
                         Form1.ShowDialog();
                         txtDisplay.Text = string.Empty;
@@ -93,6 +102,7 @@ namespace SquiredCoffee.FormManage
             }
             else
             {
+                videoCaptureDevice.Stop();
                 Form2.title = "Khách hàng không tồn tại ! ";
                 Form2.ShowDialog();
                 txtDisplay.Text = string.Empty;

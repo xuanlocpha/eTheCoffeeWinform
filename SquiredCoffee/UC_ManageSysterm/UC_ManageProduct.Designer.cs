@@ -548,7 +548,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.flpProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flpProduct.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.flpProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(218)))));
             this.flpProduct.ForeColor = System.Drawing.Color.White;
             this.flpProduct.Location = new System.Drawing.Point(18, 177);
             this.flpProduct.Margin = new System.Windows.Forms.Padding(7, 3, 3, 3);
@@ -578,7 +578,6 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.cbListCategory.ShadowDecoration.Parent = this.cbListCategory;
             this.cbListCategory.Size = new System.Drawing.Size(418, 36);
             this.cbListCategory.TabIndex = 27;
-            this.cbListCategory.SelectedIndexChanged += new System.EventHandler(this.cbListProduct_SelectedIndexChanged);
             this.cbListCategory.TextChanged += new System.EventHandler(this.cbListCategory_TextChanged);
             // 
             // gunaVScrollBar1

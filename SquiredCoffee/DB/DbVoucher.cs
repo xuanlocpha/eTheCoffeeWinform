@@ -31,13 +31,14 @@ namespace SquiredCoffee.DB
 
         public static void AddVoucher(Voucher std)
         {
-            string sql = "INSERT INTO vouchers (title,content,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status) " +
-                        "VALUES(@title,@content,@coupon_code,@image,@qr_code,@start_date,@expiry_date,@discount_unit,@discount,@apply_for,@quantity_rule,@price_rule,@status)";
+            string sql = "INSERT INTO vouchers (title,content,type,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status) " +
+                        "VALUES(@title,@content,@type,@coupon_code,@image,@qr_code,@start_date,@expiry_date,@discount_unit,@discount,@apply_for,@quantity_rule,@price_rule,@status)";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
             cmd.Parameters.Add("@content", MySqlDbType.VarChar).Value = std.content;
+            cmd.Parameters.Add("@type", MySqlDbType.VarChar).Value = std.type;
             cmd.Parameters.Add("@coupon_code", MySqlDbType.VarChar).Value = std.coupon_code;
             cmd.Parameters.Add("@image", MySqlDbType.VarChar).Value = std.image;
             cmd.Parameters.Add("@qr_code", MySqlDbType.VarChar).Value = std.qr_code;
@@ -65,13 +66,14 @@ namespace SquiredCoffee.DB
         public static void UpdateVoucher(Voucher std,string id)
         {
             
-            string sql = "UPDATE vouchers SET title=@title,content=@content,coupon_code=@coupon_code,image=@image,qr_code=@qr_code,start_date=@start_date,expiry_date=@expiry_date,discount_unit=@discount_unit,discount=@discount,apply_for=@apply_for,quantity_rule=@quantity_rule,price_rule=@price_rule,status=@status WHERE id = @id";
+            string sql = "UPDATE vouchers SET title=@title,content=@content,type =@type,coupon_code=@coupon_code,image=@image,qr_code=@qr_code,start_date=@start_date,expiry_date=@expiry_date,discount_unit=@discount_unit,discount=@discount,apply_for=@apply_for,quantity_rule=@quantity_rule,price_rule=@price_rule,status=@status WHERE id = @id";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
             cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
             cmd.Parameters.Add("@content", MySqlDbType.VarChar).Value = std.content;
+            cmd.Parameters.Add("@type", MySqlDbType.VarChar).Value = std.type;
             cmd.Parameters.Add("@coupon_code", MySqlDbType.VarChar).Value = std.coupon_code;
             cmd.Parameters.Add("@image", MySqlDbType.VarChar).Value = std.image;
             cmd.Parameters.Add("@qr_code", MySqlDbType.VarChar).Value = std.qr_code;
@@ -207,7 +209,7 @@ namespace SquiredCoffee.DB
           
             List<Voucher> voucherList = new List<Voucher>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,type,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers ");
             foreach (DataRow item in data.Rows)
             {
                 Voucher voucher = new Voucher(item);
@@ -223,7 +225,7 @@ namespace SquiredCoffee.DB
 
             List<Voucher> voucherList = new List<Voucher>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE coupon_code = '"+coupon_code+"' ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,type,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE coupon_code = '"+coupon_code+"' ");
             foreach (DataRow item in data.Rows)
             {
                 Voucher voucher = new Voucher(item);
@@ -236,7 +238,7 @@ namespace SquiredCoffee.DB
         {
             List<Voucher> voucherList = new List<Voucher>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE id='"+@key+"'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,type,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE id='"+@key+"'");
             foreach (DataRow item in data.Rows)
             {
                 Voucher voucher = new Voucher(item);
@@ -250,7 +252,7 @@ namespace SquiredCoffee.DB
         {
             List<Voucher> voucherList = new List<Voucher>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE status ='"+@key+"' ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,type,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE status ='"+@key+"' ");
             foreach (DataRow item in data.Rows)
             {
                 Voucher voucher = new Voucher(item);
@@ -265,7 +267,7 @@ namespace SquiredCoffee.DB
         {
             List<Voucher> voucherList = new List<Voucher>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,coupen_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE title LIKE'%" + @key + "%' OR discount LIKE'%" + @key + "%' OR discount_unit LIKE'%" + @key + "%' ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,type,coupen_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE title LIKE'%" + @key + "%' OR discount LIKE'%" + @key + "%' OR discount_unit LIKE'%" + @key + "%' ");
             foreach (DataRow item in data.Rows)
             {
                 Voucher voucher = new Voucher(item);
@@ -280,7 +282,7 @@ namespace SquiredCoffee.DB
         {
             List<Voucher> voucherList = new List<Voucher>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE coupon_code ='" + @key + "' and '" + @date + "' >= start_date and '" +@date + "' <= expiry_date ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,content,type,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE coupon_code ='" + @key + "' and '" + @date + "' >= start_date and '" +@date + "' <= expiry_date ");
             foreach (DataRow item in data.Rows)
             {
                 Voucher voucher = new Voucher(item);
@@ -292,7 +294,7 @@ namespace SquiredCoffee.DB
 
         public static bool CheckVoucher(string @key, string @date)
         {
-            string sql = "SELECT id,title,content,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE coupon_code ='" + @key + "' and '" + @date + "' >= start_date and '" + @date + "' <= expiry_date ";
+            string sql = "SELECT * FROM vouchers WHERE coupon_code ='" + @key + "' and '" + @date + "' >= start_date and '" + @date + "' <= expiry_date ";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
@@ -312,7 +314,7 @@ namespace SquiredCoffee.DB
 
         public static bool CheckVoucherReward(string @id, string @date)
         {
-            string sql = "SELECT id,title,content,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE id ='" + @id + "' and '" + @date + "' >= start_date and '" + @date + "' <= expiry_date ";
+            string sql = "SELECT * FROM vouchers WHERE id ='" + @id + "' and '" + @date + "' >= start_date and '" + @date + "' <= expiry_date ";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
@@ -333,7 +335,7 @@ namespace SquiredCoffee.DB
 
         public static bool CheckVoucherQuantityRuler(string id, string quantity)
         {
-            string sql = "SELECT id,title,content,coupon_code,image,qr_code,start_date,expiry_date,discount_unit,discount,apply_for,quantity_rule,price_rule,status FROM vouchers WHERE id = '"+id+"' and '"+quantity+"' >= quantity_rule";
+            string sql = "SELECT * FROM vouchers WHERE id = '"+id+"' and '"+quantity+"' >= quantity_rule";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             MySqlDataAdapter adp = new MySqlDataAdapter(cmd);

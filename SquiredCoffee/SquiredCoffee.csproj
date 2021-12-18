@@ -276,9 +276,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class\Assignment.cs" />
     <Compile Include="Class\Bill_Details.cs" />
     <Compile Include="Class\Category.cs" />
     <Compile Include="Class\Discount.cs" />
+    <Compile Include="Class\ExportInvoice.cs" />
+    <Compile Include="Class\ExportInvoiceItems.cs" />
     <Compile Include="Class\ImportInvoice.cs" />
     <Compile Include="Class\ImportInvoiceItem.cs" />
     <Compile Include="Class\ItemDetail.cs" />
@@ -339,9 +342,12 @@
       <DependentUpon>ItemDetailTopping.cs</DependentUpon>
     </Compile>
     <Compile Include="DB\DataProvider.cs" />
+    <Compile Include="DB\DbAssignment.cs" />
     <Compile Include="DB\DbBill.cs" />
     <Compile Include="DB\DbCategory.cs" />
     <Compile Include="DB\DbDiscount.cs" />
+    <Compile Include="DB\DbExportInvoice.cs" />
+    <Compile Include="DB\DbExportInvoiceItem.cs" />
     <Compile Include="DB\DbImportInvoice.cs" />
     <Compile Include="DB\DbImportInvoiceItem.cs" />
     <Compile Include="DB\DbNotification.cs" />
@@ -501,6 +507,12 @@
     <Compile Include="FormManage\FormError.Designer.cs">
       <DependentUpon>FormError.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManage\FormExportInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormExportInvoice.Designer.cs">
+      <DependentUpon>FormExportInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManage\FormInfomationStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -531,6 +543,12 @@
     <Compile Include="FormManage\FormInformationImportInvoice.Designer.cs">
       <DependentUpon>FormInformationImportInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManage\FormInformationNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationNotification.Designer.cs">
+      <DependentUpon>FormInformationNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManage\FormInformationOption.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -543,11 +561,11 @@
     <Compile Include="FormManage\FormInformationOptionGroup.Designer.cs">
       <DependentUpon>FormInformationOptionGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormManage\FormInformationOrder.cs">
+    <Compile Include="FormManage\FormInformationStatisticalOrder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormManage\FormInformationOrder.Designer.cs">
-      <DependentUpon>FormInformationOrder.cs</DependentUpon>
+    <Compile Include="FormManage\FormInformationStatisticalOrder.Designer.cs">
+      <DependentUpon>FormInformationStatisticalOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManage\FormInformationProduct.cs">
       <SubType>Form</SubType>
@@ -584,6 +602,12 @@
     </Compile>
     <Compile Include="FormManage\FormInformationRole.Designer.cs">
       <DependentUpon>FormInformationRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormManage\FormInformationStatisticalProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInformationStatisticalProduct.Designer.cs">
+      <DependentUpon>FormInformationStatisticalProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="FormManage\FormInformationStockProduct.cs">
       <SubType>Form</SubType>
@@ -732,17 +756,41 @@
     <Compile Include="UC_ManageSysterm\UC_Dashbroad.Designer.cs">
       <DependentUpon>UC_Dashbroad.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_ManageSysterm\UC_InformationStatictisOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_InformationStatictisOrder.Designer.cs">
+      <DependentUpon>UC_InformationStatictisOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_InformationStatictisProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_InformationStatictisProduct.Designer.cs">
+      <DependentUpon>UC_InformationStatictisProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ManageSysterm\UC_InformationUserSale.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_InformationUserSale.Designer.cs">
       <DependentUpon>UC_InformationUserSale.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageAssignment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageAssignment.Designer.cs">
+      <DependentUpon>UC_ManageAssignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageCategory.Designer.cs">
       <DependentUpon>UC_ManageCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageChart.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_ManageChart.Designer.cs">
+      <DependentUpon>UC_ManageChart.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_ManageDiscount.cs">
       <SubType>UserControl</SubType>
@@ -938,6 +986,7 @@
     <Compile Include="ViewModels\OrderShow2.cs" />
     <Compile Include="ViewModels\ProductOptionShow.cs" />
     <Compile Include="ViewModels\ProductShow.cs" />
+    <Compile Include="ViewModels\ProductShow2.cs" />
     <Compile Include="ViewModels\ProductShowTop.cs" />
     <Compile Include="ViewModels\ProductToppingShow.cs" />
     <Compile Include="ViewModels\ReceiptShow.cs" />
@@ -1031,6 +1080,9 @@
     <EmbeddedResource Include="FormManage\FormError.resx">
       <DependentUpon>FormError.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormExportInvoice.resx">
+      <DependentUpon>FormExportInvoice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInfomationStaff.resx">
       <DependentUpon>FormInfomationStaff.cs</DependentUpon>
     </EmbeddedResource>
@@ -1046,14 +1098,17 @@
     <EmbeddedResource Include="FormManage\FormInformationImportInvoice.resx">
       <DependentUpon>FormInformationImportInvoice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationNotification.resx">
+      <DependentUpon>FormInformationNotification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationOption.resx">
       <DependentUpon>FormInformationOption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationOptionGroup.resx">
       <DependentUpon>FormInformationOptionGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormManage\FormInformationOrder.resx">
-      <DependentUpon>FormInformationOrder.cs</DependentUpon>
+    <EmbeddedResource Include="FormManage\FormInformationStatisticalOrder.resx">
+      <DependentUpon>FormInformationStatisticalOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationProduct.resx">
       <DependentUpon>FormInformationProduct.cs</DependentUpon>
@@ -1072,6 +1127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationRole.resx">
       <DependentUpon>FormInformationRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInformationStatisticalProduct.resx">
+      <DependentUpon>FormInformationStatisticalProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationStockProduct.resx">
       <DependentUpon>FormInformationStockProduct.cs</DependentUpon>
@@ -1156,11 +1214,23 @@
     <EmbeddedResource Include="UC_ManageSysterm\UC_Dashbroad.resx">
       <DependentUpon>UC_Dashbroad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_InformationStatictisOrder.resx">
+      <DependentUpon>UC_InformationStatictisOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_InformationStatictisProduct.resx">
+      <DependentUpon>UC_InformationStatictisProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_InformationUserSale.resx">
       <DependentUpon>UC_InformationUserSale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageAssignment.resx">
+      <DependentUpon>UC_ManageAssignment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageCategory.resx">
       <DependentUpon>UC_ManageCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_ManageChart.resx">
+      <DependentUpon>UC_ManageChart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_ManageDiscount.resx">
       <DependentUpon>UC_ManageDiscount.cs</DependentUpon>

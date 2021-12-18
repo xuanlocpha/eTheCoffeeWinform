@@ -149,6 +149,8 @@ namespace SquiredCoffee.UC_ManageSysterm
             }
         }
 
+
+
         public void Onclick(object sender, EventArgs e)
         {
             FormBackGround formBackGround = new FormBackGround();
@@ -300,11 +302,6 @@ namespace SquiredCoffee.UC_ManageSysterm
             flpProduct.Controls.Clear();
             productStatusList("0");
             lblTotalProductSearch.Text = totalProductSearch.ToString();
-        }
-
-        private void cbListProduct_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

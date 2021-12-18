@@ -62,7 +62,7 @@ namespace SquiredCoffee.DB
 
         public static void AddProductOption(ProductOption std)
         {
-            string sql = "INSERT INTO product_options (product_id,option_id,title,price,defaults,status) VALUES(@product_id,@option_id,@title,@price,@defaults,@status)";
+            string sql = "INSERT INTO product_options (product_id,option_id,title,price,default,status) VALUES(@product_id,@option_id,@title,@price,'"+std.defaults+"',@status)";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
@@ -70,7 +70,7 @@ namespace SquiredCoffee.DB
             cmd.Parameters.Add("@option_id", MySqlDbType.VarChar).Value = std.option_id;
             cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
             cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = std.price;
-            cmd.Parameters.Add("@defaults", MySqlDbType.VarChar).Value = std.defaults;
+            cmd.Parameters.Add("@default", MySqlDbType.VarChar).Value = std.defaults;
             cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
             try
             {
@@ -86,7 +86,7 @@ namespace SquiredCoffee.DB
 
         public static void UpdateProductOption(ProductOption std, string id)
         {
-            string sql = "UPDATE product_options SET product_id=@product_id,option_id=@option_id,title=@title,price=@price,default=@defaults,status=@status  WHERE id = @id";
+            string sql = "UPDATE product_options SET product_id=@product_id,option_id=@option_id,title=@title,price=@price,default='"+std.defaults+"',status=@status  WHERE id = @id";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;

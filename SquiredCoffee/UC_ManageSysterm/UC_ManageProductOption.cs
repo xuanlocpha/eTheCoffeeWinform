@@ -168,35 +168,36 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void btnAddProductOption_Click(object sender, EventArgs e)
         {
-            FormBackGround formBackGround = new FormBackGround();
-            try
-            {
-                using (FormAddProductOption Form = new FormAddProductOption(this))
-                {
-                    formBackGround.StartPosition = FormStartPosition.Manual;
-                    formBackGround.FormBorderStyle = FormBorderStyle.None;
-                    formBackGround.Opacity = .70d;
-                    formBackGround.BackColor = Color.Black;
-                    formBackGround.WindowState = FormWindowState.Maximized;
-                    formBackGround.TopMost = true;
-                    formBackGround.Location = this.Location;
-                    formBackGround.ShowInTaskbar = false;
-                    formBackGround.Show();
+            //FormBackGround formBackGround = new FormBackGround();
+            //try
+            //{
+            //    using (FormAddProductOption Form = new FormAddProductOption(this))
+            //    {
+            //        formBackGround.StartPosition = FormStartPosition.Manual;
+            //        formBackGround.FormBorderStyle = FormBorderStyle.None;
+            //        formBackGround.Opacity = .70d;
+            //        formBackGround.BackColor = Color.Black;
+            //        formBackGround.WindowState = FormWindowState.Maximized;
+            //        formBackGround.TopMost = true;
+            //        formBackGround.Location = this.Location;
+            //        formBackGround.ShowInTaskbar = false;
+            //        formBackGround.Show();
 
-                    Form.Owner = formBackGround;
-                    Form.ShowDialog();
+            //        Form.Owner = formBackGround;
+            //        Form.ShowDialog();
 
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-            finally
-            {
-                formBackGround.Dispose();
-            }
-           
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw;
+            //}
+            //finally
+            //{
+            //    formBackGround.Dispose();
+            //}
+
+            Form.ShowDialog();
         }
 
         private void dgvProductOption_CellClick(object sender, DataGridViewCellEventArgs e)

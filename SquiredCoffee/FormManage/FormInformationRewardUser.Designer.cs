@@ -33,6 +33,8 @@ namespace SquiredCoffee.FormManage
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInformationRewardUser));
             this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtContent = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblPoint = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.ptImage = new System.Windows.Forms.PictureBox();
@@ -51,8 +53,6 @@ namespace SquiredCoffee.FormManage
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse8 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtContent = new Guna.UI2.WinForms.Guna2TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptImage)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
@@ -83,6 +83,45 @@ namespace SquiredCoffee.FormManage
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(849, 516);
             this.panel1.TabIndex = 1;
+            // 
+            // txtContent
+            // 
+            this.txtContent.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
+            this.txtContent.BorderRadius = 15;
+            this.txtContent.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtContent.DefaultText = "";
+            this.txtContent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtContent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtContent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtContent.DisabledState.Parent = this.txtContent;
+            this.txtContent.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtContent.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtContent.FocusedState.Parent = this.txtContent;
+            this.txtContent.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContent.ForeColor = System.Drawing.Color.Black;
+            this.txtContent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtContent.HoverState.Parent = this.txtContent;
+            this.txtContent.Location = new System.Drawing.Point(21, 296);
+            this.txtContent.Margin = new System.Windows.Forms.Padding(4);
+            this.txtContent.Name = "txtContent";
+            this.txtContent.PasswordChar = '\0';
+            this.txtContent.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.txtContent.PlaceholderText = "...";
+            this.txtContent.SelectedText = "";
+            this.txtContent.ShadowDecoration.Parent = this.txtContent;
+            this.txtContent.Size = new System.Drawing.Size(403, 139);
+            this.txtContent.TabIndex = 162;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Quicksand", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(12, 242);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 33);
+            this.label2.TabIndex = 161;
+            this.label2.Text = "Giới Thiệu :";
             // 
             // lblPoint
             // 
@@ -254,45 +293,6 @@ namespace SquiredCoffee.FormManage
             this.guna2Elipse8.BorderRadius = 20;
             this.guna2Elipse8.TargetControl = this.ptImage;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Quicksand", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(12, 242);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 33);
-            this.label2.TabIndex = 161;
-            this.label2.Text = "Giới Thiệu :";
-            // 
-            // txtContent
-            // 
-            this.txtContent.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
-            this.txtContent.BorderRadius = 15;
-            this.txtContent.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtContent.DefaultText = "";
-            this.txtContent.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtContent.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtContent.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtContent.DisabledState.Parent = this.txtContent;
-            this.txtContent.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtContent.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtContent.FocusedState.Parent = this.txtContent;
-            this.txtContent.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContent.ForeColor = System.Drawing.Color.Black;
-            this.txtContent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtContent.HoverState.Parent = this.txtContent;
-            this.txtContent.Location = new System.Drawing.Point(21, 296);
-            this.txtContent.Margin = new System.Windows.Forms.Padding(4);
-            this.txtContent.Name = "txtContent";
-            this.txtContent.PasswordChar = '\0';
-            this.txtContent.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtContent.PlaceholderText = "...";
-            this.txtContent.SelectedText = "";
-            this.txtContent.ShadowDecoration.Parent = this.txtContent;
-            this.txtContent.Size = new System.Drawing.Size(403, 139);
-            this.txtContent.TabIndex = 162;
-            // 
             // FormInformationRewardUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -305,6 +305,7 @@ namespace SquiredCoffee.FormManage
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInformationRewardUser";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormInformationRewardUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

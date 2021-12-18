@@ -32,6 +32,16 @@ namespace SquiredCoffee
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSale));
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lblTableNumber = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.lblCountOrderOnline = new System.Windows.Forms.Label();
+            this.btnOrderOnline = new Guna.UI2.WinForms.Guna2Button();
+            this.btnResetOrder = new Guna.UI2.WinForms.Guna2Button();
+            this.btnNewOrder = new Guna.UI2.WinForms.Guna2Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,16 +63,6 @@ namespace SquiredCoffee
             this.lblGrandTotal = new System.Windows.Forms.Label();
             this.btnPayment = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.lblTableNumber = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.lblCountOrderOnline = new System.Windows.Forms.Label();
-            this.btnOrderOnline = new Guna.UI2.WinForms.Guna2Button();
-            this.btnResetOrder = new Guna.UI2.WinForms.Guna2Button();
-            this.btnNewOrder = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.flpProduct = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaVScrollBar1 = new Guna.UI.WinForms.GunaVScrollBar();
@@ -71,6 +71,7 @@ namespace SquiredCoffee
             this.cbCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.btnExportInvoice = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.btnLogout = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.btnHistoryOrder = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.btnVoucherDiscount = new Guna.UI2.WinForms.Guna2GradientTileButton();
@@ -84,6 +85,10 @@ namespace SquiredCoffee
             this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.guna2Elipse7 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.panel3.SuspendLayout();
+            this.guna2GradientPanel2.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptImageStaff)).BeginInit();
@@ -91,9 +96,6 @@ namespace SquiredCoffee
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.guna2GradientPanel2.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,7 +105,173 @@ namespace SquiredCoffee
             // 
             // guna2Elipse1
             // 
-            this.guna2Elipse1.BorderRadius = 20;
+            this.guna2Elipse1.BorderRadius = 10;
+            this.guna2Elipse1.TargetControl = this.panel3;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
+            this.panel3.Controls.Add(this.guna2GradientPanel2);
+            this.panel3.Controls.Add(this.panel10);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(4, 4);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(5);
+            this.panel3.Size = new System.Drawing.Size(481, 120);
+            this.panel3.TabIndex = 0;
+            // 
+            // guna2GradientPanel2
+            // 
+            this.guna2GradientPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
+            this.guna2GradientPanel2.BorderRadius = 8;
+            this.guna2GradientPanel2.Controls.Add(this.lblTableNumber);
+            this.guna2GradientPanel2.Controls.Add(this.label3);
+            this.guna2GradientPanel2.Controls.Add(this.label2);
+            this.guna2GradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(130)))), ((int)(((byte)(68)))));
+            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(72)))), ((int)(((byte)(115)))));
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(5, 59);
+            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
+            this.guna2GradientPanel2.ShadowDecoration.Parent = this.guna2GradientPanel2;
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(467, 54);
+            this.guna2GradientPanel2.TabIndex = 14;
+            // 
+            // lblTableNumber
+            // 
+            this.lblTableNumber.AutoSize = true;
+            this.lblTableNumber.BackColor = System.Drawing.Color.Transparent;
+            this.lblTableNumber.Font = new System.Drawing.Font("Quicksand", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTableNumber.Location = new System.Drawing.Point(417, 10);
+            this.lblTableNumber.Name = "lblTableNumber";
+            this.lblTableNumber.Size = new System.Drawing.Size(42, 35);
+            this.lblTableNumber.TabIndex = 16;
+            this.lblTableNumber.Text = "43";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Quicksand", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(315, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 35);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Bàn Số :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(10, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(223, 41);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Đơn Hàng Mới !";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.Controls.Add(this.lblCountOrderOnline);
+            this.panel10.Controls.Add(this.btnOrderOnline);
+            this.panel10.Controls.Add(this.btnResetOrder);
+            this.panel10.Controls.Add(this.btnNewOrder);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(5, 5);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(471, 50);
+            this.panel10.TabIndex = 12;
+            // 
+            // lblCountOrderOnline
+            // 
+            this.lblCountOrderOnline.AutoSize = true;
+            this.lblCountOrderOnline.BackColor = System.Drawing.Color.Transparent;
+            this.lblCountOrderOnline.Font = new System.Drawing.Font("Quicksand", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountOrderOnline.ForeColor = System.Drawing.Color.Black;
+            this.lblCountOrderOnline.Location = new System.Drawing.Point(440, 4);
+            this.lblCountOrderOnline.Name = "lblCountOrderOnline";
+            this.lblCountOrderOnline.Size = new System.Drawing.Size(44, 35);
+            this.lblCountOrderOnline.TabIndex = 17;
+            this.lblCountOrderOnline.Text = "50";
+            // 
+            // btnOrderOnline
+            // 
+            this.btnOrderOnline.Animated = true;
+            this.btnOrderOnline.AutoRoundedCorners = true;
+            this.btnOrderOnline.BorderRadius = 16;
+            this.btnOrderOnline.CheckedState.Parent = this.btnOrderOnline;
+            this.btnOrderOnline.CustomImages.Parent = this.btnOrderOnline;
+            this.btnOrderOnline.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnOrderOnline.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnOrderOnline.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnOrderOnline.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnOrderOnline.DisabledState.Parent = this.btnOrderOnline;
+            this.btnOrderOnline.FillColor = System.Drawing.Color.Transparent;
+            this.btnOrderOnline.Font = new System.Drawing.Font("Quicksand", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnOrderOnline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(128)))), ((int)(((byte)(36)))));
+            this.btnOrderOnline.HoverState.Parent = this.btnOrderOnline;
+            this.btnOrderOnline.Image = ((System.Drawing.Image)(resources.GetObject("btnOrderOnline.Image")));
+            this.btnOrderOnline.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnOrderOnline.Location = new System.Drawing.Point(304, 7);
+            this.btnOrderOnline.Name = "btnOrderOnline";
+            this.btnOrderOnline.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.btnOrderOnline.ShadowDecoration.Parent = this.btnOrderOnline;
+            this.btnOrderOnline.Size = new System.Drawing.Size(130, 35);
+            this.btnOrderOnline.TabIndex = 2;
+            this.btnOrderOnline.Text = "Đơn Online";
+            this.btnOrderOnline.Click += new System.EventHandler(this.btnOrderOnline_Click);
+            // 
+            // btnResetOrder
+            // 
+            this.btnResetOrder.Animated = true;
+            this.btnResetOrder.AutoRoundedCorners = true;
+            this.btnResetOrder.BorderRadius = 16;
+            this.btnResetOrder.CheckedState.Parent = this.btnResetOrder;
+            this.btnResetOrder.CustomImages.Parent = this.btnResetOrder;
+            this.btnResetOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnResetOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnResetOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnResetOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnResetOrder.DisabledState.Parent = this.btnResetOrder;
+            this.btnResetOrder.FillColor = System.Drawing.Color.Transparent;
+            this.btnResetOrder.Font = new System.Drawing.Font("Quicksand", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnResetOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(128)))), ((int)(((byte)(36)))));
+            this.btnResetOrder.HoverState.Parent = this.btnResetOrder;
+            this.btnResetOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnResetOrder.Image")));
+            this.btnResetOrder.Location = new System.Drawing.Point(148, 7);
+            this.btnResetOrder.Name = "btnResetOrder";
+            this.btnResetOrder.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.btnResetOrder.ShadowDecoration.Parent = this.btnResetOrder;
+            this.btnResetOrder.Size = new System.Drawing.Size(146, 35);
+            this.btnResetOrder.TabIndex = 1;
+            this.btnResetOrder.Text = "Làm Mới";
+            this.btnResetOrder.Click += new System.EventHandler(this.btnResetOrder_Click);
+            // 
+            // btnNewOrder
+            // 
+            this.btnNewOrder.Animated = true;
+            this.btnNewOrder.AutoRoundedCorners = true;
+            this.btnNewOrder.BorderRadius = 16;
+            this.btnNewOrder.CheckedState.Parent = this.btnNewOrder;
+            this.btnNewOrder.CustomImages.Parent = this.btnNewOrder;
+            this.btnNewOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNewOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNewOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNewOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNewOrder.DisabledState.Parent = this.btnNewOrder;
+            this.btnNewOrder.FillColor = System.Drawing.Color.Transparent;
+            this.btnNewOrder.Font = new System.Drawing.Font("Quicksand", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btnNewOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(128)))), ((int)(((byte)(36)))));
+            this.btnNewOrder.HoverState.Parent = this.btnNewOrder;
+            this.btnNewOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnNewOrder.Image")));
+            this.btnNewOrder.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnNewOrder.Location = new System.Drawing.Point(2, 7);
+            this.btnNewOrder.Name = "btnNewOrder";
+            this.btnNewOrder.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.btnNewOrder.ShadowDecoration.Parent = this.btnNewOrder;
+            this.btnNewOrder.Size = new System.Drawing.Size(146, 35);
+            this.btnNewOrder.TabIndex = 0;
+            this.btnNewOrder.Text = "Đơn Mới";
+            this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click);
             // 
             // panel1
             // 
@@ -145,7 +313,7 @@ namespace SquiredCoffee
             this.lblRoleName.AutoSize = true;
             this.lblRoleName.Font = new System.Drawing.Font("Quicksand", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRoleName.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblRoleName.Location = new System.Drawing.Point(1301, 48);
+            this.lblRoleName.Location = new System.Drawing.Point(1232, 48);
             this.lblRoleName.Name = "lblRoleName";
             this.lblRoleName.Size = new System.Drawing.Size(96, 25);
             this.lblRoleName.TabIndex = 5;
@@ -155,7 +323,7 @@ namespace SquiredCoffee
             // 
             this.lblFullName.AutoSize = true;
             this.lblFullName.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFullName.Location = new System.Drawing.Point(1287, 17);
+            this.lblFullName.Location = new System.Drawing.Point(1218, 17);
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(163, 30);
             this.lblFullName.TabIndex = 4;
@@ -177,7 +345,7 @@ namespace SquiredCoffee
             // 
             this.ptImageStaff.BaseColor = System.Drawing.Color.White;
             this.ptImageStaff.Image = ((System.Drawing.Image)(resources.GetObject("ptImageStaff.Image")));
-            this.ptImageStaff.Location = new System.Drawing.Point(1217, 17);
+            this.ptImageStaff.Location = new System.Drawing.Point(1148, 17);
             this.ptImageStaff.Name = "ptImageStaff";
             this.ptImageStaff.Size = new System.Drawing.Size(64, 59);
             this.ptImageStaff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -244,10 +412,10 @@ namespace SquiredCoffee
             // 
             this.flpOrder.BackColor = System.Drawing.Color.White;
             this.flpOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpOrder.Location = new System.Drawing.Point(4, 136);
+            this.flpOrder.Location = new System.Drawing.Point(4, 124);
             this.flpOrder.Name = "flpOrder";
             this.flpOrder.Padding = new System.Windows.Forms.Padding(5);
-            this.flpOrder.Size = new System.Drawing.Size(464, 616);
+            this.flpOrder.Size = new System.Drawing.Size(464, 628);
             this.flpOrder.TabIndex = 15;
             // 
             // gunaVScrollBar2
@@ -255,12 +423,12 @@ namespace SquiredCoffee
             this.gunaVScrollBar2.BackColor = System.Drawing.Color.Transparent;
             this.gunaVScrollBar2.Dock = System.Windows.Forms.DockStyle.Right;
             this.gunaVScrollBar2.LargeChange = 10;
-            this.gunaVScrollBar2.Location = new System.Drawing.Point(468, 136);
+            this.gunaVScrollBar2.Location = new System.Drawing.Point(468, 124);
             this.gunaVScrollBar2.Maximum = 100;
             this.gunaVScrollBar2.Name = "gunaVScrollBar2";
             this.gunaVScrollBar2.Radius = 6;
             this.gunaVScrollBar2.ScrollIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(218)))));
-            this.gunaVScrollBar2.Size = new System.Drawing.Size(17, 616);
+            this.gunaVScrollBar2.Size = new System.Drawing.Size(17, 628);
             this.gunaVScrollBar2.TabIndex = 14;
             this.gunaVScrollBar2.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
             this.gunaVScrollBar2.ThumbHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(128)))), ((int)(((byte)(36)))));
@@ -298,18 +466,19 @@ namespace SquiredCoffee
             this.lblSubtotal.AutoSize = true;
             this.lblSubtotal.BackColor = System.Drawing.Color.Transparent;
             this.lblSubtotal.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtotal.Location = new System.Drawing.Point(345, 70);
+            this.lblSubtotal.Location = new System.Drawing.Point(339, 82);
             this.lblSubtotal.Name = "lblSubtotal";
             this.lblSubtotal.Size = new System.Drawing.Size(61, 41);
             this.lblSubtotal.TabIndex = 23;
             this.lblSubtotal.Text = "0 đ";
+            this.lblSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(14, 70);
+            this.label7.Location = new System.Drawing.Point(15, 82);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(170, 41);
             this.label7.TabIndex = 22;
@@ -319,21 +488,22 @@ namespace SquiredCoffee
             // 
             this.lblShipping.AutoSize = true;
             this.lblShipping.BackColor = System.Drawing.Color.Transparent;
-            this.lblShipping.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShipping.Location = new System.Drawing.Point(353, 40);
+            this.lblShipping.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShipping.Location = new System.Drawing.Point(338, 39);
             this.lblShipping.Name = "lblShipping";
-            this.lblShipping.Size = new System.Drawing.Size(44, 30);
+            this.lblShipping.Size = new System.Drawing.Size(61, 41);
             this.lblShipping.TabIndex = 21;
             this.lblShipping.Text = "0 đ";
+            this.lblShipping.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 38);
+            this.label1.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(32, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 30);
+            this.label1.Size = new System.Drawing.Size(152, 41);
             this.label1.TabIndex = 20;
             this.label1.Text = "Shipping :";
             // 
@@ -342,17 +512,18 @@ namespace SquiredCoffee
             this.lblGrandTotal.AutoSize = true;
             this.lblGrandTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblGrandTotal.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGrandTotal.Location = new System.Drawing.Point(345, -3);
+            this.lblGrandTotal.Location = new System.Drawing.Point(337, -2);
             this.lblGrandTotal.Name = "lblGrandTotal";
             this.lblGrandTotal.Size = new System.Drawing.Size(61, 41);
             this.lblGrandTotal.TabIndex = 19;
             this.lblGrandTotal.Text = "0 đ";
+            this.lblGrandTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnPayment
             // 
             this.btnPayment.Animated = true;
             this.btnPayment.AutoRoundedCorners = true;
-            this.btnPayment.BorderRadius = 34;
+            this.btnPayment.BorderRadius = 27;
             this.btnPayment.CheckedState.Parent = this.btnPayment;
             this.btnPayment.CustomImages.Parent = this.btnPayment;
             this.btnPayment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -367,10 +538,10 @@ namespace SquiredCoffee
             this.btnPayment.Image = ((System.Drawing.Image)(resources.GetObject("btnPayment.Image")));
             this.btnPayment.ImageOffset = new System.Drawing.Point(0, 3);
             this.btnPayment.ImageSize = new System.Drawing.Size(37, 37);
-            this.btnPayment.Location = new System.Drawing.Point(22, 113);
+            this.btnPayment.Location = new System.Drawing.Point(22, 126);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.ShadowDecoration.Parent = this.btnPayment;
-            this.btnPayment.Size = new System.Drawing.Size(445, 70);
+            this.btnPayment.Size = new System.Drawing.Size(445, 57);
             this.btnPayment.TabIndex = 18;
             this.btnPayment.Text = "Thanh Toán";
             this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
@@ -385,170 +556,6 @@ namespace SquiredCoffee
             this.label6.Size = new System.Drawing.Size(159, 41);
             this.label6.TabIndex = 16;
             this.label6.Text = "Tạm Tính :";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.guna2GradientPanel2);
-            this.panel3.Controls.Add(this.panel10);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(4, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(5);
-            this.panel3.Size = new System.Drawing.Size(481, 132);
-            this.panel3.TabIndex = 0;
-            // 
-            // guna2GradientPanel2
-            // 
-            this.guna2GradientPanel2.BackColor = System.Drawing.Color.White;
-            this.guna2GradientPanel2.BorderRadius = 8;
-            this.guna2GradientPanel2.Controls.Add(this.lblTableNumber);
-            this.guna2GradientPanel2.Controls.Add(this.label3);
-            this.guna2GradientPanel2.Controls.Add(this.label2);
-            this.guna2GradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(130)))), ((int)(((byte)(68)))));
-            this.guna2GradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(72)))), ((int)(((byte)(115)))));
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(5, 61);
-            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.ShadowDecoration.Parent = this.guna2GradientPanel2;
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(467, 62);
-            this.guna2GradientPanel2.TabIndex = 14;
-            // 
-            // lblTableNumber
-            // 
-            this.lblTableNumber.AutoSize = true;
-            this.lblTableNumber.BackColor = System.Drawing.Color.Transparent;
-            this.lblTableNumber.Font = new System.Drawing.Font("Quicksand", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTableNumber.Location = new System.Drawing.Point(413, 11);
-            this.lblTableNumber.Name = "lblTableNumber";
-            this.lblTableNumber.Size = new System.Drawing.Size(42, 35);
-            this.lblTableNumber.TabIndex = 16;
-            this.lblTableNumber.Text = "43";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Quicksand", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(311, 11);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 35);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Bàn Số :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Quicksand", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(223, 41);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Đơn Hàng Mới !";
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.White;
-            this.panel10.Controls.Add(this.lblCountOrderOnline);
-            this.panel10.Controls.Add(this.btnOrderOnline);
-            this.panel10.Controls.Add(this.btnResetOrder);
-            this.panel10.Controls.Add(this.btnNewOrder);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(5, 5);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(471, 50);
-            this.panel10.TabIndex = 12;
-            // 
-            // lblCountOrderOnline
-            // 
-            this.lblCountOrderOnline.AutoSize = true;
-            this.lblCountOrderOnline.BackColor = System.Drawing.Color.Transparent;
-            this.lblCountOrderOnline.Font = new System.Drawing.Font("Quicksand", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountOrderOnline.ForeColor = System.Drawing.Color.Black;
-            this.lblCountOrderOnline.Location = new System.Drawing.Point(433, 7);
-            this.lblCountOrderOnline.Name = "lblCountOrderOnline";
-            this.lblCountOrderOnline.Size = new System.Drawing.Size(44, 35);
-            this.lblCountOrderOnline.TabIndex = 17;
-            this.lblCountOrderOnline.Text = "50";
-            // 
-            // btnOrderOnline
-            // 
-            this.btnOrderOnline.Animated = true;
-            this.btnOrderOnline.AutoRoundedCorners = true;
-            this.btnOrderOnline.BorderRadius = 16;
-            this.btnOrderOnline.CheckedState.Parent = this.btnOrderOnline;
-            this.btnOrderOnline.CustomImages.Parent = this.btnOrderOnline;
-            this.btnOrderOnline.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnOrderOnline.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnOrderOnline.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnOrderOnline.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnOrderOnline.DisabledState.Parent = this.btnOrderOnline;
-            this.btnOrderOnline.FillColor = System.Drawing.Color.Transparent;
-            this.btnOrderOnline.Font = new System.Drawing.Font("Quicksand", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnOrderOnline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(128)))), ((int)(((byte)(36)))));
-            this.btnOrderOnline.HoverState.Parent = this.btnOrderOnline;
-            this.btnOrderOnline.Image = ((System.Drawing.Image)(resources.GetObject("btnOrderOnline.Image")));
-            this.btnOrderOnline.Location = new System.Drawing.Point(304, 6);
-            this.btnOrderOnline.Name = "btnOrderOnline";
-            this.btnOrderOnline.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnOrderOnline.ShadowDecoration.Parent = this.btnOrderOnline;
-            this.btnOrderOnline.Size = new System.Drawing.Size(130, 35);
-            this.btnOrderOnline.TabIndex = 2;
-            this.btnOrderOnline.Text = "Đơn Online";
-            this.btnOrderOnline.Click += new System.EventHandler(this.btnOrderOnline_Click);
-            // 
-            // btnResetOrder
-            // 
-            this.btnResetOrder.Animated = true;
-            this.btnResetOrder.AutoRoundedCorners = true;
-            this.btnResetOrder.BorderRadius = 16;
-            this.btnResetOrder.CheckedState.Parent = this.btnResetOrder;
-            this.btnResetOrder.CustomImages.Parent = this.btnResetOrder;
-            this.btnResetOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnResetOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnResetOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnResetOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnResetOrder.DisabledState.Parent = this.btnResetOrder;
-            this.btnResetOrder.FillColor = System.Drawing.Color.Transparent;
-            this.btnResetOrder.Font = new System.Drawing.Font("Quicksand", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnResetOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(128)))), ((int)(((byte)(36)))));
-            this.btnResetOrder.HoverState.Parent = this.btnResetOrder;
-            this.btnResetOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnResetOrder.Image")));
-            this.btnResetOrder.Location = new System.Drawing.Point(151, 7);
-            this.btnResetOrder.Name = "btnResetOrder";
-            this.btnResetOrder.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnResetOrder.ShadowDecoration.Parent = this.btnResetOrder;
-            this.btnResetOrder.Size = new System.Drawing.Size(146, 35);
-            this.btnResetOrder.TabIndex = 1;
-            this.btnResetOrder.Text = "Làm Mới";
-            this.btnResetOrder.Click += new System.EventHandler(this.btnResetOrder_Click);
-            // 
-            // btnNewOrder
-            // 
-            this.btnNewOrder.Animated = true;
-            this.btnNewOrder.AutoRoundedCorners = true;
-            this.btnNewOrder.BorderRadius = 16;
-            this.btnNewOrder.CheckedState.Parent = this.btnNewOrder;
-            this.btnNewOrder.CustomImages.Parent = this.btnNewOrder;
-            this.btnNewOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNewOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNewOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNewOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNewOrder.DisabledState.Parent = this.btnNewOrder;
-            this.btnNewOrder.FillColor = System.Drawing.Color.Transparent;
-            this.btnNewOrder.Font = new System.Drawing.Font("Quicksand", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btnNewOrder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(128)))), ((int)(((byte)(36)))));
-            this.btnNewOrder.HoverState.Parent = this.btnNewOrder;
-            this.btnNewOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnNewOrder.Image")));
-            this.btnNewOrder.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNewOrder.Location = new System.Drawing.Point(4, 9);
-            this.btnNewOrder.Name = "btnNewOrder";
-            this.btnNewOrder.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnNewOrder.ShadowDecoration.Parent = this.btnNewOrder;
-            this.btnNewOrder.Size = new System.Drawing.Size(146, 35);
-            this.btnNewOrder.TabIndex = 0;
-            this.btnNewOrder.Text = "Đơn Mới";
-            this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click);
             // 
             // guna2GradientPanel1
             // 
@@ -571,7 +578,7 @@ namespace SquiredCoffee
             // 
             // flpProduct
             // 
-            this.flpProduct.BackColor = System.Drawing.Color.White;
+            this.flpProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(218)))));
             this.flpProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpProduct.ForeColor = System.Drawing.Color.White;
             this.flpProduct.Location = new System.Drawing.Point(0, 150);
@@ -591,7 +598,7 @@ namespace SquiredCoffee
             this.gunaVScrollBar1.Name = "gunaVScrollBar1";
             this.gunaVScrollBar1.Radius = 8;
             this.gunaVScrollBar1.ScrollbarSize = 20;
-            this.gunaVScrollBar1.ScrollIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(235)))), ((int)(((byte)(218)))));
+            this.gunaVScrollBar1.ScrollIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
             this.gunaVScrollBar1.Size = new System.Drawing.Size(21, 797);
             this.gunaVScrollBar1.TabIndex = 10;
             this.gunaVScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
@@ -666,6 +673,7 @@ namespace SquiredCoffee
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.btnExportInvoice);
             this.panel9.Controls.Add(this.btnLogout);
             this.panel9.Controls.Add(this.btnHistoryOrder);
             this.panel9.Controls.Add(this.btnVoucherDiscount);
@@ -676,6 +684,36 @@ namespace SquiredCoffee
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(1001, 88);
             this.panel9.TabIndex = 1;
+            // 
+            // btnExportInvoice
+            // 
+            this.btnExportInvoice.BorderRadius = 5;
+            this.btnExportInvoice.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnExportInvoice.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnExportInvoice.CheckedState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(72)))), ((int)(((byte)(115)))));
+            this.btnExportInvoice.CheckedState.Parent = this.btnExportInvoice;
+            this.btnExportInvoice.CustomImages.Parent = this.btnExportInvoice;
+            this.btnExportInvoice.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExportInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportInvoice.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExportInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExportInvoice.DisabledState.Parent = this.btnExportInvoice;
+            this.btnExportInvoice.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(112)))), ((int)(((byte)(34)))));
+            this.btnExportInvoice.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(112)))), ((int)(((byte)(34)))));
+            this.btnExportInvoice.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold);
+            this.btnExportInvoice.ForeColor = System.Drawing.Color.White;
+            this.btnExportInvoice.HoverState.Parent = this.btnExportInvoice;
+            this.btnExportInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnExportInvoice.Image")));
+            this.btnExportInvoice.ImageOffset = new System.Drawing.Point(0, 4);
+            this.btnExportInvoice.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnExportInvoice.Location = new System.Drawing.Point(690, 7);
+            this.btnExportInvoice.Name = "btnExportInvoice";
+            this.btnExportInvoice.ShadowDecoration.Parent = this.btnExportInvoice;
+            this.btnExportInvoice.Size = new System.Drawing.Size(165, 78);
+            this.btnExportInvoice.TabIndex = 7;
+            this.btnExportInvoice.Text = "Kết Kho";
+            this.btnExportInvoice.Click += new System.EventHandler(this.btnExportInvoice_Click);
             // 
             // btnLogout
             // 
@@ -698,11 +736,11 @@ namespace SquiredCoffee
             this.btnLogout.HoverState.Parent = this.btnLogout;
             this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
             this.btnLogout.ImageOffset = new System.Drawing.Point(0, 4);
-            this.btnLogout.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnLogout.Location = new System.Drawing.Point(818, 4);
+            this.btnLogout.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnLogout.Location = new System.Drawing.Point(861, 6);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.ShadowDecoration.Parent = this.btnLogout;
-            this.btnLogout.Size = new System.Drawing.Size(193, 78);
+            this.btnLogout.Size = new System.Drawing.Size(165, 78);
             this.btnLogout.TabIndex = 6;
             this.btnLogout.Text = "Đăng Xuất";
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -729,10 +767,10 @@ namespace SquiredCoffee
             this.btnHistoryOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnHistoryOrder.Image")));
             this.btnHistoryOrder.ImageOffset = new System.Drawing.Point(0, 4);
             this.btnHistoryOrder.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnHistoryOrder.Location = new System.Drawing.Point(617, 4);
+            this.btnHistoryOrder.Location = new System.Drawing.Point(519, 6);
             this.btnHistoryOrder.Name = "btnHistoryOrder";
             this.btnHistoryOrder.ShadowDecoration.Parent = this.btnHistoryOrder;
-            this.btnHistoryOrder.Size = new System.Drawing.Size(193, 78);
+            this.btnHistoryOrder.Size = new System.Drawing.Size(165, 78);
             this.btnHistoryOrder.TabIndex = 5;
             this.btnHistoryOrder.Text = "Lịch Sử BH";
             this.btnHistoryOrder.Click += new System.EventHandler(this.btnHistoryOrder_Click);
@@ -759,10 +797,10 @@ namespace SquiredCoffee
             this.btnVoucherDiscount.Image = ((System.Drawing.Image)(resources.GetObject("btnVoucherDiscount.Image")));
             this.btnVoucherDiscount.ImageOffset = new System.Drawing.Point(0, 4);
             this.btnVoucherDiscount.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnVoucherDiscount.Location = new System.Drawing.Point(416, 4);
+            this.btnVoucherDiscount.Location = new System.Drawing.Point(348, 5);
             this.btnVoucherDiscount.Name = "btnVoucherDiscount";
             this.btnVoucherDiscount.ShadowDecoration.Parent = this.btnVoucherDiscount;
-            this.btnVoucherDiscount.Size = new System.Drawing.Size(193, 78);
+            this.btnVoucherDiscount.Size = new System.Drawing.Size(165, 78);
             this.btnVoucherDiscount.TabIndex = 4;
             this.btnVoucherDiscount.Text = "Khuyến Mãi";
             this.btnVoucherDiscount.Click += new System.EventHandler(this.btnVoucherDiscount_Click);
@@ -789,10 +827,10 @@ namespace SquiredCoffee
             this.btnReward.Image = ((System.Drawing.Image)(resources.GetObject("btnReward.Image")));
             this.btnReward.ImageOffset = new System.Drawing.Point(0, 4);
             this.btnReward.ImageSize = new System.Drawing.Size(33, 33);
-            this.btnReward.Location = new System.Drawing.Point(216, 4);
+            this.btnReward.Location = new System.Drawing.Point(177, 5);
             this.btnReward.Name = "btnReward";
             this.btnReward.ShadowDecoration.Parent = this.btnReward;
-            this.btnReward.Size = new System.Drawing.Size(193, 78);
+            this.btnReward.Size = new System.Drawing.Size(165, 78);
             this.btnReward.TabIndex = 3;
             this.btnReward.Text = "Đổi quà";
             this.btnReward.Click += new System.EventHandler(this.guna2GradientTileButton1_Click);
@@ -820,10 +858,10 @@ namespace SquiredCoffee
             this.btnAllProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnAllProduct.Image")));
             this.btnAllProduct.ImageOffset = new System.Drawing.Point(0, 4);
             this.btnAllProduct.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnAllProduct.Location = new System.Drawing.Point(14, 4);
+            this.btnAllProduct.Location = new System.Drawing.Point(6, 4);
             this.btnAllProduct.Name = "btnAllProduct";
             this.btnAllProduct.ShadowDecoration.Parent = this.btnAllProduct;
-            this.btnAllProduct.Size = new System.Drawing.Size(193, 78);
+            this.btnAllProduct.Size = new System.Drawing.Size(165, 78);
             this.btnAllProduct.TabIndex = 2;
             this.btnAllProduct.Text = "Sản Phẩm";
             this.btnAllProduct.Click += new System.EventHandler(this.btnAllProduct_Click);
@@ -859,7 +897,7 @@ namespace SquiredCoffee
             // 
             // guna2Elipse6
             // 
-            this.guna2Elipse6.BorderRadius = 10;
+            this.guna2Elipse6.BorderRadius = 11;
             this.guna2Elipse6.TargetControl = this.panel6;
             // 
             // timer1
@@ -869,6 +907,11 @@ namespace SquiredCoffee
             // timer2
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // guna2Elipse7
+            // 
+            this.guna2Elipse7.BorderRadius = 10;
+            this.guna2Elipse7.TargetControl = this.flpProduct;
             // 
             // FormSale
             // 
@@ -887,6 +930,11 @@ namespace SquiredCoffee
             this.Text = "FormSale";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormSale_Load);
+            this.panel3.ResumeLayout(false);
+            this.guna2GradientPanel2.ResumeLayout(false);
+            this.guna2GradientPanel2.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
@@ -896,11 +944,6 @@ namespace SquiredCoffee
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.guna2GradientPanel2.ResumeLayout(false);
-            this.guna2GradientPanel2.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -968,5 +1011,7 @@ namespace SquiredCoffee
         private System.Windows.Forms.Timer timer2;
         private Guna.UI2.WinForms.Guna2ComboBox cbCategory;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
+        private Guna.UI2.WinForms.Guna2GradientTileButton btnExportInvoice;
     }
 }

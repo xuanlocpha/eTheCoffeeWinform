@@ -168,7 +168,7 @@ namespace SquiredCoffee.FormManage
                 string start_date = DateTime.Now.Date.ToString("yyyy-MM-dd");
                 string expiry_date = "2021-12-30";
                 string coupen_code = stringCouponCode();
-                Voucher std1 = new Voucher(txtTitle.Text, txtContent.Text, coupen_code, "", "", start_date, expiry_date,"percent",0,"", 1,0,1);
+                Voucher std1 = new Voucher(txtTitle.Text, txtContent.Text,"private", coupen_code, "", "", start_date, expiry_date,"percent",0,"", 1,0,1);
                 DbVoucher.AddVoucher(std1);
                 List<Voucher> voucherList = DbVoucher.SearchVoucherListWithReward(coupen_code);
                 foreach (Voucher item in voucherList)

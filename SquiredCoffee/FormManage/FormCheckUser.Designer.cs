@@ -35,7 +35,6 @@ namespace SquiredCoffee.FormManage
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.pbClose = new System.Windows.Forms.PictureBox();
-            this.btnStart = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbCamera = new System.Windows.Forms.ComboBox();
@@ -59,7 +58,6 @@ namespace SquiredCoffee.FormManage
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
             this.panel1.Controls.Add(this.guna2GradientPanel1);
-            this.panel1.Controls.Add(this.btnStart);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cbCamera);
@@ -113,28 +111,6 @@ namespace SquiredCoffee.FormManage
             this.pbClose.TabStop = false;
             this.pbClose.Click += new System.EventHandler(this.pbClose_Click);
             // 
-            // btnStart
-            // 
-            this.btnStart.CheckedState.Parent = this.btnStart;
-            this.btnStart.CustomImages.Parent = this.btnStart;
-            this.btnStart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnStart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnStart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnStart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnStart.DisabledState.Parent = this.btnStart;
-            this.btnStart.FillColor = System.Drawing.Color.Transparent;
-            this.btnStart.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.HoverState.Parent = this.btnStart;
-            this.btnStart.Image = ((System.Drawing.Image)(resources.GetObject("btnStart.Image")));
-            this.btnStart.ImageSize = new System.Drawing.Size(45, 45);
-            this.btnStart.Location = new System.Drawing.Point(682, 67);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.ShadowDecoration.Parent = this.btnStart;
-            this.btnStart.Size = new System.Drawing.Size(62, 43);
-            this.btnStart.TabIndex = 40;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -164,7 +140,7 @@ namespace SquiredCoffee.FormManage
             this.cbCamera.FormattingEnabled = true;
             this.cbCamera.Location = new System.Drawing.Point(203, 74);
             this.cbCamera.Name = "cbCamera";
-            this.cbCamera.Size = new System.Drawing.Size(473, 30);
+            this.cbCamera.Size = new System.Drawing.Size(518, 30);
             this.cbCamera.TabIndex = 33;
             // 
             // txtDisplay
@@ -250,6 +226,7 @@ namespace SquiredCoffee.FormManage
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCheckUser";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormCheckUser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -277,7 +254,6 @@ namespace SquiredCoffee.FormManage
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse7;
-        private Guna.UI2.WinForms.Guna2Button btnStart;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbClose;

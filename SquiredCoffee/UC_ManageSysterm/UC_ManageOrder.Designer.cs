@@ -81,6 +81,8 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnSearchDate = new Guna.UI2.WinForms.Guna2Button();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.bunifuGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
@@ -122,9 +124,9 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(76, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 33);
+            this.label1.Size = new System.Drawing.Size(191, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Q.Lý Bán Hàng";
+            this.label1.Text = "Quản lý hóa đơn";
             // 
             // lblTotalOrderSearch
             // 
@@ -247,6 +249,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.dgvOrder.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOrder.Size = new System.Drawing.Size(1587, 549);
             this.dgvOrder.TabIndex = 31;
+            this.dgvOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellClick);
             this.dgvOrder.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvOrder_RowsAdded);
             this.dgvOrder.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvOrder_RowsRemoved);
             // 
@@ -773,6 +776,20 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnSearchDate.TabIndex = 116;
             this.btnSearchDate.Click += new System.EventHandler(this.btnSearchDate_Click);
             // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // UC_ManageOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -842,5 +859,7 @@ namespace SquiredCoffee.UC_ManageSysterm
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

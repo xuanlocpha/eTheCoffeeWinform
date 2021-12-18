@@ -412,7 +412,7 @@ namespace SquiredCoffee.FormManage
             this.btnPayment.Location = new System.Drawing.Point(412, 141);
             this.btnPayment.Name = "btnPayment";
             this.btnPayment.ShadowDecoration.Parent = this.btnPayment;
-            this.btnPayment.Size = new System.Drawing.Size(159, 118);
+            this.btnPayment.Size = new System.Drawing.Size(159, 125);
             this.btnPayment.TabIndex = 29;
             this.btnPayment.Text = "Thanh toán";
             this.btnPayment.Click += new System.EventHandler(this.btnPayment_Click);
@@ -993,6 +993,7 @@ namespace SquiredCoffee.FormManage
             this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
+            this.printPreviewDialog1.Load += new System.EventHandler(this.printPreviewDialog1_Load);
             // 
             // FormPaymentSale
             // 
@@ -1007,6 +1008,7 @@ namespace SquiredCoffee.FormManage
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPaymentSale";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormPaymentSale_Load);
             this.panel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);

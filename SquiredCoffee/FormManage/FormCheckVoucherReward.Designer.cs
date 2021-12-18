@@ -305,6 +305,7 @@ namespace SquiredCoffee.FormManage
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCheckVoucherReward";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormCheckVoucherReward_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptImage)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);

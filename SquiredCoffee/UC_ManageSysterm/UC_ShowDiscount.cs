@@ -31,7 +31,8 @@ namespace SquiredCoffee.UC_ManageSysterm
                 foreach (Product item1 in products)
                 {
                     string k = Convert.ToString(item.product);
-                    if (k.Contains(item1.id.ToString()) == true)
+                    string[] arrListStr = k.Split(',');
+                    if (arrListStr.Contains(item1.id.ToString()) == true)
                     {
                         List<Product> products1 = DbProduct.LoadProduct(item1.id.ToString());
                         foreach (Product item2 in products1)

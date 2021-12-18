@@ -37,6 +37,7 @@ namespace SquiredCoffee.FormManage
         public string roleName;
         public string gender;
         public int status;
+        public string password;
 
         void ketnoi()
         {
@@ -96,7 +97,7 @@ namespace SquiredCoffee.FormManage
                 txtPhone.Text = item.phone;
                 txtEmail.Text = item.email;
                 txtUserName.Text = item.username;
-                txtPassword.Text = item.password;
+                password = item.password;
                 cbRoleName.Text = item.title;
                 if (item.status == 1)
                 {
@@ -107,7 +108,14 @@ namespace SquiredCoffee.FormManage
                     rdStatus2.Checked = true;
                 }
                 image_staff = item.image;
-                ptImage.Image = ConvertBase64ToImage(image_staff);
+                if (image_staff != "")
+                {
+                    ptImage.Image = ConvertBase64ToImage(item.image);
+                }
+                else
+                {
+                    ptImage.Image = new Bitmap(Application.StartupPath + "\\Resource\\no_img.jpg");
+                }
                 status = item.status;
             }
         }
@@ -138,6 +146,18 @@ namespace SquiredCoffee.FormManage
                 string base64Text = Convert.ToBase64String(imageArray); //base64Text must be global but I'll use  richtext
                 image_staff = base64Text;
             }
+        }
+        private string GetMD5(string txt)
+        {
+            string str = "";
+            Byte[] buffer = System.Text.Encoding.UTF8.GetBytes(txt);
+            System.Security.Cryptography.MD5CryptoServiceProvider md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            buffer = md5.ComputeHash(buffer);
+            foreach (Byte b in buffer)
+            {
+                str += b.ToString("X2");
+            }
+            return str;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -254,7 +274,7 @@ namespace SquiredCoffee.FormManage
                 if (btnEdit.Text == "Sửa")
                 {
                     string birthday = dtpBirthday.Value.Date.ToString("yyyy-MM-dd");
-                    Staff std = new Staff(txtlast_name.Text, txtFirstName.Text, txtUserName.Text, txtPassword.Text, gender, birthday, image_staff, txtPhone.Text, txtEmail.Text, Convert.ToInt32(cbRoleName.SelectedValue), status);
+                    Staff std = new Staff(txtlast_name.Text, txtFirstName.Text, txtUserName.Text,password, gender, birthday, image_staff, txtPhone.Text, txtEmail.Text, Convert.ToInt32(cbRoleName.SelectedValue), status);
                     if(DbStaff.CheckUpdateStaff(std,id_staff.ToString())== true)
                     {
                         Form1.title = "Sửa Thành Công ";

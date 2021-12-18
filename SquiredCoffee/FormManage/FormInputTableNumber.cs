@@ -96,7 +96,6 @@ namespace SquiredCoffee.FormManage
         {
 
             table_number = txtTableNumber.Text;
-           
             if (table_number == "")
             {
                 Form2.title = "Số Bàn Đang Trống !";
@@ -122,8 +121,8 @@ namespace SquiredCoffee.FormManage
                 foreach (Order item in order_List)
                 {
                     _parent.id_order = item.id.ToString();
-                    string x = "#000000" + item.id.ToString();
-                    Trannsaction std1 = new Trannsaction(18,item.id, x,"cash", "offline", "pickup", "", "packing");
+                    string x = "#00000" + Convert.ToString(item.id -1);
+                    Trannsaction std1 = new Trannsaction(18,"",item.id, x,"cash", "offline", "pickup", "", "packing");
                     DbTransaction.AddTransaction(std1);
                 }
                 

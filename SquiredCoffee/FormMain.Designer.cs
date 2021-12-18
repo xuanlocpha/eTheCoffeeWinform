@@ -40,7 +40,7 @@ namespace SquiredCoffee
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnTopping = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnChart = new Guna.UI2.WinForms.Guna2Button();
             this.btnVoucher = new Guna.UI2.WinForms.Guna2Button();
             this.btnOrder = new Guna.UI2.WinForms.Guna2Button();
             this.btnWareHouse = new Guna.UI2.WinForms.Guna2Button();
@@ -53,8 +53,6 @@ namespace SquiredCoffee
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNotification = new Guna.UI2.WinForms.Guna2CircleButton();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.guna2CircleButton3 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -158,7 +156,7 @@ namespace SquiredCoffee
             // panel5
             // 
             this.panel5.Controls.Add(this.btnTopping);
-            this.panel5.Controls.Add(this.guna2Button6);
+            this.panel5.Controls.Add(this.btnChart);
             this.panel5.Controls.Add(this.btnVoucher);
             this.panel5.Controls.Add(this.btnOrder);
             this.panel5.Controls.Add(this.btnWareHouse);
@@ -204,36 +202,37 @@ namespace SquiredCoffee
             this.btnTopping.Text = "Q.Lý Topping";
             this.btnTopping.Click += new System.EventHandler(this.btnTopping_Click_1);
             // 
-            // guna2Button6
+            // btnChart
             // 
-            this.guna2Button6.BorderRadius = 20;
-            this.guna2Button6.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2Button6.CheckedState.FillColor = System.Drawing.Color.White;
-            this.guna2Button6.CheckedState.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button6.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.guna2Button6.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.guna2Button6.CheckedState.Parent = this.guna2Button6;
-            this.guna2Button6.CustomImages.Parent = this.guna2Button6;
-            this.guna2Button6.CustomizableEdges.BottomRight = false;
-            this.guna2Button6.CustomizableEdges.TopRight = false;
-            this.guna2Button6.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button6.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button6.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button6.DisabledState.Parent = this.guna2Button6;
-            this.guna2Button6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
-            this.guna2Button6.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold);
-            this.guna2Button6.ForeColor = System.Drawing.Color.White;
-            this.guna2Button6.HoverState.Parent = this.guna2Button6;
-            this.guna2Button6.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button6.Image")));
-            this.guna2Button6.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button6.ImageSize = new System.Drawing.Size(32, 32);
-            this.guna2Button6.Location = new System.Drawing.Point(17, 689);
-            this.guna2Button6.Name = "guna2Button6";
-            this.guna2Button6.ShadowDecoration.Parent = this.guna2Button6;
-            this.guna2Button6.Size = new System.Drawing.Size(301, 66);
-            this.guna2Button6.TabIndex = 31;
-            this.guna2Button6.Text = "Thống Kê";
+            this.btnChart.BorderRadius = 20;
+            this.btnChart.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnChart.CheckedState.FillColor = System.Drawing.Color.White;
+            this.btnChart.CheckedState.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChart.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.btnChart.CheckedState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnChart.CheckedState.Parent = this.btnChart;
+            this.btnChart.CustomImages.Parent = this.btnChart;
+            this.btnChart.CustomizableEdges.BottomRight = false;
+            this.btnChart.CustomizableEdges.TopRight = false;
+            this.btnChart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChart.DisabledState.Parent = this.btnChart;
+            this.btnChart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
+            this.btnChart.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold);
+            this.btnChart.ForeColor = System.Drawing.Color.White;
+            this.btnChart.HoverState.Parent = this.btnChart;
+            this.btnChart.Image = ((System.Drawing.Image)(resources.GetObject("btnChart.Image")));
+            this.btnChart.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnChart.ImageSize = new System.Drawing.Size(32, 32);
+            this.btnChart.Location = new System.Drawing.Point(17, 689);
+            this.btnChart.Name = "btnChart";
+            this.btnChart.ShadowDecoration.Parent = this.btnChart;
+            this.btnChart.Size = new System.Drawing.Size(301, 66);
+            this.btnChart.TabIndex = 31;
+            this.btnChart.Text = "Thống Kê";
+            this.btnChart.Click += new System.EventHandler(this.btnChart_Click);
             // 
             // btnVoucher
             // 
@@ -296,7 +295,7 @@ namespace SquiredCoffee
             this.btnOrder.ShadowDecoration.Parent = this.btnOrder;
             this.btnOrder.Size = new System.Drawing.Size(301, 66);
             this.btnOrder.TabIndex = 29;
-            this.btnOrder.Text = "Q.Lý Bán Hàng";
+            this.btnOrder.Text = "Q.Lý Hóa Đơn";
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
             // btnWareHouse
@@ -488,8 +487,6 @@ namespace SquiredCoffee
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.btnNotification);
             this.panel2.Controls.Add(this.guna2CircleButton1);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.lblRoleName);
             this.panel2.Controls.Add(this.guna2CircleButton3);
             this.panel2.Controls.Add(this.lblNameStaff);
@@ -537,28 +534,6 @@ namespace SquiredCoffee
             this.guna2CircleButton1.ShadowDecoration.Parent = this.guna2CircleButton1;
             this.guna2CircleButton1.Size = new System.Drawing.Size(52, 51);
             this.guna2CircleButton1.TabIndex = 22;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(128, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 30);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "5:30 14/10/2021";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(16, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(116, 30);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Thời Gian :";
             // 
             // guna2CircleButton3
             // 
@@ -625,7 +600,7 @@ namespace SquiredCoffee
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
+        private Guna.UI2.WinForms.Guna2Button btnChart;
         private Guna.UI2.WinForms.Guna2Button btnVoucher;
         private Guna.UI2.WinForms.Guna2Button btnOrder;
         private Guna.UI2.WinForms.Guna2Button btnWareHouse;
@@ -642,8 +617,6 @@ namespace SquiredCoffee
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton3;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelMenu;
         private Guna.UI2.WinForms.Guna2Button btnTopping;

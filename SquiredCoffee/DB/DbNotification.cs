@@ -70,7 +70,22 @@ namespace SquiredCoffee.DB
         {
             List<NotificationSystem> notificationSystemList = new List<NotificationSystem>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT n.id,n.id_staff,n.title,n.content,n.create_date,n.status,CONCAT(s.first_name,s.last_name) as name_staff FROM notifications n INNER JOIN staffs s ON s.id = n.id_staff WHERE n.status = '" + x+"'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT n.id,n.id_staff,n.title,n.content,n.create_date,n.status,CONCAT(s.first_name,s.last_name) as name_staff FROM notifications n INNER JOIN staffs s ON s.id = n.id_staff WHERE n.status = '" + x + "'");
+            foreach (DataRow item in data.Rows)
+            {
+                NotificationSystem notificationSystem = new NotificationSystem(item);
+                notificationSystemList.Add(notificationSystem);
+            }
+
+            return notificationSystemList;
+        }
+
+
+        public static List<NotificationSystem> LoadNotificationCheck(string x)
+        {
+            List<NotificationSystem> notificationSystemList = new List<NotificationSystem>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT n.id,n.id_staff,n.title,n.content,n.create_date,n.status,CONCAT(s.first_name,s.last_name) as name_staff FROM notifications n INNER JOIN staffs s ON s.id = n.id_staff WHERE n.status = '" + x + "'");
             foreach (DataRow item in data.Rows)
             {
                 NotificationSystem notificationSystem = new NotificationSystem(item);

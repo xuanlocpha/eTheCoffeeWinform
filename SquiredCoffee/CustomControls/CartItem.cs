@@ -49,8 +49,8 @@ namespace SquiredCoffee.CustomControls
         private void btnQuantity_Click(object sender, EventArgs e)
         {
             DbOrderItem.DeleteOrderItem(ItemId.ToString());
+            _parent.clearOrder1();
             _parent.LoadOrderItem();
-            _parent.clearProduct();
         }
     }
 }

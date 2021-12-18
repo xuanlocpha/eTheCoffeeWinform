@@ -117,5 +117,11 @@ namespace SquiredCoffee
             UC_ManageOrder uC_ManageOrder = new UC_ManageOrder();
             AddControlsToPanel(uC_ManageOrder);
         }
+
+        private void btnChart_Click(object sender, EventArgs e)
+        {
+            UC_ManageChart uC_ManageChart = new UC_ManageChart();
+            AddControlsToPanel(uC_ManageChart);
+        }
     }
 }

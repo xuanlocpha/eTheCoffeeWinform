@@ -1,4 +1,5 @@
 ﻿using SquiredCoffee.Class;
+using SquiredCoffee.CustomControls;
 using SquiredCoffee.DB;
 using SquiredCoffee.FormManage;
 using System;
@@ -19,11 +20,13 @@ namespace SquiredCoffee.UC_ManageSysterm
         public int totalSearchNotification;
         public int id_staff;
         FormAddNotification Form;
+        FormInformationNotification Form1;
 
         public UC_ManageNotification()
         {
             InitializeComponent();
             Form = new FormAddNotification(this);
+            Form1 = new FormInformationNotification(this);
         }
 
         public void clear()
@@ -116,6 +119,42 @@ namespace SquiredCoffee.UC_ManageSysterm
         {
             Form.id_staff = id_staff;
             Form.ShowDialog();
+        }
+
+        private void dgvNotification_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Form1.id_notification = dgvNotification.Rows[e.RowIndex].Cells[1].Value.ToString();
+            Form1.id_staff = id_staff;
+            Form1.ShowDialog();
+            //FormBackGround formBackGround = new FormBackGround();
+            //try
+            //{
+            //    using (FormInformationNotification Form = new FormInformationNotification(this))
+            //    {
+            //        formBackGround.StartPosition = FormStartPosition.Manual;
+            //        formBackGround.FormBorderStyle = FormBorderStyle.None;
+            //        formBackGround.Opacity = .70d;
+            //        formBackGround.BackColor = Color.Black;
+            //        formBackGround.WindowState = FormWindowState.Maximized;
+            //        formBackGround.TopMost = true;
+            //        formBackGround.Location = this.Location;
+            //        formBackGround.ShowInTaskbar = false;
+            //        formBackGround.Show();
+
+            //        Form.Owner = formBackGround;
+            //        Form.id_notification = dgvNotification.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //        Form.ShowDialog();
+            //        return;
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw;
+            //}
+            //finally
+            //{
+            //    formBackGround.Dispose();
+            //}
         }
     }
 }

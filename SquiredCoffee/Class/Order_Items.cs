@@ -17,6 +17,7 @@ namespace SquiredCoffee.Class
         public string content { get; set; }
         public string title { get; set; }
         public decimal price { get; set; }
+        public decimal price_discount { get; set; }
 
         public Order_Items(int Product_Id,string Item_Detail, int Order_Id, int Quantity,decimal Price, string Content)
         {
@@ -38,6 +39,7 @@ namespace SquiredCoffee.Class
             price = Convert.ToDecimal(row["price"]);
             content = row["content"].ToString();
             title = row["title"].ToString();
+            price_discount = Convert.ToDecimal(row["price_discount"]);
         }
     }
 }

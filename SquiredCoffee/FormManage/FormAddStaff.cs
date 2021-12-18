@@ -116,7 +116,20 @@ namespace SquiredCoffee.FormManage
             ptImage.Image = new Bitmap(Application.StartupPath + "\\Resource\\no_img.jpg");
             rdStatus1.Checked = true;
         }
-    
+
+        private string GetMD5(string txt)
+        {
+            string str = "";
+            Byte[] buffer = System.Text.Encoding.UTF8.GetBytes(txt);
+            System.Security.Cryptography.MD5CryptoServiceProvider md5 = new System.Security.Cryptography.MD5CryptoServiceProvider();
+            buffer = md5.ComputeHash(buffer);
+            foreach (Byte b in buffer)
+            {
+                str += b.ToString("X2");
+            }
+            return str;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtFirstName.Text.Trim() == "")
@@ -236,7 +249,8 @@ namespace SquiredCoffee.FormManage
             if (btnSave.Text == "Lưu")
             {
                 string birthday = dtpBirthday.Value.Date.ToString("yyyy-MM-dd");
-                Staff std = new Staff(txtlast_name.Text,txtFirstName.Text,txtUserName.Text,txtPassword.Text,gender,birthday,image_staff,txtPhone.Text,txtEmail.Text, Convert.ToInt32(cbRoleName.SelectedValue), status);
+                string password = GetMD5(txtPassword.Text);
+                Staff std = new Staff(txtlast_name.Text,txtFirstName.Text,txtUserName.Text,password,gender,birthday,image_staff,txtPhone.Text,txtEmail.Text, Convert.ToInt32(cbRoleName.SelectedValue), status);
                 if(DbStaff.CheckCreateStaff(std) == true)
                 {
                     Form1.title = "Tạo Thành Công";

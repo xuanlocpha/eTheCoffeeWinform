@@ -31,6 +31,8 @@ namespace SquiredCoffee.FormManage
         public void Display()
         {
             dgvOrder.Rows.Clear();
+            int totalProductOffline = 0;
+            int totalProductOnline = 0;
             List<OrderShow2> orderList = DbOrder.LoadShowOrder();
             foreach (OrderShow2 item in orderList)
             {
@@ -42,10 +44,19 @@ namespace SquiredCoffee.FormManage
                 {
                     username = item.user_name;
                 }
+               
                 DateTime dt = Convert.ToDateTime(item.created_at);
                 string date = dt.ToString("yyyy-MM-dd");
                 if(DateTime.Now.ToString("yyyy-MM-dd") == date)
                 {
+                    if (item.mode == "online")
+                    {
+                        totalProductOnline = totalProductOnline + 1;
+                    }
+                    if (item.mode == "offline")
+                    {
+                        totalProductOffline = totalProductOffline + 1;
+                    }
                     dgvOrder.Rows.Add(new object[] {
                     imageList1.Images[0],
                     item.id,
@@ -58,9 +69,11 @@ namespace SquiredCoffee.FormManage
                     string.Format("{0:#,##0} đ",item.voucher_discount),
                     string.Format("{0:#,##0} đ",item.shipping_discount),
                     string.Format("{0:#,##0} đ",item.grandtotal),
-                });
                 }
-
+                 );
+            }
+                lblTotalProductOffline.Text = totalProductOffline.ToString();
+                lblTotalProductOnline.Text = totalProductOnline.ToString();
             }
         }
 

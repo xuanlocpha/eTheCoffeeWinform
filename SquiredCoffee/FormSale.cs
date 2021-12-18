@@ -16,6 +16,8 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Net;
+using System.Text;
 using System.Windows.Forms;
 
 namespace SquiredCoffee
@@ -59,6 +61,9 @@ namespace SquiredCoffee
         public decimal grandTotalPayment;
         public string code;
         public int quantityOrder;
+        public string token;
+        public string id_transaction;
+        public int min = 0;
         List<int> str1 = new List<int>();
         List<int> str2 = new List<int>();
 
@@ -72,7 +77,7 @@ namespace SquiredCoffee
         FormVoucherDiscount Form6;
         FormShowOrder Form7;
         MySqlConnection con = new MySqlConnection();
-
+        FormExportInvoice Form8;
         public FormSale(FormLoginSysterm parent)
         {
             InitializeComponent();
@@ -86,6 +91,7 @@ namespace SquiredCoffee
             Form5 = new FormReward(this);
             Form6 = new FormVoucherDiscount(this);
             Form7 = new FormShowOrder(this);
+            Form8 = new FormExportInvoice(this);
         }
         private PictureBox pic = new PictureBox();
         public Label price;
@@ -124,6 +130,7 @@ namespace SquiredCoffee
         {
             cbCategory.SelectedIndex = -1;
             txtSearch.Text = string.Empty;
+            
         }
 
 
@@ -195,11 +202,11 @@ namespace SquiredCoffee
             {
                 Guna2Elipse elip = new Guna2Elipse();
                 elip.TargetControl = pic;
-                elip.BorderRadius = 10;
+                elip.BorderRadius = 7;
 
                 Guna2Elipse elip1 = new Guna2Elipse();
                 elip1.TargetControl = title;
-                elip1.BorderRadius = 10;
+                elip1.BorderRadius = 7;
 
                 pic = new PictureBox();
                 pic.Width = 196;
@@ -232,7 +239,7 @@ namespace SquiredCoffee
                 guna2GradientPanel.FillColor = Color.FromArgb(249, 130, 68);
                 guna2GradientPanel.FillColor2 = Color.FromArgb(247, 72, 115);
                 guna2GradientPanel.BackColor = Color.Transparent;
-                guna2GradientPanel.BorderRadius = 7;
+                guna2GradientPanel.BorderRadius = 5;
 
 
                 Label lbl = new Label();
@@ -255,41 +262,41 @@ namespace SquiredCoffee
 
         public void Onclick(object sender, EventArgs e)
         {
-            //FormBackGround formBackGround = new FormBackGround();
-            //try
-            //{
-            //    using (FormOrderProduct Form = new FormOrderProduct(this))
-            //    {
-            //        formBackGround.StartPosition = FormStartPosition.Manual;
-            //        formBackGround.FormBorderStyle = FormBorderStyle.None;
-            //        formBackGround.Opacity = .70d;
-            //        formBackGround.BackColor = Color.Black;
-            //        formBackGround.WindowState = FormWindowState.Maximized;
-            //        formBackGround.TopMost = true;
-            //        formBackGround.Location = this.Location;
-            //        formBackGround.ShowInTaskbar = false;
-            //        formBackGround.Show();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormOrderProduct Form = new FormOrderProduct(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
 
-            //        string tag = ((PictureBox)sender).Tag.ToString();
-            //        Form.idProduct = tag;
-            //        Form.Owner = formBackGround;
-            //        Form.ShowDialog();
-            //        return;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw;
-            //}
-            //finally
-            //{
-            //    formBackGround.Dispose();
-            //}
-            grandTotal = 0;
-            string tag = ((PictureBox)sender).Tag.ToString();
-            Form1.idProduct = tag;
-            Form1.ShowDialog();
-            return;
+                    grandTotal = 0;
+                    string tag = ((PictureBox)sender).Tag.ToString();
+                    Form.idProduct = tag;
+                    Form.Owner = formBackGround;
+                    Form.ShowDialog();
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
+            //grandTotal = 0;
+            //string tag = ((PictureBox)sender).Tag.ToString();
+            //Form1.idProduct = tag;
+            //Form1.ShowDialog();
         }
 
         public void Onclick1(object sender, EventArgs e)
@@ -298,7 +305,6 @@ namespace SquiredCoffee
             DbOrderItem.DeleteOrderItem(tag);
             LoadOrderItem();
         }
-
 
 
         public void ReadFormDataFile(string fileLocation)
@@ -368,7 +374,7 @@ namespace SquiredCoffee
                     {
                         decimal kq = (item.price * Convert.ToDecimal(item1.discount)) / 100;
                         decimal discount = item.price - kq;
-                        cart.ItemDiscount = string.Format("{0:#,##0} đ", discount);
+                        cart.ItemDiscount = string.Format("{0:#,##0} đ", kq);
                         grandTotal = grandTotal + (item.quantity * discount);
                     }
                     else
@@ -439,7 +445,7 @@ namespace SquiredCoffee
                     {
                         decimal kq = (item.price * Convert.ToDecimal(item1.discount)) / 100;
                         decimal discount = item.price - kq;
-                        cart.ItemDiscount = string.Format("{0:#,##0} đ", discount);
+                        cart.ItemDiscount = string.Format("{0:#,##0} đ", kq);
                         grandTotal = grandTotal + (item.quantity * discount);
                     }
                     else
@@ -539,44 +545,41 @@ namespace SquiredCoffee
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            min = min + 1;
             showTableNumber();
         }
 
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
-            //FormBackGround formBackGround = new FormBackGround();
-            //try
-            //{
-            //    using(FormInputTableNumber Form = new FormInputTableNumber(this))
-            //    {
-            //        formBackGround.StartPosition = FormStartPosition.Manual;
-            //        formBackGround.FormBorderStyle = FormBorderStyle.None;
-            //        formBackGround.Opacity = .70d;
-            //        formBackGround.BackColor = Color.Black;
-            //        formBackGround.WindowState = FormWindowState.Maximized;
-            //        formBackGround.TopMost = true;
-            //        formBackGround.Location = this.Location;
-            //        formBackGround.ShowInTaskbar = false;
-            //        formBackGround.Show();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormInputTableNumber Form = new FormInputTableNumber(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
 
-            //        Form.Owner = formBackGround;
-            //        Form.staff_id = id_staff;
-            //        Form.ShowDialog();
-
-            //    }
-            //}
-            //catch(Exception ex)
-            //{
-            //    throw;
-            //}
-            //finally
-            //{
-            //    formBackGround.Dispose();
-            //}
-
-            grandTotal = 0;
-            Form.staff_id = id_staff;
-            Form.ShowDialog();
+                    Form.Owner = formBackGround;
+                    grandTotal = 0;
+                    Form.staff_id = id_staff;
+                    Form.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
         }
 
         private void cbCategory_TextChanged(object sender, EventArgs e)
@@ -745,33 +748,40 @@ namespace SquiredCoffee
 
             //        if (mode == "online")
             //        {
-
-            //            Trannsaction std1 = new Trannsaction(18, Convert.ToInt32(id_order), code, "cash", mode, "pickup", "", "packing");
-            //            DbTransaction.UpdateTransaction(std1, id_order.ToString());
-            //            notification();
-            //            Form.Owner = formBackGround;
-            //            Form.tableName = lblTableNumber.Text;
-            //            Form.provisional = grandTotalPayment.ToString();
-            //            Form.id_order = Convert.ToInt32(id_order);
-            //            Form.id_staff = id_staff;
-            //            Form.mode = mode;
-            //            Form.shipping = shipping;
-            //            Form.quantity = quantityOrder;
-            //            Form.ShowDialog();
+            //            List<Trannsaction> trannsactionList = DbTransaction.LoadTransaction(id_order.ToString());
+            //            foreach (Trannsaction item in trannsactionList)
+            //            {
+            //                token = item.token;
+            //                id_transaction = item.id.ToString();
+            //            }
+            //            code = "#00000" + Convert.ToString(Convert.ToInt32(id_order) - 1);
+            //            Trannsaction std1 = new Trannsaction(18, token, Convert.ToInt32(id_order), code, "cash", mode, "pickup", "", "packing");
+            //            DbTransaction.UpdateTransaction(std1, id_transaction.ToString());
+            //            SendPushNotification(id_transaction);
+            //            Form2 = new FormPaymentSale(this);
+            //            Form2.tableName = lblTableNumber.Text;
+            //            Form2.provisional = grandTotalPayment.ToString();
+            //            Form2.id_order = Convert.ToInt32(id_order);
+            //            Form2.id_staff = id_staff;
+            //            Form2.mode = mode;
+            //            Form2.shipping = shipping;
+            //            Form2.name_staff = lblFullName.Text;
+            //            Form2.quantity = quantityOrder;
+            //            Form2.ShowDialog();
             //        }
             //        else
             //        {
-            //            Form.Owner = formBackGround;
-            //            Form.tableName = lblTableNumber.Text;
-            //            Form.provisional = grandTotalPayment.ToString();
-            //            Form.id_order = Convert.ToInt32(id_order);
-            //            Form.id_staff = id_staff;
-            //            Form.mode = mode;
-            //            Form.shipping = shipping;
-            //            Form.quantity = quantityOrder;
-            //            Form.ShowDialog();
+            //            Form2 = new FormPaymentSale(this);
+            //            Form2.tableName = lblTableNumber.Text;
+            //            Form2.provisional = grandTotalPayment.ToString();
+            //            Form2.id_order = Convert.ToInt32(id_order);
+            //            Form2.id_staff = id_staff;
+            //            Form2.mode = mode;
+            //            Form2.shipping = shipping;
+            //            Form2.name_staff = lblFullName.Text;
+            //            Form2.quantity = quantityOrder;
+            //            Form2.ShowDialog();
             //        }
-
             //    }
             //}
             //catch (Exception ex)
@@ -782,12 +792,19 @@ namespace SquiredCoffee
             //{
             //    formBackGround.Dispose();
             //}
+
             if (mode == "online")
             {
-
-                Trannsaction std1 = new Trannsaction(18, Convert.ToInt32(id_order), code, "cash", mode, "pickup", "", "packing");
-                DbTransaction.UpdateTransaction(std1, id_order.ToString());
-                notification();
+                List<Trannsaction> trannsactionList = DbTransaction.LoadTransaction(id_order.ToString());
+                foreach (Trannsaction item in trannsactionList)
+                {
+                    token = item.token;
+                    id_transaction = item.id.ToString();
+                }
+                code = "#00000" + Convert.ToString(Convert.ToInt32(id_order) - 1);
+                Trannsaction std1 = new Trannsaction(18, token, Convert.ToInt32(id_order), code, "cash", mode, "pickup", "", "packing");
+                DbTransaction.UpdateTransaction(std1, id_transaction.ToString());
+                SendPushNotification(id_transaction);
                 Form2 = new FormPaymentSale(this);
                 Form2.tableName = lblTableNumber.Text;
                 Form2.provisional = grandTotalPayment.ToString();
@@ -812,22 +829,82 @@ namespace SquiredCoffee
                 Form2.quantity = quantityOrder;
                 Form2.ShowDialog();
             }
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            string date = DateTime.Now.ToString("yyyy-MM-dd");
+            string time = DateTime.Now.ToString("HH");
+            List<Assignment> assignmentList = DbAssignment.LoadAssginmentListSearch(id_staff.ToString(), date);
+            foreach (Assignment item1 in assignmentList)
+            {
+               int total_min = min + item1.total_min;
+               DbAssignment.UpdateAssignmentTotalMin(total_min.ToString(), item1.id.ToString());
+            }
             this.Close();
         }
 
         private void btnOrderOnline_Click(object sender, EventArgs e)
         {
-            FormOrderOnline Form = new FormOrderOnline(this);
-            Form.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormOrderOnline Form = new FormOrderOnline (this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
         }
 
         private void guna2GradientTileButton1_Click(object sender, EventArgs e)
         {
-            Form5.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormReward Form = new FormReward(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -843,12 +920,64 @@ namespace SquiredCoffee
 
         private void btnHistoryOrder_Click(object sender, EventArgs e)
         {
-           Form7.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormShowOrder Form = new FormShowOrder(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
         }
 
         private void btnVoucherDiscount_Click(object sender, EventArgs e)
         {
-            Form6.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormVoucherDiscount Form = new FormVoucherDiscount(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
         }
 
         public async void notification()
@@ -864,6 +993,116 @@ namespace SquiredCoffee
             var result = client.DeleteAsync("notification");
             SetResponse response = await client.SetAsync("notification_transaction", data);
             SetResponse response1 = await client.SetAsync("token", token);
+        }
+
+        private static string SendPushNotification(string id_transaction)
+        {
+            string response;
+
+            try
+            {
+                // From: https://console.firebase.google.com/project/x.y.z/settings/general/android:x.y.z
+
+                // Projekt-ID: x.y.z
+                // Web-API-Key: A...Y (39 chars)
+                // App-ID: 1:...:android:...
+
+                // From https://console.firebase.google.com/project/x.y.z/settings/
+                // cloudmessaging/android:x,y,z
+                // Server-Key: AAAA0...    ...._4
+
+                string serverKey = "AAAAxsx2lx8:APA91bHFQHpVrA3Mchy07X8oesMssw0mLx0mUFahdhumYy7s5kqM7PvLXLgfZruzKx8H8ps_j6QSX0jDn50UXfkfzFTykgQJO4Hw_j0Y7HzZoOjvBg3IspJm-DTS7PajmFWogib0kMJH"; // Something very long
+                string senderId = "853833848607";
+                string deviceId = "fTmPozwiQeiDUIeLK-ofgE:APA91bFjFsINh6kbm_PuPWHRFY0M9XiR5S2Dt3lg-jeCdRgn24B0qRGj23tMkw44UAWHYfQC0MEKoKSpHv2ot5kyS1s_iCel09Ff80keHZskqT_vSgKMnHRYt-liJatnDrtNJyhIhSgg"; // Also something very long, 
+                // got from android
+                //string deviceId = "/topics/all";               // Use this to notify all devices, 
+                                                               // but App must be subscribed to 
+                                                               // topic notification
+                WebRequest tRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
+
+                tRequest.Method = "post";
+                tRequest.ContentType = "application/json";
+                var dataBase = new
+                {
+                    to = deviceId,
+                    notification = new
+                    {
+                        title ="Trạng thái đơn hàng của bạn : Đã được tiếp nhận và đang xử lý !!!",
+                        body = "Đơn hàng của bạn đã được tiếp nhận và đang xử lý , các trạng thái tiếp theo của đơn hàng sẽ được cập nhật đến bạn . ",
+                        sound = "default"
+                    },
+                    data = new
+                    {
+                        mode = "online",
+                        delivery_method = "pickup",
+                        status = "packing",
+                        transaction_id = id_transaction
+                    }
+                };
+
+                var serializer = new JavaScriptSerializer();
+                var json = serializer.Serialize(dataBase);
+                Byte[] byteArray = Encoding.UTF8.GetBytes(json);
+                tRequest.Headers.Add(string.Format("Authorization: key={0}", serverKey));
+                tRequest.Headers.Add(string.Format("Sender: id={0}", senderId));
+                tRequest.ContentLength = byteArray.Length;
+
+                using (Stream dataStream = tRequest.GetRequestStream())
+                {
+                    dataStream.Write(byteArray, 0, byteArray.Length);
+                    using (WebResponse tResponse = tRequest.GetResponse())
+                    {
+                        using (Stream dataStreamResponse = tResponse.GetResponseStream())
+                        {
+                            using (StreamReader tReader = new StreamReader(dataStreamResponse))
+                            {
+                                String sResponseFromServer = tReader.ReadToEnd();
+                                response = sResponseFromServer;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                response = ex.Message;
+            }
+
+            return response;
+        }
+
+        private void btnExportInvoice_Click(object sender, EventArgs e)
+        {
+            ExportInvoice std = new ExportInvoice(id_staff, DateTime.Now.ToString("yyyy-MM-dd"), 0);
+            DbExportInvoice.AddExportInvoice(std);
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormExportInvoice Form = new FormExportInvoice(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.id_staff = id_staff.ToString();
+                    Form.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
         }
     }
 }

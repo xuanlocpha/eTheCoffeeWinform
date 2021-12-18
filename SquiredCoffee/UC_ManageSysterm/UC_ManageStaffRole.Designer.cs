@@ -38,12 +38,14 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.btnAssignment = new Guna.UI2.WinForms.Guna2Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.btnAssignment);
             this.panel1.Controls.Add(this.btnRole);
             this.panel1.Controls.Add(this.btnStaff);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -140,6 +142,36 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.guna2Elipse3.BorderRadius = 10;
             this.guna2Elipse3.TargetControl = this.panel1;
             // 
+            // btnAssignment
+            // 
+            this.btnAssignment.BorderRadius = 4;
+            this.btnAssignment.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnAssignment.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(77)))), ((int)(((byte)(0)))));
+            this.btnAssignment.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
+            this.btnAssignment.CheckedState.Parent = this.btnAssignment;
+            this.btnAssignment.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 0, 6);
+            this.btnAssignment.CustomImages.Parent = this.btnAssignment;
+            this.btnAssignment.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAssignment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAssignment.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAssignment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAssignment.DisabledState.Parent = this.btnAssignment;
+            this.btnAssignment.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAssignment.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(171)))), ((int)(((byte)(84)))));
+            this.btnAssignment.Font = new System.Drawing.Font("Quicksand SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssignment.ForeColor = System.Drawing.Color.White;
+            this.btnAssignment.HoverState.Parent = this.btnAssignment;
+            this.btnAssignment.Image = ((System.Drawing.Image)(resources.GetObject("btnAssignment.Image")));
+            this.btnAssignment.ImageSize = new System.Drawing.Size(23, 23);
+            this.btnAssignment.Location = new System.Drawing.Point(640, 0);
+            this.btnAssignment.Name = "btnAssignment";
+            this.btnAssignment.Padding = new System.Windows.Forms.Padding(4);
+            this.btnAssignment.ShadowDecoration.Parent = this.btnAssignment;
+            this.btnAssignment.Size = new System.Drawing.Size(320, 63);
+            this.btnAssignment.TabIndex = 8;
+            this.btnAssignment.Text = "Quản Lý Lịch Làm Việc";
+            this.btnAssignment.Click += new System.EventHandler(this.btnAssignment_Click);
+            // 
             // UC_ManageStaffRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -165,5 +197,6 @@ namespace SquiredCoffee.UC_ManageSysterm
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse3;
+        private Guna.UI2.WinForms.Guna2Button btnAssignment;
     }
 }

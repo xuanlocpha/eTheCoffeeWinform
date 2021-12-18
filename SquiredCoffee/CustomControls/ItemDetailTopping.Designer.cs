@@ -80,11 +80,11 @@ namespace SquiredCoffee.CustomControls
             this.lblPriceTopping.AutoSize = true;
             this.lblPriceTopping.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPriceTopping.ForeColor = System.Drawing.Color.White;
-            this.lblPriceTopping.Location = new System.Drawing.Point(392, 10);
+            this.lblPriceTopping.Location = new System.Drawing.Point(395, 10);
             this.lblPriceTopping.Name = "lblPriceTopping";
-            this.lblPriceTopping.Size = new System.Drawing.Size(25, 30);
+            this.lblPriceTopping.Size = new System.Drawing.Size(38, 30);
             this.lblPriceTopping.TabIndex = 21;
-            this.lblPriceTopping.Text = "0";
+            this.lblPriceTopping.Text = "0đ";
             // 
             // lblNameTopping
             // 

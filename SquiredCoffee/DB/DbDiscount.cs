@@ -42,11 +42,40 @@ namespace SquiredCoffee.DB
         //    return discountList;
         //}
 
+
+        public static List<Discount> LoadDiscountList()
+        {
+            List<Discount> discountList = new List<Discount>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,discount,products,start_date,expiry_date FROM discounts ");
+            foreach (DataRow item in data.Rows)
+            {
+                Discount discount = new Discount(item);
+                discountList.Add(discount);
+            }
+
+            return discountList;
+        }
+
         public static List<Discount> LoadDiscountList(string date)
         {
             List<Discount> discountList = new List<Discount>();
 
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,discount,products,start_date,expiry_date FROM discounts WHERE '" + date + "' >= start_date and '" + date + "' <= expiry_date");
+            foreach (DataRow item in data.Rows)
+            {
+                Discount discount = new Discount(item);
+                discountList.Add(discount);
+            }
+
+            return discountList;
+        }
+
+        public static List<Discount> LoadDiscountListId(string id)
+        {
+            List<Discount> discountList = new List<Discount>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,discount,products,start_date,expiry_date FROM discounts WHERE id = '"+id+"'");
             foreach (DataRow item in data.Rows)
             {
                 Discount discount = new Discount(item);
@@ -123,29 +152,53 @@ namespace SquiredCoffee.DB
         //}
 
 
-        //public static void AddDiscount(Discount std)
-        //{
-        //    string sql = "INSERT INTO discounts (discount,product_id,start_date,expiry_date,status) VALUES(@discount,@product_id,@start_date,@expiry_date,@status)";
-        //    MySqlConnection con = GetConnection();
-        //    MySqlCommand cmd = new MySqlCommand(sql, con);
-        //    cmd.CommandType = CommandType.Text;
-        //    cmd.Parameters.Add("@discount", MySqlDbType.VarChar).Value = std.discount;
-        //    cmd.Parameters.Add("@product_id", MySqlDbType.VarChar).Value = std.product_id;
-        //    cmd.Parameters.Add("@start_date", MySqlDbType.VarChar).Value = std.start_date;
-        //    cmd.Parameters.Add("@expiry_date", MySqlDbType.VarChar).Value = std.expiry_date;
-        //    cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
-        //    try
-        //    {
-        //        cmd.ExecuteNonQuery();
-        //        MessageBox.Show("Thêm Giảm Giá ( Thành Công ) ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    }
-        //    catch (MySqlException ex)
-        //    {
-        //        MessageBox.Show("Thêm Giảm Giá ( Không Thành Công ) ! \n" + ex.Message, "Cảnh Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //    con.Close();
-        //}
+        public static void AddDiscount(Discount std)
+        {
+            string sql = "INSERT INTO discounts (discount,products,start_date,expiry_date) VALUES(@discount,@products,@start_date,@expiry_date)";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@discount", MySqlDbType.VarChar).Value = std.discount;
+            cmd.Parameters.Add("@products", MySqlDbType.VarChar).Value = std.product;
+            cmd.Parameters.Add("@start_date", MySqlDbType.VarChar).Value = std.start_date;
+            cmd.Parameters.Add("@expiry_date", MySqlDbType.VarChar).Value = std.expiry_date;
+            try
+            {
+                cmd.ExecuteNonQuery();
+               // MessageBox.Show("Thêm Giảm Giá ( Thành Công ) ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Thêm Giảm Giá ( Không Thành Công ) ! \n" + ex.Message, "Cảnh Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
 
+
+        public static bool CheckDiscount(Discount std)
+        {
+            AddDiscount(std);
+            string sql = "select * from discounts where discount = @discount and products = @products and start_date = @start_date and expiry_date = @expiry_date";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@discount", MySqlDbType.VarChar).Value = std.discount;
+            cmd.Parameters.Add("@products", MySqlDbType.VarChar).Value = std.product;
+            cmd.Parameters.Add("@start_date", MySqlDbType.VarChar).Value = std.start_date;
+            cmd.Parameters.Add("@expiry_date", MySqlDbType.VarChar).Value = std.expiry_date;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
 
         public static bool CheckDiscount(string @key,string @discount)
         {

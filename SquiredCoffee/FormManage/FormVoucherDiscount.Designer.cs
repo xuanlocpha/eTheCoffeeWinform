@@ -177,9 +177,9 @@ namespace SquiredCoffee.FormManage
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(76, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 41);
+            this.label1.Size = new System.Drawing.Size(332, 41);
             this.label1.TabIndex = 172;
-            this.label1.Text = "Khuyến Mãi";
+            this.label1.Text = "Khuyến Mãi && Giảm Giá";
             // 
             // guna2GradientPanel1
             // 
@@ -209,6 +209,7 @@ namespace SquiredCoffee.FormManage
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormVoucherDiscount";
+            this.TopMost = true;
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnBack)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);

@@ -149,6 +149,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.dgvNotification.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNotification.Size = new System.Drawing.Size(1531, 482);
             this.dgvNotification.TabIndex = 83;
+            this.dgvNotification.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNotification_CellClick);
             // 
             // Column12
             // 

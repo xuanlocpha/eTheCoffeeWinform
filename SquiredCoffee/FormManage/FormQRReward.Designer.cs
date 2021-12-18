@@ -236,6 +236,7 @@ namespace SquiredCoffee.FormManage
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormQRReward";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormQRReward_FormClosing);
             this.Load += new System.EventHandler(this.FormQRReward_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ptCamera)).EndInit();

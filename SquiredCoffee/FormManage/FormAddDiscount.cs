@@ -1,7 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using SquiredCoffee.Class;
 using SquiredCoffee.DB;
-using SquiredCoffee.UC_ManageSysterm;
+using SquiredCoffee.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,24 +17,25 @@ namespace SquiredCoffee.FormManage
     public partial class FormAddDiscount : Form
     {
         MySqlConnection con = new MySqlConnection();
-        //public static UC_ManageDiscount _parent;
-        public int status = 1;
-        public FormAddDiscount(/*UC_ManageDiscount parent*/)
+        List<string> str1 = new List<string>();
+        FormSuccess Form1;
+        FormError Form2;
+        public FormAddDiscount()
         {
             InitializeComponent();
-            //_parent = parent;
+            Form1 = new FormSuccess();
+            Form2 = new FormError();
         }
-
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            str1.Clear();
             this.Close();
         }
 
-
         void ketnoi()
         {
-            con.ConnectionString = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9;charset=utf8";
+            con.ConnectionString = "SERVER=45.252.251.29;PORT=3306;DATABASE=sodopxlg_koffeeholic;UID=sodopxlg;PASSWORD=05qT1yfRp9";
             if (con.State == ConnectionState.Closed)
                 con.Open();
         }
@@ -48,87 +49,92 @@ namespace SquiredCoffee.FormManage
             return ds;
         }
 
-        void ListDiscount()
+        void ListCategory()
         {
-            string sql = "SELECT * FROM products";
+            string sql = "SELECT * FROM categories";
             DataSet ListCategory = new DataSet();
             ListCategory = LoadDB(sql);
-            cbDiscount.DataSource = ListCategory.Tables[0];
-            cbDiscount.DisplayMember = "title";
-            cbDiscount.ValueMember = "id";
-            cbDiscount.SelectedIndex = -1;
+            cbCategoryName.DataSource = ListCategory.Tables[0];
+            cbCategoryName.DisplayMember = "title";
+            cbCategoryName.ValueMember = "id";
+            cbCategoryName.SelectedIndex = -1;
             con.Close();
         }
 
-
-        private void rdStatus1_CheckedChanged(object sender, EventArgs e)
+        private void cbCategoryName_TextChanged(object sender, EventArgs e)
         {
-            status = 1;
+            flpProduct.Controls.Clear();
+            List<ProductShow> productShowList = DbProduct.LoadProductSearchList1(cbCategoryName.Text);
+            foreach (ProductShow item in productShowList)
+            {
+                CheckBox chk = new CheckBox();
+                chk.Width = 150;
+                chk.Height = 30;
+                chk.Text = item.title;
+                chk.ForeColor = Color.Black;
+                chk.Font = new Font("Quicksand", 12);
+                chk.Tag = item.id.ToString();
+
+                flpProduct.Controls.Add(chk);               
+                chk.Click += new EventHandler(Onclick);
+            }
         }
 
-        private void rdStatus2_CheckedChanged(object sender, EventArgs e)
+        public void Onclick(object sender, EventArgs e)
         {
-            status = 0;
+            string tag = ((CheckBox)sender).Tag.ToString();
+            str1.Add(tag);
         }
+
 
         private void FormAddDiscount_Load(object sender, EventArgs e)
         {
-            ListDiscount();
+            ListCategory();
         }
-
-        public void clear()
-        {
-            txtDiscount.Text = string.Empty;
-            cbDiscount.SelectedIndex = -1;
-            dtpStartDate.Value = DateTime.Now;
-            dtpExpiryeDate.Value = DateTime.Now;
-        }
-
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (cbDiscount.Text == "")
+            if (str1 == null)
             {
-                MessageBox.Show("Tên Sản phẩm Không Được Để ( Trống )");
+                Form2.title = "Sản phẩm giảm đang (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtDiscount.Text.Trim() == "")
             {
-                MessageBox.Show("Giá trị giảm giá không được ( Trống )");
+                Form2.title = "Giảm giá đang (Trống) ";
+                Form2.ShowDialog();
                 return;
             }
             if (txtDiscount.Text.Trim().Length < 1)
             {
-                MessageBox.Show("Giá trị giảm giá phải lớn hơn (  1 ký tự )");
+                Form2.title = "Giảm giá phải ( > 1 ký tự ) ";
+                Form2.ShowDialog();
                 return;
             }
-            if(Convert.ToDateTime(dtpExpiryeDate.Text) <= DateTime.Now)
+            if (dtpExpiry_Date.Value <= DateTime.Now)
             {
-                MessageBox.Show("Ngày Kết Thúc Không Được Nhỏ Hơn Ngày Hiện Tại !!!");
-                return;
-            }
-            if (DbDiscount.CheckDiscount((cbDiscount.SelectedValue).ToString(), txtDiscount.Text)==true)
-            {
-                MessageBox.Show("Giảm giá này đã (  Tồn tại )");
+                Form2.title = "Ngày Kết Thúc Phải ( >= Ngày Hiện Tại) ";
+                Form2.ShowDialog();
                 return;
             }
             if (btnSave.Text == "Lưu")
             {
-                string start_date = dtpStartDate.Value.Date.ToString("yyyy-MM-dd");
-                string expiry_date = dtpExpiryeDate.Value.Date.ToString("yyyy-MM-dd");
-                //Discount std = new Discount(Convert.ToDouble(txtDiscount.Text), Convert.ToInt32(cbDiscount.SelectedValue),start_date,expiry_date,status);
-                //DbDiscount.AddDiscount(std);
-                this.Close();
-                clear();
-                //_parent.Display();
-            }
-        }
-
-        private void txtDiscount_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
+                string Expiry_Date = dtpExpiry_Date.Value.Date.ToString("yyyy-MM-dd");
+                string product = string.Join(",", str1.ToArray());
+                Discount std = new Discount(Convert.ToDouble(txtDiscount.Text),product, DateTime.Now.ToString("yyyy-MM-dd"), Expiry_Date);
+                if (DbDiscount.CheckDiscount(std) == true)
+                {
+                    Form1.title = "Thêm Mới Discount ( Thành Công )";
+                    Form1.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    Form2.title = "Thêm Mới Discount ( Không Thành Công )";
+                    Form2.ShowDialog();
+                    this.Close();
+                }
             }
         }
     }

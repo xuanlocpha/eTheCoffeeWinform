@@ -1,8 +1,10 @@
 ﻿using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using Nancy.Json;
 using Newtonsoft.Json;
 using SquiredCoffee.Class;
+using SquiredCoffee.CustomControls;
 using SquiredCoffee.DB;
 using SquiredCoffee.ViewModels;
 using System;
@@ -10,7 +12,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,6 +49,7 @@ namespace SquiredCoffee.FormManage
         public string option_price;
         public string topping_name;
         public string topping_price;
+        public string id_transaction;
         public int x = 0;
         List<int> str1 = new List<int>();
         List<int> str2 = new List<int>();
@@ -59,6 +64,7 @@ namespace SquiredCoffee.FormManage
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            id_transaction = "";
             this.Close();
             _parent.clearOrder1();
             _parent.LoadOrderItem();
@@ -89,7 +95,9 @@ namespace SquiredCoffee.FormManage
             btnMethod2.BackColor = Color.FromArgb(255, 153, 0);
             btnMethod1.BackColor = Color.FromArgb(128, 128, 255);
             btnMethod3.BackColor = Color.FromArgb(128, 128, 255);
-            Enabled(false);
+            txtTotal.Text = lblIntoMoney.Text;
+            txtTotal.Enabled = true;
+            type = "payment transfer";
         }
 
         private void btnMethod3_Click(object sender, EventArgs e)
@@ -97,7 +105,9 @@ namespace SquiredCoffee.FormManage
             btnMethod3.BackColor = Color.FromArgb(255, 153, 0);
             btnMethod2.BackColor = Color.FromArgb(128, 128, 255);
             btnMethod1.BackColor = Color.FromArgb(128, 128, 255);
-            Enabled(false);
+            txtTotal.Text = lblIntoMoney.Text;
+            txtTotal.Enabled = true;
+            type = "payment transfer";
         }
 
 
@@ -151,6 +161,7 @@ namespace SquiredCoffee.FormManage
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
+            btnCancelOrder.Enabled = false;
             btnPrintBill.Enabled = true;
             btnPlusPoint.Enabled = true;
             if (txtExcessCash.Enabled == true)
@@ -168,7 +179,7 @@ namespace SquiredCoffee.FormManage
                     List<Trannsaction> transactions = DbTransaction.LoadTransaction(id_order.ToString());
                     foreach (Trannsaction item1 in transactions)
                     {
-                        Trannsaction std1 = new Trannsaction(item1.user_id, item1.order_id, item1.code, type, item1.mode, item1.delivery_method, item1.content, "success");
+                        Trannsaction std1 = new Trannsaction(item1.user_id,item1.token, item1.order_id, item1.code, type, item1.mode, item1.delivery_method, item1.content, "success");
                         DbTransaction.UpdateTransaction(std1, item1.id.ToString());
                     }
                 }
@@ -184,11 +195,12 @@ namespace SquiredCoffee.FormManage
                     List<Trannsaction> transactions = DbTransaction.LoadTransaction(id_order.ToString());
                     foreach (Trannsaction item1 in transactions)
                     {
-                        Trannsaction std1 = new Trannsaction(item1.user_id, item1.order_id, item1.code, item1.type, item1.mode, "delivery", item1.content, "shipping");
+                        id_transaction = item1.id.ToString();
+                        Trannsaction std1 = new Trannsaction(item1.user_id, item1.token, item1.order_id, item1.code, item1.type, item1.mode, "delivery", item1.content, "shipping");
                         DbTransaction.UpdateTransaction(std1, item1.id.ToString());
                     }
                 }
-               notification();
+               SendPushNotification(id_transaction);
             }
             _parent.clearOrder();
             _parent.LoadOrderItem();
@@ -301,9 +313,12 @@ namespace SquiredCoffee.FormManage
 
         private void btnPrintBill_Click(object sender, EventArgs e)
         {
+           
+            this.Hide();
             (printPreviewDialog1 as Form).WindowState = FormWindowState.Maximized;
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
+            id_transaction = "";
             this.Close();
             //Form2.tableName = tableName;
             //Form2.name_staff = name_staff;
@@ -356,10 +371,11 @@ namespace SquiredCoffee.FormManage
                     List<Trannsaction> transactions = DbTransaction.LoadTransaction(id_order.ToString());
                     foreach (Trannsaction item1 in transactions)
                     {
-                        Trannsaction std1 = new Trannsaction(item1.user_id, item1.order_id, item1.code, type, item1.mode, item1.delivery_method, item1.content, "cancelled");
+                        Trannsaction std1 = new Trannsaction(item1.user_id, item1.token, item1.order_id, item1.code, type, item1.mode, item1.delivery_method, item1.content, "cancelled");
                         DbTransaction.UpdateTransaction(std1, item1.id.ToString());
                     }
                 }
+                this.Close();
             }
             else
             {
@@ -372,10 +388,11 @@ namespace SquiredCoffee.FormManage
                     List<Trannsaction> transactions = DbTransaction.LoadTransaction(id_order.ToString());
                     foreach (Trannsaction item1 in transactions)
                     {
-                        Trannsaction std1 = new Trannsaction(item1.user_id, item1.order_id, item1.code, item1.type, item1.mode, "delivery", item1.content, "cancelled");
+                        Trannsaction std1 = new Trannsaction(item1.user_id, item1.token, item1.order_id, item1.code, item1.type, item1.mode, "delivery", item1.content, "cancelled");
                         DbTransaction.UpdateTransaction(std1, item1.id.ToString());
                     }
                 }
+                this.Close();
             }
             _parent.clearOrder();
             _parent.LoadOrderItem();
@@ -383,6 +400,35 @@ namespace SquiredCoffee.FormManage
 
         private void btnPlusPoint_Click(object sender, EventArgs e)
         {
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormCheckUser Form = new FormCheckUser(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.total = kq;
+                    this.Hide();
+                    Form.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
             Form1.total = kq;
             this.Hide();
             Form1.ShowDialog();
@@ -390,10 +436,37 @@ namespace SquiredCoffee.FormManage
 
         private void btnVoucher_Click(object sender, EventArgs e)
         {
-            Form.quantity = quantity;
-            Form.total = Convert.ToDecimal(provisional);
-            this.Hide();
-            Form.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormScannerBarCode Form = new FormScannerBarCode(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.quantity = quantity;
+                    Form.total = Convert.ToDecimal(provisional);
+                    this.Hide();
+                    Form.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
+           
         }
 
 
@@ -410,6 +483,83 @@ namespace SquiredCoffee.FormManage
             };
             SetResponse response = await client.SetAsync("notification_transaction", data);
             SetResponse response1 = await client.SetAsync("token", token);
+        }
+
+
+        private static string SendPushNotification(string id_transaction)
+        {
+            string response;
+
+            try
+            {
+                // From: https://console.firebase.google.com/project/x.y.z/settings/general/android:x.y.z
+
+                // Projekt-ID: x.y.z
+                // Web-API-Key: A...Y (39 chars)
+                // App-ID: 1:...:android:...
+
+                // From https://console.firebase.google.com/project/x.y.z/settings/
+                // cloudmessaging/android:x,y,z
+                // Server-Key: AAAA0...    ...._4
+
+                string serverKey = "AAAAxsx2lx8:APA91bHFQHpVrA3Mchy07X8oesMssw0mLx0mUFahdhumYy7s5kqM7PvLXLgfZruzKx8H8ps_j6QSX0jDn50UXfkfzFTykgQJO4Hw_j0Y7HzZoOjvBg3IspJm-DTS7PajmFWogib0kMJH"; // Something very long
+                string senderId = "853833848607";
+                string deviceId = "fTmPozwiQeiDUIeLK-ofgE:APA91bFjFsINh6kbm_PuPWHRFY0M9XiR5S2Dt3lg-jeCdRgn24B0qRGj23tMkw44UAWHYfQC0MEKoKSpHv2ot5kyS1s_iCel09Ff80keHZskqT_vSgKMnHRYt-liJatnDrtNJyhIhSgg"; // Also something very long, 
+                                                                                                                                                                                                         // got from android
+                                                                                                                                                                                                         //string deviceId = "/topics/all";               // Use this to notify all devices, 
+                                                                                                                                                                                                         // but App must be subscribed to 
+                                                                                                                                                                                                         // topic notification
+                WebRequest tRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
+
+                tRequest.Method = "post";
+                tRequest.ContentType = "application/json";
+                var dataBase = new
+                {
+                    to = deviceId,
+                    notification = new
+                    {
+                        title = "Trạng thái đơn hàng của bạn : Đã được tiếp nhận và đang xử lý !!!",
+                        body = "Đơn hàng của bạn đã được tiếp nhận và đang xử lý , các trạng thái tiếp theo của đơn hàng sẽ được cập nhật đến bạn . ",
+                        sound = "default"
+                    },
+                    data = new
+                    {
+                        mode = "online",
+                        delivery_method = "delivery",
+                        status = "shipping",
+                        transaction_id = id_transaction
+                    }
+                };
+
+                var serializer = new JavaScriptSerializer();
+                var json = serializer.Serialize(dataBase);
+                Byte[] byteArray = Encoding.UTF8.GetBytes(json);
+                tRequest.Headers.Add(string.Format("Authorization: key={0}", serverKey));
+                tRequest.Headers.Add(string.Format("Sender: id={0}", senderId));
+                tRequest.ContentLength = byteArray.Length;
+
+                using (Stream dataStream = tRequest.GetRequestStream())
+                {
+                    dataStream.Write(byteArray, 0, byteArray.Length);
+                    using (WebResponse tResponse = tRequest.GetResponse())
+                    {
+                        using (Stream dataStreamResponse = tResponse.GetResponseStream())
+                        {
+                            using (StreamReader tReader = new StreamReader(dataStreamResponse))
+                            {
+                                String sResponseFromServer = tReader.ReadToEnd();
+                                response = sResponseFromServer;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                response = ex.Message;
+            }
+
+            return response;
         }
 
         public void OptionName(int id, string product_id, int quantity)
@@ -572,6 +722,11 @@ namespace SquiredCoffee.FormManage
             graphics.DrawString("Giá Sản Phẩm Đã Bao Gồm ( VAT ) ", new Font("Quicksand", 16, FontStyle.Bold), new SolidBrush(color: Color.Black), 250, starty + offset);
             offset = offset + 30;
             graphics.DrawString("Password wifi : squirethecoffee", new Font("Quicksand", 15), new SolidBrush(color: Color.Black), 265, starty + offset);
+        }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

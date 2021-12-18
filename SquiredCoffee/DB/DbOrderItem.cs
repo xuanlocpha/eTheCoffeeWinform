@@ -42,6 +42,63 @@ namespace SquiredCoffee.DB
             con.Close();
         }
 
+
+        public static bool CheckOrderItem(string id_order, string product_id, string item_detail)
+        {
+            string sql = "select * from order_items where order_id = '" + id_order + "' and product_id ='" + product_id + "' and item_detail = '" + item_detail + "' ";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+        public static List<Order_Items> order_Items_Load_Check(string id_order, string product_id, string item_detail)
+        {
+            List<Order_Items> order_Items_List = new List<Order_Items>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT oi.id,oi.product_id,oi.order_id,oi.item_detail,oi.quantity,oi.content,p.title,p.price FROM order_items oi, orders o , products p   WHERE  oi.order_id = '" + id_order + "' AND o.id ='" + id_order + "' AND p.id = oi.product_id AND oi.product_id = '" + product_id + "' AND oi.item_detail = '" + item_detail + "'");
+            foreach (DataRow item in data.Rows)
+            {
+                Order_Items order_Items = new Order_Items(item);
+                order_Items_List.Add(order_Items);
+            }
+
+            return order_Items_List;
+        }
+
+
+        public static void UpdateOrderItem(string id, string product_id, string order_id, string quantity)
+        {
+            string sql = "UPDATE order_items SET quantity = @quantity WHERE id = @id AND product_id = product_id AND order_id = @order_id";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("@product_id", MySqlDbType.VarChar).Value = product_id;
+            cmd.Parameters.Add("@order_id", MySqlDbType.VarChar).Value = order_id;
+            cmd.Parameters.Add("@quantity", MySqlDbType.VarChar).Value = quantity;
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Order Không Thành Công ! \n" + ex.Message, "Cảnh Báo Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+        }
+
+
         public static bool CheckDb(string @id_order, string  @id_product)
         {
             string sql = "select * from order_items where id_order = '" + id_order + "' and id_product ='"+id_product+"' ";
@@ -141,7 +198,7 @@ namespace SquiredCoffee.DB
         {
             List<Order_Items> order_Items_List = new List<Order_Items>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT oi.id,oi.product_id,oi.order_id,oi.item_detail,oi.quantity,oi.content,p.title,p.price FROM order_items oi, orders o , products p   WHERE  oi.order_id = '" + id_order + "' AND o.id ='" + id_order + "' AND p.id = oi.product_id");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT oi.id,oi.product_id,oi.order_id,oi.item_detail,oi.quantity,oi.price as price_discount,oi.content,p.title,p.price FROM order_items oi, orders o , products p   WHERE  oi.order_id = '" + id_order + "' AND o.id ='" + id_order + "' AND p.id = oi.product_id");
             foreach (DataRow item in data.Rows)
             {
                 Order_Items order_Items= new Order_Items(item);
@@ -150,6 +207,22 @@ namespace SquiredCoffee.DB
 
             return order_Items_List;
         }
+
+
+        public static List<Order_Items> order_Items_List_Date(string date)
+        {
+            List<Order_Items> order_Items_List = new List<Order_Items>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT oi.id,oi.product_id,oi.order_id,oi.item_detail,oi.quantity,oi.price as price_discount,oi.content,p.title,p.price FROM order_items oi, orders o , products p   WHERE  p.id = oi.product_id AND oi.created_at like'%" + date + "%' GROUP BY oi.product_id ORDER BY SUM(oi.quantity) DESC LIMIT 10");
+            foreach (DataRow item in data.Rows)
+            {
+                Order_Items order_Items = new Order_Items(item);
+                order_Items_List.Add(order_Items);
+            }
+
+            return order_Items_List;
+        }
+
 
 
         public static void DeleteIngredient(string id)
