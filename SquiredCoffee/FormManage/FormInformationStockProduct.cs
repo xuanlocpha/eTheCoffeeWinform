@@ -60,6 +60,7 @@ namespace SquiredCoffee.FormManage
 
         private void FormInformationStockProduct_Load(object sender, EventArgs e)
         {
+            txtQuantity.Enabled = false;
             Display();
         }
 

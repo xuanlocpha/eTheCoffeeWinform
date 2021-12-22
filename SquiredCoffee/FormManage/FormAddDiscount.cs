@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using SquiredCoffee.Class;
 using SquiredCoffee.DB;
+using SquiredCoffee.UC_ManageSysterm;
 using SquiredCoffee.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -20,11 +21,13 @@ namespace SquiredCoffee.FormManage
         List<string> str1 = new List<string>();
         FormSuccess Form1;
         FormError Form2;
-        public FormAddDiscount()
+        UC_ManageDiscount _parent;
+        public FormAddDiscount(UC_ManageDiscount parent)
         {
             InitializeComponent();
             Form1 = new FormSuccess();
             Form2 = new FormError();
+            _parent = parent;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -128,12 +131,14 @@ namespace SquiredCoffee.FormManage
                     Form1.title = "Thêm Mới Discount ( Thành Công )";
                     Form1.ShowDialog();
                     this.Close();
+                    _parent.Display();
                 }
                 else
                 {
                     Form2.title = "Thêm Mới Discount ( Không Thành Công )";
                     Form2.ShowDialog();
                     this.Close();
+                    _parent.Display();
                 }
             }
         }

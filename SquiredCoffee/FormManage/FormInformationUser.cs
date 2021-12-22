@@ -105,10 +105,13 @@ namespace SquiredCoffee.FormManage
             }
         }
 
+
         private void FormInformationUser_Load(object sender, EventArgs e)
         {
             txtDisplayName.Enabled = txtEmail.Enabled = txtLevel.Enabled = txtPhone.Enabled = txtPoint.Enabled = false;
             dtpBirthday.Enabled = false;
+            rdGender1.Enabled = true;
+            rdGender2.Enabled = true;
             Display();
         }
 

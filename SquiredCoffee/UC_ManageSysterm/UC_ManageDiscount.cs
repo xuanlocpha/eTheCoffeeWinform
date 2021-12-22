@@ -23,7 +23,7 @@ namespace SquiredCoffee.UC_ManageSysterm
         {
             InitializeComponent();
             Form = new FormInformationDiscount();
-            Form1 = new FormAddDiscount();
+            Form1 = new FormAddDiscount(this);
         }
 
 
@@ -122,7 +122,35 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
-            Form1.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormAddDiscount Form = new FormAddDiscount(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.ShowDialog();
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
+            //Form1.ShowDialog();
         }
     }
 }

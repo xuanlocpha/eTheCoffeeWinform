@@ -141,11 +141,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             "- Top 10 sản phẩm bán chạy theo ngày",
             "- Top 10 sản phẩm bán chạy theo tháng",
             "- Top 10 sản phẩm bán chạy theo năm",
-            "- Khách hàng mua nhiều nhất",
-            "- Nhân viên làm nhiều nhất",
-            "- Thu chi theo tháng",
-            "- Thu chi theo năm ",
-            "- Sản phẩm gần hết trong kho"});
+            "- Khách hàng mua nhiều nhất"});
             this.cbSelect.ItemsAppearance.Parent = this.cbSelect;
             this.cbSelect.Location = new System.Drawing.Point(157, 11);
             this.cbSelect.Name = "cbSelect";

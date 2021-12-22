@@ -105,6 +105,7 @@ namespace SquiredCoffee.FormManage
             this.btnSave.BorderRadius = 15;
             this.btnSave.CheckedState.Parent = this.btnSave;
             this.btnSave.CustomImages.Parent = this.btnSave;
+            this.btnSave.DisabledState.Parent = this.btnSave;
             this.btnSave.FillColor = System.Drawing.Color.Tomato;
             this.btnSave.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
@@ -220,6 +221,7 @@ namespace SquiredCoffee.FormManage
             this.Name = "FormAddRole";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddRole";
+            this.TopMost = true;
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

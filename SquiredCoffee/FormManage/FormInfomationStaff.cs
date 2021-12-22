@@ -246,18 +246,6 @@ namespace SquiredCoffee.FormManage
                 Form2.ShowDialog();
                 return;
             }
-            if (txtPassword.Text.Trim() == "")
-            {
-                Form2.title = "Mật Khẩu Đang (Trống) ";
-                Form2.ShowDialog();
-                return;
-            }
-            if (txtPassword.Text.Trim().Length < 1)
-            {
-                Form2.title = "Mật Khẩu (>1 Ký Tự) ";
-                Form2.ShowDialog();
-                return;
-            }
             if (cbRoleName.ValueMember == "")
             {
                 Form2.title = "Bạn Chưa Phân Quyền Tài Khoản";

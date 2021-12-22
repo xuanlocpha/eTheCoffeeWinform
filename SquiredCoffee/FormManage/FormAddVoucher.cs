@@ -179,8 +179,7 @@ namespace SquiredCoffee.FormManage
             {
                 string start_date = dtpStartDate.Value.Date.ToString("yyyy-MM-dd");
                 string expiry_date = dtpExpiryDate.Value.Date.ToString("yyyy-MM-dd");
-                string coupen_code = stringCouponCode();
-                Voucher std = new Voucher(txtTitle.Text,txtContent.Text,"public",coupen_code,image,image_QrCode,start_date,expiry_date,cbDiscountUnit.Text,Convert.ToInt32(txtDiscount.Text),cbApply.Text,Convert.ToInt32(txtQuantityRule.Text),Convert.ToInt32(txtPriceRule.Text),status) ;
+                Voucher std = new Voucher(txtTitle.Text,txtContent.Text,"public",txtCoupenCode.Text,image,image_QrCode,start_date,expiry_date,cbDiscountUnit.Text,Convert.ToInt32(txtDiscount.Text),cbApply.Text,Convert.ToInt32(txtQuantityRule.Text),Convert.ToInt32(txtPriceRule.Text),status) ;
                 DbVoucher.AddVoucher(std);
                 this.Close();
                 _parent.Display();

@@ -202,41 +202,41 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void dgvProductOption_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //FormBackGround formBackGround = new FormBackGround();
-            //try
-            //{
-            //    using (FormInformationProductOption Form = new FormInformationProductOption(this))
-            //    {
-            //        formBackGround.StartPosition = FormStartPosition.Manual;
-            //        formBackGround.FormBorderStyle = FormBorderStyle.None;
-            //        formBackGround.Opacity = .70d;
-            //        formBackGround.BackColor = Color.Black;
-            //        formBackGround.WindowState = FormWindowState.Maximized;
-            //        formBackGround.TopMost = true;
-            //        formBackGround.Location = this.Location;
-            //        formBackGround.ShowInTaskbar = false;
-            //        formBackGround.Show();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormInformationProductOption Form = new FormInformationProductOption(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
 
-            //        Form.Owner = formBackGround;
-            //        string id_product_option = dgvProductOption.Rows[e.RowIndex].Cells[1].Value.ToString();
-            //        Form.id_product_option = Convert.ToInt32(id_product_option);
-            //        Form.ShowDialog();
+                    Form.Owner = formBackGround;
+                    string id_product_option = dgvProductOption.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    Form.id_product_option = Convert.ToInt32(id_product_option);
+                    Form.ShowDialog();
 
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw;
-            //}
-            //finally
-            //{
-            //    formBackGround.Dispose();
-            //}
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
 
-            
-            string id_product_option = dgvProductOption.Rows[e.RowIndex].Cells[1].Value.ToString();
-            Form1.id_product_option = Convert.ToInt32(id_product_option);
-            Form1.ShowDialog();
+
+            //string id_product_option = dgvProductOption.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //Form1.id_product_option = Convert.ToInt32(id_product_option);
+            //Form1.ShowDialog();
         }
     }
 }

@@ -96,6 +96,14 @@ namespace SquiredCoffee.UC_ManageSysterm
                     uC_InformationStatictisProduct2.key = cbYear.Text ;
                     AddControlsToPanel(uC_InformationStatictisProduct2);
                     break;
+                case 8:
+                    UC_InformationStatictisUser uC_InformationStatictisUser = new UC_InformationStatictisUser();
+                    AddControlsToPanel(uC_InformationStatictisUser);
+                    break;
+                case 9:
+                    UC_InformationStatictisAssignment uC_InformationStatictisAssignment = new UC_InformationStatictisAssignment();
+                    AddControlsToPanel(uC_InformationStatictisAssignment);
+                    break;
             }
         }
 
@@ -123,7 +131,7 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void cbSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbSelect.Text == "- Thống kê hóa đơn hôm nay")
+            if (cbSelect.Text == "- Thống kê hóa đơn hôm nay")
             {
                 dtpDate.Enabled = false;
                 cbMonth.Enabled = false;
@@ -149,7 +157,7 @@ namespace SquiredCoffee.UC_ManageSysterm
                 cbYear.Enabled = true;
                 option = 4;
             }
-            if(cbSelect.Text == "- Top 10 sản phẩm bán chạy theo ngày")
+            if (cbSelect.Text == "- Top 10 sản phẩm bán chạy theo ngày")
             {
                 dtpDate.Enabled = true;
                 option = 5;
@@ -168,6 +176,20 @@ namespace SquiredCoffee.UC_ManageSysterm
                 cbYear.Enabled = true;
                 option = 7;
             }
+            if (cbSelect.Text == "- Khách hàng mua nhiều nhất")
+            {
+                dtpDate.Enabled = false;
+                cbMonth.Enabled = false;
+                cbYear.Enabled = false;
+                option = 8;
+            }
+            //if (cbSelect.Text == "- Nhân viên làm nhiều nhất")
+            //{
+            //    dtpDate.Enabled = false;
+            //    cbMonth.Enabled = false;
+            //    cbYear.Enabled = false;
+            //    option = 9;
+            //}
         }
     }
 }

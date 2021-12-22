@@ -62,7 +62,7 @@ namespace SquiredCoffee.DB
 
         public static void AddProductOption(ProductOption std)
         {
-            string sql = "INSERT INTO product_options (product_id,option_id,title,price,default,status) VALUES(@product_id,@option_id,@title,@price,'"+std.defaults+"',@status)";
+            string sql = "INSERT INTO product_options (product_id,option_id,title,price,default,status) VALUES(@product_id,@option_id,@title,@price,@defaults,@status)";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
@@ -75,7 +75,6 @@ namespace SquiredCoffee.DB
             try
             {
                 cmd.ExecuteNonQuery();
-               
             }
             catch (MySqlException ex)
             {
@@ -86,21 +85,21 @@ namespace SquiredCoffee.DB
 
         public static void UpdateProductOption(ProductOption std, string id)
         {
-            string sql = "UPDATE product_options SET product_id=@product_id,option_id=@option_id,title=@title,price=@price,default='"+std.defaults+"',status=@status  WHERE id = @id";
+            string sql = "UPDATE product_options SET product_id = '"+std.product_id+ "' , option_id = '" + std.option_id + "' , title = '" + std.title + "',price='" + std.price + "',status ='" + std.status + "' WHERE id ='" + id + "' ";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
-            cmd.Parameters.Add("@product_id", MySqlDbType.VarChar).Value = std.product_id;
-            cmd.Parameters.Add("@option_id", MySqlDbType.VarChar).Value = std.option_id;
-            cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
-            cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = std.price;
-            cmd.Parameters.Add("@defaults", MySqlDbType.VarChar).Value = 0;
-            cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
+            //cmd.CommandType = CommandType.Text;
+            //cmd.Parameters.Add("@id", MySqlDbType.VarChar).Value = id;
+            //cmd.Parameters.Add("@product_id", MySqlDbType.VarChar).Value = std.product_id;
+            //cmd.Parameters.Add("@option_id", MySqlDbType.VarChar).Value = std.option_id;
+            //cmd.Parameters.Add("@title", MySqlDbType.VarChar).Value = std.title;
+            //cmd.Parameters.Add("@price", MySqlDbType.VarChar).Value = std.price;
+            //cmd.Parameters.Add("@defaults", MySqlDbType.VarChar).Value = std.defaults;
+            //cmd.Parameters.Add("@status", MySqlDbType.VarChar).Value = std.status;
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
             try
             {
                 cmd.ExecuteNonQuery();
-                
             }
             catch (MySqlException ex)
             {
@@ -229,8 +228,8 @@ namespace SquiredCoffee.DB
 
         public static bool CheckUpdateProductOption(ProductOption std, string id)
         {
-            UpdateProductOption(std, id);
-            string sql = "select * from product_options where product_id=@product_id and option_id=@option_id and title=@title and price=@price and default='"+std.defaults+"' and status=@status";
+            UpdateProductOption(std,id);
+            string sql = "select * from product_options where product_id=@product_id and option_id=@option_id and title=@title and price=@price and status=@status";
             MySqlConnection con = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;

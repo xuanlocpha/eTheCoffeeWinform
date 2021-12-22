@@ -232,7 +232,6 @@ namespace SquiredCoffee.UC_ManageSysterm
                     formBackGround.ShowInTaskbar = false;
                     formBackGround.Show();
 
-                    string tag = ((PictureBox)sender).Tag.ToString();
                     Form.Owner = formBackGround;
                     Form.ShowDialog();
                     return;

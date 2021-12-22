@@ -129,6 +129,22 @@ namespace SquiredCoffee.DB
         }
 
 
+        public static List<User> ListUserStatictis()
+        {
+            List<User> userList = new List<User>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,display_name,gender,birthday,email,phone,image,point,total_point,level,bar_code,status,password FROM users  ORDER BY SUM(oi.quantity) DESC LIMIT 10");
+
+            foreach (DataRow item in data.Rows)
+            {
+                User user = new User(item);
+                userList.Add(user);
+            }
+
+            return userList;
+        }
+
+
         public static List<User> ListUserSearchClick(string status)
         {
             List<User> userList = new List<User>();
@@ -205,6 +221,21 @@ namespace SquiredCoffee.DB
             List<User> userList = new List<User>();
 
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,display_name,gender,birthday,email,phone,image,point,total_point,level,bar_code,status,password FROM users  WHERE  phone = '" + phone + "'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                User user = new User(item);
+                userList.Add(user);
+            }
+
+            return userList;
+        }
+
+        public static List<User> UserSearchId(string id)
+        {
+            List<User> userList = new List<User>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,display_name,gender,birthday,email,phone,image,point,total_point,level,bar_code,status,password FROM users  WHERE  id = '" + id + "'");
 
             foreach (DataRow item in data.Rows)
             {

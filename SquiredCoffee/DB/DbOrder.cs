@@ -172,6 +172,22 @@ namespace SquiredCoffee.DB
         }
 
 
+        public static List<OrderShow2> LoadShowOrderSearchId(string id)
+        {
+            List<OrderShow2> orderList = new List<OrderShow2>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT o.id,o.table_number,o.staff_id,o.user_id,o.address_id,o.subtotal,o.voucher_discount,o.shipping_discount,o.shipping,o.grandtotal,s.first_name,s.last_name,u.display_name as user_name ,t.mode,a.address,o.created_at FROM  orders o , staffs s ,users u, address a, transactions t WHERE o.staff_id = s.id AND o.user_id = u.id AND o.address_id = a.id AND t.order_id = o.id AND o.user_id = '"+id+"'AND o.status = '" + 1 + "'");
+
+            foreach (DataRow item in data.Rows)
+            {
+                OrderShow2 orderShow2 = new OrderShow2(item);
+                orderList.Add(orderShow2);
+            }
+
+            return orderList;
+        }
+
+
         public static List<Order> LoadOrderUpdate(string id)
         {
             List<Order> orderList = new List<Order>();

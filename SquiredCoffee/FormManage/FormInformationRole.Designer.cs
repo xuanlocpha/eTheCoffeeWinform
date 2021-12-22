@@ -189,6 +189,7 @@ namespace SquiredCoffee.FormManage
             this.btnEdit.BorderRadius = 15;
             this.btnEdit.CheckedState.Parent = this.btnEdit;
             this.btnEdit.CustomImages.Parent = this.btnEdit;
+            this.btnEdit.DisabledState.Parent = this.btnEdit;
             this.btnEdit.FillColor = System.Drawing.Color.Tomato;
             this.btnEdit.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
@@ -209,6 +210,7 @@ namespace SquiredCoffee.FormManage
             this.btnDelete.BorderRadius = 15;
             this.btnDelete.CheckedState.Parent = this.btnDelete;
             this.btnDelete.CustomImages.Parent = this.btnDelete;
+            this.btnDelete.DisabledState.Parent = this.btnDelete;
             this.btnDelete.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
@@ -241,6 +243,7 @@ namespace SquiredCoffee.FormManage
             this.Name = "FormInformationRole";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormInformationRole";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormInformationRole_Load);
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();

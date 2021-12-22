@@ -43,7 +43,6 @@ namespace SquiredCoffee.FormManage
             this.btnChooseImage = new Guna.UI2.WinForms.Guna2Button();
             this.ptImage = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,7 +55,6 @@ namespace SquiredCoffee.FormManage
             this.rdStatus1 = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.rdStatus2 = new System.Windows.Forms.RadioButton();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
@@ -87,7 +85,6 @@ namespace SquiredCoffee.FormManage
             this.panel1.Controls.Add(this.btnChooseImage);
             this.panel1.Controls.Add(this.ptImage);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtUserName);
             this.panel1.Controls.Add(this.label6);
@@ -100,7 +97,6 @@ namespace SquiredCoffee.FormManage
             this.panel1.Controls.Add(this.rdStatus1);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.rdStatus2);
-            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.bunifuGradientPanel1);
@@ -153,7 +149,7 @@ namespace SquiredCoffee.FormManage
             this.btnDelete.HoverState.Parent = this.btnDelete;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDelete.Location = new System.Drawing.Point(657, 659);
+            this.btnDelete.Location = new System.Drawing.Point(657, 652);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
             this.btnDelete.Size = new System.Drawing.Size(393, 57);
@@ -238,7 +234,7 @@ namespace SquiredCoffee.FormManage
             this.btnEdit.HoverState.Parent = this.btnEdit;
             this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnEdit.Location = new System.Drawing.Point(214, 659);
+            this.btnEdit.Location = new System.Drawing.Point(214, 652);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.ShadowDecoration.Parent = this.btnEdit;
             this.btnEdit.Size = new System.Drawing.Size(393, 57);
@@ -255,7 +251,7 @@ namespace SquiredCoffee.FormManage
             this.btnChooseImage.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseImage.ForeColor = System.Drawing.Color.White;
             this.btnChooseImage.HoverState.Parent = this.btnChooseImage;
-            this.btnChooseImage.Location = new System.Drawing.Point(809, 578);
+            this.btnChooseImage.Location = new System.Drawing.Point(809, 554);
             this.btnChooseImage.Name = "btnChooseImage";
             this.btnChooseImage.ShadowDecoration.Parent = this.btnChooseImage;
             this.btnChooseImage.Size = new System.Drawing.Size(393, 45);
@@ -270,7 +266,7 @@ namespace SquiredCoffee.FormManage
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ptImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ptImage.Image = ((System.Drawing.Image)(resources.GetObject("ptImage.Image")));
-            this.ptImage.Location = new System.Drawing.Point(809, 230);
+            this.ptImage.Location = new System.Drawing.Point(809, 210);
             this.ptImage.Name = "ptImage";
             this.ptImage.Size = new System.Drawing.Size(393, 329);
             this.ptImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -287,34 +283,6 @@ namespace SquiredCoffee.FormManage
             this.label10.Size = new System.Drawing.Size(110, 30);
             this.label10.TabIndex = 157;
             this.label10.Text = "Hình Ảnh :";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(16)))), ((int)(((byte)(221)))));
-            this.txtPassword.BorderRadius = 15;
-            this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.DefaultText = "";
-            this.txtPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassword.DisabledState.Parent = this.txtPassword;
-            this.txtPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.FocusedState.Parent = this.txtPassword;
-            this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPassword.HoverState.Parent = this.txtPassword;
-            this.txtPassword.Location = new System.Drawing.Point(214, 591);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
-            this.txtPassword.PlaceholderForeColor = System.Drawing.Color.Black;
-            this.txtPassword.PlaceholderText = "Password đăng nhập ...";
-            this.txtPassword.SelectedText = "";
-            this.txtPassword.ShadowDecoration.Parent = this.txtPassword;
-            this.txtPassword.Size = new System.Drawing.Size(397, 45);
-            this.txtPassword.TabIndex = 156;
             // 
             // label3
             // 
@@ -522,17 +490,6 @@ namespace SquiredCoffee.FormManage
             this.rdStatus2.UseVisualStyleBackColor = true;
             this.rdStatus2.CheckedChanged += new System.EventHandler(this.rdStatus2_CheckedChanged);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.label9.Location = new System.Drawing.Point(52, 598);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 30);
-            this.label9.TabIndex = 150;
-            this.label9.Text = "Password :";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -667,7 +624,6 @@ namespace SquiredCoffee.FormManage
         private Guna.UI2.WinForms.Guna2Button btnChooseImage;
         private System.Windows.Forms.PictureBox ptImage;
         private System.Windows.Forms.Label label10;
-        private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2TextBox txtUserName;
         private System.Windows.Forms.Label label6;
@@ -680,7 +636,6 @@ namespace SquiredCoffee.FormManage
         private System.Windows.Forms.RadioButton rdStatus1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RadioButton rdStatus2;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label4;
         private Bunifu.UI.WinForms.BunifuGradientPanel bunifuGradientPanel1;

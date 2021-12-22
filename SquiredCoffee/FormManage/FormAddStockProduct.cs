@@ -50,7 +50,7 @@ namespace SquiredCoffee.FormManage
 
         public void clear()
         {
-            txtQuantity.Text = txtTitle.Text = txtUnit.Text = string.Empty;
+            txtTitle.Text = txtUnit.Text = string.Empty;
             rdStatus1.Checked = true;
         }
 
@@ -68,27 +68,9 @@ namespace SquiredCoffee.FormManage
                 Form2.ShowDialog();
                 return;
             }
-            if (txtQuantity.Text.Trim() == "")
-            {
-                Form2.title = "Số Lượng Không Được (Trống) ";
-                Form2.ShowDialog();
-                return;
-            }
-            if (txtQuantity.Text.Trim().Length < 1)
-            {
-                Form2.title = "Số Lượng Phải (> 1 Ký Tự) ";
-                Form2.ShowDialog();
-                return;
-            }
             if (txtUnit.Text.Trim() == "")
             {
                 Form2.title = "Đơn Vị Không Được Để (Trống) ";
-                Form2.ShowDialog();
-                return;
-            }
-            if (txtQuantity.Text.Trim().Length < 1)
-            {
-                Form2.title = "Đơn Vị Phải Lớn Hơn (>1 Ký Tự) ";
                 Form2.ShowDialog();
                 return;
             }
@@ -100,7 +82,7 @@ namespace SquiredCoffee.FormManage
             }
             if (btnSave.Text == "Lưu")
             {
-                StockProduct std = new StockProduct(txtTitle.Text,Convert.ToInt32(txtQuantity.Text),txtUnit.Text,status);
+                StockProduct std = new StockProduct(txtTitle.Text,0,txtUnit.Text,status);
                 DbStockProduct.AddStockProduct(std);
                 if (DbStockProduct.CheckCreateStockProduct(std) == true)
                 {

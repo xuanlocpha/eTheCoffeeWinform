@@ -64,6 +64,9 @@ namespace SquiredCoffee
         public string token;
         public string id_transaction;
         public int min = 0;
+        public string type;
+        public string id_user;
+        public string delivery_method;
         List<int> str1 = new List<int>();
         List<int> str2 = new List<int>();
 
@@ -129,8 +132,12 @@ namespace SquiredCoffee
         public void clear()
         {
             cbCategory.SelectedIndex = -1;
-            txtSearch.Text = string.Empty;
-            
+            txtSearch.Text = string.Empty; 
+        }
+
+        public void clearFlp()
+        {
+            flpOrder.Controls.Clear();
         }
 
 
@@ -146,6 +153,7 @@ namespace SquiredCoffee
             lblGrandTotal.Text = lblShipping.Text = lblSubtotal.Text = "0 đ";
             quantityOrder = 0;
         }
+
 
 
         public void clearOrder1()
@@ -659,7 +667,7 @@ namespace SquiredCoffee
         {
             cbCategory.SelectedIndex = -1;
             flpProduct.Controls.Clear();
-            List<ProductShow> productShowList = DbProduct.LoadProductSearchList(txtSearch.Text);
+            List<ProductShow> productShowList = DbProduct.LoadProductSearchList(txtSearch.Text.Trim());
             foreach (ProductShow item in productShowList)
             {
                 Guna2Elipse elip = new Guna2Elipse();
@@ -800,11 +808,14 @@ namespace SquiredCoffee
                 {
                     token = item.token;
                     id_transaction = item.id.ToString();
+                    id_user = item.user_id.ToString();
+                    type = item.type;
+                    delivery_method = item.delivery_method;
                 }
                 code = "#00000" + Convert.ToString(Convert.ToInt32(id_order) - 1);
-                Trannsaction std1 = new Trannsaction(18, token, Convert.ToInt32(id_order), code, "cash", mode, "pickup", "", "packing");
+                Trannsaction std1 = new Trannsaction(Convert.ToInt32(id_user), token, Convert.ToInt32(id_order), code,type, mode,delivery_method, "", "packing");
                 DbTransaction.UpdateTransaction(std1, id_transaction.ToString());
-                SendPushNotification(id_transaction);
+                SendPushNotification(token,id_transaction);
                 Form2 = new FormPaymentSale(this);
                 Form2.tableName = lblTableNumber.Text;
                 Form2.provisional = grandTotalPayment.ToString();
@@ -812,6 +823,7 @@ namespace SquiredCoffee
                 Form2.id_staff = id_staff;
                 Form2.mode = mode;
                 Form2.shipping = shipping;
+                Form2.id_user = id_user;
                 Form2.name_staff = lblFullName.Text;
                 Form2.quantity = quantityOrder;
                 Form2.ShowDialog();
@@ -825,6 +837,7 @@ namespace SquiredCoffee
                 Form2.id_staff = id_staff;
                 Form2.mode = mode;
                 Form2.shipping = shipping;
+                Form2.id_user = "18";
                 Form2.name_staff = lblFullName.Text;
                 Form2.quantity = quantityOrder;
                 Form2.ShowDialog();
@@ -844,6 +857,7 @@ namespace SquiredCoffee
             }
             this.Close();
         }
+
 
         private void btnOrderOnline_Click(object sender, EventArgs e)
         {
@@ -995,7 +1009,7 @@ namespace SquiredCoffee
             SetResponse response1 = await client.SetAsync("token", token);
         }
 
-        private static string SendPushNotification(string id_transaction)
+        private static string SendPushNotification(string token,string id_transaction)
         {
             string response;
 
@@ -1013,7 +1027,7 @@ namespace SquiredCoffee
 
                 string serverKey = "AAAAxsx2lx8:APA91bHFQHpVrA3Mchy07X8oesMssw0mLx0mUFahdhumYy7s5kqM7PvLXLgfZruzKx8H8ps_j6QSX0jDn50UXfkfzFTykgQJO4Hw_j0Y7HzZoOjvBg3IspJm-DTS7PajmFWogib0kMJH"; // Something very long
                 string senderId = "853833848607";
-                string deviceId = "fTmPozwiQeiDUIeLK-ofgE:APA91bFjFsINh6kbm_PuPWHRFY0M9XiR5S2Dt3lg-jeCdRgn24B0qRGj23tMkw44UAWHYfQC0MEKoKSpHv2ot5kyS1s_iCel09Ff80keHZskqT_vSgKMnHRYt-liJatnDrtNJyhIhSgg"; // Also something very long, 
+                string deviceId = token; // Also something very long, 
                 // got from android
                 //string deviceId = "/topics/all";               // Use this to notify all devices, 
                                                                // but App must be subscribed to 
@@ -1024,7 +1038,7 @@ namespace SquiredCoffee
                 tRequest.ContentType = "application/json";
                 var dataBase = new
                 {
-                    to = deviceId,
+                    to = token,
                     notification = new
                     {
                         title ="Trạng thái đơn hàng của bạn : Đã được tiếp nhận và đang xử lý !!!",
@@ -1033,10 +1047,8 @@ namespace SquiredCoffee
                     },
                     data = new
                     {
-                        mode = "online",
-                        delivery_method = "pickup",
-                        status = "packing",
-                        transaction_id = id_transaction
+                        transaction_id = id_transaction,
+                        type = "transaction" 
                     }
                 };
 

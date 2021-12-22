@@ -32,7 +32,6 @@ namespace SquiredCoffee.FormManage
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddOption));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.label12 = new System.Windows.Forms.Label();
             this.txtTitleOption = new Guna.UI2.WinForms.Guna2TextBox();
@@ -41,14 +40,15 @@ namespace SquiredCoffee.FormManage
             this.cbOptionGroup = new Guna.UI2.WinForms.Guna2ComboBox();
             this.rdStatus1 = new System.Windows.Forms.RadioButton();
             this.rdStatus2 = new System.Windows.Forms.RadioButton();
+            this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
             this.btnClose = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuGradientPanel1 = new Bunifu.UI.WinForms.BunifuGradientPanel();
+            this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.bunifuGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,11 +68,6 @@ namespace SquiredCoffee.FormManage
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(769, 379);
             this.panel1.TabIndex = 0;
-            // 
-            // guna2Elipse3
-            // 
-            this.guna2Elipse3.BorderRadius = 15;
-            this.guna2Elipse3.TargetControl = this.panel1;
             // 
             // btnSave
             // 
@@ -101,7 +96,7 @@ namespace SquiredCoffee.FormManage
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.label12.Location = new System.Drawing.Point(143, 246);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(151, 34);
+            this.label12.Size = new System.Drawing.Size(149, 33);
             this.label12.TabIndex = 145;
             this.label12.Text = "Trạng Thái  :";
             // 
@@ -140,7 +135,7 @@ namespace SquiredCoffee.FormManage
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.label6.Location = new System.Drawing.Point(16, 99);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(286, 34);
+            this.label6.Size = new System.Drawing.Size(279, 33);
             this.label6.TabIndex = 139;
             this.label6.Text = "Tên Tùy Chọn Sản Phẩm :";
             // 
@@ -151,7 +146,7 @@ namespace SquiredCoffee.FormManage
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.label2.Location = new System.Drawing.Point(118, 174);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 34);
+            this.label2.Size = new System.Drawing.Size(167, 33);
             this.label2.TabIndex = 140;
             this.label2.Text = "Tên Tùy Chọn :";
             // 
@@ -187,7 +182,7 @@ namespace SquiredCoffee.FormManage
             this.rdStatus1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.rdStatus1.Location = new System.Drawing.Point(344, 246);
             this.rdStatus1.Name = "rdStatus1";
-            this.rdStatus1.Size = new System.Drawing.Size(147, 38);
+            this.rdStatus1.Size = new System.Drawing.Size(144, 37);
             this.rdStatus1.TabIndex = 141;
             this.rdStatus1.TabStop = true;
             this.rdStatus1.Text = "Kích Hoạt ";
@@ -201,11 +196,31 @@ namespace SquiredCoffee.FormManage
             this.rdStatus2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.rdStatus2.Location = new System.Drawing.Point(521, 248);
             this.rdStatus2.Name = "rdStatus2";
-            this.rdStatus2.Size = new System.Drawing.Size(145, 38);
+            this.rdStatus2.Size = new System.Drawing.Size(144, 37);
             this.rdStatus2.TabIndex = 142;
             this.rdStatus2.Text = "Tạm Khóa";
             this.rdStatus2.UseVisualStyleBackColor = true;
             this.rdStatus2.CheckedChanged += new System.EventHandler(this.rdStatus2_CheckedChanged);
+            // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.BorderRadius = 1;
+            this.bunifuGradientPanel1.Controls.Add(this.btnClose);
+            this.bunifuGradientPanel1.Controls.Add(this.pictureBox1);
+            this.bunifuGradientPanel1.Controls.Add(this.label1);
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.DeepPink;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.DodgerBlue;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(60)))), ((int)(((byte)(212)))));
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(769, 60);
+            this.bunifuGradientPanel1.TabIndex = 138;
             // 
             // btnClose
             // 
@@ -241,25 +256,10 @@ namespace SquiredCoffee.FormManage
             this.label1.TabIndex = 0;
             this.label1.Text = "Thêm Mới Option :";
             // 
-            // bunifuGradientPanel1
+            // guna2Elipse3
             // 
-            this.bunifuGradientPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
-            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuGradientPanel1.BorderRadius = 1;
-            this.bunifuGradientPanel1.Controls.Add(this.btnClose);
-            this.bunifuGradientPanel1.Controls.Add(this.pictureBox1);
-            this.bunifuGradientPanel1.Controls.Add(this.label1);
-            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.DeepPink;
-            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.DodgerBlue;
-            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(60)))), ((int)(((byte)(212)))));
-            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
-            this.bunifuGradientPanel1.Quality = 10;
-            this.bunifuGradientPanel1.Size = new System.Drawing.Size(769, 60);
-            this.bunifuGradientPanel1.TabIndex = 138;
+            this.guna2Elipse3.BorderRadius = 15;
+            this.guna2Elipse3.TargetControl = this.panel1;
             // 
             // guna2Elipse1
             // 
@@ -278,12 +278,13 @@ namespace SquiredCoffee.FormManage
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAddOption";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormAddOption_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.bunifuGradientPanel1.ResumeLayout(false);
             this.bunifuGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

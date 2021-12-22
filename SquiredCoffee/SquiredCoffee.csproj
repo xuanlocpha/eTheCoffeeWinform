@@ -525,6 +525,12 @@
     <Compile Include="FormManage\FormImage.Designer.cs">
       <DependentUpon>FormImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManage\FormInfomationStaticProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormInfomationStaticProduct.Designer.cs">
+      <DependentUpon>FormInfomationStaticProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManage\FormInformationCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -711,6 +717,12 @@
     <Compile Include="FormManage\FormSuccess.Designer.cs">
       <DependentUpon>FormSuccess.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormManage\FormSuggest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormManage\FormSuggest.Designer.cs">
+      <DependentUpon>FormSuggest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormManage\FormVoucherDiscount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -756,6 +768,12 @@
     <Compile Include="UC_ManageSysterm\UC_Dashbroad.Designer.cs">
       <DependentUpon>UC_Dashbroad.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_ManageSysterm\UC_InformationStatictisAssignment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_InformationStatictisAssignment.Designer.cs">
+      <DependentUpon>UC_InformationStatictisAssignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_ManageSysterm\UC_InformationStatictisOrder.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -767,6 +785,12 @@
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_InformationStatictisProduct.Designer.cs">
       <DependentUpon>UC_InformationStatictisProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_InformationStatictisUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ManageSysterm\UC_InformationStatictisUser.Designer.cs">
+      <DependentUpon>UC_InformationStatictisUser.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_ManageSysterm\UC_InformationUserSale.cs">
       <SubType>UserControl</SubType>
@@ -1089,6 +1113,9 @@
     <EmbeddedResource Include="FormManage\FormImage.resx">
       <DependentUpon>FormImage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormInfomationStaticProduct.resx">
+      <DependentUpon>FormInfomationStaticProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormInformationCategory.resx">
       <DependentUpon>FormInformationCategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -1182,6 +1209,9 @@
     <EmbeddedResource Include="FormManage\FormSuccess.resx">
       <DependentUpon>FormSuccess.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormManage\FormSuggest.resx">
+      <DependentUpon>FormSuggest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormManage\FormVoucherDiscount.resx">
       <DependentUpon>FormVoucherDiscount.cs</DependentUpon>
     </EmbeddedResource>
@@ -1214,11 +1244,17 @@
     <EmbeddedResource Include="UC_ManageSysterm\UC_Dashbroad.resx">
       <DependentUpon>UC_Dashbroad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_InformationStatictisAssignment.resx">
+      <DependentUpon>UC_InformationStatictisAssignment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_InformationStatictisOrder.resx">
       <DependentUpon>UC_InformationStatictisOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_InformationStatictisProduct.resx">
       <DependentUpon>UC_InformationStatictisProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ManageSysterm\UC_InformationStatictisUser.resx">
+      <DependentUpon>UC_InformationStatictisUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_ManageSysterm\UC_InformationUserSale.resx">
       <DependentUpon>UC_InformationUserSale.cs</DependentUpon>

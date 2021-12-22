@@ -22,6 +22,7 @@ namespace SquiredCoffee.UC_ManageSysterm
         public int totalSearch;
         public string id_staff;
         public string role_name;
+        public string gender;
         public UC_ManageStaff()
         {
             InitializeComponent();
@@ -260,6 +261,14 @@ namespace SquiredCoffee.UC_ManageSysterm
             List<Staff> staffList = DbStaff.Search(txtSearch.Text);
             foreach (Staff item in staffList)
             {
+                if(item.gender == "male")
+                {
+                    gender = "nam";
+                }
+                if (item.gender == "female")
+                {
+                    gender = "nữ";
+                }
                 DateTime birthday = Convert.ToDateTime(item.birthday);
                 totalSearch += 1;
                 dgvStaff.Rows.Add(new object[] {
@@ -267,14 +276,12 @@ namespace SquiredCoffee.UC_ManageSysterm
                     item.id,
                     item.first_name,
                     item.last_name,
-                    item.gender,
+                    gender,
                     String.Format("{0:dd/MM/yyyy}",birthday),
                     item.title,
                     item.phone,
                     item.email,
-                    item.username,
-                    item.password,
-                    Convert.ToBoolean(item.status)?  imageList1.Images[1] : imageList1.Images[2],
+                    //Convert.ToBoolean(item.status)?  imageList1.Images[1] : imageList1.Images[2],
                 });
             }
             lblTotalStaffSearch.Text = totalSearch.ToString();

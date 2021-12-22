@@ -115,16 +115,24 @@ namespace SquiredCoffee.FormManage
             {
                 string CreateDate = DateTime.Now.ToString("yyyy-MM-dd");
                 int quantity = Convert.ToInt32(txtQuantity.Text);
-                ExportInvoiceItems std = new ExportInvoiceItems(Convert.ToInt32(id_export_invoice), Convert.ToInt32(cbStockProduct.SelectedValue),quantity,txtUnit.Text,CreateDate,1);
-                DbExportInvoiceItem.AddExportInvoice(std);
-                Form1.title = "Cập Nhật Kho Thành Công ";
-                Form1.ShowDialog();
                 List<StockProduct> stockProductList = DbStockProduct.LoadStockProductCheck(Convert.ToString(cbStockProduct.SelectedValue));
                 foreach (StockProduct item in stockProductList)
                 {
-                   int x = item.quantity - quantity;
-                   StockProduct std1 = new StockProduct(item.title, x, item.unit, item.status);
-                   DbStockProduct.UpdateStockProduct(std1, Convert.ToString(cbStockProduct.SelectedValue));
+                   if(item.quantity < quantity)
+                    {
+                        Form2.title = "Số lượng sản phẩm trong kho nhỏ hơn số nhập";
+                        Form2.ShowDialog();
+                    }
+                    else
+                    {
+                        ExportInvoiceItems std = new ExportInvoiceItems(Convert.ToInt32(id_export_invoice), Convert.ToInt32(cbStockProduct.SelectedValue), quantity, txtUnit.Text, CreateDate, 1);
+                        DbExportInvoiceItem.AddExportInvoice(std);
+                        Form1.title = "Cập Nhật Kho Thành Công ";
+                        Form1.ShowDialog();
+                        int x = item.quantity - quantity;
+                        StockProduct std1 = new StockProduct(item.title, x, item.unit, item.status);
+                        DbStockProduct.UpdateStockProduct(std1, Convert.ToString(cbStockProduct.SelectedValue));
+                    }
                 }
                 clear();
                 LoadExportInvoiceItem();

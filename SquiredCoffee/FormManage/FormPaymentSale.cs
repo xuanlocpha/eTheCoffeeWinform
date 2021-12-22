@@ -40,6 +40,7 @@ namespace SquiredCoffee.FormManage
         FormScannerBarCode Form;
         FormCheckUser Form1;
         FormInvoice Form2;
+        FormError Form3;
         public string type;
         public string mode;
         public decimal shipping;
@@ -50,7 +51,10 @@ namespace SquiredCoffee.FormManage
         public string topping_name;
         public string topping_price;
         public string id_transaction;
+        public string id_user;
         public int x = 0;
+        public string token;
+        public string username;
         List<int> str1 = new List<int>();
         List<int> str2 = new List<int>();
         public FormPaymentSale(FormSale parent)
@@ -60,6 +64,7 @@ namespace SquiredCoffee.FormManage
             Form = new FormScannerBarCode(this);
             Form1 = new FormCheckUser(this);
             Form2 = new FormInvoice(this);
+            Form3 = new FormError();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -97,6 +102,8 @@ namespace SquiredCoffee.FormManage
             btnMethod3.BackColor = Color.FromArgb(128, 128, 255);
             txtTotal.Text = lblIntoMoney.Text;
             txtTotal.Enabled = true;
+            txtExcessCash.Enabled = true;
+            txtMoneyCustomer.Enabled = true;
             type = "payment transfer";
         }
 
@@ -107,6 +114,8 @@ namespace SquiredCoffee.FormManage
             btnMethod1.BackColor = Color.FromArgb(128, 128, 255);
             txtTotal.Text = lblIntoMoney.Text;
             txtTotal.Enabled = true;
+            txtExcessCash.Enabled = true;
+            txtMoneyCustomer.Enabled = true;
             type = "payment transfer";
         }
 
@@ -168,6 +177,12 @@ namespace SquiredCoffee.FormManage
             {
                 excessCash();
             }
+            //if(Convert.ToInt32(txtMoneyCustomer.Text) > Convert.ToInt32(txtTotal.Text))
+            //{
+            //    Form3.title = "Số tiền khách đưa phải lớn hơn tổng tiền";
+            //    Form3.ShowDialog();
+            //    return;
+            //}
             if (mode == "offline")
             {
                 List<Order> orders = DbOrder.LoadOrderUpdate(id_order.ToString());
@@ -179,13 +194,19 @@ namespace SquiredCoffee.FormManage
                     List<Trannsaction> transactions = DbTransaction.LoadTransaction(id_order.ToString());
                     foreach (Trannsaction item1 in transactions)
                     {
-                        Trannsaction std1 = new Trannsaction(item1.user_id,item1.token, item1.order_id, item1.code, type, item1.mode, item1.delivery_method, item1.content, "success");
+                        Trannsaction std1 = new Trannsaction(item1.user_id, item1.token, item1.order_id, item1.code, type, item1.mode, item1.delivery_method, item1.content, "success");
                         DbTransaction.UpdateTransaction(std1, item1.id.ToString());
-                    }
+                    } 
                 }
             }
             else
             {
+                List<Trannsaction> trannsactionList = DbTransaction.LoadTransaction(id_order.ToString());
+                foreach (Trannsaction item in trannsactionList)
+                {
+                    token = item.token;
+                    id_transaction = item.id.ToString();
+                }
                 List<Order> orders = DbOrder.LoadOrderUpdate(id_order.ToString());
                 foreach (Order item in orders)
                 {
@@ -195,12 +216,35 @@ namespace SquiredCoffee.FormManage
                     List<Trannsaction> transactions = DbTransaction.LoadTransaction(id_order.ToString());
                     foreach (Trannsaction item1 in transactions)
                     {
-                        id_transaction = item1.id.ToString();
-                        Trannsaction std1 = new Trannsaction(item1.user_id, item1.token, item1.order_id, item1.code, item1.type, item1.mode, "delivery", item1.content, "shipping");
-                        DbTransaction.UpdateTransaction(std1, item1.id.ToString());
+                        if (item1.delivery_method == "pickup")
+                        {
+                            id_transaction = item1.id.ToString();
+                            Trannsaction std1 = new Trannsaction(item1.user_id, item1.token, item1.order_id, item1.code, item1.type, item1.mode, item1.delivery_method, item1.content, "success");
+                            DbTransaction.UpdateTransaction(std1, item1.id.ToString());
+                            List<User> userList = DbUser.UserSearchId(id_user);
+                            foreach (User item2 in userList)
+                            {
+                                decimal kq = Math.Round(Convert.ToDecimal(txtTotal.Text) / 1000);
+                                decimal kq1 = kq + item2.point;
+                                DbUser.UpdateUser(kq1.ToString(), item.id.ToString());
+                            }
+                        }
+                        else
+                        {
+                            id_transaction = item1.id.ToString();
+                            Trannsaction std1 = new Trannsaction(item1.user_id, item1.token, item1.order_id, item1.code, item1.type, item1.mode, item1.delivery_method, item1.content, "shipping");
+                            DbTransaction.UpdateTransaction(std1, item1.id.ToString());
+                            List<User> userList = DbUser.UserSearchId(id_user);
+                            foreach (User item2 in userList)
+                            {
+                                decimal kq = Math.Round(Convert.ToDecimal(txtTotal.Text) / 1000);
+                                decimal kq1 = kq + item2.point;
+                                DbUser.UpdateUser(kq1.ToString(), item.id.ToString());
+                            }
+                        }
                     }
                 }
-               SendPushNotification(id_transaction);
+               SendPushNotification(token,id_transaction);
             }
             _parent.clearOrder();
             _parent.LoadOrderItem();
@@ -313,8 +357,19 @@ namespace SquiredCoffee.FormManage
 
         private void btnPrintBill_Click(object sender, EventArgs e)
         {
-           
-            this.Hide();
+            List<OrderShow2> orderList = DbOrder.LoadShowOrder(id_order.ToString());
+            foreach (OrderShow2 item in orderList)
+            {
+                if (item.user_name == "guest")
+                {
+                    username = "Khách Ngoài";
+                }
+                else
+                {
+                    username = item.user_name;
+                }
+            }
+                this.Hide();
             (printPreviewDialog1 as Form).WindowState = FormWindowState.Maximized;
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
@@ -388,8 +443,8 @@ namespace SquiredCoffee.FormManage
                     List<Trannsaction> transactions = DbTransaction.LoadTransaction(id_order.ToString());
                     foreach (Trannsaction item1 in transactions)
                     {
-                        Trannsaction std1 = new Trannsaction(item1.user_id, item1.token, item1.order_id, item1.code, item1.type, item1.mode, "delivery", item1.content, "cancelled");
-                        DbTransaction.UpdateTransaction(std1, item1.id.ToString());
+                        Trannsaction std2 = new Trannsaction(item1.user_id, item1.token, item1.order_id, item1.code, item1.type, item1.mode, "delivery", item1.content, "cancelled");
+                        DbTransaction.UpdateTransaction(std2, item1.id.ToString());
                     }
                 }
                 this.Close();
@@ -486,7 +541,7 @@ namespace SquiredCoffee.FormManage
         }
 
 
-        private static string SendPushNotification(string id_transaction)
+        private static string SendPushNotification(string token, string id_transaction)
         {
             string response;
 
@@ -504,18 +559,18 @@ namespace SquiredCoffee.FormManage
 
                 string serverKey = "AAAAxsx2lx8:APA91bHFQHpVrA3Mchy07X8oesMssw0mLx0mUFahdhumYy7s5kqM7PvLXLgfZruzKx8H8ps_j6QSX0jDn50UXfkfzFTykgQJO4Hw_j0Y7HzZoOjvBg3IspJm-DTS7PajmFWogib0kMJH"; // Something very long
                 string senderId = "853833848607";
-                string deviceId = "fTmPozwiQeiDUIeLK-ofgE:APA91bFjFsINh6kbm_PuPWHRFY0M9XiR5S2Dt3lg-jeCdRgn24B0qRGj23tMkw44UAWHYfQC0MEKoKSpHv2ot5kyS1s_iCel09Ff80keHZskqT_vSgKMnHRYt-liJatnDrtNJyhIhSgg"; // Also something very long, 
-                                                                                                                                                                                                         // got from android
-                                                                                                                                                                                                         //string deviceId = "/topics/all";               // Use this to notify all devices, 
-                                                                                                                                                                                                         // but App must be subscribed to 
-                                                                                                                                                                                                         // topic notification
+                string deviceId = token; // Also something very long, 
+                                         // got from android
+                                         //string deviceId = "/topics/all";               // Use this to notify all devices, 
+                                         // but App must be subscribed to 
+                                         // topic notification
                 WebRequest tRequest = WebRequest.Create("https://fcm.googleapis.com/fcm/send");
 
                 tRequest.Method = "post";
                 tRequest.ContentType = "application/json";
                 var dataBase = new
                 {
-                    to = deviceId,
+                    to = token,
                     notification = new
                     {
                         title = "Trạng thái đơn hàng của bạn : Đã được tiếp nhận và đang xử lý !!!",
@@ -524,10 +579,8 @@ namespace SquiredCoffee.FormManage
                     },
                     data = new
                     {
-                        mode = "online",
-                        delivery_method = "delivery",
-                        status = "shipping",
-                        transaction_id = id_transaction
+                        transaction_id = id_transaction,
+                        type = "transaction"
                     }
                 };
 
@@ -622,7 +675,7 @@ namespace SquiredCoffee.FormManage
             graphics.DrawString(tableName, new Font("Quicksand", 15), new SolidBrush(color: Color.Black), 650, starty + offset);
             offset = offset + 40;
             graphics.DrawString("Khách Hàng :", new Font("Quicksand", 15, FontStyle.Bold), new SolidBrush(color: Color.Black), 70, starty + offset);
-            graphics.DrawString("Lộc Phúc", new Font("Quicksand", 15), new SolidBrush(color: Color.Black), 210, starty + offset);
+            graphics.DrawString(username, new Font("Quicksand", 15), new SolidBrush(color: Color.Black), 210, starty + offset);
             offset = offset + 35;
             graphics.DrawString("------------------------------------------------------------------------------------", new Font("Quicksand", 15), new SolidBrush(color: Color.Black), 50, starty + offset);
             offset = offset + 25;
@@ -727,6 +780,20 @@ namespace SquiredCoffee.FormManage
         private void printPreviewDialog1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtMoneyCustomer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // Nếu bạn muốn, bạn có thể cho phép nhập số thực với dấu chấm
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

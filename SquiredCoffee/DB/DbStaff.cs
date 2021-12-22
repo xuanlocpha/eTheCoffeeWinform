@@ -148,7 +148,7 @@ namespace SquiredCoffee.DB
         {
             List<Staff> staffList = new List<Staff>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT s.id,s.last_name,s.first_name,s.username,s.password,s.gender,s.birthday,s.image,s.phone,s.email,s.role_id,s.status,r.Title FROM staffs s, roles r WHERE s.role_id = r.id");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT s.id,s.last_name,s.first_name,s.username,s.password,s.gender,s.birthday,s.image,s.phone,s.email,s.role_id,s.status,r.Title FROM staffs s, roles r WHERE s.role_id = r.id AND s.id != 1");
 
             foreach (DataRow item in data.Rows)
             {
@@ -181,7 +181,7 @@ namespace SquiredCoffee.DB
         {
             List<Staff> staffList = new List<Staff>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT s.id,s.last_name,s.first_name,s.username,s.password,s.gender,s.birthday,s.image,s.phone,s.email,s.role_id,s.status,r.Title FROM staffs s, roles r WHERE s.role_id = r.id AND s.status = '"+status+"'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT s.id,s.last_name,s.first_name,s.username,s.password,s.gender,s.birthday,s.image,s.phone,s.email,s.role_id,s.status,r.Title FROM staffs s, roles r WHERE s.role_id = r.id AND s.status = '"+status+ "' AND s.id != 1");
 
             foreach (DataRow item in data.Rows)
             {
@@ -197,7 +197,7 @@ namespace SquiredCoffee.DB
             List<Staff> staffList = new List<Staff>();
 
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT s.id,s.last_name,s.first_name,s.username,s.password,s.gender,s.birthday,s.image,s.phone,s.email,s.role_id,s.status,r.Title FROM staffs s  " +
-                " INNER JOIN roles r ON s.role_id = r.id  WHERE s.username LIKE'%" + search + "%' OR s.phone LIKE'%" + search + "%' OR s.first_name LIKE'%" + search + "%' OR s.last_name LIKE'%" + search + "%' OR s.email LIKE'%" + search + "%'");
+                " INNER JOIN roles r ON s.role_id = r.id  WHERE  s.id != 1 AND s.username LIKE'%" + search + "%' OR s.phone LIKE'%" + search + "%' OR s.first_name LIKE'%" + search + "%' OR s.last_name LIKE'%" + search + "%' OR s.email LIKE'%" + search + "%' ");
 
             foreach (DataRow item in data.Rows)
             {

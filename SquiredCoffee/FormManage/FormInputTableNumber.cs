@@ -116,6 +116,8 @@ namespace SquiredCoffee.FormManage
                 DbOrder.AddOrder(std);
                 _parent.tableNumber = table_number;
                 _parent.clear();
+                _parent.clearOrder1();
+                _parent.clearFlp();
                 clear();
                 List<Order> order_List = DbOrder.LoadOrder(table_number);
                 foreach (Order item in order_List)

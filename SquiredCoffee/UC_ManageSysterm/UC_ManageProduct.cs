@@ -145,6 +145,7 @@ namespace SquiredCoffee.UC_ManageSysterm
                 flpProduct.Controls.Add(pic);
 
                 lblTotalProduct.Text = totalProduct.ToString();
+                lblTotalProductSearch.Text = totalProductSearch.ToString();
                 pic.Click += new EventHandler(Onclick);
             }
         }
@@ -272,7 +273,14 @@ namespace SquiredCoffee.UC_ManageSysterm
            
         }
 
-      
+       public void resetLoad()
+        {
+            flpProduct.Controls.Clear();
+            txtSearch.Text = string.Empty;
+            clear1();
+            clear();
+            Display();
+        }
 
         private void btnAll_Click(object sender, EventArgs e)
         {

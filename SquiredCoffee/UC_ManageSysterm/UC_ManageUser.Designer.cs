@@ -56,7 +56,6 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.btnActive = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnAll = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtSearch = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.btnAddOptionGroup = new Guna.UI2.WinForms.Guna2Button();
             this.lblTotalUserSearch = new System.Windows.Forms.Label();
             this.dgvUser = new System.Windows.Forms.DataGridView();
             this.Column12 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -92,7 +91,6 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.panel1.Controls.Add(this.btnActive);
             this.panel1.Controls.Add(this.btnAll);
             this.panel1.Controls.Add(this.txtSearch);
-            this.panel1.Controls.Add(this.btnAddOptionGroup);
             this.panel1.Controls.Add(this.lblTotalUserSearch);
             this.panel1.Controls.Add(this.dgvUser);
             this.panel1.Controls.Add(this.bunifuGradientPanel1);
@@ -143,6 +141,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.bunifuVScrollBar1.ThumbMargin = 1;
             this.bunifuVScrollBar1.ThumbStyle = Bunifu.UI.WinForms.BunifuVScrollBar.ThumbStyles.Inset;
             this.bunifuVScrollBar1.Value = 0;
+            this.bunifuVScrollBar1.Scroll += new System.EventHandler<Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs>(this.bunifuVScrollBar1_Scroll);
             // 
             // label4
             // 
@@ -496,7 +495,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.txtSearch.IconRight = null;
             this.txtSearch.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(285, 91);
+            this.txtSearch.Location = new System.Drawing.Point(47, 91);
             this.txtSearch.MaxLength = 32767;
             this.txtSearch.MinimumSize = new System.Drawing.Size(1, 1);
             this.txtSearch.Modified = false;
@@ -532,7 +531,7 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
             this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(729, 48);
+            this.txtSearch.Size = new System.Drawing.Size(967, 48);
             this.txtSearch.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.txtSearch.TabIndex = 77;
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -542,24 +541,6 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.txtSearch.TextPlaceholder = "    Nhập Từ Khóa Tìm Kiếm ...";
             this.txtSearch.UseSystemPasswordChar = false;
             this.txtSearch.WordWrap = true;
-            // 
-            // btnAddOptionGroup
-            // 
-            this.btnAddOptionGroup.BorderRadius = 20;
-            this.btnAddOptionGroup.CheckedState.Parent = this.btnAddOptionGroup;
-            this.btnAddOptionGroup.CustomImages.Parent = this.btnAddOptionGroup;
-            this.btnAddOptionGroup.DisabledState.Parent = this.btnAddOptionGroup;
-            this.btnAddOptionGroup.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(79)))), ((int)(((byte)(157)))));
-            this.btnAddOptionGroup.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddOptionGroup.ForeColor = System.Drawing.Color.White;
-            this.btnAddOptionGroup.HoverState.Parent = this.btnAddOptionGroup;
-            this.btnAddOptionGroup.Image = ((System.Drawing.Image)(resources.GetObject("btnAddOptionGroup.Image")));
-            this.btnAddOptionGroup.Location = new System.Drawing.Point(34, 91);
-            this.btnAddOptionGroup.Name = "btnAddOptionGroup";
-            this.btnAddOptionGroup.ShadowDecoration.Parent = this.btnAddOptionGroup;
-            this.btnAddOptionGroup.Size = new System.Drawing.Size(186, 48);
-            this.btnAddOptionGroup.TabIndex = 82;
-            this.btnAddOptionGroup.Text = "Thêm mới";
             // 
             // lblTotalUserSearch
             // 
@@ -629,6 +610,8 @@ namespace SquiredCoffee.UC_ManageSysterm
             this.dgvUser.Size = new System.Drawing.Size(1531, 520);
             this.dgvUser.TabIndex = 81;
             this.dgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUser_CellClick);
+            this.dgvUser.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvUser_RowsAdded);
+            this.dgvUser.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvUser_RowsRemoved);
             // 
             // Column12
             // 
@@ -806,7 +789,6 @@ namespace SquiredCoffee.UC_ManageSysterm
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnActive;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnAll;
         private Bunifu.UI.WinForms.BunifuTextBox txtSearch;
-        private Guna.UI2.WinForms.Guna2Button btnAddOptionGroup;
         private System.Windows.Forms.Label lblTotalUserSearch;
         private System.Windows.Forms.DataGridView dgvUser;
         private System.Windows.Forms.ImageList imageList1;

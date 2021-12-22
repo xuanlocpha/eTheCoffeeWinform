@@ -219,5 +219,41 @@ namespace SquiredCoffee.UC_ManageSysterm
         {
 
         }
+
+        private void bunifuVScrollBar1_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            try
+            {
+                dgvImportInvoice.FirstDisplayedScrollingRowIndex = dgvImportInvoice.Rows[e.Value].Index;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void dgvImportInvoice_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            try
+            {
+                bunifuVScrollBar1.Maximum = dgvImportInvoice.RowCount - 1;
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void dgvImportInvoice_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            try
+            {
+                bunifuVScrollBar1.Maximum = dgvImportInvoice.RowCount - 1;
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

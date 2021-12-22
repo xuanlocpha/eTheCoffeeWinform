@@ -39,7 +39,7 @@ namespace SquiredCoffee.Class
             price = Convert.ToDecimal(row["price"]);
             content = row["content"].ToString();
             title = row["title"].ToString();
-            price_discount = Convert.ToDecimal(row["price_discount"]);
+            //price_discount = Convert.ToDecimal(row["price_discount"]);
         }
     }
 }

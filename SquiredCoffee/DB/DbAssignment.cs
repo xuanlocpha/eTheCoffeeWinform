@@ -270,11 +270,31 @@ namespace SquiredCoffee.DB
         }
 
 
+        public static bool CheckAssignment(string id_staff, string date)
+        {
+            string sql = "SELECT * FROM assignment WHERE  staff_id='" + id_staff + "' AND date = '" + date + "'";
+            MySqlConnection con = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataSet tbl = new DataSet();
+            adp.Fill(tbl);
+            int i = tbl.Tables[0].Rows.Count;
+            if (i > 0)
+            {
+                return true;  // data exist
+            }
+            else
+            {
+                return false; //data not exist
+            }
+        }
+
+
         public static List<Assignment> LoadAssginmentListSearch(string id_staff,string date)
         {
             List<Assignment> assignmentList = new List<Assignment>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM assignment WHERE  staff_id='"+id_staff+"' AND date = '"+date+"' ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT a.id,a.staff_id,a.date,a.start_time,a.expiry_time,a.check_shift,a.total_min,a.total_time_late,a.type,CONCAT(first_name,last_name) AS name_staff FROM assignment a , staffs s WHERE a.staff_id = s.id AND a.staff_id='" + id_staff + "' AND a.date = '" + date + "'");
             foreach (DataRow item in data.Rows)
             {
                 Assignment assignment = new Assignment(item);

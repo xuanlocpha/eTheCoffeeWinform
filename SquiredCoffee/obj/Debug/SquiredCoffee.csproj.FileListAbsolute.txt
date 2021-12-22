@@ -1675,5 +1675,9 @@ B:\Phần mềm quản lý  quán  cafe\eTheCoffeeWinform\SquiredCoffee\obj\Debu
 B:\Phần mềm quản lý  quán  cafe\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.pdb
 B:\Phần mềm quản lý  quán  cafe\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_ManageAssignment.resources
 B:\Phần mềm quản lý  quán  cafe\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_InformationStatictisOrder.resources
-B:\Phần mềm quản lý  quán  cafe\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.csproj.AssemblyReference.cache
 B:\Phần mềm quản lý  quán  cafe\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_InformationStatictisProduct.resources
+B:\Phần mềm quản lý  quán  cafe\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormInfomationStaticProduct.resources
+B:\Phần mềm quản lý  quán  cafe\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.FormManage.FormSuggest.resources
+B:\Phần mềm quản lý  quán  cafe\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_InformationStatictisUser.resources
+B:\Phần mềm quản lý  quán  cafe\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.csproj.AssemblyReference.cache
+B:\Phần mềm quản lý  quán  cafe\eTheCoffeeWinform\SquiredCoffee\obj\Debug\SquiredCoffee.UC_ManageSysterm.UC_InformationStatictisAssignment.resources

@@ -1,4 +1,5 @@
 ﻿using SquiredCoffee.Class;
+using SquiredCoffee.CustomControls;
 using SquiredCoffee.DB;
 using SquiredCoffee.FormManage;
 using System;
@@ -113,14 +114,72 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
-            Form.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormAddRole Form = new FormAddRole(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    Form.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
+            //Form.ShowDialog();
         }
 
         private void dgvRole_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string id_role = dgvRole.Rows[e.RowIndex].Cells[1].Value.ToString();
-            Form1.id_role = Convert.ToInt32(id_role);
-            Form1.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormInformationRole Form = new FormInformationRole(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
+
+                    Form.Owner = formBackGround;
+                    string id_role = dgvRole.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    Form.id_role = Convert.ToInt32(id_role);
+                    Form.ShowDialog();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
+            //string id_role = dgvRole.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //Form1.id_role = Convert.ToInt32(id_role);
+            //Form1.ShowDialog();
         }
 
         private void dgvRole_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)

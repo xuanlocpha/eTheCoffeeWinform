@@ -43,7 +43,6 @@ namespace SquiredCoffee.FormManage
             this.cbOptionName = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTitle = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@ namespace SquiredCoffee.FormManage
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbProductName = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panel1.SuspendLayout();
             this.bunifuGradientPanel1.SuspendLayout();
@@ -92,7 +92,7 @@ namespace SquiredCoffee.FormManage
             this.chkDefault2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.chkDefault2.Location = new System.Drawing.Point(455, 346);
             this.chkDefault2.Name = "chkDefault2";
-            this.chkDefault2.Size = new System.Drawing.Size(211, 38);
+            this.chkDefault2.Size = new System.Drawing.Size(206, 37);
             this.chkDefault2.TabIndex = 168;
             this.chkDefault2.Text = "Không Mặc định";
             this.chkDefault2.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@ namespace SquiredCoffee.FormManage
             this.chkDefault1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.chkDefault1.Location = new System.Drawing.Point(237, 346);
             this.chkDefault1.Name = "chkDefault1";
-            this.chkDefault1.Size = new System.Drawing.Size(134, 38);
+            this.chkDefault1.Size = new System.Drawing.Size(131, 37);
             this.chkDefault1.TabIndex = 167;
             this.chkDefault1.Text = "Mặc định";
             this.chkDefault1.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@ namespace SquiredCoffee.FormManage
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.label5.Location = new System.Drawing.Point(74, 344);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 34);
+            this.label5.Size = new System.Drawing.Size(127, 33);
             this.label5.TabIndex = 164;
             this.label5.Text = "Mặc định  :";
             // 
@@ -129,7 +129,7 @@ namespace SquiredCoffee.FormManage
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.label12.Location = new System.Drawing.Point(57, 412);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(151, 34);
+            this.label12.Size = new System.Drawing.Size(149, 33);
             this.label12.TabIndex = 163;
             this.label12.Text = "Trạng Thái  :";
             // 
@@ -141,7 +141,7 @@ namespace SquiredCoffee.FormManage
             this.rdStatus1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.rdStatus1.Location = new System.Drawing.Point(237, 412);
             this.rdStatus1.Name = "rdStatus1";
-            this.rdStatus1.Size = new System.Drawing.Size(147, 38);
+            this.rdStatus1.Size = new System.Drawing.Size(144, 37);
             this.rdStatus1.TabIndex = 161;
             this.rdStatus1.TabStop = true;
             this.rdStatus1.Text = "Kích Hoạt ";
@@ -155,7 +155,7 @@ namespace SquiredCoffee.FormManage
             this.rdStatus2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.rdStatus2.Location = new System.Drawing.Point(454, 412);
             this.rdStatus2.Name = "rdStatus2";
-            this.rdStatus2.Size = new System.Drawing.Size(145, 38);
+            this.rdStatus2.Size = new System.Drawing.Size(144, 37);
             this.rdStatus2.TabIndex = 162;
             this.rdStatus2.Text = "Tạm Khóa";
             this.rdStatus2.UseVisualStyleBackColor = true;
@@ -196,7 +196,7 @@ namespace SquiredCoffee.FormManage
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.label4.Location = new System.Drawing.Point(86, 275);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 34);
+            this.label4.Size = new System.Drawing.Size(112, 33);
             this.label4.TabIndex = 159;
             this.label4.Text = "Giá Tiền :";
             // 
@@ -228,7 +228,7 @@ namespace SquiredCoffee.FormManage
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.label3.Location = new System.Drawing.Point(20, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 34);
+            this.label3.Size = new System.Drawing.Size(167, 33);
             this.label3.TabIndex = 157;
             this.label3.Text = "Tên Tùy Chọn :";
             // 
@@ -259,11 +259,6 @@ namespace SquiredCoffee.FormManage
             this.txtTitle.ShadowDecoration.Parent = this.txtTitle;
             this.txtTitle.Size = new System.Drawing.Size(397, 47);
             this.txtTitle.TabIndex = 156;
-            // 
-            // guna2Elipse2
-            // 
-            this.guna2Elipse2.BorderRadius = 15;
-            this.guna2Elipse2.TargetControl = this;
             // 
             // btnDelete
             // 
@@ -312,7 +307,7 @@ namespace SquiredCoffee.FormManage
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.label2.Location = new System.Drawing.Point(86, 200);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 34);
+            this.label2.Size = new System.Drawing.Size(107, 33);
             this.label2.TabIndex = 153;
             this.label2.Text = "Tiêu Đề :";
             // 
@@ -323,7 +318,7 @@ namespace SquiredCoffee.FormManage
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.label11.Location = new System.Drawing.Point(20, 73);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(182, 34);
+            this.label11.Size = new System.Drawing.Size(176, 33);
             this.label11.TabIndex = 154;
             this.label11.Text = "Tên Sản Phẩm :";
             // 
@@ -377,7 +372,7 @@ namespace SquiredCoffee.FormManage
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(76, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(315, 34);
+            this.label1.Size = new System.Drawing.Size(309, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chi Tiết Tùy Chọn Sản Phẩm";
             // 
@@ -401,6 +396,11 @@ namespace SquiredCoffee.FormManage
             this.cbProductName.ShadowDecoration.Parent = this.cbProductName;
             this.cbProductName.Size = new System.Drawing.Size(400, 36);
             this.cbProductName.TabIndex = 155;
+            // 
+            // guna2Elipse2
+            // 
+            this.guna2Elipse2.BorderRadius = 15;
+            this.guna2Elipse2.TargetControl = this;
             // 
             // guna2Elipse1
             // 

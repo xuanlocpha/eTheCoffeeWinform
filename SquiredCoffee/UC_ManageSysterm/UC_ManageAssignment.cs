@@ -72,27 +72,29 @@ namespace SquiredCoffee.UC_ManageSysterm
             {
                 string date = dtpDate.Value.Date.ToString("yyyy-MM-dd");
                 Assignment std = new Assignment(Convert.ToInt32(cbStaffName.SelectedValue), date, start_time, end_time, 0, 0, 0, type);
-                if (DbAssignment.CheckAddAssignment(std) == true)
+                if (DbAssignment.CheckAssignment(std) == true)
                 {
-                    if (DbAssignment.CheckAssignment(std) == true)
+                    Form1.title = "Ca này đã tồn tại";
+                    Form1.ShowDialog();
+                    return;
+                }
+                else
+                {
+                    if (DbAssignment.CheckAddAssignment(std) == true)
                     {
-                        Form1.title = "Ca này đã tồn tại";
-                        Form1.ShowDialog();
-                        return;
-                    }
-                    else
-                    {
+
                         Form2.title = "Thêm mới ca làm việc thành công";
                         Form2.ShowDialog();
                         clear();
                         Display();
                     }
+                    else
+                    {
+                        Form2.title = "Thêm mới ca làm việc không thành công";
+                        Form1.ShowDialog();
+                    }
                 }
-                else
-                {
-                    Form2.title = "Thêm mới ca làm việc không thành công";
-                    Form1.ShowDialog();
-                }
+
             }
         }
 
@@ -321,6 +323,40 @@ namespace SquiredCoffee.UC_ManageSysterm
            
         }
 
+        private void bunifuVScrollBar1_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            try
+            {
+                dgvStaff.FirstDisplayedScrollingRowIndex = dgvStaff.Rows[e.Value].Index;
+            }
+            catch (Exception)
+            {
 
+            }
+        }
+
+        private void dgvStaff_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            try
+            {
+                bunifuVScrollBar1.Maximum = dgvStaff.RowCount - 1;
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void dgvStaff_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            try
+            {
+                bunifuVScrollBar1.Maximum = dgvStaff.RowCount - 1;
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

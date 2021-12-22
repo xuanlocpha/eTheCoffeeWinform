@@ -182,7 +182,7 @@ namespace SquiredCoffee.FormManage
                     Form1.title = "Sửa Thành Công";
                     Form1.ShowDialog();
                     this.Close();
-                    _parent.Display();
+                    _parent.resetLoad();
                     _parent.clear1();
                }
                 else
@@ -190,7 +190,7 @@ namespace SquiredCoffee.FormManage
                     Form2.title = "Sửa Không Thành Công";
                     Form2.ShowDialog();
                     this.Close();
-                    _parent.Display();
+                    _parent.resetLoad();
                     _parent.clear1();
                 }
             }

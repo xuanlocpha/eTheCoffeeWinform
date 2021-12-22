@@ -336,6 +336,7 @@ namespace SquiredCoffee.FormManage
             this.txtMoneyCustomer.Size = new System.Drawing.Size(416, 40);
             this.txtMoneyCustomer.TabIndex = 266;
             this.txtMoneyCustomer.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMoneyCustomer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMoneyCustomer_KeyPress);
             // 
             // label12
             // 

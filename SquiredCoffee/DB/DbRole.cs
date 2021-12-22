@@ -109,7 +109,7 @@ namespace SquiredCoffee.DB
         {
             List<Role> roleList = new List<Role>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,status FROM roles ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,status FROM roles WHERE id != 4");
             foreach (DataRow item in data.Rows)
             {
                 Role role = new Role(item);
@@ -158,7 +158,7 @@ namespace SquiredCoffee.DB
         {
             List<Role> roleList = new List<Role>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,status FROM roles WHERE status ='"+@key+"' ");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,status FROM roles WHERE status ='"+@key+ "' AND id != 4 ");
             foreach (DataRow item in data.Rows)
             {
                 Role role = new Role(item);
@@ -173,7 +173,7 @@ namespace SquiredCoffee.DB
         {
             List<Role> roleList = new List<Role>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,status FROM roles WHERE title LIKE'%" + @key + "%'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT id,title,status FROM roles WHERE title LIKE'%" + @key + "%' AND id != 4");
             foreach (DataRow item in data.Rows)
             {
                 Role role = new Role(item);

@@ -111,53 +111,69 @@ namespace SquiredCoffee
                 {
                     if (item.role_id == 2)
                     {
-                        string date = DateTime.Now.ToString("yyyy-MM-dd");
-                        List<Assignment> assignmentList = DbAssignment.LoadAssginmentListSearch(item.id.ToString(),date);
-                        foreach (Assignment item1 in assignmentList)
-                        {
-                            DateTime dt = Convert.ToDateTime(item1.start_time);
-                            DateTime dt2 = Convert.ToDateTime(item1.expiry_time);
-                            if (7 < Convert.ToInt32(DateTime.Now.ToString("HH")) && Convert.ToInt32(DateTime.Now.ToString("HH"))  < 13)
-                            {
-                                Type = 1;
-                            }
-                            else if (14 < Convert.ToInt32(DateTime.Now.ToString("HH")) && Convert.ToInt32(DateTime.Now.ToString("HH")) < 18)
-                            {
-                                Type = 2;
-                            }
-                            else if (19 < Convert.ToInt32(DateTime.Now.ToString("HH")) && Convert.ToInt32(DateTime.Now.ToString("HH")) < 22)
-                            {
-                                Type = 3;
-                            }
-                            if(Type != item1.type)
-                            {
-                                Form2.title = "Chưa đến ca làm việc của bạn";
-                                Form2.ShowDialog();
-                                txtUserNameForm1.Text = txtPasswordForm1.Text = "";
-                                return;
-                            }
-                            string time1 = dt.ToString("HH:mm:ss");
-                            string time2 = DateTime.Now.ToString("HH:mm:ss");
-                            if (DateTime.Compare(DateTime.Parse(time2),DateTime.Parse(time1))<0)
-                            {
-                                if (item1.check_shift == 0)
-                                {
-                                    DbAssignment.UpdateAssignmentCheck("1", item1.id.ToString(), "0");
-                                }
-                            }
-                            else if (DateTime.Compare(DateTime.Parse(time2), DateTime.Parse(time1)) >0)
-                            {
-                                int totalTimeLate =   ((Convert.ToInt32(DateTime.Now.ToString("HH")) - Convert.ToInt32(dt.ToString("HH")))*60)+Convert.ToInt32(DateTime.Now.ToString("mm"));
-                                if (item1.check_shift == 0)
-                                {
-                                    DbAssignment.UpdateAssignmentCheck("1", item1.id.ToString(), totalTimeLate.ToString());
-                                }
-                                if (item1.check_shift == 1)
-                                {
-                                    DbAssignment.UpdateAssignmentCheck1("1", item1.id.ToString());
-                                }
-                            }
-                        }
+                        //string date = DateTime.Now.ToString("yyyy-MM-dd");
+                        //if (DbAssignment.CheckAssignment(item.id.ToString(), date) == true)
+                        //{
+                        //    List<Assignment> assignmentList = DbAssignment.LoadAssginmentListSearch(item.id.ToString(), date);
+                        //    foreach (Assignment item1 in assignmentList)
+                        //    {
+                        //        DateTime dt = Convert.ToDateTime(item1.start_time);
+                        //        DateTime dt2 = Convert.ToDateTime(item1.expiry_time);
+                        //        if (7 < Convert.ToInt32(DateTime.Now.ToString("HH")) && Convert.ToInt32(DateTime.Now.ToString("HH")) < 13)
+                        //        {
+                        //            Type = 1;
+                        //        }
+                        //        else if (14 < Convert.ToInt32(DateTime.Now.ToString("HH")) && Convert.ToInt32(DateTime.Now.ToString("HH")) < 18)
+                        //        {
+                        //            Type = 2;
+                        //        }
+                        //        else if (19 < Convert.ToInt32(DateTime.Now.ToString("HH")) && Convert.ToInt32(DateTime.Now.ToString("HH")) < 22)
+                        //        {
+                        //            Type = 3;
+                        //        }
+                        //        if (Type != item1.type)
+                        //        {
+                        //            Form2.title = "Chưa đến ca làm việc của bạn";
+                        //            Form2.ShowDialog();
+                        //            txtUserNameForm1.Text = txtPasswordForm1.Text = "";
+                        //            return;
+                        //        }
+                        //        string time1 = dt.ToString("HH:mm:ss");
+                        //        string time2 = DateTime.Now.ToString("HH:mm:ss");
+                        //        if (DateTime.Compare(DateTime.Parse(time2), DateTime.Parse(time1)) < 0)
+                        //        {
+                        //            if (item1.check_shift == 0)
+                        //            {
+                        //                DbAssignment.UpdateAssignmentCheck("1", item1.id.ToString(), "0");
+                        //            }
+                        //        }
+                        //        else if (DateTime.Compare(DateTime.Parse(time2), DateTime.Parse(time1)) > 0)
+                        //        {
+                        //            int totalTimeLate = ((Convert.ToInt32(DateTime.Now.ToString("HH")) - Convert.ToInt32(dt.ToString("HH"))) * 60) + Convert.ToInt32(DateTime.Now.ToString("mm"));
+                        //            if (item1.check_shift == 0)
+                        //            {
+                        //                DbAssignment.UpdateAssignmentCheck("1", item1.id.ToString(), totalTimeLate.ToString());
+                        //            }
+                        //            if (item1.check_shift == 1)
+                        //            {
+                        //                DbAssignment.UpdateAssignmentCheck1("1", item1.id.ToString());
+                        //            }
+                        //        }
+                        //    }
+                        //    Form5.fullName = item.first_name + " " + item.last_name;
+                        //    Form5.roleName = item.title;
+                        //    Form5.imageStaff = item.image;
+                        //    Form5.id_staff = item.id;
+                        //    Form5.ShowDialog();
+                        //    this.Close();
+                        //    return;
+                        //}
+                        //else
+                        //{
+                        //    Form2.title = "Hôm nay bạn không có ca làm ";
+                        //    Form2.ShowDialog();
+                        //    return;
+                        //}
                         Form5.fullName = item.first_name + " " + item.last_name;
                         Form5.roleName = item.title;
                         Form5.imageStaff = item.image;

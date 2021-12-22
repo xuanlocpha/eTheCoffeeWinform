@@ -91,38 +91,38 @@ namespace SquiredCoffee.UC_ManageSysterm
 
         private void dgvUser_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string id_user = dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString();
-            Form.id_user = id_user;
-            Form.ShowDialog();
-            //FormBackGround formBackGround = new FormBackGround();
-            //try
-            //{
-            //    using (FormInformationUser Form = new FormInformationUser(this))
-            //    {
-            //        formBackGround.StartPosition = FormStartPosition.Manual;
-            //        formBackGround.FormBorderStyle = FormBorderStyle.None;
-            //        formBackGround.Opacity = .70d;
-            //        formBackGround.BackColor = Color.Black;
-            //        formBackGround.WindowState = FormWindowState.Maximized;
-            //        formBackGround.TopMost = true;
-            //        formBackGround.Location = this.Location;
-            //        formBackGround.ShowInTaskbar = false;
-            //        formBackGround.Show();
+            //string id_user = dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //Form.id_user = id_user;
+            //Form.ShowDialog();
+            FormBackGround formBackGround = new FormBackGround();
+            try
+            {
+                using (FormInformationUser Form = new FormInformationUser(this))
+                {
+                    formBackGround.StartPosition = FormStartPosition.Manual;
+                    formBackGround.FormBorderStyle = FormBorderStyle.None;
+                    formBackGround.Opacity = .70d;
+                    formBackGround.BackColor = Color.Black;
+                    formBackGround.WindowState = FormWindowState.Maximized;
+                    formBackGround.TopMost = true;
+                    formBackGround.Location = this.Location;
+                    formBackGround.ShowInTaskbar = false;
+                    formBackGround.Show();
 
-            //        Form.Owner = formBackGround;
-            //        string id_user = dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString();
-            //        Form.id_user = id_user;
-            //        Form.ShowDialog();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw;
-            //}
-            //finally
-            //{
-            //    formBackGround.Dispose();
-            //}
+                    Form.Owner = formBackGround;
+                    string id_user = dgvUser.Rows[e.RowIndex].Cells[1].Value.ToString();
+                    Form.id_user = id_user;
+                    Form.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                formBackGround.Dispose();
+            }
         }
 
         private void btnAll_Click(object sender, EventArgs e)
@@ -217,5 +217,42 @@ namespace SquiredCoffee.UC_ManageSysterm
             }
             lblTotalUserSearch.Text = totalUserSearch.ToString();
         }
+
+        private void bunifuVScrollBar1_Scroll(object sender, Bunifu.UI.WinForms.BunifuVScrollBar.ScrollEventArgs e)
+        {
+            try
+            {
+                dgvUser.FirstDisplayedScrollingRowIndex = dgvUser.Rows[e.Value].Index;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void dgvUser_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            try
+            {
+                bunifuVScrollBar1.Maximum = dgvUser.RowCount - 1;
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void dgvUser_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            try
+            {
+                bunifuVScrollBar1.Maximum = dgvUser.RowCount - 1;
+            }
+            catch
+            {
+
+            }
+        }
+
     }
 }
